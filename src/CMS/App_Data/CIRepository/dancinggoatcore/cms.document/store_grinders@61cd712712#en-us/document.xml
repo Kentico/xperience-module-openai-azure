@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- This is a CI serialization file for Grinders -->
+<cms.documentlocalization>
+  <DocumentContent />
+  <DocumentCreatedByUserID>
+    <CodeName>administrator</CodeName>
+    <GUID>6415b8ce-8072-4bcd-8e48-9d7178b826b7</GUID>
+    <ObjectType>cms.user</ObjectType>
+  </DocumentCreatedByUserID>
+  <DocumentCreatedWhen>2020-08-03 07:40:47Z</DocumentCreatedWhen>
+  <DocumentCulture>en-US</DocumentCulture>
+  <DocumentGUID>429ae219-8b9b-4380-ad25-13c8249a2b43</DocumentGUID>
+  <DocumentModifiedByUserID>
+    <CodeName>administrator</CodeName>
+    <GUID>6415b8ce-8072-4bcd-8e48-9d7178b826b7</GUID>
+    <ObjectType>cms.user</ObjectType>
+  </DocumentModifiedByUserID>
+  <DocumentModifiedWhen>2020-12-22 14:25:57Z</DocumentModifiedWhen>
+  <DocumentName>Grinders</DocumentName>
+  <DocumentNodeID>
+    <CodeName>/Store/Grinders</CodeName>
+    <GUID>72ad46c2-2dc6-43e1-baa0-4bf557d76136</GUID>
+    <ObjectType>cms.node</ObjectType>
+    <Site>
+      <CodeName>DancingGoatCore</CodeName>
+      <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+      <ObjectType>cms.site</ObjectType>
+    </Site>
+  </DocumentNodeID>
+  <DocumentPageDescription>
+    <![CDATA[Finding the right coffee grinder will no longer grind your gears. See our current offer.]]>
+  </DocumentPageDescription>
+  <DocumentShowInMenu>False</DocumentShowInMenu>
+</cms.documentlocalization>

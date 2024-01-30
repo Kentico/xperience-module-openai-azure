@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- This is a CI serialization file for About Us -->
+<cms.documentlocalization>
+  <DocumentContent />
+  <DocumentCreatedByUserID>
+    <CodeName>administrator</CodeName>
+    <GUID>6415b8ce-8072-4bcd-8e48-9d7178b826b7</GUID>
+    <ObjectType>cms.user</ObjectType>
+  </DocumentCreatedByUserID>
+  <DocumentCreatedWhen>2020-08-10 07:16:19Z</DocumentCreatedWhen>
+  <DocumentCulture>en-US</DocumentCulture>
+  <DocumentGUID>5d818076-7cc8-48e6-b367-2e1a16865029</DocumentGUID>
+  <DocumentModifiedByUserID>
+    <CodeName>administrator</CodeName>
+    <GUID>6415b8ce-8072-4bcd-8e48-9d7178b826b7</GUID>
+    <ObjectType>cms.user</ObjectType>
+  </DocumentModifiedByUserID>
+  <DocumentModifiedWhen>2020-12-15 11:19:59Z</DocumentModifiedWhen>
+  <DocumentName>About Us</DocumentName>
+  <DocumentNodeID>
+    <CodeName>/About-Us</CodeName>
+    <GUID>38ac32a4-57b3-47ea-b12c-85da4599b917</GUID>
+    <ObjectType>cms.node</ObjectType>
+    <Site>
+      <CodeName>DancingGoatCore</CodeName>
+      <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+      <ObjectType>cms.site</ObjectType>
+    </Site>
+  </DocumentNodeID>
+  <DocumentPageDescription>
+    <![CDATA[At Dancing Goat, we strive to do things right. Not only do we source the best coffees you can get your hands on. We also make sure we have a direct relationship with our farmers. Find out more about our philosophy, history, and the way we produce our high-quality coffee.]]>
+  </DocumentPageDescription>
+  <DocumentShowInMenu>True</DocumentShowInMenu>
+</cms.documentlocalization>

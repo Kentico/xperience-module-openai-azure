@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.pageurlpath>
+  <PageUrlPathCulture>en-US</PageUrlPathCulture>
+  <PageUrlPathGUID>a9d755c1-1b94-4add-a9f0-a1300b179690</PageUrlPathGUID>
+  <PageUrlPathNodeID>
+    <CodeName>/Store/Brewers/Espro-Press</CodeName>
+    <GUID>74d5683e-4cd3-4042-9bd6-870d5e3fb9b0</GUID>
+    <ObjectType>cms.node</ObjectType>
+    <Site>
+      <CodeName>DancingGoatCore</CodeName>
+      <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+      <ObjectType>cms.site</ObjectType>
+    </Site>
+  </PageUrlPathNodeID>
+  <PageUrlPathSiteID>
+    <CodeName>DancingGoatCore</CodeName>
+    <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+    <ObjectType>cms.site</ObjectType>
+  </PageUrlPathSiteID>
+  <PageUrlPathUrlPath>Store/Brewers/Espro-Press</PageUrlPathUrlPath>
+  <PageUrlPathUrlPathHash>
+    <![CDATA[37F055253E83C52F84FDB3FC9D042C9D5371D1663BD0DF30F58918FAC3B79235]]>
+  </PageUrlPathUrlPathHash>
+</cms.pageurlpath>

@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.alternativeform>
+  <FormClassID>
+    <CodeName>ecommerce.manufacturer</CodeName>
+    <GUID>dcbcbc29-fa72-404c-bcaf-7eea0dac144e</GUID>
+    <ObjectType>cms.systemtable</ObjectType>
+  </FormClassID>
+  <FormCustomizedColumns />
+  <FormDefinition>
+    <form>
+      <field column="ManufacturerThumbnailGUID" order="5" />
+      <field column="ManufacturerSiteID" visible="true" order="6">
+        <settings>
+          <Options>
+<![CDATA[
+{%SiteContext.CurrentSiteID|(identity)GlobalAdministrator|(hash)4f7433321168d6844abe167688753cc5e119d5e7469d91b476cefcdabafa0e65%};{$com.onthissiteonly$}
+;{$com.globally$}
+]]>
+          </Options>
+          <SortItems>False</SortItems>
+          <EditText>False</EditText>
+          <controlname>dropdownlistcontrol</controlname>
+        </settings>
+        <properties>
+          <visiblemacro>
+            <![CDATA[{%Settings.CMSStoreAllowGlobalManufacturers && CurrentUser.IsAuthorizedPerResource("CMS.Ecommerce","EcommerceGlobalModify") && (CurrentUser.IsAuthorizedPerResource("CMS.Ecommerce","ModifyManufacturers") || CurrentUser.IsAuthorizedPerResource("CMS.Ecommerce","EcommerceModify"))|(identity)GlobalAdministrator|(hash)832f33e50cc28ad3511b3b86b87d8ddf5aba24f61825076a17bf02fc2a1fb2ed%}]]>
+          </visiblemacro>
+          <defaultvalue ismacro="true">
+<![CDATA[
+{% if (!Settings.CMSStoreAllowGlobalManufacturers
+    || !CurrentUser.IsAuthorizedPerResource("CMS.Ecommerce","EcommerceGlobalModify")
+    || CurrentUser.IsAuthorizedPerResource("CMS.Ecommerce","ModifyManufacturers")
+    || CurrentUser.IsAuthorizedPerResource("CMS.Ecommerce","EcommerceModify")) {SiteContext.CurrentSiteID} |(identity)GlobalAdministrator|(hash)8cf22c8575e630f64f93eec420c8a2d80e8c2cd364a8e6c24bd7dbfe81330749%}
+]]>
+          </defaultvalue>
+          <fieldcaption>{$com.available$}</fieldcaption>
+        </properties>
+      </field>
+      <field column="ManufacturerLastModified" order="7" />
+      <field column="ManufacturerEnabled" visible="">
+        <settings>
+          <controlname />
+        </settings>
+        <properties>
+          <fieldcaption />
+        </properties>
+      </field>
+    </form>
+  </FormDefinition>
+  <FormDisplayName>Quick add</FormDisplayName>
+  <FormGUID>2e2bdff0-75cf-46b3-9841-e025385ae446</FormGUID>
+  <FormHideNewParentFields>False</FormHideNewParentFields>
+  <FormIsCustom>False</FormIsCustom>
+  <FormName>quickadd</FormName>
+</cms.alternativeform>

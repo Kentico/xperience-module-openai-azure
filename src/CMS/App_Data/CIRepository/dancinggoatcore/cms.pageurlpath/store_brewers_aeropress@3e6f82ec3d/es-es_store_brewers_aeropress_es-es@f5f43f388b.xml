@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.pageurlpath>
+  <PageUrlPathCulture>es-ES</PageUrlPathCulture>
+  <PageUrlPathGUID>a9894e04-ae98-4256-a6ae-58b43210fd93</PageUrlPathGUID>
+  <PageUrlPathNodeID>
+    <CodeName>/Store/Brewers/AeroPress</CodeName>
+    <GUID>f869d687-8fa9-4b1c-b573-764ac0590d74</GUID>
+    <ObjectType>cms.node</ObjectType>
+    <Site>
+      <CodeName>DancingGoatCore</CodeName>
+      <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+      <ObjectType>cms.site</ObjectType>
+    </Site>
+  </PageUrlPathNodeID>
+  <PageUrlPathSiteID>
+    <CodeName>DancingGoatCore</CodeName>
+    <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+    <ObjectType>cms.site</ObjectType>
+  </PageUrlPathSiteID>
+  <PageUrlPathUrlPath>es-ES/Store/Brewers/AeroPress</PageUrlPathUrlPath>
+  <PageUrlPathUrlPathHash>
+    <![CDATA[D5CD71070627C4F938DACD7A3A64503FFF4B44B8C1CC9E435862BFF156AE282F]]>
+  </PageUrlPathUrlPathHash>
+</cms.pageurlpath>

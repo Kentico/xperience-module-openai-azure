@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.searchindex>
+  <IndexAnalyzerType>subset</IndexAnalyzerType>
+  <IndexBatchSize>10000</IndexBatchSize>
+  <IndexCustomAnalyzerClassName />
+  <IndexDisplayName>Dancing Goat Core</IndexDisplayName>
+  <IndexGUID>f3563e11-0390-4707-b53d-041f8ff511ee</IndexGUID>
+  <IndexName>DancingGoatCore.Index</IndexName>
+  <IndexProvider>Lucene</IndexProvider>
+  <IndexSettings>
+    <index>
+      <item classnames="" id="45200f6e-e0aa-4ecf-b0bb-2b95d6f6d13c" inclatt="False" inclcats="False" path="/%" type="allowed" />
+      <item classnames="" id="ddba17c3-6657-4a9b-86c1-4099a9fc47a8" inclatt="False" inclcats="False" path="/Manufacturers/%" type="excluded" />
+    </index>
+  </IndexSettings>
+  <IndexType>cms.document</IndexType>
+</cms.searchindex>

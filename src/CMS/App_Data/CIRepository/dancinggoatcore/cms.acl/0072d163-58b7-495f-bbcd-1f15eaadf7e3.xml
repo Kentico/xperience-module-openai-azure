@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.acl>
+  <ACLGUID>0072d163-58b7-495f-bbcd-1f15eaadf7e3</ACLGUID>
+  <ACLInheritedACLs />
+  <ACLSiteID>
+    <CodeName>DancingGoatCore</CodeName>
+    <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+    <ObjectType>cms.site</ObjectType>
+  </ACLSiteID>
+</cms.acl>

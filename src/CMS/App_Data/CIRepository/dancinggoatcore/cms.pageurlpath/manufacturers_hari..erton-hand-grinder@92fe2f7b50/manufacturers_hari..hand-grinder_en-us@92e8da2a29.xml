@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.pageurlpath>
+  <PageUrlPathCulture>en-US</PageUrlPathCulture>
+  <PageUrlPathGUID>1ec9b367-39be-409f-a895-9f85baf19fae</PageUrlPathGUID>
+  <PageUrlPathNodeID>
+    <CodeName>/Manufacturers/Hario/Hario-Skerton-Hand-Grinder</CodeName>
+    <GUID>a663ef53-c91d-4682-8452-85487891c999</GUID>
+    <ObjectType>cms.node</ObjectType>
+    <Site>
+      <CodeName>DancingGoatCore</CodeName>
+      <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+      <ObjectType>cms.site</ObjectType>
+    </Site>
+  </PageUrlPathNodeID>
+  <PageUrlPathSiteID>
+    <CodeName>DancingGoatCore</CodeName>
+    <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+    <ObjectType>cms.site</ObjectType>
+  </PageUrlPathSiteID>
+  <PageUrlPathUrlPath>Manufacturers/Hario/Hario-Skerton-Hand-Grinder</PageUrlPathUrlPath>
+  <PageUrlPathUrlPathHash>
+    <![CDATA[D9701ABC6C860CA543EA1F21EE7FB63FDE0D7FCD8B6612C12D1CA79DBA97DAE9]]>
+  </PageUrlPathUrlPathHash>
+</cms.pageurlpath>

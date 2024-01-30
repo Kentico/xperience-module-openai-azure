@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.transformation>
+  <TransformationClassID>
+    <CodeName>Ecommerce.Transformations</CodeName>
+    <GUID>7539c21d-cde0-4d71-ab9f-12de5ddec092</GUID>
+    <ObjectType>cms.documenttype</ObjectType>
+  </TransformationClassID>
+  <TransformationCode>
+<![CDATA[
+{% if (CustomerFirstName + CustomerLastName != null) { %} 
+<em> {% (Localize(CustomerFirstName) + " " + Localize(CustomerLastName))|(encode)true %} </em><br/>
+{% } |(identity)GlobalAdministrator|(hash)7c010550bcf7bc7e799cb4f668e468551a8916587af298bc95b0f182ba0cd4ad%}
+{% if (CustomerEmail != null) { %}
+<a href="mailto:{% Localize(CustomerEmail)|(encode)true %}"> 
+{% Localize(CustomerEmail)|(encode)true %} 
+</a><br/>
+{% } |(identity)GlobalAdministrator|(hash)3223fd43b72a9766636ddffc32287db345f26d7fcfeab83f740809694f540cb8%}
+{% if (CustomerPhone != null) { %} 
+{% Localize(CustomerPhone)|(encode)true %}<br />
+{% } |(identity)GlobalAdministrator|(hash)ee4fa1c2680a2a40c9aa76aabdb032c38799d8b85e502f148da7cd3f260e2b08%}
+]]>
+  </TransformationCode>
+  <TransformationGUID>3cb5ade5-b895-4e69-bf73-53aa364fcef2</TransformationGUID>
+  <TransformationName>Order_CustomerDetail</TransformationName>
+  <TransformationType>text</TransformationType>
+</cms.transformation>

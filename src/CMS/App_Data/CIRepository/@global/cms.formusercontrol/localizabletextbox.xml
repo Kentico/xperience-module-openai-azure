@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.formusercontrol>
+  <UserControlCodeName>LocalizableTextBox</UserControlCodeName>
+  <UserControlDescription>
+    <![CDATA[Provides a single text field and a button for localizing the entered text.]]>
+  </UserControlDescription>
+  <UserControlDisplayName>Localizable text box</UserControlDisplayName>
+  <UserControlFileName>~/CMSFormControls/System/LocalizableTextBox.ascx</UserControlFileName>
+  <UserControlForBinary>False</UserControlForBinary>
+  <UserControlForBoolean>False</UserControlForBoolean>
+  <UserControlForDateTime>False</UserControlForDateTime>
+  <UserControlForDecimal>False</UserControlForDecimal>
+  <UserControlForDocAttachments>False</UserControlForDocAttachments>
+  <UserControlForDocRelationships>False</UserControlForDocRelationships>
+  <UserControlForFile>False</UserControlForFile>
+  <UserControlForGuid>False</UserControlForGuid>
+  <UserControlForInteger>False</UserControlForInteger>
+  <UserControlForLongText>True</UserControlForLongText>
+  <UserControlForText>True</UserControlForText>
+  <UserControlGUID>5995f07b-1b85-4052-b615-e166ec43609b</UserControlGUID>
+  <UserControlIsSystem>False</UserControlIsSystem>
+  <UserControlParameters>
+    <form version="2">
+      <field allowempty="true" column="ValueIsContent" columntype="boolean" guid="9d92c8fc-265b-4de3-9e1e-0fec69bd33a2" resolvedefaultvalue="False" visible="true">
+        <properties>
+          <defaultvalue>false</defaultvalue>
+          <fieldcaption>{$localizable.valueiscontent$}</fieldcaption>
+          <fielddescription>Indicates if textbox value is used in content.</fielddescription>
+        </properties>
+        <settings>
+          <controlname>checkboxcontrol</controlname>
+        </settings>
+      </field>
+      <field allowempty="true" column="Width" columntype="integer" displayinsimplemode="true" guid="175178ce-fd0a-4715-93bc-66d5baf6e1a2" resolvedefaultvalue="False" visible="true">
+        <properties>
+          <fieldcaption>Width</fieldcaption>
+          <fielddescription>Sets the width of the text box in pixels.</fielddescription>
+          <validationerrormessage>The value must be greater than 0.</validationerrormessage>
+        </properties>
+        <settings>
+          <AutoCompleteEnableCaching>False</AutoCompleteEnableCaching>
+          <AutoCompleteFirstRowSelected>False</AutoCompleteFirstRowSelected>
+          <AutoCompleteShowOnlyCurrentWordInCompletionListItem>False</AutoCompleteShowOnlyCurrentWordInCompletionListItem>
+          <controlname>TextBoxControl</controlname>
+          <FilterMode>False</FilterMode>
+          <Trim>False</Trim>
+        </settings>
+        <rules>
+          <rule>
+            <![CDATA[{%Rule("(Value >= 1)", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"MinValue\" ><p n=\"minvalue\"><t>1</t><v>1</v><r>0</r><d></d><vt>double</vt><tv>0</tv></p></r></rules>")%}]]>
+          </rule>
+        </rules>
+      </field>
+    </form>
+  </UserControlParameters>
+  <UserControlPriority>0</UserControlPriority>
+  <UserControlShowInCustomTables>True</UserControlShowInCustomTables>
+  <UserControlShowInDocumentTypes>True</UserControlShowInDocumentTypes>
+  <UserControlShowInReports>True</UserControlShowInReports>
+  <UserControlShowInSystemTables>True</UserControlShowInSystemTables>
+  <UserControlShowInWebParts>True</UserControlShowInWebParts>
+</cms.formusercontrol>

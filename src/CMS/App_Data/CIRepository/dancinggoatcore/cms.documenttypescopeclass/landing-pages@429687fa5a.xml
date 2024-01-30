@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.documenttypescopeclass>
+  <Parent>
+    <GUID>49518f5e-5cf6-4aae-bf55-6bfaab086556</GUID>
+    <ObjectType>cms.documenttypescope</ObjectType>
+    <Site>
+      <CodeName>DancingGoatCore</CodeName>
+      <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+      <ObjectType>cms.site</ObjectType>
+    </Site>
+  </Parent>
+  <Bindings>
+    <Binding id="cms.documenttype_DancingGoatCore.LandingPage">
+      <ClassID>
+        <CodeName>DancingGoatCore.LandingPage</CodeName>
+        <GUID>c56dc743-349c-45aa-9084-5425a53dc654</GUID>
+        <ObjectType>cms.documenttype</ObjectType>
+      </ClassID>
+    </Binding>
+  </Bindings>
+</cms.documenttypescopeclass>

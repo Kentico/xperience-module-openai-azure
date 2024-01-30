@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.alternativeform>
+  <FormClassID>
+    <CodeName>CMS.SMTPServer</CodeName>
+    <GUID>21fdc065-df67-473b-b859-e5e0fc51b60b</GUID>
+    <ObjectType>cms.class</ObjectType>
+  </FormClassID>
+  <FormCustomizedColumns />
+  <FormDefinition>
+    <form version="2">
+      <field column="ServerID" guid="c331e619-6707-4b28-83f5-0dc06ab3b1fc" />
+      <field column="ServerName" guid="378adb50-4930-4f66-bab8-ed5b9663ea8a" />
+      <field column="ServerPriority" guid="85b25e3a-728f-4583-bc16-cdf1f30cf7f1" />
+      <field allowempty="true" column="AssignToSite" columntype="boolean" dummy="altform" guid="7451f4aa-1b8a-4d79-909b-581f2409956b" system="true" visible="true" order="4">
+        <properties>
+          <defaultvalue>true</defaultvalue>
+        </properties>
+        <settings>
+          <controlname>AssignToSite</controlname>
+        </settings>
+      </field>
+      <field column="ServerEnabled" guid="0b471c96-3f09-480e-92fa-d110d7602889" visible="" order="5">
+        <settings>
+          <controlname />
+        </settings>
+      </field>
+      <category name="general.advanced" order="6" />
+      <field column="ServerDeliveryMethod" guid="5e3d28f6-23ed-484c-9519-d71c84c6a313" order="7" />
+      <field column="ServerUserName" guid="e2eea375-809a-4875-b70f-4275d4d6ac63" order="8" />
+      <field column="ServerAuthenticationType" guid="040826ee-b601-4d84-b38d-aad86453fda2" order="9" />
+      <field column="ServerPassword" guid="3e6aa6f0-4b4c-4ddd-8ef3-5266c26c8b4b" order="10" />
+      <field column="ServerOAuthCredentials" guid="c13da517-d1c4-41a5-8247-978889d1f18c" order="11" />
+      <field column="ServerUseSSL" guid="73f0a42d-78ad-4d62-981a-403f29295f56" order="12" />
+      <field column="ServerPickupDirectory" guid="d2ad7ad5-69c1-4be3-9a8f-e02493778a94" order="13" />
+      <field column="ServerIsGlobal" guid="274aa6e5-bdb1-4fa8-ac44-0c817c89a832" order="14" />
+      <field column="ServerGUID" guid="e8d4e762-d3a1-4937-9e92-878fc56d141d" order="15" />
+      <field column="ServerLastModified" guid="6be76690-b010-4c8b-ad84-8a8d76e62602" order="16" />
+    </form>
+  </FormDefinition>
+  <FormDisplayName>insert</FormDisplayName>
+  <FormGUID>82f42997-34ee-4ab2-a628-7f79c72b918a</FormGUID>
+  <FormHideNewParentFields>True</FormHideNewParentFields>
+  <FormIsCustom>False</FormIsCustom>
+  <FormName>Insert</FormName>
+</cms.alternativeform>

@@ -1,0 +1,13 @@
+<ConfigUpgrade>
+  <Namespaces />
+  <Insert />
+  <Update>
+    <Node path="/configuration/system.serviceModel/bindings/basicHttpBinding/binding[@name = &quot;SalesForceBinding&quot;]">
+      <Attribute name="maxReceivedMessageSize" value="1048576" />
+    </Node>
+	<Node path="/configuration/system.serviceModel/client/endpoint[@name = &quot;SalesForceClient&quot;]">
+      <Attribute name="address" value="https://login.salesforce.com/services/Soap/u/54.0" />
+    </Node>
+  </Update>
+  <Delete />
+</ConfigUpgrade>

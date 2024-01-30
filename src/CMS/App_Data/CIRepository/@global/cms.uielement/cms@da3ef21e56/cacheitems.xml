@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.uielement>
+  <ElementCaption>{$Administration-System.DebugCacheItems$}</ElementCaption>
+  <ElementCheckModuleReadPermission>False</ElementCheckModuleReadPermission>
+  <ElementDisplayName>{$Administration-System.DebugCacheItems$}</ElementDisplayName>
+  <ElementFromVersion>8.0</ElementFromVersion>
+  <ElementGUID>5143d751-b421-452b-9a50-4b37c0fe89dd</ElementGUID>
+  <ElementIconClass />
+  <ElementIsCustom>False</ElementIsCustom>
+  <ElementIsGlobalApplication>False</ElementIsGlobalApplication>
+  <ElementIsMenu>False</ElementIsMenu>
+  <ElementName>CacheItems</ElementName>
+  <ElementOrder>2</ElementOrder>
+  <ElementPageTemplateID>
+    <CodeName>VerticalTabs</CodeName>
+    <GUID>8136b750-a785-438f-a412-32212cd4dde6</GUID>
+    <ObjectType>cms.pagetemplate</ObjectType>
+  </ElementPageTemplateID>
+  <ElementParentID>
+    <CodeName>Debug</CodeName>
+    <GUID>3abfac77-95b9-4a3b-a0be-3539abca35d8</GUID>
+    <ObjectType>cms.uielement</ObjectType>
+    <Parent>
+      <CodeName>CMS</CodeName>
+      <GUID>ce1a65a0-80dc-4c53-b0e7-bdecf0aa8c02</GUID>
+      <ObjectType>cms.resource</ObjectType>
+    </Parent>
+  </ElementParentID>
+  <ElementProperties>
+    <Data>
+      <AllowSubTabs>true</AllowSubTabs>
+      <category_name_header>False</category_name_header>
+      <displaybreadcrumbs>False</displaybreadcrumbs>
+      <DisplayTitleInTabs>false</DisplayTitleInTabs>
+      <includejquery>False</includejquery>
+    </Data>
+  </ElementProperties>
+  <ElementRequiresGlobalAdminPriviligeLevel>False</ElementRequiresGlobalAdminPriviligeLevel>
+  <ElementResourceID>
+    <CodeName>CMS</CodeName>
+    <GUID>ce1a65a0-80dc-4c53-b0e7-bdecf0aa8c02</GUID>
+    <ObjectType>cms.resource</ObjectType>
+  </ElementResourceID>
+  <ElementSize>0</ElementSize>
+  <ElementType>PageTemplate</ElementType>
+</cms.uielement>

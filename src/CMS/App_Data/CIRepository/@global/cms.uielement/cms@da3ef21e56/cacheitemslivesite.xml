@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.uielement>
+  <ElementCaption>{$administration-system.debuglivesite$}</ElementCaption>
+  <ElementCheckModuleReadPermission>True</ElementCheckModuleReadPermission>
+  <ElementDisplayName>Cache items - Live site</ElementDisplayName>
+  <ElementFromVersion>13.0</ElementFromVersion>
+  <ElementGUID>078fc1dc-3989-4ab3-8c4d-9dcd6a447063</ElementGUID>
+  <ElementIconClass />
+  <ElementIsCustom>False</ElementIsCustom>
+  <ElementIsGlobalApplication>False</ElementIsGlobalApplication>
+  <ElementIsMenu>False</ElementIsMenu>
+  <ElementName>CacheItemsLiveSite</ElementName>
+  <ElementOrder>1</ElementOrder>
+  <ElementParentID>
+    <CodeName>CacheItems</CodeName>
+    <GUID>5143d751-b421-452b-9a50-4b37c0fe89dd</GUID>
+    <ObjectType>cms.uielement</ObjectType>
+    <Parent>
+      <CodeName>CMS</CodeName>
+      <GUID>ce1a65a0-80dc-4c53-b0e7-bdecf0aa8c02</GUID>
+      <ObjectType>cms.resource</ObjectType>
+    </Parent>
+  </ElementParentID>
+  <ElementProperties>
+    <Data>
+      <DisplayBreadcrumbs>False</DisplayBreadcrumbs>
+    </Data>
+  </ElementProperties>
+  <ElementRequiresGlobalAdminPriviligeLevel>False</ElementRequiresGlobalAdminPriviligeLevel>
+  <ElementResourceID>
+    <CodeName>CMS</CodeName>
+    <GUID>ce1a65a0-80dc-4c53-b0e7-bdecf0aa8c02</GUID>
+    <ObjectType>cms.resource</ObjectType>
+  </ElementResourceID>
+  <ElementSize>0</ElementSize>
+  <ElementTargetURL>
+    <![CDATA[~/CMSModules/System/Debug/System_DebugCacheItems.aspx?livesitelogs=true]]>
+  </ElementTargetURL>
+  <ElementType>Url</ElementType>
+</cms.uielement>

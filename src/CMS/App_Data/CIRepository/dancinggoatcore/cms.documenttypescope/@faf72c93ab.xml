@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.documenttypescope>
+  <ScopeAllowAllTypes>False</ScopeAllowAllTypes>
+  <ScopeAllowLinks>False</ScopeAllowLinks>
+  <ScopeGUID>5b24c039-6ba5-4b30-b171-f4f0403e4487</ScopeGUID>
+  <ScopeIncludeChildren>False</ScopeIncludeChildren>
+  <ScopePath>/</ScopePath>
+  <ScopeSiteID>
+    <CodeName>DancingGoatCore</CodeName>
+    <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+    <ObjectType>cms.site</ObjectType>
+  </ScopeSiteID>
+</cms.documenttypescope>
