@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.resource>
+  <ResourceAuthor>Kentico Software</ResourceAuthor>
+  <ResourceDescription>Kentico Xperience integration with Azure OpenAI</ResourceDescription>
+  <ResourceDisplayName>Azure OpenAI integration</ResourceDisplayName>
+  <ResourceGUID>3648eeba-e734-4d6a-b2b0-46f79930dfa6</ResourceGUID>
+  <ResourceHasFiles>False</ResourceHasFiles>
+  <ResourceIsInDevelopment>False</ResourceIsInDevelopment>
+  <ResourceName>Kentico.Xperience.OpenAI.Azure</ResourceName>
+  <ResourceVersion>1.0.0</ResourceVersion>
+  <ShowInDevelopment>False</ShowInDevelopment>
+</cms.resource>
