@@ -136,7 +136,7 @@ segments_2i
 # Generated files
 **/Client/dist/*
 
-**/CMSModules/WebFarm/*
+**/CMSModules/WebFarm/webfarm.sync
 **/CMSModules/SmartSearch/DancingGoatCore*
 
 src/packages
