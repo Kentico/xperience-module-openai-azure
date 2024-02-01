@@ -21,9 +21,9 @@
 1. Download/clone this repository
 1. Copy `/src/CMS/ConnectionStrings.template.config` file to `/src/CMS/ConnectionStrings.config`
 1. Open `/src/WebApp.sln`
+1. Start the *CMSApp* project in IIS Express
 1. Optionally: If you receive an exception _Could not find a part of the path ... bin\roslyn\csc.exe_ in the new step, open the Package Manager Console (Menu -> View -> Other Windows) and run \
    `Update-Package Microsoft.CodeDom.Providers.DotNetCompilerPlatform -r`
-1. Start the *CMSApp* project in IIS Express
 1. Create a database via a web wizard
 1. Stop IIS Express process
 1. Restore database data via `/src/CMS/bin/ContinuousIntegration.exe -r`
