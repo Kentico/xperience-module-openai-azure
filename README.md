@@ -20,6 +20,8 @@
 ## Development environment setup
 1. Download/clone this repository
 1. Copy `/src/CMS/ConnectionStrings.template.config` file to `/src/CMS/ConnectionStrings.config`
+1. Add directory junction of _src/Kentico.Xperience.OpenAI.Azure/CMSResources/Kentico.Xperience.OpenAI.Azure_ into _src/CMS/CMSResources_ using Command Prompt (not Powershell)\
+`mklink /J .\src\CMS\CMSResources\Kentico.Xperience.OpenAI.Azure .\src\Kentico.Xperience.OpenAI.Azure\CMSResources\Kentico.Xperience.OpenAI.Azure`
 1. Open `/src/WebApp.sln`
 1. Start the *CMSApp* project in IIS Express
 1. Optionally: If you receive an exception _Could not find a part of the path ... bin\roslyn\csc.exe_ in the new step, open the Package Manager Console (Menu -> View -> Other Windows) and run \

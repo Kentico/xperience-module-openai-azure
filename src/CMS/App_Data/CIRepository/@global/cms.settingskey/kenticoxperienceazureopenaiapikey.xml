@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.settingskey>
+  <KeyCategoryID>
+    <CodeName>Kentico.Xperience.AzureOpenAI.General</CodeName>
+    <ObjectType>cms.settingscategory</ObjectType>
+  </KeyCategoryID>
+  <KeyDescription>
+    <![CDATA[{$settingskey.xperienceazureopenai.apikey.description$}]]>
+  </KeyDescription>
+  <KeyDisplayName>{$settingskey.xperienceazureopenai.apikey$}</KeyDisplayName>
+  <KeyExplanationText />
+  <KeyGUID>7c2a824c-f8fe-4154-8349-7a5a48471cb9</KeyGUID>
+  <KeyIsGlobal>False</KeyIsGlobal>
+  <KeyIsHidden>False</KeyIsHidden>
+  <KeyName>KenticoXperienceAzureOpenAIAPIKey</KeyName>
+  <KeyOrder>2</KeyOrder>
+  <KeyType>string</KeyType>
+</cms.settingskey>
