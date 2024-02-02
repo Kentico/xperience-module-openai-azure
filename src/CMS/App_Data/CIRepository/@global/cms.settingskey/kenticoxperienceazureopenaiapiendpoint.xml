@@ -5,9 +5,9 @@
     <ObjectType>cms.settingscategory</ObjectType>
   </KeyCategoryID>
   <KeyDescription>
-    <![CDATA[{$settingskey.cmsazureopenaiapiendpoint.description$}]]>
+    <![CDATA[{$settingskey.xperienceazureopenai.apiendpoint.description$}]]>
   </KeyDescription>
-  <KeyDisplayName>{$settingskey.cmsazureopenaiapiendpoint$}</KeyDisplayName>
+  <KeyDisplayName>{$settingskey.xperienceazureopenai.apiendpoint$}</KeyDisplayName>
   <KeyExplanationText />
   <KeyGUID>63e8165a-d9fd-4e83-a0d9-0abfd6309e9f</KeyGUID>
   <KeyIsGlobal>False</KeyIsGlobal>

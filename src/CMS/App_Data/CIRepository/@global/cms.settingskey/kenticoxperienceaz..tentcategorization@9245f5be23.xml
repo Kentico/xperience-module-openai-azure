@@ -6,9 +6,11 @@
   </KeyCategoryID>
   <KeyDefaultValue>False</KeyDefaultValue>
   <KeyDescription>
-    <![CDATA[{$settingskey.cmsenablecontentcategorization.description$}]]>
+    <![CDATA[{$settingskey.xperienceazureopenai.enablecontentcategorization.description$}]]>
   </KeyDescription>
-  <KeyDisplayName>{$settingskey.cmsenablecontentcategorization$}</KeyDisplayName>
+  <KeyDisplayName>
+    <![CDATA[{$settingskey.xperienceazureopenai.enablecontentcategorization$}]]>
+  </KeyDisplayName>
   <KeyExplanationText />
   <KeyGUID>d82cc3b5-59b9-4fc2-8903-7e7773ed8e18</KeyGUID>
   <KeyIsGlobal>False</KeyIsGlobal>

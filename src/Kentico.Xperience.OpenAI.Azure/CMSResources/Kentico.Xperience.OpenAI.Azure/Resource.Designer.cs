@@ -64,81 +64,81 @@ namespace Kentico.Xperience.OpenAI.Azure.CMSResources.Kentico.Xperience.OpenAI.A
         /// <summary>
         ///   Looks up a localized string similar to Azure OpenAI.
         /// </summary>
-        internal static string settingscategory_cmsazureopenai {
+        internal static string settingscategory_xperienceazureopenai {
             get {
-                return ResourceManager.GetString("settingscategory.cmsazureopenai", resourceCulture);
+                return ResourceManager.GetString("settingscategory.xperienceazureopenai", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Content categorization.
         /// </summary>
-        internal static string settingscategory_cmsazureopenaicontentcategorization {
+        internal static string settingscategory_xperienceazureopenai_contentcategorization {
             get {
-                return ResourceManager.GetString("settingscategory.cmsazureopenaicontentcategorization", resourceCulture);
+                return ResourceManager.GetString("settingscategory.xperienceazureopenai.contentcategorization", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to General.
         /// </summary>
-        internal static string settingscategory_cmsazureopenaigeneral {
+        internal static string settingscategory_xperienceazureopenai_general {
             get {
-                return ResourceManager.GetString("settingscategory.cmsazureopenaigeneral", resourceCulture);
+                return ResourceManager.GetString("settingscategory.xperienceazureopenai.general", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Azure OpenAI API endpoint.
         /// </summary>
-        internal static string settingskey_cmsazureopenaiapiendpoint {
+        internal static string settingskey_xperienceazureopenai_apiendpoint {
             get {
-                return ResourceManager.GetString("settingskey.cmsazureopenaiapiendpoint", resourceCulture);
+                return ResourceManager.GetString("settingskey.xperienceazureopenai.apiendpoint", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to The endpoint of the Microsoft Azure OpenAI API resource. You can find the endpoint in the Microsoft Azure portal when viewing your Azure OpenAI resource..
         /// </summary>
-        internal static string settingskey_cmsazureopenaiapiendpoint_description {
+        internal static string settingskey_xperienceazureopenai_apiendpoint_description {
             get {
-                return ResourceManager.GetString("settingskey.cmsazureopenaiapiendpoint.description", resourceCulture);
+                return ResourceManager.GetString("settingskey.xperienceazureopenai.apiendpoint.description", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Azure OpenAI API key.
         /// </summary>
-        internal static string settingskey_cmsazureopenaiapikey {
+        internal static string settingskey_xperienceazureopenai_apikey {
             get {
-                return ResourceManager.GetString("settingskey.cmsazureopenaiapikey", resourceCulture);
+                return ResourceManager.GetString("settingskey.xperienceazureopenai.apikey", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to A valid key of the Microsoft Azure OpenAI API resource specified by the endpoint setting. You can manage API keys in the Microsoft Azure portal when viewing your Azure OpenAI resource..
         /// </summary>
-        internal static string settingskey_cmsazureopenaiapikey_description {
+        internal static string settingskey_xperienceazureopenai_apikey_description {
             get {
-                return ResourceManager.GetString("settingskey.cmsazureopenaiapikey.description", resourceCulture);
+                return ResourceManager.GetString("settingskey.xperienceazureopenai.apikey.description", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Enable content categorization.
         /// </summary>
-        internal static string settingskey_cmsenablecontentcategorization {
+        internal static string settingskey_xperienceazureopenai_enablecontentcategorization {
             get {
-                return ResourceManager.GetString("settingskey.cmsenablecontentcategorization", resourceCulture);
+                return ResourceManager.GetString("settingskey.xperienceazureopenai.enablecontentcategorization", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Enables content categorization. The content categorization is performed by Microsoft Azure OpenAI..
         /// </summary>
-        internal static string settingskey_cmsenablecontentcategorization_description {
+        internal static string settingskey_xperienceazureopenai_enablecontentcategorization_description {
             get {
-                return ResourceManager.GetString("settingskey.cmsenablecontentcategorization.description", resourceCulture);
+                return ResourceManager.GetString("settingskey.xperienceazureopenai.enablecontentcategorization.description", resourceCulture);
             }
         }
     }

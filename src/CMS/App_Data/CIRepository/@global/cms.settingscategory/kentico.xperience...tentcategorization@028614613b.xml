@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <cms.settingscategory>
   <CategoryDisplayName>
-    <![CDATA[{$settingscategory.cmsazureopenaicontentcategorization$}]]>
+    <![CDATA[{$settingscategory.xperienceazureopenai.contentcategorization$}]]>
   </CategoryDisplayName>
   <CategoryIconPath />
   <CategoryIsGroup>True</CategoryIsGroup>

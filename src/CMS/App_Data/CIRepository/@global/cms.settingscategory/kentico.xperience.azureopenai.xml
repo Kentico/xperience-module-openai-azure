@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <cms.settingscategory>
-  <CategoryDisplayName>{$settingscategory.cmsazureopenai$}</CategoryDisplayName>
+  <CategoryDisplayName>{$settingscategory.xperienceazureopenai$}</CategoryDisplayName>
   <CategoryIconPath />
   <CategoryIsGroup>False</CategoryIsGroup>
   <CategoryName>Kentico.Xperience.AzureOpenAI</CategoryName>

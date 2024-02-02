@@ -117,31 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="settingscategory.cmsazureopenai" xml:space="preserve">
+  <data name="settingscategory.xperienceazureopenai" xml:space="preserve">
     <value>Azure OpenAI</value>
   </data>
-  <data name="settingscategory.cmsazureopenaicontentcategorization" xml:space="preserve">
+  <data name="settingscategory.xperienceazureopenai.contentcategorization" xml:space="preserve">
     <value>Content categorization</value>
   </data>
-  <data name="settingscategory.cmsazureopenaigeneral" xml:space="preserve">
+  <data name="settingscategory.xperienceazureopenai.general" xml:space="preserve">
     <value>General</value>
   </data>
-  <data name="settingskey.cmsazureopenaiapiendpoint" xml:space="preserve">
+  <data name="settingskey.xperienceazureopenai.apiendpoint" xml:space="preserve">
     <value>Azure OpenAI API endpoint</value>
   </data>
-  <data name="settingskey.cmsazureopenaiapiendpoint.description" xml:space="preserve">
+  <data name="settingskey.xperienceazureopenai.apiendpoint.description" xml:space="preserve">
     <value>The endpoint of the Microsoft Azure OpenAI API resource. You can find the endpoint in the Microsoft Azure portal when viewing your Azure OpenAI resource.</value>
   </data>
-  <data name="settingskey.cmsazureopenaiapikey" xml:space="preserve">
+  <data name="settingskey.xperienceazureopenai.apikey" xml:space="preserve">
     <value>Azure OpenAI API key</value>
   </data>
-  <data name="settingskey.cmsazureopenaiapikey.description" xml:space="preserve">
+  <data name="settingskey.xperienceazureopenai.apikey.description" xml:space="preserve">
     <value>A valid key of the Microsoft Azure OpenAI API resource specified by the endpoint setting. You can manage API keys in the Microsoft Azure portal when viewing your Azure OpenAI resource.</value>
   </data>
-  <data name="settingskey.cmsenablecontentcategorization" xml:space="preserve">
+  <data name="settingskey.xperienceazureopenai.enablecontentcategorization" xml:space="preserve">
     <value>Enable content categorization</value>
   </data>
-  <data name="settingskey.cmsenablecontentcategorization.description" xml:space="preserve">
+  <data name="settingskey.xperienceazureopenai.enablecontentcategorization.description" xml:space="preserve">
     <value>Enables content categorization. The content categorization is performed by Microsoft Azure OpenAI.</value>
   </data>
 </root>
