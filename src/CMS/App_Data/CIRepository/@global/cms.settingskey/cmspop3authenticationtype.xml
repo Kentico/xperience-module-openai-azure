@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.settingskey>
+  <KeyCategoryID>
+    <CodeName>CMS.Newsletters.POP3Settings</CodeName>
+    <ObjectType>cms.settingscategory</ObjectType>
+  </KeyCategoryID>
+  <KeyDefaultValue>basic</KeyDefaultValue>
+  <KeyDescription>
+    <![CDATA[{$settingskey.cmspop3authenticationtype.description$}]]>
+  </KeyDescription>
+  <KeyDisplayName>{$settingskey.cmspop3authenticationtype$}</KeyDisplayName>
+  <KeyEditingControlPath>EnumSelector</KeyEditingControlPath>
+  <KeyExplanationText />
+  <KeyFormControlSettings>
+    <settings>
+      <AssemblyName>CMS.EmailEngine</AssemblyName>
+      <DisplayType>1</DisplayType>
+      <Sort>False</Sort>
+      <TypeName>CMS.EmailEngine.EmailServerAuthenticationType</TypeName>
+      <UseStringRepresentation>True</UseStringRepresentation>
+    </settings>
+  </KeyFormControlSettings>
+  <KeyGUID>ae20eeb0-eb86-4fcc-9529-fc34f14fb430</KeyGUID>
+  <KeyIsCustom>False</KeyIsCustom>
+  <KeyIsGlobal>False</KeyIsGlobal>
+  <KeyIsHidden>False</KeyIsHidden>
+  <KeyName>CMSPOP3AuthenticationType</KeyName>
+  <KeyOrder>4</KeyOrder>
+  <KeyType>string</KeyType>
+  <KeyValue>basic</KeyValue>
+</cms.settingskey>

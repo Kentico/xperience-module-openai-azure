@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.settingskey>
+  <KeyCategoryID>
+    <CodeName>CMS.CognitiveServices.ImageRecognition</CodeName>
+    <ObjectType>cms.settingscategory</ObjectType>
+  </KeyCategoryID>
+  <KeyDescription>
+    <![CDATA[{$settingskey.cmsazurecomputervisionendpoint.description$}]]>
+  </KeyDescription>
+  <KeyDisplayName>{$settingskey.cmsazurecomputervisionendpoint$}</KeyDisplayName>
+  <KeyExplanationText />
+  <KeyGUID>2fc25cd6-5cf0-4abd-a735-fa71753e0d73</KeyGUID>
+  <KeyIsCustom>False</KeyIsCustom>
+  <KeyIsGlobal>False</KeyIsGlobal>
+  <KeyIsHidden>False</KeyIsHidden>
+  <KeyName>CMSAzureComputerVisionAPIEndpoint</KeyName>
+  <KeyOrder>2</KeyOrder>
+  <KeyType>string</KeyType>
+</cms.settingskey>

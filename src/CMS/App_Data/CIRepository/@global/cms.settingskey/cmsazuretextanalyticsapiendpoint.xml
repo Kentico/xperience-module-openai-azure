@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.settingskey>
+  <KeyCategoryID>
+    <CodeName>CMS.CognitiveServices.TextAnalytics</CodeName>
+    <ObjectType>cms.settingscategory</ObjectType>
+  </KeyCategoryID>
+  <KeyDescription>
+    <![CDATA[{$settingskey.cmsazuretextanalyticsapiendpoint.description$}]]>
+  </KeyDescription>
+  <KeyDisplayName>{$settingskey.cmsazuretextanalyticsapiendpoint$}</KeyDisplayName>
+  <KeyExplanationText />
+  <KeyGUID>4d84b483-161e-4eca-9c4b-1cf59b79c7e9</KeyGUID>
+  <KeyIsCustom>False</KeyIsCustom>
+  <KeyIsGlobal>False</KeyIsGlobal>
+  <KeyIsHidden>False</KeyIsHidden>
+  <KeyName>CMSAzureTextAnalyticsAPIEndpoint</KeyName>
+  <KeyOrder>2</KeyOrder>
+  <KeyType>string</KeyType>
+</cms.settingskey>

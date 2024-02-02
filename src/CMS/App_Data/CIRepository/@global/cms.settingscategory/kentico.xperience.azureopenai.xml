@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.settingscategory>
+  <CategoryDisplayName>{$settingscategory.cmsazureopenai$}</CategoryDisplayName>
+  <CategoryIconPath />
+  <CategoryIsGroup>False</CategoryIsGroup>
+  <CategoryName>Kentico.Xperience.AzureOpenAI</CategoryName>
+  <CategoryOrder>0</CategoryOrder>
+  <CategoryParentID>
+    <CodeName>CMS.Content</CodeName>
+    <ObjectType>cms.settingscategory</ObjectType>
+  </CategoryParentID>
+  <CategoryResourceID>
+    <CodeName>Kentico.Xperience.OpenAI.Azure</CodeName>
+    <GUID>3648eeba-e734-4d6a-b2b0-46f79930dfa6</GUID>
+    <ObjectType>cms.resource</ObjectType>
+  </CategoryResourceID>
+</cms.settingscategory>
