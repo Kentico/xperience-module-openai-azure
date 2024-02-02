@@ -20,16 +20,17 @@
 ## Development environment setup
 1. Download/clone this repository
 2. Copy _/src/CMS/ConnectionStrings.template.config_ file to _/src/CMS/ConnectionStrings.config_
-3. Open _/src/WebApp.sln_
-4. Run the *CMSApp* project in IIS Express
-5. Create a database via a web wizard
-6. Stop IIS Express process
-7. Restore database data via _/src/CMS/bin/ContinuousIntegration.exe -r_
-8. Run the *CMSApp* project in IIS Express
-9. Go to _Sites_ application
-10. Start the DancingGoatCore site
-11. Browser: Clear cookies
-12. Restart IIS Express process
+3. Add directory junction of _src/Kentico.Xperience.OpenAI.Azure/CMSResources/Kentico.Xperience.OpenAI.Azure_ into _src/CMS/CMSResources_
+4. Open _/src/WebApp.sln_
+5. Run the *CMSApp* project in IIS Express
+6. Create a database via a web wizard
+7. Stop IIS Express process
+8. Restore database data via _/src/CMS/bin/ContinuousIntegration.exe -r_
+9. Run the *CMSApp* project in IIS Express
+10. Go to _Sites_ application
+11. Start the DancingGoatCore site
+12. Browser: Clear cookies
+13. Restart IIS Express process
 
 ## Quick Start
 
