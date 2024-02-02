@@ -19,19 +19,21 @@
   
 ## Development environment setup
 1. Download/clone this repository
-2. Copy _/src/CMS/ConnectionStrings.template.config_ file to _/src/CMS/ConnectionStrings.config_
-3. Add directory junction of _src/Kentico.Xperience.OpenAI.Azure/CMSResources/Kentico.Xperience.OpenAI.Azure_ into _src/CMS/CMSResources_ using Command Prompt (not Powershell)\
+1. Copy `/src/CMS/ConnectionStrings.template.config` file to `/src/CMS/ConnectionStrings.config`
+1. Add directory junction of _src/Kentico.Xperience.OpenAI.Azure/CMSResources/Kentico.Xperience.OpenAI.Azure_ into _src/CMS/CMSResources_ using Command Prompt (not Powershell)\
 `mklink /J .\src\CMS\CMSResources\Kentico.Xperience.OpenAI.Azure .\src\Kentico.Xperience.OpenAI.Azure\CMSResources\Kentico.Xperience.OpenAI.Azure`
-4. Open _/src/WebApp.sln_
-5. Run the *CMSApp* project in IIS Express
-6. Create a database via a web wizard
-7. Stop IIS Express process
-8. Restore database data via _/src/CMS/bin/ContinuousIntegration.exe -r_
-9. Run the *CMSApp* project in IIS Express
-10. Go to _Sites_ application
-11. Start the DancingGoatCore site
-12. Browser: Clear cookies
-13. Restart IIS Express process
+1. Open `/src/WebApp.sln`
+1. Start the *CMSApp* project in IIS Express
+1. Optionally: If you receive an exception _Could not find a part of the path ... bin\roslyn\csc.exe_ in the new step, open the Package Manager Console (Menu -> View -> Other Windows) and run \
+   `Update-Package Microsoft.CodeDom.Providers.DotNetCompilerPlatform -r`
+1. Create a database via a web wizard
+1. Stop IIS Express process
+1. Restore database data via `/src/CMS/bin/ContinuousIntegration.exe -r`
+1. Start the *CMSApp* project in IIS Express
+1. Go to _Sites_ application
+1. Start the DancingGoatCore site
+1. Browser: Clear cookies
+1. Restart IIS Express process (possibly not necessary)
 
 ## Quick Start
 
