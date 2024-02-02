@@ -20,7 +20,8 @@
 ## Development environment setup
 1. Download/clone this repository
 2. Copy _/src/CMS/ConnectionStrings.template.config_ file to _/src/CMS/ConnectionStrings.config_
-3. Add directory junction of _src/Kentico.Xperience.OpenAI.Azure/CMSResources/Kentico.Xperience.OpenAI.Azure_ into _src/CMS/CMSResources_
+3. Add directory junction of _src/Kentico.Xperience.OpenAI.Azure/CMSResources/Kentico.Xperience.OpenAI.Azure_ into _src/CMS/CMSResources_ using Command Prompt (not Powershell)\
+`mklink /J .\src\CMS\CMSResources\Kentico.Xperience.OpenAI.Azure .\src\Kentico.Xperience.OpenAI.Azure\CMSResources\Kentico.Xperience.OpenAI.Azure`
 4. Open _/src/WebApp.sln_
 5. Run the *CMSApp* project in IIS Express
 6. Create a database via a web wizard
