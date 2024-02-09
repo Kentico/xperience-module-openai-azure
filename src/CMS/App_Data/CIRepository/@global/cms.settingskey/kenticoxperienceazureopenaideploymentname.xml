@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.settingskey>
+  <KeyCategoryID>
+    <CodeName>Kentico.Xperience.AzureOpenAI.General</CodeName>
+    <ObjectType>cms.settingscategory</ObjectType>
+  </KeyCategoryID>
+  <KeyDescription>
+    <![CDATA[The deployment name of the Microsoft Azure OpenAI API resource. You can find the endpoint in the Microsoft Azure portal when viewing your Azure OpenAI resource.]]>
+  </KeyDescription>
+  <KeyDisplayName>Azure OpenAI Deployment name</KeyDisplayName>
+  <KeyExplanationText />
+  <KeyGUID>e4e7102d-68bf-4682-848b-682be428bb4f</KeyGUID>
+  <KeyIsGlobal>False</KeyIsGlobal>
+  <KeyIsHidden>False</KeyIsHidden>
+  <KeyName>KenticoXperienceAzureOpenAIDeploymentName</KeyName>
+  <KeyOrder>3</KeyOrder>
+  <KeyType>string</KeyType>
+</cms.settingskey>

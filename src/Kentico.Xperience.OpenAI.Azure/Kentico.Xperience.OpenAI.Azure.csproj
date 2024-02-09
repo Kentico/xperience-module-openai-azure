@@ -30,11 +30,23 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Reference Include="CMS.Base">
+        <HintPath>..\Lib\CMS.Base.dll</HintPath>
+      </Reference>
       <Reference Include="CMS.Core">
         <HintPath>..\Lib\CMS.Core.dll</HintPath>
       </Reference>
       <Reference Include="CMS.DataEngine">
         <HintPath>..\Lib\CMS.DataEngine.dll</HintPath>
+      </Reference>
+      <Reference Include="CMS.DocumentEngine">
+        <HintPath>..\Lib\CMS.DocumentEngine.dll</HintPath>
+      </Reference>
+      <Reference Include="CMS.FormEngine">
+        <HintPath>..\Lib\CMS.FormEngine.dll</HintPath>
+      </Reference>
+      <Reference Include="CMS.Taxonomy">
+        <HintPath>..\Lib\CMS.Taxonomy.dll</HintPath>
       </Reference>
     </ItemGroup>
 
