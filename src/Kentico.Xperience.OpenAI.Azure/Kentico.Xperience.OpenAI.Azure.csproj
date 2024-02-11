@@ -45,9 +45,6 @@
       <Reference Include="CMS.FormEngine">
         <HintPath>..\Lib\CMS.FormEngine.dll</HintPath>
       </Reference>
-      <Reference Include="CMS.Taxonomy">
-        <HintPath>..\Lib\CMS.Taxonomy.dll</HintPath>
-      </Reference>
     </ItemGroup>
 
     <ItemGroup>

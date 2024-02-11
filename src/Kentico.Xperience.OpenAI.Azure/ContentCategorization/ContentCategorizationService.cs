@@ -14,21 +14,21 @@ using CMS.FormEngine;
 
 using Kentico.Xperience.OpenAI.Azure;
 
-[assembly: RegisterImplementation(typeof(ITextClassificationService), typeof(TextClassificationService))]
+[assembly: RegisterImplementation(typeof(IContentCategorizationService), typeof(ContentCategorizationService))]
 
 namespace Kentico.Xperience.OpenAI.Azure
 {
     /// <summary>
-    /// Implementation of the <see cref="ITextClassificationService"/>.
+    /// Implementation of the <see cref="IContentCategorizationService"/>.
     /// </summary>
-    internal class TextClassificationService : ITextClassificationService
+    public class ContentCategorizationService : IContentCategorizationService
     {
         private const string DEPLOYMENT_NAME_KEY = "KenticoXperienceAzureOpenAIDeploymentName";
         private const string API_ENPOINT_KEY = "KenticoXperienceAzureOpenAIAPIEndpoint";
         private const string API_KEY_KEY = "KenticoXperienceAzureOpenAIAPIKey";
         private const string CLASSIFICATION_ENABLED_KEY = "KenticoXperienceAzureOpenAIEnableContentCategorization";
 
-        private const string DEFAULT_SYSTEM_PROMPT = "Classify the following page data, by the provided categories. Even when the categories do not fit in general, you have to pick at least 1. Respond only with the category names, separated by \";\", do not mention anything else than category names.";
+        private const string DEFAULT_SYSTEM_PROMPT = "Categorize the following page data, by the provided categories. Even when the categories do not fit in general, you have to pick at least 1. Respond only with the category names, separated by \";\", do not mention anything else than category names.";
 
         private const int MAX_TOKENS = 400;
 
@@ -36,32 +36,28 @@ namespace Kentico.Xperience.OpenAI.Azure
 
 
         /// <summary>
-        /// Creates new instance of <see cref="TextClassificationService"/>.
+        /// Creates new instance of <see cref="ContentCategorizationService"/>.
         /// </summary>
         /// <param name="settingsService"></param>
-        public TextClassificationService(ISettingsService settingsService)
+        public ContentCategorizationService(ISettingsService settingsService)
         {
             this.settingsService = settingsService;
         }
 
 
         /// <inheritdoc/>
-        public string SystemPrompt { get; set; } = DEFAULT_SYSTEM_PROMPT;
-
-
-        /// <inheritdoc/>
-        public void ResetSystemPrompt()
+        public virtual string GetSystemPrompt()
         {
-            SystemPrompt = DEFAULT_SYSTEM_PROMPT;
+            return DEFAULT_SYSTEM_PROMPT;
         }
 
 
         /// <inheritdoc/>
-        public bool IsClassificationEnabled => bool.Parse(settingsService[CLASSIFICATION_ENABLED_KEY]);
+        public bool IsCategorizationEnabled => bool.Parse(settingsService[CLASSIFICATION_ENABLED_KEY]);
 
 
         /// <inheritdoc/>
-        public IEnumerable<string> ClassifyPage(TreeNode treeNode, IEnumerable<string> categories, CancellationToken cancellationToken)
+        public IEnumerable<string> CategorizePage(TreeNode treeNode, IEnumerable<string> categories, CancellationToken cancellationToken)
         {
             if (treeNode == null)
             {
@@ -71,7 +67,7 @@ namespace Kentico.Xperience.OpenAI.Azure
             {
                 throw new ArgumentNullException(nameof(categories));
             }
-            if (!IsClassificationEnabled)
+            if (!IsCategorizationEnabled)
             {
                 throw new InvalidOperationException("Content Categorization is disabled.");
             }
@@ -127,7 +123,7 @@ namespace Kentico.Xperience.OpenAI.Azure
                 DeploymentName = deploymentName,
                 Messages =
                 {
-                    new ChatRequestSystemMessage(SystemPrompt),
+                    new ChatRequestSystemMessage(GetSystemPrompt()),
                     new ChatRequestSystemMessage(GetCategories(categories)),
                     new ChatRequestUserMessage(treeNodeData),
                 },
