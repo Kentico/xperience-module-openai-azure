@@ -638,7 +638,7 @@ See {1} for more information.</value>
   </data>
   <data name="cmsform.UnpublishedRedirectUrlDescription" xml:space="preserve">
     <value>Select a relative URL of a page or enter an absolute URL.</value>
-  </data>	
+  </data>
   <data name="dialogs.header.title.selectfiles" xml:space="preserve">
     <value>Select file</value>
   </data>
@@ -743,5 +743,17 @@ See {1} for more information.</value>
   </data>
   <data name="settings.validationdoubleerror" xml:space="preserve">
     <value>Enter a valid decimal number (according to your preferred UI culture).</value>
+  </data>
+  <data name="objecttype.cms_categoryclass" xml:space="preserve">
+    <value>Category allowed page type</value>
+  </data>
+  <data name="category.allowalltypes" xml:space="preserve">
+    <value>Allowed for all page types</value>
+  </data>
+  <data name="category.allowonlyfollowing" xml:space="preserve">
+    <value>Allowed only for the following page types</value>
+  </data>
+  <data name="Category_Edit.AllowedPageTypes" xml:space="preserve">
+    <value>Allowed page types</value>
   </data>
 </root>

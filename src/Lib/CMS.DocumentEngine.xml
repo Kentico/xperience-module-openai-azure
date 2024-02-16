@@ -2884,6 +2884,42 @@
             <param name="siteDisplayName">Display name of the site</param>
             <param name="linkedNodes">Indicates whether standard documents or linked documents are processed in the batch</param>
         </member>
+        <member name="T:CMS.DocumentEngine.Internal.IPageCategorizationService">
+            <summary>
+            Interface for categorization of pages.
+            </summary>
+        </member>
+        <member name="P:CMS.DocumentEngine.Internal.IPageCategorizationService.IsCategorizationEnabled">
+            <summary>
+            Indicates whether Page Categorization is enabled.
+            </summary>
+        </member>
+        <member name="M:CMS.DocumentEngine.Internal.IPageCategorizationService.CategorizePage(CMS.DocumentEngine.TreeNode,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Categorizes the <paramref name="treeNode"/> based on the page data.
+            </summary>
+            <param name="treeNode">The page to be categorized.</param>
+            <param name="categories">Display names of categories from which the page categorization picks.</param>
+            <exception cref="T:System.ArgumentException">Thrown when <paramref name="categories"/> is empty.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="treeNode"/> or <paramref name="categories"/> are null.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the API endpoint, key or deployment name are not configured.</exception>
+            <remarks>Only text data is used for categorization.</remarks>
+        </member>
+        <member name="T:CMS.DocumentEngine.Internal.PageCategorizationResult">
+            <summary>
+            Represents a result page for categorization service.
+            </summary>
+        </member>
+        <member name="P:CMS.DocumentEngine.Internal.PageCategorizationResult.IdentifiedCategories">
+            <summary>
+            Categories that have been successfully identified.
+            </summary>
+        </member>
+        <member name="P:CMS.DocumentEngine.Internal.PageCategorizationResult.UnidentifiedCategories">
+            <summary>
+            Categories that could not have been identified.
+            </summary>
+        </member>
         <member name="T:CMS.DocumentEngine.Internal.AttachmentHandlerEvents">
             <summary>
             Events for document attachment handler.
@@ -13202,6 +13238,17 @@
             <param name="instanceGuid">GUID of the <see cref="T:CMS.DocumentEngine.PageBuilder.TempPageBuilderWidgetsInfo"/> to retrieve.</param>
             <returns>Returns query for retrieving <see cref="T:CMS.DocumentEngine.PageBuilder.TempPageBuilderWidgetsInfo"/>.</returns>
             <exception cref="T:System.ArgumentException">Thrown when <paramref name="instanceGuid"/> is <see cref="F:System.Guid.Empty"/>.</exception>
+        </member>
+        <member name="T:CMS.DocumentEngine.PageCategorizationService">
+            <summary>
+            Fallback implementation for the IPageCategorizationService.
+            </summary>
+        </member>
+        <member name="P:CMS.DocumentEngine.PageCategorizationService.IsCategorizationEnabled">
+            <inheritdoc/>
+        </member>
+        <member name="M:CMS.DocumentEngine.PageCategorizationService.CategorizePage(CMS.DocumentEngine.TreeNode,System.Collections.Generic.IEnumerable{System.String})">
+            <inheritdoc/>
         </member>
         <member name="T:CMS.DocumentEngine.DocumentColumnLists">
             <summary>

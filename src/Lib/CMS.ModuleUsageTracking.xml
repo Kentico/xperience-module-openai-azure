@@ -40,11 +40,6 @@
             </summary>
             <param name="task">Task data</param>
         </member>
-        <member name="M:CMS.ModuleUsageTracking.Dispatcher.ProcessData">
-            <summary>
-            Executes module usage data processing.
-            </summary>
-        </member>
         <member name="T:CMS.ModuleUsageTracking.GlobalUsageDataSource">
             <summary>
             Class for retrieving global statistical information about current web application instance.

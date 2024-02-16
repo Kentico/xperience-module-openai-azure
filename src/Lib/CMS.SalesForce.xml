@@ -336,6 +336,39 @@
             </summary>
             <returns>A new SalesForce organization session.</returns>
         </member>
+        <member name="T:CMS.SalesForce.PkceProperties">
+            <summary>
+            Contains PKCE properties used in the OAuth 2.0 authorization code flow.
+            </summary>
+            <remarks>
+            More information can be found at RFC 7636 (https://tools.ietf.org/html/rfc7636).
+            </remarks>
+        </member>
+        <member name="P:CMS.SalesForce.PkceProperties.CodeVerifier">
+            <summary>
+            The code verifier.
+            </summary>
+        </member>
+        <member name="P:CMS.SalesForce.PkceProperties.CodeChallenge">
+            <summary>
+            The code challenge.
+            </summary>
+        </member>
+        <member name="P:CMS.SalesForce.PkceProperties.CodeChallengeMethod">
+            <summary>
+            The code challenge method.
+            </summary>
+        </member>
+        <member name="T:CMS.SalesForce.PkcePropertiesGenerator">
+            <summary>
+            Class for generating PKCE properties used in the OAuth 2.0 authorization code flow.
+            </summary>
+        </member>
+        <member name="M:CMS.SalesForce.PkcePropertiesGenerator.GeneratePkceProperties">
+            <summary>
+            Generates a new code verifier and code challenge.
+            </summary>
+        </member>
         <member name="T:CMS.SalesForce.RefreshTokenSessionProvider">
             <summary>
             Provides SalesForce organization sessions using the OAuth refresh token.
@@ -374,6 +407,15 @@
             <param name="clientId">The consumer identifier associated with the remote access application in SalesForce.</param>
             <param name="clientSecret">The consumer secret associated with the remote access application in SalesForce.</param>
             <param name="redirectUrl">The redirect URL for the OAuth 2.0 web server authentication flow.</param>
+        </member>
+        <member name="M:CMS.SalesForce.SalesForceAuthorizationHelper.#ctor(System.String,System.String,System.String,CMS.SalesForce.PkceProperties)">
+            <summary>
+            Initializes a new instance of the SalesForceAuthorizationHelper class using the specified parameters.
+            </summary>
+            <param name="clientId">The consumer identifier associated with the remote access application in SalesForce.</param>
+            <param name="clientSecret">The consumer secret associated with the remote access application in SalesForce.</param>
+            <param name="redirectUrl">The redirect URL for the OAuth 2.0 web server authentication flow.</param>
+            <param name="pkceProperties">The PKCE properties for the OAuth 2.0 authorization code flow.</param>
         </member>
         <member name="M:CMS.SalesForce.SalesForceAuthorizationHelper.GetAuthorizationUrl(System.String)">
             <summary>
