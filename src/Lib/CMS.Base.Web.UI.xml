@@ -13664,7 +13664,7 @@
         <member name="P:CMS.CKEditor.Web.UI.CKEditorControl.FileBrowserUploadUrl">
              <summary>
              The location of the script that handles file uploads.
-             If set, the Upload tab will appear in the Link, Image, and Flash dialog windows.
+             If set, the Upload tab will appear in the Link and Image dialog windows.
             
              It is also possible to set a separate url for a selected dialog box,
              using the dialog name in file browser settings: filebrowser[dialogName]UploadUrl.

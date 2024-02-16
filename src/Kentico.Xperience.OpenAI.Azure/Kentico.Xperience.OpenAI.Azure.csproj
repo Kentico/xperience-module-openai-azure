@@ -1,49 +1,42 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
-    <PropertyGroup>
-        <Title>Kentico.Xperience.OpenAI.Azure</Title>
-        <Description>Kentico Xperience connector to Azure OpenAI</Description>
-        <TargetFrameworks>net48</TargetFrameworks>
-        <Authors>Kentico Software</Authors>
-        <Company>Kentico Software</Company>
-        <Version>1.0</Version>
-        <Copyright>Copyright © 2024</Copyright>
-        <SignAssembly>true</SignAssembly>
-        <AssemblyOriginatorKeyFile>OpenSource.snk</AssemblyOriginatorKeyFile>
-        <RootNamespace>Kentico.Xperience.OpenAI.Azure</RootNamespace>
-        <AssemblyName>Kentico.Xperience.OpenAI.Azure</AssemblyName>
-    </PropertyGroup>
-
-    <ItemGroup>
-      <EmbeddedResource Remove="CMSResources\Kentico.Xperience.OpenAI.Azure\Resource.resx" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Content Include="CMSResources\Kentico.Xperience.OpenAI.Azure\Resource.resx">
-        <Generator>ResXFileCodeGenerator</Generator>
-        <LastGenOutput>Resource.Designer.cs</LastGenOutput>
-      </Content>
-    </ItemGroup>
-    
-    <ItemGroup>
-      <PackageReference Include="Azure.AI.OpenAI" Version="1.0.0-beta.12" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Reference Include="CMS.Core">
-        <HintPath>..\Lib\CMS.Core.dll</HintPath>
-      </Reference>
-      <Reference Include="CMS.DataEngine">
-        <HintPath>..\Lib\CMS.DataEngine.dll</HintPath>
-      </Reference>
-    </ItemGroup>
-
-    <ItemGroup>
-      <Compile Update="CMSResources\Kentico.Xperience.OpenAI.Azure\Resource.Designer.cs">
-        <DesignTime>True</DesignTime>
-        <AutoGen>True</AutoGen>
-        <DependentUpon>Resource.resx</DependentUpon>
-      </Compile>
-    </ItemGroup>
-
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Title>Kentico.Xperience.OpenAI.Azure</Title>
+    <Description>Kentico Xperience connector to Azure OpenAI</Description>
+    <TargetFrameworks>net48</TargetFrameworks>
+    <Authors>Kentico Software</Authors>
+    <Company>Kentico Software</Company>
+    <Version>1.0</Version>
+    <Copyright>Copyright © 2024</Copyright>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>OpenSource.snk</AssemblyOriginatorKeyFile>
+    <RootNamespace>Kentico.Xperience.OpenAI.Azure</RootNamespace>
+    <AssemblyName>Kentico.Xperience.OpenAI.Azure</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="CMSResources\Kentico.Xperience.OpenAI.Azure\Resource.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CMSResources\Kentico.Xperience.OpenAI.Azure\Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Azure.AI.OpenAI" Version="1.0.0-beta.12" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="CMS.Core">
+      <HintPath>..\Lib\CMS.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CMS.DataEngine">
+      <HintPath>..\Lib\CMS.DataEngine.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="CMSResources\Kentico.Xperience.OpenAI.Azure\Resource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>
