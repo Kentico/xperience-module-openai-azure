@@ -5,23 +5,25 @@ using System.Linq;
 using Azure;
 using Azure.AI.OpenAI;
 
+using CMS;
 using CMS.Base;
 using CMS.Core;
 using CMS.DataEngine;
 using CMS.DocumentEngine;
+using CMS.DocumentEngine.Internal;
 using CMS.FormEngine;
 using CMS.Helpers;
 
 using Kentico.Xperience.OpenAI.Azure;
 
-//[assembly: RegisterImplementation(typeof(IPageCategorizationService), typeof(PageCategorizationService), Lifestyle = Lifestyle.Singleton, Priority = RegistrationPriority.SystemDefault)]
+[assembly: RegisterImplementation(typeof(IPageCategorizationService), typeof(PageCategorizationService), Lifestyle = Lifestyle.Singleton, Priority = RegistrationPriority.SystemDefault)]
 
 namespace Kentico.Xperience.OpenAI.Azure
 {
     /// <summary>
-    /// Implementation of the <see cref="IPageCategorizationService"/>.
+    /// Service responsible for categorizing pages using Azure OpenAI.
     /// </summary>
-    public class PageCategorizationService //: IPageCategorization
+    public class PageCategorizationService : IPageCategorizationService
     {
         private const string DEPLOYMENT_NAME_KEY = "KenticoXperienceAzureOpenAIDeploymentName";
         private const string API_ENPOINT_KEY = "KenticoXperienceAzureOpenAIAPIEndpoint";
@@ -43,7 +45,7 @@ namespace Kentico.Xperience.OpenAI.Azure
 
 
         /// <summary>
-        /// Creates new instance of <see cref="PageCategorizationService"/>.
+        /// Initializes a new instance of <see cref="PageCategorizationService"/> class.
         /// </summary>
         /// <param name="settingsService"></param>
         public PageCategorizationService(ISettingsService settingsService, IAppSettingsService appSettingsService)
@@ -54,47 +56,44 @@ namespace Kentico.Xperience.OpenAI.Azure
 
 
         /// <inheritdoc/>
-        private string GetSystemPrompt(IEnumerable<string> categories)
-        {
-            return DEFAULT_SYSTEM_PROMPT + GetCategories(categories);
-        }
+        private string GetSystemPrompt(IEnumerable<string> categories) => DEFAULT_SYSTEM_PROMPT + GetCategories(categories);
 
 
         /// <inheritdoc/>
-        public IEnumerable<string> CategorizePage(TreeNode treeNode, IEnumerable<string> categories)
+        public PageCategorizationResult CategorizePage(TreeNode treeNode, IEnumerable<string> categoryNames)
         {
             if (treeNode == null)
             {
                 throw new ArgumentNullException(nameof(treeNode));
             }
-            if (categories == null)
+            if (categoryNames == null)
             {
-                throw new ArgumentNullException(nameof(categories));
+                throw new ArgumentNullException(nameof(categoryNames));
             }
             if (!IsCategorizationEnabled)
             {
                 throw new InvalidOperationException("Content Categorization is disabled.");
             }
-            if (!categories.Any())
+            if (!categoryNames.Any())
             {
-                throw new ArgumentException($"{nameof(categories)} cannot be empty.");
+                throw new ArgumentException($"{nameof(categoryNames)} cannot be empty.");
             }
 
-            var treeNodeData = ExtractTreeNodeData(treeNode);
+            string treeNodeData = ExtractTreeNodeData(treeNode);
 
             var client = CreateClient();
-            var chatCompletionsOptions = InitializeChatCompletionsOptions(treeNodeData, categories);
+            var chatCompletionsOptions = InitializeChatCompletionsOptions(treeNodeData, categoryNames);
             var response = client.GetChatCompletions(chatCompletionsOptions);
 
             // Process the response
-            return new List<string>() { response.Value.Choices[0].Message.Content };
+            return ProcessResponse(response, categoryNames);
         }
 
 
         private OpenAIClient CreateClient()
         {
-            var apiEndpoint = settingsService[API_ENPOINT_KEY].ToString(string.Empty);
-            var apiKey = settingsService[API_KEY_KEY].ToString(string.Empty);
+            string apiEndpoint = settingsService[API_ENPOINT_KEY].ToString(string.Empty);
+            string apiKey = settingsService[API_KEY_KEY].ToString(string.Empty);
 
             if (string.IsNullOrEmpty(apiEndpoint) || string.IsNullOrEmpty(apiKey))
             {
@@ -110,7 +109,7 @@ namespace Kentico.Xperience.OpenAI.Azure
             var fields = GetFields(treeNode)
                 .Where((field) => !string.IsNullOrEmpty(field.value))
                 .Select(field => $"<{field.name}>:{field.value}");
-            var textRepresentation = string.Join(";", fields);
+            string textRepresentation = string.Join(";", fields);
 
             return "Categorize the following data:" + textRepresentation;
         }
@@ -118,14 +117,14 @@ namespace Kentico.Xperience.OpenAI.Azure
 
         private ChatCompletionsOptions InitializeChatCompletionsOptions(string treeNodeData, IEnumerable<string> categories)
         {
-            var deploymentName = settingsService[DEPLOYMENT_NAME_KEY].ToString(string.Empty);
+            string deploymentName = settingsService[DEPLOYMENT_NAME_KEY].ToString(string.Empty);
 
             if (string.IsNullOrEmpty(deploymentName))
             {
                 throw new InvalidOperationException($"The Azure OpenAI Content Categorization service deployment name is not configured correctly");
             }
 
-            var temperature = ValidationHelper.GetFloat(appSettingsService[TEMPERATURE_KEY], DEFAULT_TEMPERATURE);
+            float temperature = ValidationHelper.GetFloat(appSettingsService[TEMPERATURE_KEY], DEFAULT_TEMPERATURE);
 
             var chatCompletionsOptions = new ChatCompletionsOptions()
             {
@@ -157,19 +156,26 @@ namespace Kentico.Xperience.OpenAI.Azure
         }
 
 
-        private string GetCategories(IEnumerable<string> categories) => "Category names:" + string.Join(";", categories);
-
-        private void ProcessResponse(Response<ChatCompletions> response, IEnumerable<string> categories)
+        private PageCategorizationResult ProcessResponse(Response<ChatCompletions> response, IEnumerable<string> categories)
         {
             var validCategories = categories.ToHashSet();
 
-            var responseContent = response.Value.Choices[0].Message.Content;
+            string responseContent = response.Value.Choices[0].Message.Content;
 
             var cattegoryNames = responseContent.TrimEnd('.').Split(';').Select(category => category.Trim(' ')).Distinct();
 
             // Filter the valid/invalid categories
             var correctlyIdentified = cattegoryNames.Where(category => validCategories.Contains(category));
             var other = cattegoryNames.Where((category) => !validCategories.Contains(category));
+
+            return new PageCategorizationResult
+            {
+                IdentifiedCategories = correctlyIdentified,
+                UnidentifiedCategories = other
+            };
         }
+
+
+        private string GetCategories(IEnumerable<string> categories) => "Category names:" + string.Join(";", categories);
     }
 }

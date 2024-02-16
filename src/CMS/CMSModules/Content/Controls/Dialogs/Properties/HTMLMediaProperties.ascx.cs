@@ -897,7 +897,11 @@ public partial class CMSModules_Content_Controls_Dialogs_Properties_HTMLMediaPro
                     isLink = CMSDialogHelper.IsImageLink(url, imgLink, OriginalWidth, OriginalHeight, imgTarget);
                 }
 
-                pnlUpdateWidthHeight.Visible = ImageHelper.IsEditableImage(source?.Extension);
+                if (!ItemNotSystem) // limit width and height only if the item is a system item, otherwise we don't know the format.
+                {
+                    pnlUpdateWidthHeight.Visible = ImageHelper.IsEditableImage(source?.Extension);
+                }
+
 
                 if (tabImageGeneral.Visible)
                 {

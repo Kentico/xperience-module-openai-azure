@@ -204,6 +204,8 @@ public partial class CMSModules_Categories_Controls_MultipleCategoriesSelector :
             // Select appropriate dialog window
             selectCategory.SelectItemPageUrl = IsLiveSite ? "~/CMSModules/Categories/CMSPages/LiveCategorySelection.aspx" : "~/CMSModules/Categories/Dialogs/CategorySelection.aspx";
 
+            selectCategory.SetValue("CurrentDocumentID", Node.DocumentID);
+            
             if (!RequestHelper.IsPostBack())
             {
                 ReloadData();
