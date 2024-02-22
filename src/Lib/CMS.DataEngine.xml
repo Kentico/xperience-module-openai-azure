@@ -30553,14 +30553,29 @@
             <summary>
             Ensures that the object contains the output data.
             </summary>
-            <param name="defaultData">Default data which should be loaded if data required</param>
+            <param name="defaultData">Default data which should be loaded if data required.</param>
+            <returns>Returns true if new data has been loaded</returns>
+        </member>
+        <member name="M:CMS.DataEngine.CMSOutputMetaFile.EnsureData(System.Byte[],System.Boolean)">
+            <summary>
+            Ensures that the object contains the output data.
+            </summary>
+            <param name="defaultData">Default data which should be loaded if data required.</param>
+            <param name="canResize">Indicates if image can be resized. Using a true value directly can result in the generation of a resized file.</param>
             <returns>Returns true if new data has been loaded</returns>
         </member>
         <member name="M:CMS.DataEngine.CMSOutputMetaFile.LoadData(System.Byte[])">
             <summary>
             Loads the data to the object.
             </summary>
-            <param name="data">New data</param>
+            <param name="data">New data.</param>
+        </member>
+        <member name="M:CMS.DataEngine.CMSOutputMetaFile.LoadData(System.Byte[],System.Boolean)">
+            <summary>
+            Loads the data to the object.
+            </summary>
+            <param name="data">New data.</param>
+            <param name="canResize">Indicates if image can be resized. Using a true value directly can result in the generation of a resized file.</param>
         </member>
         <member name="P:CMS.DataEngine.CMSOutputMetaFile.Item(System.String)">
             <summary>

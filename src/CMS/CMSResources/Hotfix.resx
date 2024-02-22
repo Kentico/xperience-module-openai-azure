@@ -234,6 +234,27 @@ See {1} for more information.</value>
   <data name="administration-system.debugadmin" xml:space="preserve">
     <value>Administration</value>
   </data>
+  <data name="administration-system.files.mediaprotection" xml:space="preserve">
+    <value>Media protection</value>
+  </data>
+  <data name="administration-system.files.mediaprotection.submit" xml:space="preserve">
+    <value>Get protected URL</value>
+  </data>
+  <data name="administration-system.files.mediaprotection.smarttip.title" xml:space="preserve">
+    <value>Generate hash-protected URLs for image files</value>
+  </data>
+  <data name="administration-system.files.mediaprotection.smarttip" xml:space="preserve">
+    <value>If the image file request protection is enabled, you need to ensure that all requests to system image handlers containing certain parameters (e.g., "width", "height") include a hash.
+ &lt;br/&gt;&lt;br/&gt;
+Enter a URL to a system image handler to obtain a protected URL containing the hash.
+    </value>
+  </data>
+  <data name="administration-system.files.mediaprotection.protectedurl" xml:space="preserve">
+    <value>Protected URL:</value>
+  </data>
+  <data name="administration-system.files.mediaprotection.unknownformat" xml:space="preserve">
+    <value>The format of the URL is not recognized. Only system image file handlers with resize parameters (e.g., "width", "height") are allowed.</value>
+  </data>
   <data name="srch.settings.nocontentfields" xml:space="preserve">
     <value>This page type doesn't have any content fields configured. However, the page's system fields can still be used for indexing. You can see system fields indexing options in the Modules application -&gt; Pages -&gt; Classes -&gt; Page -&gt; Search tab.</value>
   </data>
@@ -251,6 +272,12 @@ See {1} for more information.</value>
   </data>
   <data name="settingskey.cmsuseculturealiasaslanguageprefixinurl.description" xml:space="preserve">
     <value>If selected, the system generates page URLs with culture aliases as language prefixes whenever a culture alias is specified. If there is no culture alias specified for a given culture, the culture code is used instead. E.g., '{domain}/en-US/Home' becomes '{domain}/en/Home' when the culture alias is set to 'en' for the 'English - United States' culture.&lt;br /&gt;&lt;br /&gt;You can view and set culture aliases in the 'Localization' application on the 'Cultures' tab.</value>
+  </data>
+  <data name="settingskey.cmsenablemediaprotection" xml:space="preserve">
+	  <value>Enable image file request protection</value>
+  </data>
+  <data name="settingskey.cmsenablemediaprotection.description" xml:space="preserve">
+	  <value>Enables additional hash protection for image file requests with a specified "width", "height" or "maxsidesize" parameters. Requests without a valid hash will return the image in default dimensions.</value>
   </data>
   <data name="culture.editcultureconfirmation" xml:space="preserve">
     <value>Are you sure you want to save the changes? Saving the changes may lead to changes in page URLs. For example, changing the culture alias when using it as a language prefix in URLs will lead to regeneration of all URLs associated with the culture.</value>

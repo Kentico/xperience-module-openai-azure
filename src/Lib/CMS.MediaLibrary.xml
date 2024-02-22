@@ -85,12 +85,26 @@
             <summary>
             Ensures that the object contains the output data.
             </summary>
-            <param name="defaultData">Default data which should be loaded if data required</param>
+            <param name="defaultData">Default data which should be loaded if data required.</param>
+            <returns>Returns true if new data has been loaded.</returns>
+        </member>
+        <member name="M:CMS.MediaLibrary.CMSOutputMediaFile.EnsureData(System.Byte[],System.Boolean)">
+            <summary>
+            Ensures that the object contains the output data.
+            </summary>
+            <param name="defaultData">Default data which should be loaded if data required.</param>
+            <param name="canResize">Indicates if image can be resized. Using a true value directly can result in the generation of a resized file.</param>
             <returns>Returns true if new data has been loaded</returns>
         </member>
         <member name="M:CMS.MediaLibrary.CMSOutputMediaFile.LoadData">
             <summary>
             Loads the data to the object.
+            </summary>
+        </member>
+        <member name="M:CMS.MediaLibrary.CMSOutputMediaFile.LoadData(System.Boolean)">
+            <summary>
+            Loads the data to the object.
+            <param name="canResize">Indicates if image can be resized. Using a true value directly can result in the generation of a resized file.</param>
             </summary>
         </member>
         <member name="M:CMS.MediaLibrary.CMSOutputMediaFile.LoadPreview">

@@ -413,10 +413,10 @@ public partial class CMSModules_MediaLibrary_Controls_MediaLibrary_MediaFileEdit
 
     #region "Public methods"
 
-        /// <summary>
-        /// Reloads controls content.
-        /// </summary>
-        public void ReLoadUserControl()
+    /// <summary>
+    /// Reloads controls content.
+    /// </summary>
+    public void ReLoadUserControl()
     {
         ReLoadUserControl(true);
     }
@@ -510,13 +510,15 @@ public partial class CMSModules_MediaLibrary_Controls_MediaLibrary_MediaFileEdit
             if (ImageHelper.IsImage(FileInfo.FileExtension))
             {
                 // Ensure max side size 200
-                int[] maxsize = ImageHelper.EnsureImageDimensions(0, 0, 200, FileInfo.FileImageWidth, FileInfo.FileImageHeight);
+                int maxSideSize = 200;
+                int[] maxsize = ImageHelper.EnsureImageDimensions(0, 0, maxSideSize, FileInfo.FileImageWidth, FileInfo.FileImageHeight);
                 imagePreview.Width = maxsize[0];
                 imagePreview.Height = maxsize[1];
 
                 // If is Image show image properties
-                imagePreview.URL = URLHelper.AddParameterToUrl(permanentUrl, "maxsidesize", "200");
+                imagePreview.URL = URLHelper.AddParameterToUrl(permanentUrl, "maxsidesize", maxSideSize.ToString());
                 imagePreview.URL = URLHelper.AddParameterToUrl(imagePreview.URL, "chset", Guid.NewGuid().ToString());
+                imagePreview.URL = Service.Resolve<IMediaProtectionService>().GetProtectedUrl(imagePreview.URL, true);
                 plcImagePreview.Visible = true;
                 plcMediaPreview.Visible = false;
 

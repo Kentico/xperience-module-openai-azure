@@ -14267,6 +14267,28 @@
             Salt for request on handler running under page CMSPages/GetImageVersion.aspx
             </summary>
         </member>
+        <member name="T:CMS.Helpers.MediaProtectionHelper">
+            <summary>
+            Implementation of <see cref="T:CMS.Core.Internal.IMediaProtectionHelper"/> using <see cref="T:CMS.Helpers.ValidationHelper"/> to generate and validate hash.
+            </summary>
+        </member>
+        <member name="M:CMS.Helpers.MediaProtectionHelper.GetHash(System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:CMS.Helpers.MediaProtectionHelper.ValidateHash(System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:CMS.Helpers.MediaProtectionService.#ctor(CMS.Core.Internal.IMediaProtectionHelper,CMS.Core.ISettingsService)">
+            <summary>
+            Creates new instance of <see cref="T:CMS.Helpers.MediaProtectionService"/>.
+            </summary>
+        </member>
+        <member name="M:CMS.Helpers.MediaProtectionService.GetProtectedUrl(System.String,System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:CMS.Helpers.MediaProtectionUrlValidator.IsValid(System.String,System.String)">
+            <inheritdoc />
+        </member>
         <member name="T:CMS.Helpers.OptInApprovalResultEnum">
             <summary>
             General enumeration for opt-in validation results

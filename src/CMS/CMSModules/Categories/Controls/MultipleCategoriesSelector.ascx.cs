@@ -4,8 +4,10 @@ using System.Data;
 
 using CMS.Base;
 using CMS.Base.Web.UI;
+using CMS.Core;
 using CMS.DataEngine;
 using CMS.DocumentEngine;
+using CMS.DocumentEngine.Internal;
 using CMS.Helpers;
 using CMS.Membership;
 using CMS.SiteProvider;
@@ -201,11 +203,15 @@ public partial class CMSModules_Categories_Controls_MultipleCategoriesSelector :
             selectCategory.UniGrid.OnAfterRetrieveData += UniGrid_OnAfterRetrieveData;
             selectCategory.ItemsPerPage = 25;
 
+            var isContentCategorizationEnabled = IsContentCategorizationEnabled();
+            selectCategory.DialogWindowWidth = !IsLiveSite && isContentCategorizationEnabled ? 950 : 800;
+
             // Select appropriate dialog window
             selectCategory.SelectItemPageUrl = IsLiveSite ? "~/CMSModules/Categories/CMSPages/LiveCategorySelection.aspx" : "~/CMSModules/Categories/Dialogs/CategorySelection.aspx";
 
             selectCategory.SetValue("CurrentDocumentID", Node.DocumentID);
-            
+            selectCategory.SetValue("ShowAutoSelect", isContentCategorizationEnabled);
+
             if (!RequestHelper.IsPostBack())
             {
                 ReloadData();
@@ -364,7 +370,7 @@ public partial class CMSModules_Categories_Controls_MultipleCategoriesSelector :
                 int categoryId = ValidationHelper.GetInteger(item, 0);
                 DocumentCategoryInfo.Provider.Remove(Node.DocumentID, categoryId);
             }
-            
+
             logUpdateTask = true;
         }
 
@@ -459,6 +465,17 @@ public partial class CMSModules_Categories_Controls_MultipleCategoriesSelector :
         }
 
         return string.Format("({0})", where);
+    }
+
+
+    private bool IsContentCategorizationEnabled()
+    {
+        if (ModuleEntryManager.IsModuleLoaded(ContentCategorizationConstants.OPENAI_INTEGRATION_MODULE_NAME))
+        {
+            return SettingsKeyInfoProvider.GetBoolValue($"{SiteContext.CurrentSiteName}.{ContentCategorizationConstants.ENABLED_SETTINGS_KEY}");
+        }
+
+        return false;
     }
 
     #endregion
