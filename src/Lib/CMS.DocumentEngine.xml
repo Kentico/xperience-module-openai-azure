@@ -1408,14 +1408,29 @@
             <summary>
             Ensures that the object contains the output data.
             </summary>
-            <param name="defaultData">Default data which should be loaded if data required</param>
-            <returns>Returns true if new data has been loaded</returns>
+            <param name="defaultData">Default data which should be loaded if data required.</param>
+            <returns>Returns true if new data has been loaded.</returns>
+        </member>
+        <member name="M:CMS.DocumentEngine.CMSOutputAttachment.EnsureData(System.Byte[],System.Boolean)">
+            <summary>
+            Ensures that the object contains the output data.
+            </summary>
+            <param name="defaultData">Default data which should be loaded if data required.</param>
+            <param name="canResize">Indicates if image can be resized. Using a true value directly can result in the generation of a resized file.</param>
+            <returns>Returns true if new data has been loaded.</returns>
         </member>
         <member name="M:CMS.DocumentEngine.CMSOutputAttachment.LoadData(System.Byte[])">
             <summary>
             Loads the data to the object.
             </summary>
             <param name="data">New data</param>
+        </member>
+        <member name="M:CMS.DocumentEngine.CMSOutputAttachment.LoadData(System.Byte[],System.Boolean)">
+            <summary>
+            Loads the data to the object.
+            </summary>
+            <param name="data">New data.</param>
+            <param name="canResize">Indicates if image can be resized. Using a true value directly can result in the generation of a resized file.</param>
         </member>
         <member name="P:CMS.DocumentEngine.CMSOutputAttachment.Item(System.String)">
             <summary>
@@ -1785,6 +1800,52 @@
             Ensures binary data within the given attachment.
             </summary>
             <param name="sourceAttachment">Source attachment.</param>
+        </member>
+        <member name="T:CMS.DocumentEngine.Internal.ContentCategorizationConstants">
+            <summary>
+            Constants for the content categorization feature.
+            </summary>
+        </member>
+        <member name="F:CMS.DocumentEngine.Internal.ContentCategorizationConstants.OPENAI_INTEGRATION_MODULE_NAME">
+            <summary>
+            Name of the Azure OpenAI integration module.
+            </summary>
+        </member>
+        <member name="F:CMS.DocumentEngine.Internal.ContentCategorizationConstants.ENABLED_SETTINGS_KEY">
+            <summary>
+            Name of the setting which determines whether the content categorization is enabled.
+            </summary>
+        </member>
+        <member name="T:CMS.DocumentEngine.Internal.IPageCategorizationService">
+            <summary>
+            Represents a service responsible for categorization of pages.
+            </summary>
+        </member>
+        <member name="M:CMS.DocumentEngine.Internal.IPageCategorizationService.CategorizePage(CMS.DocumentEngine.TreeNode,System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Categorizes the <paramref name="treeNode"/> based on the page data.
+            </summary>
+            <param name="treeNode">The page to be categorized.</param>
+            <param name="categoryIdentifiers">A collection of category IDs from which the categorization service should pick.</param>
+            <exception cref="T:System.ArgumentException">Thrown when <paramref name="categoryIdentifiers"/> is empty.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="treeNode"/> or <paramref name="categoryIdentifiers"/> are null.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the API endpoint, key or deployment name are not configured.</exception>
+            <remarks>Only text data is used for categorization.</remarks>
+        </member>
+        <member name="T:CMS.DocumentEngine.Internal.PageCategorizationResult">
+            <summary>
+            Represents a result of the page categorization.
+            </summary>
+        </member>
+        <member name="P:CMS.DocumentEngine.Internal.PageCategorizationResult.Categories">
+            <summary>
+            Categories that have been successfully identified. 
+            </summary>
+        </member>
+        <member name="P:CMS.DocumentEngine.Internal.PageCategorizationResult.UnknownCategories">
+            <summary>
+            Category names that could not have been identified.
+            </summary>
         </member>
         <member name="T:CMS.DocumentEngine.Internal.DocumentCultureDataInfo">
             <summary>
@@ -2728,6 +2789,19 @@
             Declares members for <see cref="T:CMS.DocumentEngine.Internal.DocumentNodeDataInfo"/> management.
             </summary>
         </member>
+        <member name="T:CMS.DocumentEngine.Internal.PageTypeCategoriesRetriever">
+            <summary>
+            Retriever for allowed categories for a page type.
+            </summary>
+        </member>
+        <member name="M:CMS.DocumentEngine.Internal.PageTypeCategoriesRetriever.Get(System.Int32,System.Int32)">
+            <summary>
+            Returns the allowed categories for the given site and page type.
+            </summary>
+            <param name="siteId">Site ID.</param>
+            <param name="pageTypeId">Page type ID.</param>
+            <exception cref="T:System.ArgumentException">Thrown when <paramref name="siteId"/> or <paramref name="pageTypeId"/> are not valid.</exception>
+        </member>
         <member name="T:CMS.DocumentEngine.Internal.AttachmentSendFileEventArgs">
             <summary>
             Attachment send file event arguments.
@@ -2883,42 +2957,6 @@
             <param name="documentTypeCodeName">Code name of the document type</param>
             <param name="siteDisplayName">Display name of the site</param>
             <param name="linkedNodes">Indicates whether standard documents or linked documents are processed in the batch</param>
-        </member>
-        <member name="T:CMS.DocumentEngine.Internal.IPageCategorizationService">
-            <summary>
-            Interface for categorization of pages.
-            </summary>
-        </member>
-        <member name="P:CMS.DocumentEngine.Internal.IPageCategorizationService.IsCategorizationEnabled">
-            <summary>
-            Indicates whether Page Categorization is enabled.
-            </summary>
-        </member>
-        <member name="M:CMS.DocumentEngine.Internal.IPageCategorizationService.CategorizePage(CMS.DocumentEngine.TreeNode,System.Collections.Generic.IEnumerable{System.String})">
-            <summary>
-            Categorizes the <paramref name="treeNode"/> based on the page data.
-            </summary>
-            <param name="treeNode">The page to be categorized.</param>
-            <param name="categories">Display names of categories from which the page categorization picks.</param>
-            <exception cref="T:System.ArgumentException">Thrown when <paramref name="categories"/> is empty.</exception>
-            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="treeNode"/> or <paramref name="categories"/> are null.</exception>
-            <exception cref="T:System.InvalidOperationException">Thrown when the API endpoint, key or deployment name are not configured.</exception>
-            <remarks>Only text data is used for categorization.</remarks>
-        </member>
-        <member name="T:CMS.DocumentEngine.Internal.PageCategorizationResult">
-            <summary>
-            Represents a result page for categorization service.
-            </summary>
-        </member>
-        <member name="P:CMS.DocumentEngine.Internal.PageCategorizationResult.IdentifiedCategories">
-            <summary>
-            Categories that have been successfully identified.
-            </summary>
-        </member>
-        <member name="P:CMS.DocumentEngine.Internal.PageCategorizationResult.UnidentifiedCategories">
-            <summary>
-            Categories that could not have been identified.
-            </summary>
         </member>
         <member name="T:CMS.DocumentEngine.Internal.AttachmentHandlerEvents">
             <summary>
@@ -4487,6 +4525,14 @@
             <summary>
             Creates new combined collection for the data.
             </summary>
+        </member>
+        <member name="T:CMS.DocumentEngine.PageCategorizationService">
+            <summary>
+            Fallback implementation of the page categorization service.
+            </summary>
+        </member>
+        <member name="M:CMS.DocumentEngine.PageCategorizationService.CategorizePage(CMS.DocumentEngine.TreeNode,System.Collections.Generic.IEnumerable{System.Int32})">
+            <inheritdoc/>
         </member>
         <member name="T:CMS.DocumentEngine.ContentPublisher">
             <summary>
@@ -13238,17 +13284,6 @@
             <param name="instanceGuid">GUID of the <see cref="T:CMS.DocumentEngine.PageBuilder.TempPageBuilderWidgetsInfo"/> to retrieve.</param>
             <returns>Returns query for retrieving <see cref="T:CMS.DocumentEngine.PageBuilder.TempPageBuilderWidgetsInfo"/>.</returns>
             <exception cref="T:System.ArgumentException">Thrown when <paramref name="instanceGuid"/> is <see cref="F:System.Guid.Empty"/>.</exception>
-        </member>
-        <member name="T:CMS.DocumentEngine.PageCategorizationService">
-            <summary>
-            Fallback implementation for the IPageCategorizationService.
-            </summary>
-        </member>
-        <member name="P:CMS.DocumentEngine.PageCategorizationService.IsCategorizationEnabled">
-            <inheritdoc/>
-        </member>
-        <member name="M:CMS.DocumentEngine.PageCategorizationService.CategorizePage(CMS.DocumentEngine.TreeNode,System.Collections.Generic.IEnumerable{System.String})">
-            <inheritdoc/>
         </member>
         <member name="T:CMS.DocumentEngine.DocumentColumnLists">
             <summary>

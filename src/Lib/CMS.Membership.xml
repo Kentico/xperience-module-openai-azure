@@ -1438,13 +1438,14 @@
             Service with avatar helper methods.
             </summary>
         </member>
-        <member name="M:CMS.Membership.AvatarService.#ctor(CMS.Core.IEventLogService,CMS.Membership.IAvatarInfoProvider,CMS.Membership.IUserInfoProvider)">
+        <member name="M:CMS.Membership.AvatarService.#ctor(CMS.Core.IEventLogService,CMS.Membership.IAvatarInfoProvider,CMS.Membership.IUserInfoProvider,CMS.Core.IMediaProtectionService)">
             <summary>
             Creates new instance of <see cref="T:CMS.Membership.AvatarService"/>
             </summary>
             <param name="eventLogService">Event log service</param>
             <param name="avatarInfoProvider">Provider for <see cref="T:CMS.Membership.AvatarInfo"/> management.</param>
             <param name="userInfoProvider">Provider for <see cref="T:CMS.Membership.UserInfo"/> management.</param>
+            <param name="mediaProtectionService">Service to protect URLs with resize-able media content.</param>
         </member>
         <member name="M:CMS.Membership.AvatarService.UpdateAvatar(CMS.Base.IUploadedFile,System.Int32,System.String)">
             <summary>
@@ -1549,11 +1550,26 @@
             <param name="defaultData">Default data which should be loaded if data required</param>
             <returns>Returns true if new data has been loaded</returns>
         </member>
+        <member name="M:CMS.Membership.CMSOutputAvatar.EnsureData(System.Byte[],System.Boolean)">
+            <summary>
+            Ensures that the object contains the output data.
+            </summary>
+            <param name="defaultData">Default data which should be loaded if data required</param>
+            <param name="canResize">Indicates if image can be resized. Using a true value directly can result in the generation of a resized file.</param>
+            <returns>Returns true if new data has been loaded</returns>
+        </member>
         <member name="M:CMS.Membership.CMSOutputAvatar.LoadData(System.Byte[])">
             <summary>
             Loads the data to the object.
             </summary>
-            <param name="data">New data</param>
+            <param name="data">New data.</param>
+        </member>
+        <member name="M:CMS.Membership.CMSOutputAvatar.LoadData(System.Byte[],System.Boolean)">
+            <summary>
+            Loads the data to the object.
+            </summary>
+            <param name="data">New data.</param>
+            <param name="canResize">Indicates if image can be resized. Using a true value directly can result in the generation of a resized file.</param>
         </member>
         <member name="P:CMS.Membership.CMSOutputAvatar.Item(System.String)">
             <summary>
@@ -3696,6 +3712,9 @@
             <summary>
             Returns <see langword="true"/> when <paramref name="c"/> is English letter character from A to Z ignoring case.
             </summary>
+        </member>
+        <member name="M:CMS.Membership.Security.UserPrivilegeLevelEvaluator.IsEditor">
+            <inheritdoc/>
         </member>
         <member name="T:CMS.Membership.UserSecurityHelper">
             <summary>

@@ -5,6 +5,8 @@ using System.Web.UI;
 
 using CMS.Base;
 using CMS.Base.Web.UI;
+using CMS.Core;
+using CMS.Core.Internal;
 using CMS.DataEngine;
 using CMS.Helpers;
 using CMS.UIControls;
@@ -201,7 +203,7 @@ public partial class CMSModules_Content_Controls_Dialogs_Properties_URLPropertie
         }
     }
 
-    
+
     /// <summary>
     /// Indicates whether the current item is audio/video.
     /// </summary>
@@ -332,7 +334,7 @@ public partial class CMSModules_Content_Controls_Dialogs_Properties_URLPropertie
         if (!RequestHelper.IsPostBack())
         {
             widthHeightElem.Locked = true;
-            
+
             if (plcAltText.Visible)
             {
                 ScriptHelper.RegisterWOpenerScript(Page);
@@ -408,14 +410,14 @@ if (wopener) {
         widthHeightElem.Height = DefaultHeight;
 
         // Remove width & height parameters from url
-        string url = URLHelper.RemoveParameterFromUrl(URLHelper.RemoveParameterFromUrl(OriginalUrl, "width"), "height");
+        string url = URLHelper.RemoveParametersFromUrl(OriginalUrl, new string[] { "width", "height", MediaProtectionConstants.MEDIA_PROTECTION_HASH_QUERY_KEY });
 
         // If media selector - insert dimensions to the URL
         if (IsMediaSelector)
         {
             url = EnsureMediaSelector(url);
         }
-        
+
         txtUrl.Text = url;
 
         LoadPreview();
@@ -872,6 +874,7 @@ if (wopener) {
                         url = URLHelper.AddParameterToUrl(url, "width", widthHeightElem.Width.ToString());
                     }
                 }
+
                 if (widthHeightElem.Height < DefaultHeight)
                 {
                     retval[DialogParameters.IMG_HEIGHT] = widthHeightElem.Height;
@@ -881,8 +884,11 @@ if (wopener) {
                     }
                 }
 
-                
-                
+                if (sizeToUrl && ((widthHeightElem.Width < DefaultWidth) || (widthHeightElem.Height < DefaultHeight)))
+                {
+                    url = Service.Resolve<IMediaProtectionService>().GetProtectedUrl(url, true);
+                }
+
                 retval[DialogParameters.IMG_URL] = (resolveUrl ? UrlResolver.ResolveUrl(imgUrl) : imgUrl);
                 retval[DialogParameters.IMG_EXT] = ValidationHelper.GetString(ViewState[DialogParameters.URL_EXT], "");
                 retval[DialogParameters.IMG_SIZETOURL] = sizeToUrl;

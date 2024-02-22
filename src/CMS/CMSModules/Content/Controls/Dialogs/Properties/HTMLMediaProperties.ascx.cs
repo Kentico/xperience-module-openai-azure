@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections;
-using System.Security.Policy;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
 using CMS.Base;
 using CMS.Base.Web.UI;
+using CMS.Core;
+using CMS.Core.Internal;
 using CMS.Helpers;
 using CMS.UIControls;
 
@@ -278,7 +279,7 @@ public partial class CMSModules_Content_Controls_Dialogs_Properties_HTMLMediaPro
     protected void btnSizeRefreshHidden_Click(object sender, EventArgs e)
     {
         // Remove width & height parameters from url
-        string url = URLHelper.RemoveParameterFromUrl(URLHelper.RemoveParameterFromUrl(CurrentUrl, "width"), "height");
+        string url = URLHelper.RemoveParametersFromUrl(CurrentUrl, new string[] { "width", "height", MediaProtectionConstants.MEDIA_PROTECTION_HASH_QUERY_KEY });
         CurrentUrl = url;
 
         switch (ViewMode)
@@ -546,10 +547,17 @@ public partial class CMSModules_Content_Controls_Dialogs_Properties_HTMLMediaPro
         {
             url = URLHelper.UpdateParameterInUrl(url, "width", widthHeightElem.Width.ToString());
         }
+
         if ((widthHeightElem.Height != DefaultHeight) && sizeToUrl)
         {
             url = URLHelper.UpdateParameterInUrl(url, "height", widthHeightElem.Height.ToString());
         }
+
+        if (sizeToUrl && ((widthHeightElem.Width != DefaultWidth) || (widthHeightElem.Height != DefaultHeight)))
+        {
+            url = Service.Resolve<IMediaProtectionService>().GetProtectedUrl(url, true);
+        }
+
         string style = txtImageAdvStyle.Text.Trim().TrimEnd(';') + ";";
 
         properties[DialogParameters.IMG_ORIGINALWIDTH] = OriginalWidth;
@@ -1100,7 +1108,7 @@ public partial class CMSModules_Content_Controls_Dialogs_Properties_HTMLMediaPro
             string url = CurrentUrl.Trim();
             bool sizeToUrl = ValidationHelper.GetBoolean(ViewState[DialogParameters.IMG_SIZETOURL], false);
 
-            if ((widthHeightElem.Width < DefaultWidth) || (DefaultWidth == 0))
+            if (ShouldAddWidthResize())
             {
                 retval[DialogParameters.IMG_WIDTH] = widthHeightElem.Width;
                 if (sizeToUrl)
@@ -1108,13 +1116,18 @@ public partial class CMSModules_Content_Controls_Dialogs_Properties_HTMLMediaPro
                     url = URLHelper.AddParameterToUrl(url, "width", widthHeightElem.Width.ToString());
                 }
             }
-            if ((widthHeightElem.Height < DefaultHeight) || (DefaultWidth == 0))
+            if (ShouldAddHeightResize())
             {
                 retval[DialogParameters.IMG_HEIGHT] = widthHeightElem.Height;
                 if (sizeToUrl)
                 {
                     url = URLHelper.AddParameterToUrl(url, "height", widthHeightElem.Height.ToString());
                 }
+            }
+
+            if (sizeToUrl && (ShouldAddHeightResize() || ShouldAddWidthResize()))
+            {
+                url = Service.Resolve<IMediaProtectionService>().GetProtectedUrl(url, true);
             }
 
             retval[DialogParameters.IMG_URL] = UrlResolver.ResolveUrl(url);
@@ -1179,8 +1192,7 @@ public partial class CMSModules_Content_Controls_Dialogs_Properties_HTMLMediaPro
             if (String.IsNullOrEmpty(txtLinkUrl.Text.Trim()))
             {
                 string url = CurrentUrl.Trim();
-                url = URLHelper.RemoveParameterFromUrl(url, "width");
-                url = URLHelper.RemoveParameterFromUrl(url, "height");
+                url = URLHelper.RemoveParametersFromUrl(url, "width", "height", MediaProtectionConstants.MEDIA_PROTECTION_HASH_QUERY_KEY);
                 if (radImageNone.Checked)
                 {
                     retval[DialogParameters.IMG_BEHAVIOR] = "";
@@ -1240,6 +1252,18 @@ public partial class CMSModules_Content_Controls_Dialogs_Properties_HTMLMediaPro
 
 
         return retval;
+    }
+
+
+    private bool ShouldAddWidthResize()
+    {
+        return (widthHeightElem.Width < DefaultWidth) || (DefaultWidth == 0);
+    }
+
+
+    private bool ShouldAddHeightResize()
+    {
+        return (widthHeightElem.Height < DefaultHeight) || (DefaultHeight == 0);
     }
 
 

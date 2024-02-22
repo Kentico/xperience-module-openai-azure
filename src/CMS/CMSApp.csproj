@@ -1591,6 +1591,7 @@
     <Content Include="CMSModules\Staging\Tools\Tasks\Tasks.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="CMSModules\System\Files\System_MediaProtection.aspx" />
     <Content Include="CMSModules\System\ObjectTypeDetails.aspx" />
     <Content Include="CMSModules\WebAnalytics\Pages\Tools\Campaign\Tab_Schedule.aspx" />
     <Content Include="CMSModules\Automation\Pages\Automation_Step_Advanced.aspx" />
@@ -4061,6 +4062,7 @@
     <Content Include="CMSAdminControls\CKeditor\skins\moono-lisa\readme.md" />
     <Content Include="CMSScripts\CMSModules\CMS.Builder\PageBuilder\messaging.localization.json" />
     <Content Include="CMSModules\ContactManagement\Pages\Tools\SalesForce\LeadOutboundMessageHandler.ashx" />
+    <Content Include="App_Themes\Default\CMSModules\cms.system.less" />
     <Content Include="CMSAdminControls\web.config" />
     <Content Include="Admin\web.config" />
     <Content Include="CMSFormControls\web.config" />
@@ -6962,6 +6964,13 @@
     </Compile>
     <Compile Include="CMSModules\Staging\Tools\TaskGroup\TaskGroup.aspx.designer.cs">
       <DependentUpon>TaskGroup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CMSModules\System\Files\System_MediaProtection.aspx.cs">
+      <DependentUpon>System_MediaProtection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CMSModules\System\Files\System_MediaProtection.aspx.designer.cs">
+      <DependentUpon>System_MediaProtection.aspx</DependentUpon>
     </Compile>
     <Compile Include="CMSModules\System\Macros\Benchmark.aspx.cs">
       <DependentUpon>Benchmark.aspx</DependentUpon>

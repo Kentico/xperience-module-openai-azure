@@ -959,18 +959,5 @@
             </summary>
             <param name="tagGroupId">ID of the tag group.</param>
         </member>
-        <member name="T:CMS.Taxonomy.Internal.TaxonomyHelper">
-            <summary>
-            Provides helper methods for taxonomy related operations.
-            </summary>
-        </member>
-        <member name="M:CMS.Taxonomy.Internal.TaxonomyHelper.GetAllowedCategories(System.Int32,System.Int32)">
-            <summary>
-            Returns the allowed categories for the given site and page type.
-            </summary>
-            <param name="siteId">Site ID.</param>
-            <param name="pageTypeId">Page type ID.</param>
-            <exception cref="T:System.ArgumentException">Thrown when <paramref name="siteId"/> or <paramref name="pageTypeId"/> are not valid.</exception>
-        </member>
     </members>
 </doc>
