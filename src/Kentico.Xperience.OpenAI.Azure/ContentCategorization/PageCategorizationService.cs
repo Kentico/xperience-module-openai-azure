@@ -6,24 +6,21 @@ using Azure;
 using Azure.AI.OpenAI;
 
 using CMS;
-using CMS.Base;
 using CMS.Core;
 using CMS.DataEngine;
 using CMS.DocumentEngine;
 using CMS.DocumentEngine.Internal;
 using CMS.FormEngine;
 using CMS.Helpers;
+using CMS.Taxonomy;
 
-using Kentico.Xperience.OpenAI.Azure;
 
-[assembly: RegisterImplementation(typeof(IPageCategorizationService), typeof(PageCategorizationService), Lifestyle = Lifestyle.Singleton, Priority = RegistrationPriority.SystemDefault)]
+[assembly: RegisterImplementation(typeof(IPageCategorizationService), typeof(PageCategorizationService1), Lifestyle = Lifestyle.Singleton, Priority = RegistrationPriority.SystemDefault)]
 
-namespace Kentico.Xperience.OpenAI.Azure
+
+namespace CMS.DocumentEngine
 {
-    /// <summary>
-    /// Service responsible for categorizing pages using Azure OpenAI.
-    /// </summary>
-    public class PageCategorizationService : IPageCategorizationService
+    public class PageCategorizationService1 : IPageCategorizationService
     {
         private const string DEPLOYMENT_NAME_KEY = "KenticoXperienceAzureOpenAIDeploymentName";
         private const string API_ENPOINT_KEY = "KenticoXperienceAzureOpenAIAPIEndpoint";
@@ -31,69 +28,71 @@ namespace Kentico.Xperience.OpenAI.Azure
         private const string CLASSIFICATION_ENABLED_KEY = "KenticoXperienceAzureOpenAIEnableContentCategorization";
         private const string TEMPERATURE_KEY = "CMSPageCategorization:OpenAIClient:Temperature";
 
-        private const string DEFAULT_SYSTEM_PROMPT = "You are a categorization agent, using provided categories to categorize text; you remove any end-of-sentence punctuations; data has format \"<field_name_1>:<field_value_1>;<field_name_2>:<field_value_2>\"; respond in the format \"category_name_1;category_name_2\"; exclusively use the provided category names and delimiters; use whitespace only within category names; you always have to pick at least 1 category";
+        private const string DEFAULT_SYSTEM_PROMPT = "You are a categorization agent, using provided categories to categorize text; you remove any end-of-sentence punctuations; data has format \"<field_name_1>:<field_value_1>;<field_name_2>:<field_value_2>\"; respond in the format \"category_name_1;category_name_2\"; exclusively use the provided category names and delimiters; use whitespace only within category names; you always have to pick at least 1 category;";
 
         private const int MAX_TOKENS = 400;
         private const float DEFAULT_TEMPERATURE = 0.5f;
 
         private readonly ISettingsService settingsService;
         private readonly IAppSettingsService appSettingsService;
+        private readonly ICategoryInfoProvider categoryInfoProvider;
 
 
         /// <inheritdoc/>
-        public bool IsCategorizationEnabled => settingsService[CLASSIFICATION_ENABLED_KEY].ToBoolean(false);
+        public bool IsCategorizationEnabled => true;
 
 
         /// <summary>
         /// Initializes a new instance of <see cref="PageCategorizationService"/> class.
         /// </summary>
         /// <param name="settingsService"></param>
-        public PageCategorizationService(ISettingsService settingsService, IAppSettingsService appSettingsService)
+        public PageCategorizationService1(ISettingsService settingsService, IAppSettingsService appSettingsService, ICategoryInfoProvider categoryInfoProvider)
         {
             this.settingsService = settingsService;
             this.appSettingsService = appSettingsService;
+            this.categoryInfoProvider = categoryInfoProvider;
         }
 
 
         /// <inheritdoc/>
-        private string GetSystemPrompt(IEnumerable<string> categories) => DEFAULT_SYSTEM_PROMPT + GetCategories(categories);
+        private string GetSystemPrompt(IEnumerable<int> categoryIdentifiers) => DEFAULT_SYSTEM_PROMPT + GetCategoryNames(categoryIdentifiers);
 
 
         /// <inheritdoc/>
-        public PageCategorizationResult CategorizePage(TreeNode treeNode, IEnumerable<string> categoryNames)
+        public PageCategorizationResult CategorizePage(TreeNode treeNode, IEnumerable<int> categoryIdentifiers)
         {
             if (treeNode == null)
             {
                 throw new ArgumentNullException(nameof(treeNode));
             }
-            if (categoryNames == null)
+            if (categoryIdentifiers == null)
             {
-                throw new ArgumentNullException(nameof(categoryNames));
+                throw new ArgumentNullException(nameof(categoryIdentifiers));
             }
             if (!IsCategorizationEnabled)
             {
                 throw new InvalidOperationException("Content Categorization is disabled.");
             }
-            if (!categoryNames.Any())
+            if (!categoryIdentifiers.Any())
             {
-                throw new ArgumentException($"{nameof(categoryNames)} cannot be empty.");
+                throw new ArgumentException($"{nameof(categoryIdentifiers)} cannot be empty.");
             }
 
             string treeNodeData = ExtractTreeNodeData(treeNode);
 
             var client = CreateClient();
-            var chatCompletionsOptions = InitializeChatCompletionsOptions(treeNodeData, categoryNames);
+            var chatCompletionsOptions = InitializeChatCompletionsOptions(treeNodeData, categoryIdentifiers);
             var response = client.GetChatCompletions(chatCompletionsOptions);
 
             // Process the response
-            return ProcessResponse(response, categoryNames);
+            return ProcessResponse(response, categoryIdentifiers);
         }
 
 
         private OpenAIClient CreateClient()
         {
-            string apiEndpoint = settingsService[API_ENPOINT_KEY].ToString(string.Empty);
-            string apiKey = settingsService[API_KEY_KEY].ToString(string.Empty);
+            string apiEndpoint = "";
+            string apiKey = "";
 
             if (string.IsNullOrEmpty(apiEndpoint) || string.IsNullOrEmpty(apiKey))
             {
@@ -115,9 +114,9 @@ namespace Kentico.Xperience.OpenAI.Azure
         }
 
 
-        private ChatCompletionsOptions InitializeChatCompletionsOptions(string treeNodeData, IEnumerable<string> categories)
+        private ChatCompletionsOptions InitializeChatCompletionsOptions(string treeNodeData, IEnumerable<int> categoryIdentifiers)
         {
-            string deploymentName = settingsService[DEPLOYMENT_NAME_KEY].ToString(string.Empty);
+            string deploymentName = "gpt-35-turbo";
 
             if (string.IsNullOrEmpty(deploymentName))
             {
@@ -131,7 +130,7 @@ namespace Kentico.Xperience.OpenAI.Azure
                 DeploymentName = deploymentName,
                 Messages =
                 {
-                    new ChatRequestSystemMessage(GetSystemPrompt(categories)),
+                    new ChatRequestSystemMessage(GetSystemPrompt(categoryIdentifiers)),
                     new ChatRequestUserMessage(treeNodeData),
                 },
                 MaxTokens = MAX_TOKENS,
@@ -156,26 +155,28 @@ namespace Kentico.Xperience.OpenAI.Azure
         }
 
 
-        private PageCategorizationResult ProcessResponse(Response<ChatCompletions> response, IEnumerable<string> categories)
+        private PageCategorizationResult ProcessResponse(Response<ChatCompletions> response, IEnumerable<int> categoryIdentifiers)
         {
-            var validCategories = categories.ToHashSet();
-
             string responseContent = response.Value.Choices[0].Message.Content;
-
+            var categoriesByName = GetCategories(categoryIdentifiers).ToDictionary(category => category.CategoryDisplayName, category => category.CategoryID);
             var cattegoryNames = responseContent.TrimEnd('.').Split(';').Select(category => category.Trim(' ')).Distinct();
 
-            // Filter the valid/invalid categories
-            var correctlyIdentified = cattegoryNames.Where(category => validCategories.Contains(category));
-            var other = cattegoryNames.Where((category) => !validCategories.Contains(category));
+            var correctlyIdentified = cattegoryNames.Where(category => categoriesByName.ContainsKey(category)).Select(name => categoriesByName[name]);
+            var other = cattegoryNames.Where((category) => !categoriesByName.ContainsKey(category));
 
             return new PageCategorizationResult
             {
-                IdentifiedCategories = correctlyIdentified,
-                UnidentifiedCategories = other
+                Categories = correctlyIdentified,
+                UnknownCategories = other
             };
         }
 
+        private IEnumerable<CategoryInfo> GetCategories(IEnumerable<int> categoryIdentifiers) => categoryIdentifiers.Select(categoryInfoProvider.Get);
 
-        private string GetCategories(IEnumerable<string> categories) => "Category names:" + string.Join(";", categories);
+        private string GetCategoryNames(IEnumerable<int> categoryIdentifiers)
+        {
+            var categories = GetCategories(categoryIdentifiers).Select(category => category.CategoryDisplayName);
+            return "Category names:" + string.Join(";", categories);
+        }
     }
 }

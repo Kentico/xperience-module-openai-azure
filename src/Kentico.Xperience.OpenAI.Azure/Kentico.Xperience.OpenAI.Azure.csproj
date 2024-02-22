@@ -43,6 +43,9 @@
     <Reference Include="CMS.Helpers">
       <HintPath>..\Lib\CMS.Helpers.dll</HintPath>
     </Reference>
+    <Reference Include="CMS.Taxonomy">
+      <HintPath>..\Lib\CMS.Taxonomy.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Update="CMSResources\Kentico.Xperience.OpenAI.Azure\Resource.Designer.cs">
