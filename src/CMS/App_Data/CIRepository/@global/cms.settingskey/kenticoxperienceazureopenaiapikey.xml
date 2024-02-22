@@ -8,6 +8,9 @@
     <![CDATA[{$settingskey.xperienceazureopenai.apikey.description$}]]>
   </KeyDescription>
   <KeyDisplayName>{$settingskey.xperienceazureopenai.apikey$}</KeyDisplayName>
+  <KeyEditingControlPath>
+    <![CDATA[~/CMSModules/Membership/FormControls/Passwords/EncryptedPassword.ascx]]>
+  </KeyEditingControlPath>
   <KeyExplanationText />
   <KeyGUID>7c2a824c-f8fe-4154-8349-7a5a48471cb9</KeyGUID>
   <KeyIsGlobal>False</KeyIsGlobal>
