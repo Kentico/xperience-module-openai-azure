@@ -17,7 +17,6 @@ using CMS.Helpers;
 using CMS.Membership;
 using CMS.SiteProvider;
 using CMS.Taxonomy;
-using CMS.Taxonomy.Internal;
 using CMS.UIControls;
 
 public partial class CMSModules_Categories_Controls_CategorySelectionDialog : CMSUserControl, ICallbackEventHandler
@@ -48,6 +47,7 @@ public partial class CMSModules_Categories_Controls_CategorySelectionDialog : CM
     private bool canModifyGlobal;
     private IDictionary<int, (string CategoryDisplayName, bool IsAllowed)> filteredCategories;
     private CMS.DocumentEngine.TreeNode currentPage;
+    private bool showAutoSelectButton;
 
     // Actions
     private HeaderAction upAction;
@@ -1036,16 +1036,14 @@ function SelectAllItems(checkbox, hash) {
 
         try
         {
-            var categoriesByDisplayName = FilteredCategoriesInTree
+            var categoryIds = FilteredCategoriesInTree
                                    .Where(c => c.Value.IsAllowed)
-                                   .ToLookup(c => ResHelper.LocalizeString(c.Value.CategoryDisplayName), c => c.Key)
-                                   .ToDictionary(c => c.Key, c => c.ToArray());
+                                   .Select(pair => pair.Key);
 
-            var categoryDisplayNames = categoriesByDisplayName.Keys.ToArray();
 
             var pageCategorizationService = Service.Resolve<IPageCategorizationService>();
-            var categorizedPage = pageCategorizationService.CategorizePage(CurrentPage, categoryDisplayNames);
-            var identifiedCategories = categorizedPage.IdentifiedCategories;
+            var categorizedPage = pageCategorizationService.CategorizePage(CurrentPage, categoryIds);
+            var identifiedCategories = categorizedPage.Categories;
 
             if (identifiedCategories is null || !identifiedCategories.Any())
             {
@@ -1053,11 +1051,9 @@ function SelectAllItems(checkbox, hash) {
                 return;
             }
 
-            var categoryIds = identifiedCategories.SelectMany(c => categoriesByDisplayName[c]);
-
             ClearSelectedCategories();
 
-            SelectCategories(categoryIds);
+            SelectCategories(identifiedCategories);
         }
         catch (Exception ex)
         {
@@ -1118,6 +1114,7 @@ function SelectAllItems(checkbox, hash) {
             disabledItems = ValidationHelper.GetString(parameters["DisabledItems"], null);
             mSecurityPurpose = ValidationHelper.GetString(parameters["SecurityPurpose"], String.Empty);
             mDocumentId = ValidationHelper.GetInteger(parameters["CurrentDocumentID"], 0);
+            showAutoSelectButton = ValidationHelper.GetBoolean(parameters["ShowAutoSelect"], false);
 
             switch (SelectionMode)
             {
@@ -1384,7 +1381,7 @@ function SelectAllItems(checkbox, hash) {
         Actions.ActionPerformed += Actions_ActionPerformed;
 
         // Init actions images
-        if (CurrentPage != null && Service.Resolve<IPageCategorizationService>().IsCategorizationEnabled)
+        if (CurrentPage != null && showAutoSelectButton)
         {
             Actions.AddAction(autoSelectAction = new HeaderAction
             {
@@ -1543,8 +1540,8 @@ function SelectAllItems(checkbox, hash) {
         {
             var classId = DataClassInfoProvider.GetDataClassInfo(CurrentPage.NodeClassName).ClassID;
 
-            var allowedCategories = TaxonomyHelper.GetAllowedCategories(SiteContext.CurrentSiteID, classId);
-            var allowedCategoryIDsAndNames = allowedCategories.ToDictionary(c => c.CategoryID, c => c.CategoryDisplayName);
+            var allowedCategories = new PageTypeCategoriesRetriever().Get(SiteContext.CurrentSiteID, classId);
+            var allowedCategoryIDsAndNames = allowedCategories.ToDictionary(c => c.CategoryID, c => ResHelper.LocalizeString(c.CategoryDisplayName));
             var filteredCategoryIDs = allowedCategories.SelectMany(category =>
             {
                 return category.CategoryIDPath

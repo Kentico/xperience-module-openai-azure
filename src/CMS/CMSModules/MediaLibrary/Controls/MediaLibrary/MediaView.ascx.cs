@@ -2,18 +2,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
-
-using CMS.Base;
-
 using System.Text;
 
+using CMS.Base;
 using CMS.Base.Web.UI;
+using CMS.Core;
 using CMS.Helpers;
 using CMS.MediaLibrary;
 using CMS.SiteProvider;
 using CMS.UIControls;
-using CMS.Core;
-using CMS.DocumentEngine;
 
 public partial class CMSModules_MediaLibrary_Controls_MediaLibrary_MediaView : MediaView
 {
@@ -685,6 +682,11 @@ function SetParentAction(argument) {
         if (width > 0)
         {
             mediaFileUrl = URLHelper.AddParameterToUrl(mediaFileUrl, "width", width.ToString());
+        }        
+
+        if (resize || height > 0 || width > 0)
+        {
+            mediaFileUrl = Service.Resolve<IMediaProtectionService>().GetProtectedUrl(mediaFileUrl, true);
         }
 
         // Media selector should returns non-resolved URL in all cases
