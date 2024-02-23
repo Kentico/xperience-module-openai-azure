@@ -14,21 +14,15 @@ using CMS.FormEngine;
 using CMS.Helpers;
 using CMS.Taxonomy;
 
+using Kentico.Xperience.OpenAI.Azure;
 
-[assembly: RegisterImplementation(typeof(IPageCategorizationService), typeof(PageCategorizationService1), Lifestyle = Lifestyle.Singleton, Priority = RegistrationPriority.SystemDefault)]
+[assembly: RegisterImplementation(typeof(IPageCategorizationService), typeof(PageCategorizationService), Lifestyle = Lifestyle.Singleton, Priority = RegistrationPriority.SystemDefault)]
 
-
-namespace CMS.DocumentEngine
+namespace Kentico.Xperience.OpenAI.Azure
 {
-    public class PageCategorizationService1 : IPageCategorizationService
+    internal class PageCategorizationService : IPageCategorizationService
     {
-        private const string DEPLOYMENT_NAME_KEY = "KenticoXperienceAzureOpenAIDeploymentName";
-        private const string API_ENPOINT_KEY = "KenticoXperienceAzureOpenAIAPIEndpoint";
-        private const string API_KEY_KEY = "KenticoXperienceAzureOpenAIAPIKey";
-        private const string CLASSIFICATION_ENABLED_KEY = "KenticoXperienceAzureOpenAIEnableContentCategorization";
-        private const string TEMPERATURE_KEY = "CMSPageCategorization:OpenAIClient:Temperature";
-
-        private const string DEFAULT_SYSTEM_PROMPT = "You are a categorization agent, using provided categories to categorize text; you remove any end-of-sentence punctuations; data has format \"<field_name_1>:<field_value_1>;<field_name_2>:<field_value_2>\"; respond in the format \"category_name_1;category_name_2\"; exclusively use the provided category names and delimiters; use whitespace only within category names; you always have to pick at least 1 category;";
+        private const string DEFAULT_SYSTEM_PROMPT = "You are a categorization agent, using provided categories to categorize text. Remove any end-of-sentence punctuations. Data has format \"field_name_1:<field_value_1>;field_name_2:<field_value_2>\". Respond in the format \"category_name_1;category_name_2\"; Exclusively use the provided category names and delimiters. Use whitespace only within category names. Ideally pick one category.\n";
 
         private const int MAX_TOKENS = 400;
         private const float DEFAULT_TEMPERATURE = 0.5f;
@@ -36,6 +30,7 @@ namespace CMS.DocumentEngine
         private readonly ISettingsService settingsService;
         private readonly IAppSettingsService appSettingsService;
         private readonly ICategoryInfoProvider categoryInfoProvider;
+        private readonly IOpenAIClientFactory openAIClientFactory;
 
 
         /// <inheritdoc/>
@@ -43,14 +38,15 @@ namespace CMS.DocumentEngine
 
 
         /// <summary>
-        /// Initializes a new instance of <see cref="PageCategorizationService"/> class.
+        /// Initializes a new instance of <see cref="CMS.DocumentEngine.PageCategorizationService"/> class.
         /// </summary>
         /// <param name="settingsService"></param>
-        public PageCategorizationService1(ISettingsService settingsService, IAppSettingsService appSettingsService, ICategoryInfoProvider categoryInfoProvider)
+        public PageCategorizationService(ISettingsService settingsService, IAppSettingsService appSettingsService, ICategoryInfoProvider categoryInfoProvider, IOpenAIClientFactory openAIClientFactory)
         {
             this.settingsService = settingsService;
             this.appSettingsService = appSettingsService;
             this.categoryInfoProvider = categoryInfoProvider;
+            this.openAIClientFactory = openAIClientFactory;
         }
 
 
@@ -91,15 +87,10 @@ namespace CMS.DocumentEngine
 
         private OpenAIClient CreateClient()
         {
-            string apiEndpoint = "";
-            string apiKey = "";
+            string apiEndpoint = settingsService[PageCategorizationConstants.API_ENDPOINT_KEY];
+            string apiKey = settingsService[PageCategorizationConstants.API_KEY_KEY];
 
-            if (string.IsNullOrEmpty(apiEndpoint) || string.IsNullOrEmpty(apiKey))
-            {
-                throw new InvalidOperationException($"The Azure OpenAI Content Categorization service API endpoint and key are not configured correctly.");
-            }
-
-            return new OpenAIClient(new Uri(apiEndpoint), new AzureKeyCredential(apiKey));
+            return openAIClientFactory.GetOpenAIClient(apiKey, apiEndpoint);
         }
 
 
@@ -123,7 +114,7 @@ namespace CMS.DocumentEngine
                 throw new InvalidOperationException($"The Azure OpenAI Content Categorization service deployment name is not configured correctly");
             }
 
-            float temperature = ValidationHelper.GetFloat(appSettingsService[TEMPERATURE_KEY], DEFAULT_TEMPERATURE);
+            float temperature = ValidationHelper.GetFloat(appSettingsService[PageCategorizationConstants.TEMPERATURE_KEY], DEFAULT_TEMPERATURE);
 
             var chatCompletionsOptions = new ChatCompletionsOptions()
             {
@@ -158,11 +149,15 @@ namespace CMS.DocumentEngine
         private PageCategorizationResult ProcessResponse(Response<ChatCompletions> response, IEnumerable<int> categoryIdentifiers)
         {
             string responseContent = response.Value.Choices[0].Message.Content;
-            var categoriesByName = GetCategories(categoryIdentifiers).ToDictionary(category => category.CategoryDisplayName, category => category.CategoryID);
-            var cattegoryNames = responseContent.TrimEnd('.').Split(';').Select(category => category.Trim(' ')).Distinct();
 
-            var correctlyIdentified = cattegoryNames.Where(category => categoriesByName.ContainsKey(category)).Select(name => categoriesByName[name]);
-            var other = cattegoryNames.Where((category) => !categoriesByName.ContainsKey(category));
+            var categoriesByName = GetCategories(categoryIdentifiers).ToLookup(category => category.CategoryDisplayName, category => category.CategoryID);
+            var cattegoryNames = responseContent.TrimEnd('.')
+                .Split(';')
+                .Select(category => category.Trim())
+                .Distinct();
+
+            var correctlyIdentified = cattegoryNames.Where(category => categoriesByName.Contains(category)).SelectMany(name => categoriesByName[name]);
+            var other = cattegoryNames.Where((category) => !categoriesByName.Contains(category));
 
             return new PageCategorizationResult
             {
@@ -171,7 +166,9 @@ namespace CMS.DocumentEngine
             };
         }
 
+
         private IEnumerable<CategoryInfo> GetCategories(IEnumerable<int> categoryIdentifiers) => categoryIdentifiers.Select(categoryInfoProvider.Get);
+
 
         private string GetCategoryNames(IEnumerable<int> categoryIdentifiers)
         {
