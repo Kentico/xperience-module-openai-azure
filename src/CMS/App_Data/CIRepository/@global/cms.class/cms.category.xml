@@ -90,6 +90,18 @@
           <controlname>checkboxcontrol</controlname>
         </settings>
       </field>
+	  <field column="CategoryAllowAllTypes" columntype="boolean" guid="16389d07-e29e-472c-bc1b-a3a5e5d5f24a" hasdependingfields="true" system="true">
+	    <properties>
+		  <defaultvalue>True</defaultvalue>
+		</properties>
+		<settings>
+		  <controlname>RadioButtonsControl</controlname>
+		  <Options>1;{$category.allowalltypes$} 0;{$category.allowonlyfollowing$}</Options>
+		  <RepeatDirection>vertical</RepeatDirection>
+		  <RepeatLayout>Flow</RepeatLayout>
+		  <SortItems>False</SortItems>
+		</settings>
+	  </field>
       <field allowempty="true" column="CategoryCount" columntype="integer" guid="d333614c-e26b-45fa-803f-2815644d9b6e" system="true">
         <properties>
           <fieldcaption>CategoryEnabled</fieldcaption>

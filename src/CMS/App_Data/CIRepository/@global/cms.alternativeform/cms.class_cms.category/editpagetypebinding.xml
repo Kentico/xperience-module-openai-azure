@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.alternativeform>
+  <FormClassID>
+    <CodeName>cms.category</CodeName>
+    <GUID>f9bd0914-ee13-41f8-85a3-4f2b50875c99</GUID>
+    <ObjectType>cms.class</ObjectType>
+  </FormClassID>
+  <FormDefinition>
+    <form version="2">
+      <field column="CategoryID" guid="a7e6de80-6774-4fc9-8764-fde25832fce0" />
+      <field column="CategorySiteID" guid="55f19a7f-1e83-4f11-8dcd-b15e2c5e2638" visible="" />
+      <field column="CategoryDisplayName" guid="62f59aab-9b3e-4ddc-8f7a-fb97e039de40" visible="" />
+      <field column="CategoryName" guid="6ec936dc-3b0f-476c-8d07-9dbb7e5a19b9" visible="" />
+      <field column="CategoryParentID" guid="70e95a64-6c83-4dc3-a334-c8a7bf61ea39" visible="" />
+      <field column="CategoryDescription" guid="21b4dc27-69d2-4ee5-ad21-31ce7362a169" visible="" />
+      <field column="CategoryEnabled" guid="60a19437-daca-476d-a9c7-f771810012d2" visible="" />
+      <field column="CategoryAllowAllTypes" guid="16389d07-e29e-472c-bc1b-a3a5e5d5f24a" visible="true" />
+      <field allowempty="true" column="CategoryClasses" columntype="longtext" dummy="altform" guid="37816dea-4104-4180-a1af-2812b3c4d0af" system="true" visible="true" order="8">
+        <properties>
+          <enabledmacro ismacro="true">
+            <![CDATA[{%!CategoryAllowAllTypes.Value|(identity)GlobalAdministrator|(hash)42240bd4fce6c8cb1bfe2cb3619e1193ba07204c2cff12f3e3556cffcd00ce60%}]]>
+          </enabledmacro>
+        </properties>
+        <settings>
+          <AddGlobalObjectNamePrefix>False</AddGlobalObjectNamePrefix>
+          <AddGlobalObjectSuffix>False</AddGlobalObjectSuffix>
+          <AllowAll>False</AllowAll>
+          <AllowDefault>False</AllowDefault>
+          <AllowEditTextBox>False</AllowEditTextBox>
+          <AllowEmpty>False</AllowEmpty>
+          <controlname>Uni_selector</controlname>
+          <DialogWindowName>SelectionDialog</DialogWindowName>
+          <EditDialogWindowHeight>700</EditDialogWindowHeight>
+          <EditDialogWindowOpenInFullscreen>False</EditDialogWindowOpenInFullscreen>
+          <EditDialogWindowWidth>1000</EditDialogWindowWidth>
+          <EditWindowName>EditWindow</EditWindowName>
+          <EncodeOutput>True</EncodeOutput>
+          <GlobalObjectSuffix ismacro="true">{$general.global$}</GlobalObjectSuffix>
+          <ItemsPerPage>25</ItemsPerPage>
+          <LocalizeItems>True</LocalizeItems>
+          <MaxDisplayedItems>25</MaxDisplayedItems>
+          <MaxDisplayedTotalItems>50</MaxDisplayedTotalItems>
+          <ObjectType>cms.documenttype</ObjectType>
+          <RemoveMultipleCommas>False</RemoveMultipleCommas>
+          <ReturnColumnName>ClassID</ReturnColumnName>
+          <ReturnColumnType>id</ReturnColumnType>
+          <SelectionMode>2</SelectionMode>
+          <UseDefaultNameFilter>True</UseDefaultNameFilter>
+          <ValuesSeparator>;</ValuesSeparator>
+        </settings>
+      </field>
+      <field column="CategoryCount" guid="d333614c-e26b-45fa-803f-2815644d9b6e" order="9" />
+      <field column="CategoryUserID" guid="aebc6d41-6911-4955-8566-3e46053d2243" order="10" />
+      <field column="CategoryGUID" guid="09d6706d-6145-400c-9e12-c47f14fdfa44" order="11" />
+      <field column="CategoryLastModified" guid="67e9377c-c25a-4dd7-9ef8-9b9d97a408ce" order="12" />
+      <field column="CategoryIDPath" guid="aac5e74e-aa14-43b5-b18c-fd329ba7974c" order="13" />
+      <field column="CategoryNamePath" guid="1591d49a-9209-4d55-851c-9fe1769e9def" order="14" />
+      <field column="CategoryLevel" guid="359e5923-49da-4a39-9910-b9458d5a40a2" order="15" />
+      <field column="CategoryOrder" guid="3b0a29ce-b93f-4ff8-a86b-5273a4ad1336" order="16" />
+    </form>
+  </FormDefinition>
+  <FormDisplayName>Edit page type binding</FormDisplayName>
+  <FormGUID>1d5dd41b-1395-4944-8224-af3ea1f13a6e</FormGUID>
+  <FormHideNewParentFields>False</FormHideNewParentFields>
+  <FormIsCustom>False</FormIsCustom>
+  <FormName>EditPageTypeBinding</FormName>
+</cms.alternativeform>
