@@ -99,9 +99,9 @@ namespace Kentico.Xperience.OpenAI.Azure
             var fields = GetFields(treeNode)
                 .Where((field) => !string.IsNullOrEmpty(field.value))
                 .Select(field => $"<{field.name}>:{field.value}");
-            string textRepresentation = string.Join(";", fields);
+            string textRepresentation = string.Join(";\n", fields);
 
-            return "Categorize the following data:" + textRepresentation;
+            return "Categorize the following data:\n" + textRepresentation;
         }
 
 

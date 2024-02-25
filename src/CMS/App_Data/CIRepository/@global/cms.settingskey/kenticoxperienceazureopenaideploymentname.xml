@@ -5,9 +5,9 @@
     <ObjectType>cms.settingscategory</ObjectType>
   </KeyCategoryID>
   <KeyDescription>
-    <![CDATA[The deployment name of the Microsoft Azure OpenAI API resource. You can find the endpoint in the Microsoft Azure portal when viewing your Azure OpenAI resource.]]>
+    <![CDATA[{$settingskey.xperienceazureopenai.deploymentname.description$}]]>
   </KeyDescription>
-  <KeyDisplayName>Azure OpenAI Deployment name</KeyDisplayName>
+  <KeyDisplayName>{$settingskey.xperienceazureopenai.deploymentname$}</KeyDisplayName>
   <KeyExplanationText />
   <KeyGUID>e4e7102d-68bf-4682-848b-682be428bb4f</KeyGUID>
   <KeyIsGlobal>False</KeyIsGlobal>
