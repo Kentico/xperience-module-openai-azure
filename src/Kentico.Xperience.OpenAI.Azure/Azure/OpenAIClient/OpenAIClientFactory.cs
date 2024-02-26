@@ -3,6 +3,13 @@
 using Azure;
 using Azure.AI.OpenAI;
 
+using CMS;
+using CMS.Core;
+
+using Kentico.Xperience.OpenAI.Azure;
+
+[assembly: RegisterImplementation(typeof(IOpenAIClientFactory), typeof(OpenAIClientFactory), Priority = RegistrationPriority.SystemDefault, Lifestyle = Lifestyle.Singleton)]
+
 namespace Kentico.Xperience.OpenAI.Azure
 {
     internal class OpenAIClientFactory : IOpenAIClientFactory

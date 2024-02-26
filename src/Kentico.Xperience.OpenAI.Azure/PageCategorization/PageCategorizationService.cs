@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -22,31 +23,31 @@ namespace Kentico.Xperience.OpenAI.Azure
 {
     internal class PageCategorizationService : IPageCategorizationService
     {
-        private const string DEFAULT_SYSTEM_PROMPT = "You are a categorization agent, using provided categories to categorize text. Remove any end-of-sentence punctuations. Data has format \"field_name_1:<field_value_1>;field_name_2:<field_value_2>\". Respond in the format \"category_name_1;category_name_2\"; Exclusively use the provided category names and delimiters. Use whitespace only within category names. Ideally pick one category.\n";
+        private const string DEFAULT_SYSTEM_PROMPT = "You are a categorization agent, using provided categories to categorize text. Remove any end-of-sentence punctuations. Data has format \"field_name_1:<field_value_1>;field_name_2:<field_value_2>\". Respond in the format \"category_name_1;category_name_2\". Exclusively use the provided category names and delimiters. Use whitespace only within category names. Ideally pick one category.\n";
 
         private const int MAX_TOKENS = 400;
         private const float DEFAULT_TEMPERATURE = 0.5f;
+        private const string delimiter = ";";
 
         private readonly ISettingsService settingsService;
         private readonly IAppSettingsService appSettingsService;
         private readonly ICategoryInfoProvider categoryInfoProvider;
         private readonly IOpenAIClientFactory openAIClientFactory;
+        private readonly ILocalizationService localizationService;
 
-
-        /// <inheritdoc/>
-        public bool IsCategorizationEnabled => true;
-
+        private ConcurrentDictionary<string, string> localizedNamesByDisplayNames = new ConcurrentDictionary<string, string>();
 
         /// <summary>
         /// Initializes a new instance of <see cref="CMS.DocumentEngine.PageCategorizationService"/> class.
         /// </summary>
         /// <param name="settingsService"></param>
-        public PageCategorizationService(ISettingsService settingsService, IAppSettingsService appSettingsService, ICategoryInfoProvider categoryInfoProvider, IOpenAIClientFactory openAIClientFactory)
+        public PageCategorizationService(ISettingsService settingsService, IAppSettingsService appSettingsService, ICategoryInfoProvider categoryInfoProvider, IOpenAIClientFactory openAIClientFactory, ILocalizationService localizationService)
         {
             this.settingsService = settingsService;
             this.appSettingsService = appSettingsService;
             this.categoryInfoProvider = categoryInfoProvider;
             this.openAIClientFactory = openAIClientFactory;
+            this.localizationService = localizationService;
         }
 
 
@@ -65,22 +66,18 @@ namespace Kentico.Xperience.OpenAI.Azure
             {
                 throw new ArgumentNullException(nameof(categoryIdentifiers));
             }
-            if (!IsCategorizationEnabled)
-            {
-                throw new InvalidOperationException("Content Categorization is disabled.");
-            }
             if (!categoryIdentifiers.Any())
             {
                 throw new ArgumentException($"{nameof(categoryIdentifiers)} cannot be empty.");
             }
 
+            var client = CreateClient();
+
             string treeNodeData = ExtractTreeNodeData(treeNode);
 
-            var client = CreateClient();
             var chatCompletionsOptions = InitializeChatCompletionsOptions(treeNodeData, categoryIdentifiers);
             var response = client.GetChatCompletions(chatCompletionsOptions);
 
-            // Process the response
             return ProcessResponse(response, categoryIdentifiers);
         }
 
@@ -88,9 +85,9 @@ namespace Kentico.Xperience.OpenAI.Azure
         private OpenAIClient CreateClient()
         {
             string apiEndpoint = settingsService[PageCategorizationConstants.API_ENDPOINT_KEY];
-            string apiKey = settingsService[PageCategorizationConstants.API_KEY_KEY];
+            string apiKey = EncryptionHelper.DecryptData(settingsService[PageCategorizationConstants.API_KEY_KEY]);
 
-            return openAIClientFactory.GetOpenAIClient(apiKey, apiEndpoint);
+            return openAIClientFactory.GetOpenAIClient(apiEndpoint, apiKey);
         }
 
 
@@ -98,8 +95,8 @@ namespace Kentico.Xperience.OpenAI.Azure
         {
             var fields = GetFields(treeNode)
                 .Where((field) => !string.IsNullOrEmpty(field.value))
-                .Select(field => $"<{field.name}>:{field.value}");
-            string textRepresentation = string.Join(";\n", fields);
+                .Select(field => $"{field.name}:{field.value}");
+            string textRepresentation = string.Join($"{delimiter}\n", fields);
 
             return "Categorize the following data:\n" + textRepresentation;
         }
@@ -107,11 +104,11 @@ namespace Kentico.Xperience.OpenAI.Azure
 
         private ChatCompletionsOptions InitializeChatCompletionsOptions(string treeNodeData, IEnumerable<int> categoryIdentifiers)
         {
-            string deploymentName = "gpt-35-turbo";
+            string deploymentName = settingsService[PageCategorizationConstants.DEPLOYMENT_NAME_KEY];
 
             if (string.IsNullOrEmpty(deploymentName))
             {
-                throw new InvalidOperationException($"The Azure OpenAI Content Categorization service deployment name is not configured correctly");
+                throw new InvalidOperationException($"The Azure OpenAI Content Categorization service deployment name is not configured correctly.");
             }
 
             float temperature = ValidationHelper.GetFloat(appSettingsService[PageCategorizationConstants.TEMPERATURE_KEY], DEFAULT_TEMPERATURE);
@@ -140,7 +137,7 @@ namespace Kentico.Xperience.OpenAI.Azure
 
             var textColumns = formInfo.GetFields(FieldDataType.LongText).Concat(formInfo.GetFields(FieldDataType.Text));
 
-            var fields = textColumns.Select(text => (text.Caption, treeNode.GetStringValue(text.Name, "")));
+            var fields = textColumns.Select(text => (text.Caption, treeNode.GetStringValue(text.Name, string.Empty)));
 
             return fields;
         }
@@ -150,9 +147,9 @@ namespace Kentico.Xperience.OpenAI.Azure
         {
             string responseContent = response.Value.Choices[0].Message.Content;
 
-            var categoriesByName = GetCategories(categoryIdentifiers).ToLookup(category => category.CategoryDisplayName, category => category.CategoryID);
+            var categoriesByName = GetCategories(categoryIdentifiers).ToLookup(category => GetLocalized(category.CategoryDisplayName), category => category.CategoryID);
             var cattegoryNames = responseContent.TrimEnd('.')
-                .Split(';')
+                .Split(delimiter[0])
                 .Select(category => category.Trim())
                 .Distinct();
 
@@ -172,8 +169,20 @@ namespace Kentico.Xperience.OpenAI.Azure
 
         private string GetCategoryNames(IEnumerable<int> categoryIdentifiers)
         {
-            var categories = GetCategories(categoryIdentifiers).Select(category => category.CategoryDisplayName);
-            return "Category names:" + string.Join(";", categories);
+            var categories = GetCategories(categoryIdentifiers).Select(category => GetLocalized(category.CategoryDisplayName, true));
+            return "Category names:" + string.Join(delimiter, categories);
+        }
+
+
+        private string GetLocalized(string categoryDisplayName, bool replace = false)
+        {
+            if (replace || !localizedNamesByDisplayNames.ContainsKey(categoryDisplayName))
+            {
+                string localizedName = localizationService.GetString(categoryDisplayName);
+                localizedNamesByDisplayNames[categoryDisplayName] = localizedName;
+            }
+
+            return localizedNamesByDisplayNames[categoryDisplayName];
         }
     }
 }
