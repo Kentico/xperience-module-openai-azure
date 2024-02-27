@@ -2,15 +2,18 @@
 
 namespace Kentico.Xperience.OpenAI.Azure
 {
+    /// <summary>
+    /// Defines a factory for creating instances of <see cref="OpenAIClient"/>.
+    /// </summary>
     internal interface IOpenAIClientFactory
     {
         /// <summary>
-        /// 
+        /// Initializes a new instance of the <see cref="OpenAIClient"/> class using the specified API endpoint and API key.
         /// </summary>
-        /// <param name="apiKey"></param>
-        /// <param name="apiEndpoint"></param>
-        /// <returns></returns>
-        /// <exception cref=""/>
+        /// <param name="apiEndpoint">The API endpoint URL for the Azure OpenAI Content Categorization service.</param>
+        /// <param name="apiKey">The subscription key for accessing the Azure OpenAI Content Categorization service..</param>
+        /// <returns>An instance of the <see cref="OpenAIClient"/> configured with the specified endpoint and key.</returns>
+        /// <exception cref="InvalidOperationException">Thrown when either <paramref name="apiEndpoint"/> or <paramref name="apiKey"/> is null or empty.</exception>
         OpenAIClient GetOpenAIClient(string apiKey, string apiEndpoint);
     }
 }

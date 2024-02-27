@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -21,27 +20,26 @@ using Kentico.Xperience.OpenAI.Azure;
 
 namespace Kentico.Xperience.OpenAI.Azure
 {
+    /// <summary>
+    /// Service responsible for categorization of pages.
+    /// </summary>
     internal class PageCategorizationService : IPageCategorizationService
     {
-        private const string DEFAULT_SYSTEM_PROMPT = "You are a categorization agent, using provided categories to categorize text. Remove any end-of-sentence punctuations. Data has format \"field_name_1:<field_value_1>;field_name_2:<field_value_2>\". Respond in the format \"category_name_1;category_name_2\". Exclusively use the provided category names and delimiters. Use whitespace only within category names. Ideally pick one category.\n";
-
-        private const int MAX_TOKENS = 400;
-        private const float DEFAULT_TEMPERATURE = 0.5f;
-        private const string delimiter = ";";
-
         private readonly ISettingsService settingsService;
         private readonly IAppSettingsService appSettingsService;
         private readonly ICategoryInfoProvider categoryInfoProvider;
         private readonly IOpenAIClientFactory openAIClientFactory;
         private readonly ILocalizationService localizationService;
 
-        private ConcurrentDictionary<string, string> localizedNamesByDisplayNames = new ConcurrentDictionary<string, string>();
-
         /// <summary>
-        /// Initializes a new instance of <see cref="CMS.DocumentEngine.PageCategorizationService"/> class.
+        /// Initializes a new instance of <see cref="PageCategorizationService"/> class.
         /// </summary>
-        /// <param name="settingsService"></param>
-        public PageCategorizationService(ISettingsService settingsService, IAppSettingsService appSettingsService, ICategoryInfoProvider categoryInfoProvider, IOpenAIClientFactory openAIClientFactory, ILocalizationService localizationService)
+        public PageCategorizationService(ISettingsService settingsService, IAppSettingsService appSettingsService, ICategoryInfoProvider categoryInfoProvider, ILocalizationService localizationService) : this(settingsService, appSettingsService, categoryInfoProvider, new OpenAIClientFactory(), localizationService)
+        {
+        }
+
+
+        internal PageCategorizationService(ISettingsService settingsService, IAppSettingsService appSettingsService, ICategoryInfoProvider categoryInfoProvider, IOpenAIClientFactory openAIClientFactory, ILocalizationService localizationService)
         {
             this.settingsService = settingsService;
             this.appSettingsService = appSettingsService;
@@ -49,10 +47,6 @@ namespace Kentico.Xperience.OpenAI.Azure
             this.openAIClientFactory = openAIClientFactory;
             this.localizationService = localizationService;
         }
-
-
-        /// <inheritdoc/>
-        private string GetSystemPrompt(IEnumerable<int> categoryIdentifiers) => DEFAULT_SYSTEM_PROMPT + GetCategoryNames(categoryIdentifiers);
 
 
         /// <inheritdoc/>
@@ -71,14 +65,21 @@ namespace Kentico.Xperience.OpenAI.Azure
                 throw new ArgumentException($"{nameof(categoryIdentifiers)} cannot be empty.");
             }
 
-            var client = CreateClient();
+            var localizedNamesByDisplayNames = new Dictionary<string, string>();
+            var systemPrompt = GetSystemPrompt(categoryIdentifiers, localizedNamesByDisplayNames);
 
+            var client = CreateClient();
             string treeNodeData = ExtractTreeNodeData(treeNode);
 
-            var chatCompletionsOptions = InitializeChatCompletionsOptions(treeNodeData, categoryIdentifiers);
+            if (treeNodeData == string.Empty)
+            {
+                return new PageCategorizationResult();
+            }
+
+            var chatCompletionsOptions = InitializeChatCompletionsOptions(treeNodeData, systemPrompt);
             var response = client.GetChatCompletions(chatCompletionsOptions);
 
-            return ProcessResponse(response, categoryIdentifiers);
+            return ProcessResponse(response, categoryIdentifiers, localizedNamesByDisplayNames);
         }
 
 
@@ -96,13 +97,19 @@ namespace Kentico.Xperience.OpenAI.Azure
             var fields = GetFields(treeNode)
                 .Where((field) => !string.IsNullOrEmpty(field.value))
                 .Select(field => $"{field.name}:{field.value}");
-            string textRepresentation = string.Join($"{delimiter}\n", fields);
 
-            return "Categorize the following data:\n" + textRepresentation;
+            if (!fields.Any())
+            {
+                return string.Empty;
+            }
+
+            string textRepresentation = string.Join($"{PageCategorizationConstants.delimiter}\n", fields);
+
+            return $"The data will be in the {treeNode.DocumentCulture} culture. Categorize the following data:\n {textRepresentation}";
         }
 
 
-        private ChatCompletionsOptions InitializeChatCompletionsOptions(string treeNodeData, IEnumerable<int> categoryIdentifiers)
+        private ChatCompletionsOptions InitializeChatCompletionsOptions(string treeNodeData, string systemPrompt)
         {
             string deploymentName = settingsService[PageCategorizationConstants.DEPLOYMENT_NAME_KEY];
 
@@ -111,21 +118,27 @@ namespace Kentico.Xperience.OpenAI.Azure
                 throw new InvalidOperationException($"The Azure OpenAI Content Categorization service deployment name is not configured correctly.");
             }
 
-            float temperature = ValidationHelper.GetFloat(appSettingsService[PageCategorizationConstants.TEMPERATURE_KEY], DEFAULT_TEMPERATURE);
+            float temperature = ValidationHelper.GetFloat(appSettingsService[PageCategorizationConstants.TEMPERATURE_KEY], PageCategorizationConstants.DEFAULT_TEMPERATURE);
 
             var chatCompletionsOptions = new ChatCompletionsOptions()
             {
                 DeploymentName = deploymentName,
                 Messages =
                 {
-                    new ChatRequestSystemMessage(GetSystemPrompt(categoryIdentifiers)),
+                    new ChatRequestSystemMessage(systemPrompt),
                     new ChatRequestUserMessage(treeNodeData),
                 },
-                MaxTokens = MAX_TOKENS,
+                MaxTokens = PageCategorizationConstants.MAX_TOKENS,
                 Temperature = temperature,
             };
 
             return chatCompletionsOptions;
+        }
+
+
+        private string GetSystemPrompt(IEnumerable<int> categoryIdentifiers, Dictionary<string, string> localizedDisplayNames)
+        {
+            return PageCategorizationConstants.DEFAULT_SYSTEM_PROMPT + GetCategoryNames(categoryIdentifiers, localizedDisplayNames);
         }
 
 
@@ -143,13 +156,13 @@ namespace Kentico.Xperience.OpenAI.Azure
         }
 
 
-        private PageCategorizationResult ProcessResponse(Response<ChatCompletions> response, IEnumerable<int> categoryIdentifiers)
+        private PageCategorizationResult ProcessResponse(Response<ChatCompletions> response, IEnumerable<int> categoryIdentifiers, Dictionary<string, string> localizedDisplayNames)
         {
             string responseContent = response.Value.Choices[0].Message.Content;
 
-            var categoriesByName = GetCategories(categoryIdentifiers).ToLookup(category => GetLocalized(category.CategoryDisplayName), category => category.CategoryID);
+            var categoriesByName = GetCategories(categoryIdentifiers).ToLookup(category => localizedDisplayNames[category.CategoryDisplayName], category => category.CategoryID);
             var cattegoryNames = responseContent.TrimEnd('.')
-                .Split(delimiter[0])
+                .Split(PageCategorizationConstants.delimiter[0])
                 .Select(category => category.Trim())
                 .Distinct();
 
@@ -167,22 +180,15 @@ namespace Kentico.Xperience.OpenAI.Azure
         private IEnumerable<CategoryInfo> GetCategories(IEnumerable<int> categoryIdentifiers) => categoryIdentifiers.Select(categoryInfoProvider.Get);
 
 
-        private string GetCategoryNames(IEnumerable<int> categoryIdentifiers)
+        private string GetCategoryNames(IEnumerable<int> categoryIdentifiers, Dictionary<string, string> localizedDisplayNames)
         {
-            var categories = GetCategories(categoryIdentifiers).Select(category => GetLocalized(category.CategoryDisplayName, true));
-            return "Category names:" + string.Join(delimiter, categories);
-        }
-
-
-        private string GetLocalized(string categoryDisplayName, bool replace = false)
-        {
-            if (replace || !localizedNamesByDisplayNames.ContainsKey(categoryDisplayName))
+            var categories = GetCategories(categoryIdentifiers).Select(category =>
             {
-                string localizedName = localizationService.GetString(categoryDisplayName);
-                localizedNamesByDisplayNames[categoryDisplayName] = localizedName;
-            }
-
-            return localizedNamesByDisplayNames[categoryDisplayName];
+                var localizedName = localizationService.GetString(category.CategoryDisplayName);
+                localizedDisplayNames[category.CategoryDisplayName] = localizedName;
+                return localizedName;
+            });
+            return "Category names: " + string.Join(PageCategorizationConstants.delimiter, categories);
         }
     }
 }

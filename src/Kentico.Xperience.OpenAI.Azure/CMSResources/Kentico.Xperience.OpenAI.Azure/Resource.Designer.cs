@@ -123,27 +123,25 @@ namespace Kentico.Xperience.OpenAI.Azure.CMSResources.Kentico.Xperience.OpenAI.A
                 return ResourceManager.GetString("settingskey.xperienceazureopenai.apikey.description", resourceCulture);
             }
         }
-
+        
         /// <summary>
-        ///   Looks up a localized string similar to Azure OpenAI Deployment name.
+        ///   Looks up a localized string similar to Deployment name.
         /// </summary>
-        internal static string settingskey_xperienceazureopenai_deploymentname {
-            get
-            {
-                return ResourceManager.GetString("settingskey.xperienceazureopenai.deploymentname", resourceCulture);
+        internal static string settingskey_xperienceazureopenai_contentcategorizationdeploymentname {
+            get {
+                return ResourceManager.GetString("settingskey.xperienceazureopenai.contentcategorizationdeploymentname", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to The deployment name of your Azure OpenAI API resource. You can find the deployment name in the Azure Open AI Studio under the Management -&gt; Deployments tab..
         /// </summary>
-        internal static string settingskey_xperienceazureopenai_deploymentname_description {
-            get
-            {
-                return ResourceManager.GetString("settingskey.xperienceazureopenai.deploymentname.description", resourceCulture);
+        internal static string settingskey_xperienceazureopenai_contentcategorizationdeploymentname_description {
+            get {
+                return ResourceManager.GetString("settingskey.xperienceazureopenai.contentcategorizationdeploymentname.description", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Enable content categorization.
         /// </summary>
