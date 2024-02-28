@@ -11,7 +11,7 @@ namespace Kentico.Xperience.OpenAI.Azure
     internal class OpenAIClientFactory : IOpenAIClientFactory
     {
         /// <inheritdoc/>
-        public OpenAIClient GetOpenAIClient(string apiEndpoint, string apiKey)
+        public OpenAIClient GetOpenAIClient(string apiKey, string apiEndpoint)
         {
             if (string.IsNullOrEmpty(apiEndpoint) || string.IsNullOrEmpty(apiKey))
             {

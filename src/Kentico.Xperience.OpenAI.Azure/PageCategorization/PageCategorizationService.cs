@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 
 using Azure;
@@ -66,6 +67,7 @@ namespace Kentico.Xperience.OpenAI.Azure
             }
 
             var localizedNamesByDisplayNames = new Dictionary<string, string>();
+            categoryIdentifiers = categoryIdentifiers.Distinct();
             var systemPrompt = GetSystemPrompt(categoryIdentifiers, localizedNamesByDisplayNames);
 
             var client = CreateClient();
@@ -88,7 +90,7 @@ namespace Kentico.Xperience.OpenAI.Azure
             string apiEndpoint = settingsService[PageCategorizationConstants.API_ENDPOINT_KEY];
             string apiKey = EncryptionHelper.DecryptData(settingsService[PageCategorizationConstants.API_KEY_KEY]);
 
-            return openAIClientFactory.GetOpenAIClient(apiEndpoint, apiKey);
+            return openAIClientFactory.GetOpenAIClient(apiKey, apiEndpoint);
         }
 
 
@@ -104,8 +106,9 @@ namespace Kentico.Xperience.OpenAI.Azure
             }
 
             string textRepresentation = string.Join($"{PageCategorizationConstants.delimiter}\n", fields);
+            string cultureName = CultureInfo.GetCultureInfo(treeNode.DocumentCulture).EnglishName;
 
-            return $"The data will be in the {treeNode.DocumentCulture} culture. Categorize the following data:\n {textRepresentation}";
+            return $"The data will be in the {cultureName} language. Categorize the following data:\n {textRepresentation}";
         }
 
 
