@@ -138,6 +138,12 @@
   <data name="settingskey.xperienceazureopenai.apikey.description" xml:space="preserve">
     <value>A valid key of the Microsoft Azure OpenAI API resource specified by the endpoint setting. You can manage API keys in the Microsoft Azure portal when viewing your Azure OpenAI resource.</value>
   </data>
+  <data name="settingskey.xperienceazureopenai.contentcategorizationdeploymentname" xml:space="preserve">
+    <value>Deployment name</value>
+  </data>
+  <data name="settingskey.xperienceazureopenai.contentcategorizationdeploymentname.description" xml:space="preserve">
+    <value>The deployment name of your Azure OpenAI API resource. You can find the deployment name in the Azure Open AI Studio under the Management -&gt; Deployments tab.</value>
+  </data>
   <data name="settingskey.xperienceazureopenai.enablecontentcategorization" xml:space="preserve">
     <value>Enable content categorization</value>
   </data>

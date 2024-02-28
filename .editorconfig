@@ -2,6 +2,10 @@
 
 root = true
 
+# Ignore paths
+[/CMS/*]
+generated_code = true
+
 [*.cs]
 end_of_line                                                               = crlf
 indent_size                                                               = 4

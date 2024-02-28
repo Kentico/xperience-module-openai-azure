@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.settingskey>
+  <KeyCategoryID>
+    <CodeName>Kentico.Xperience.AzureOpenAI.ContentCategorization</CodeName>
+    <ObjectType>cms.settingscategory</ObjectType>
+  </KeyCategoryID>
+  <KeyDescription>
+    <![CDATA[{$settingskey.xperienceazureopenai.contentcategorizationdeploymentname.description$}]]>
+  </KeyDescription>
+  <KeyDisplayName>{$settingskey.xperienceazureopenai.contentcategorizationdeploymentname$}</KeyDisplayName>
+  <KeyExplanationText />
+  <KeyGUID>fb1c4ea3-09e0-4b1f-8a31-445b75cd8320</KeyGUID>
+  <KeyIsGlobal>False</KeyIsGlobal>
+  <KeyIsHidden>False</KeyIsHidden>
+  <KeyName>
+    <![CDATA[KenticoXperienceAzureOpenAIContentCategorizationDeploymentName]]>
+  </KeyName>
+  <KeyOrder>2</KeyOrder>
+  <KeyType>string</KeyType>
+</cms.settingskey>
