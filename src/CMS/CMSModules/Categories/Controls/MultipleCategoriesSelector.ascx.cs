@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 
 using CMS.Base;
 using CMS.Base.Web.UI;
@@ -25,6 +26,7 @@ public partial class CMSModules_Categories_Controls_MultipleCategoriesSelector :
     private bool isSaved;
     private bool mDisplaySavedMessage = true;
     private string mCurrentValues = "";
+    private int[] mAllowedCategoryIDs;
 
     #endregion
 
@@ -172,6 +174,26 @@ public partial class CMSModules_Categories_Controls_MultipleCategoriesSelector :
         }
     }
 
+
+    /// <summary>
+    /// A collection of allowed category IDs for the current page.
+    /// </summary>
+    private int[] AllowedCategoryIDs
+    {
+        get
+        {
+            if (mAllowedCategoryIDs == null && Node != null)
+            {
+                var pageTypeInfo = DataClassInfoProvider.GetDataClassInfo(Node.NodeClassName);
+                mAllowedCategoryIDs = new PageTypeCategoriesRetriever().Get(Node.NodeSiteID, pageTypeInfo.ClassID)
+                    .Select(c => c.CategoryID)
+                    .ToArray();
+            }
+
+            return mAllowedCategoryIDs;
+        }
+    }
+
     #endregion
 
 
@@ -211,6 +233,7 @@ public partial class CMSModules_Categories_Controls_MultipleCategoriesSelector :
 
             selectCategory.SetValue("CurrentDocumentID", Node.DocumentID);
             selectCategory.SetValue("ShowAutoSelect", isContentCategorizationEnabled);
+            selectCategory.SetValue("AllowedCategoryIDs", string.Join(";", AllowedCategoryIDs));
 
             if (!RequestHelper.IsPostBack())
             {
@@ -384,8 +407,8 @@ public partial class CMSModules_Categories_Controls_MultipleCategoriesSelector :
             {
                 int categoryId = ValidationHelper.GetInteger(item, 0);
 
-                // Make sure, that category still exists
-                if (CategoryInfo.Provider.Get(categoryId) != null)
+                // Make sure, that category still exists and is allowed for the page type of the current page
+                if (CategoryInfo.Provider.Get(categoryId) != null && AllowedCategoryIDs.Contains(categoryId))
                 {
                     DocumentCategoryInfo.Provider.Add(Node.DocumentID, categoryId);
                 }
