@@ -5,14 +5,17 @@ This custom module allows Xperience users to [automatically select](https://docs
 
 ## Installation
 
-1. Install the TODO: [nuget name](https://) NuGet package in the administration project.
-2. Log into your [Azure Portal](https://portal.azure.com/).
+1. Install the [Kentico.Xperience.OpenAI.Azure](https://www.nuget.org/packages/Kentico.Xperience.OpenAI.Azure) NuGet package in the administration project.
+2. Log into your [Azure portal](https://portal.azure.com/).
 3. Create and configure an [Azure OpenAI resource](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/create-resource?pivots=web-portal).
-4. Within the resource, navigate to **Resource Management -> Keys and Endpoints**.
-5. Make a note of the **KEY 1** or **KEY 2** (both keys will work) and the **Endpoint** URL.
-6. In Xperience, go to **Settings -> Content -> Azure OpenAI**.
-7. Fill out the settings with the values from your Azure OpenAI resource.
-8. Enable the feature for your editors by selecting the **Enable content categorization** option.
+4. [Deploy a model](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/create-resource?pivots=web-portal#deploy-a-model)
+5. In Xperience, go to **Settings -> Content -> Azure OpenAI** and configure the settings:
+    - General:
+        - **Azure OpenAI API endpoint:** – value of the **Endpoint** field from **Resource Management -> Keys and Endpoints** of your Azure OpenAI resource in Azure portal.
+        - **Azure OpenAI API endpoint:** – value of either the **KEY 1** or **KEY 2** fields (both keys will work) from **Resource Management -> Keys and Endpoints** of your Azure OpenAI resource in Azure portal.
+    - Content categorization:
+        - Select the **Enable content categorization** option.
+        - **Deployment name** – the **Deployment name** you chose when deploying the model. Can be also found in **Azure OpenAI Studio -> Management -> Deployments**.
 
 ## Automatic selection of categories
 
