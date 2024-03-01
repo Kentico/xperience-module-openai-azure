@@ -1,50 +1,28 @@
-# Kentico Xperience Azure OpenAI integration module
+# Xperience Azure OpenAI integration
 
+This custom module allows Xperience users to [automatically select](https://docs.kentico.com/x/IgqRBg) the best fitting categories for a page based on its content using [Azure OpenAI](https://azure.microsoft.com/en-us/products/ai-services/openai-service).
 
-## Description
-
----Please put here some general information about your Intergration / App / Solution.---
-
-## Requirements and prerequisites
-* *Kentico Xperience 13.* installed.
-* URL and credentials to your Azure OpenAI portal.
 
 ## Installation
-1. Open the solution with your administration project (*~/WebApp.sln*).
-1. Navigate to the *NuGet Package Manager Console*.
-1. Run *Install-Package Kentico.Xperience.OpenAI.Azure.KX13 -Version 1.0.*
-1. Build the *CMSApp* project.
-1. Run the Xperience administration to finish the module installation.
 
-  
-## Development environment setup
-1. Download/clone this repository
-1. Copy `/src/CMS/ConnectionStrings.template.config` file to `/src/CMS/ConnectionStrings.config`
-1. Add directory junction of _src/Kentico.Xperience.OpenAI.Azure/CMSResources/Kentico.Xperience.OpenAI.Azure_ into _src/CMS/CMSResources_ using Command Prompt (not Powershell)\
-`mklink /J .\src\CMS\CMSResources\Kentico.Xperience.OpenAI.Azure .\src\Kentico.Xperience.OpenAI.Azure\CMSResources\Kentico.Xperience.OpenAI.Azure`
-1. Open `/src/WebApp.sln`
-1. Start the *CMSApp* project in IIS Express
-1. Optionally: If you receive an exception _Could not find a part of the path ... bin\roslyn\csc.exe_ in the new step, open the Package Manager Console (Menu -> View -> Other Windows) and run \
-   `Update-Package Microsoft.CodeDom.Providers.DotNetCompilerPlatform -r`
-1. Create a database via a web wizard
-1. Stop IIS Express process
-1. Restore database data via `/src/CMS/bin/ContinuousIntegration.exe -r`
-1. Start the *CMSApp* project in IIS Express
-1. Go to _Sites_ application
-1. Start the DancingGoatCore site
-1. Browser: Clear cookies
-1. Restart IIS Express process (possibly not necessary)
+1. Install the TODO: [nuget name](https://) NuGet package in the administration project.
+2. Log into your [Azure Portal](https://portal.azure.com/).
+3. Create and configure an [Azure OpenAI resource](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/create-resource?pivots=web-portal).
+4. Within the resource, navigate to **Resource Management -> Keys and Endpoints**.
+5. Make a note of the **KEY 1** or **KEY 2** (both keys will work) and the **Endpoint** URL.
+6. In Xperience, go to **Settings -> Content -> Azure OpenAI**.
+7. Fill out the settings with the values from your Azure OpenAI resource.
+8. Enable the feature for your editors by selecting the **Enable content categorization** option.
 
-## Quick Start
+## Automatic selection of categories
 
----This section shows how to quickly get started with the library. The minimum number of steps (without all the details) should be listed
-to give a developer a general idea of what is involved---
+After you [set up](#installation) the integration, next time you will be assigning a page into categories you can simply click the **Auto-Select** button and the best fitting categories based on the page's content will be automatically selected.
 
-## Full Instructions
+![Auto-select categories](images/auto_select.png)
 
----Add the full instructions, guidance, and tips to the Usage-Guide.md file---
-
-View the [Usage Guide](./docs/Usage-Guide.md) for more detailed instructions.
+**Important notes:**
+- The automatic selection overwrites your previously selected categories.
+- The page you are assigning into categories must have at least some data stored in fields with **Text** or **LongText** data types. That is, the automatic selection doesn't work for pages that are built entirely via Page builder.
 
 ## Contributing
 
