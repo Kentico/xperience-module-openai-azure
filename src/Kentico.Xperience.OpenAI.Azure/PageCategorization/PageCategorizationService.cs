@@ -105,7 +105,7 @@ namespace Kentico.Xperience.OpenAI.Azure
                 return string.Empty;
             }
 
-            string textRepresentation = string.Join($"{PageCategorizationConstants.delimiter}\n", fields);
+            string textRepresentation = string.Join($"{PageCategorizationConstants.DELIMITER}\n", fields);
             string cultureName = CultureInfo.GetCultureInfo(treeNode.DocumentCulture).EnglishName;
 
             return $"The data will be in the {cultureName} language. Categorize the following data:\n {textRepresentation}";
@@ -145,7 +145,7 @@ namespace Kentico.Xperience.OpenAI.Azure
         }
 
 
-        private IEnumerable<(string name, string value)> GetFields(TreeNode treeNode)
+        internal virtual IEnumerable<(string name, string value)> GetFields(TreeNode treeNode)
         {
             string treeNodeClassName = treeNode.ClassName;
 
@@ -165,7 +165,7 @@ namespace Kentico.Xperience.OpenAI.Azure
 
             var categoriesByName = GetCategories(categoryIdentifiers).ToLookup(category => localizedDisplayNames[category.CategoryDisplayName], category => category.CategoryID);
             var cattegoryNames = responseContent.TrimEnd('.')
-                .Split(PageCategorizationConstants.delimiter[0])
+                .Split(PageCategorizationConstants.DELIMITER[0])
                 .Select(category => category.Trim())
                 .Distinct();
 
@@ -191,7 +191,7 @@ namespace Kentico.Xperience.OpenAI.Azure
                 localizedDisplayNames[category.CategoryDisplayName] = localizedName;
                 return localizedName;
             });
-            return "Category names: " + string.Join(PageCategorizationConstants.delimiter, categories);
+            return "Category names: " + string.Join(PageCategorizationConstants.DELIMITER, categories);
         }
     }
 }
