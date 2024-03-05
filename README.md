@@ -6,9 +6,9 @@ This custom module allows Xperience users to [automatically select](https://docs
 ## Installation
 
 1. Install the [Kentico.Xperience.OpenAI.Azure](https://www.nuget.org/packages/Kentico.Xperience.OpenAI.Azure) NuGet package in the administration project.
-2. Log into your [Azure portal](https://portal.azure.com/).
+2. Sign in to your [Azure portal](https://portal.azure.com/).
 3. Create and configure an [Azure OpenAI resource](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/create-resource?pivots=web-portal).
-4. [Deploy a model](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/create-resource?pivots=web-portal#deploy-a-model)
+4. [Deploy a model](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/create-resource?pivots=web-portal#deploy-a-model).
 5. In Xperience, go to **Settings -> Content -> Azure OpenAI** and configure the settings:
     - General:
         - **Azure OpenAI API endpoint:** – value of the **Endpoint** field from **Resource Management -> Keys and Endpoints** of your Azure OpenAI resource in Azure portal.
@@ -17,15 +17,17 @@ This custom module allows Xperience users to [automatically select](https://docs
         - Select the **Enable content categorization** option.
         - **Deployment name** – the **Deployment name** you chose when deploying the model. Can be also found in **Azure OpenAI Studio -> Management -> Deployments**.
 
+    ![Azure OpenAI settings](images/azure_openai_settings.png)
+
 ## Automatic selection of categories
 
-After you [set up](#installation) the integration, next time you will be assigning a page into categories you can simply click the **Auto-Select** button and the best fitting categories based on the page's content will be automatically selected.
-
-![Auto-select categories](images/auto_select.png)
+After you [set up](#installation) the integration, next time you assign a page into categories you can simply click the **Auto-Select** button and the best fitting categories based on the page's content get automatically selected.
 
 **Important notes:**
-- The automatic selection overwrites your previously selected categories.
+- When you already have some categories selected, the automatic selection may not contain the originally selected ones. If this happens, you can manually add the desired categories on top of the automatic selection.
 - The page you are assigning into categories must have at least some data stored in fields with **Text** or **LongText** data types. That is, the automatic selection doesn't work for pages that are built entirely via Page builder.
+
+![Auto-select categories](images/auto_select.png)
 
 ## Contributing
 
