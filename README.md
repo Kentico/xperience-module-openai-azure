@@ -29,11 +29,30 @@ After you [set up](#installation) the integration, next time you assign a page i
 
 ![Auto-select categories](images/auto_select.png)
 
+## Development environment setup
+
+1. Download/clone this repository.
+2. Copy the `/src/CMS/ConnectionStrings.template.config` file to `/src/CMS/ConnectionStrings.config`.
+3. Add a directory junction of *src/Kentico.Xperience.OpenAI.Azure/CMSResources/Kentico.Xperience.OpenAI.Azure* into *src/CMS/CMSResources* using Command Prompt (not PowerShell):
+
+    `mklink /J .\src\CMS\CMSResources\Kentico.Xperience.OpenAI.Azure .\src\Kentico.Xperience.OpenAI.Azure\CMSResources\Kentico.Xperience.OpenAI.Azure`
+4. Open `/src/WebApp.sln`.
+5. Start the *CMSApp* project in IIS Express.
+    - If you receive a *Could not find a part of the path ... bin\roslyn\csc.exe* exception, open the Package Manager Console (Menu -> View -> Other Windows) and run:
+
+        `Update-Package Microsoft.CodeDom.Providers.DotNetCompilerPlatform -r`
+6. Create a database via a web wizard.
+7. Stop the IIS Express process.
+8. Restore database data via `/src/CMS/bin/ContinuousIntegration.exe -r`.
+9. Start the *CMSApp* project in IIS Express.
+10. Go to the *Sites* application.
+11. Start the DancingGoatCore site.
+12. Clear cookies in your browser.
+13. Optional – restart the IIS Express process.
+
 ## Contributing
 
 To see the guidelines for Contributing to Kentico open source software, please see [Kentico's `CONTRIBUTING.md`](https://github.com/Kentico/.github/blob/main/CONTRIBUTING.md) for more information and follow the [Kentico's `CODE_OF_CONDUCT`](https://github.com/Kentico/.github/blob/main/CODE_OF_CONDUCT.md).
-
-Instructions and technical details for contributing to **this** project can be found in [Contributing Setup](./docs/Contributing-Setup.md).
 
 ## License
 
