@@ -21,24 +21,28 @@ This custom module allows Xperience users to [automatically select](https://docs
 
 ## Automatic selection of categories
 
-After you [set up](#installation) the integration, next time you assign a page into categories you can simply click the **Auto-Select** button and the best fitting categories based on the page's content get automatically selected.
+After you [set up](#installation) the integration, the next time you assign a page into categories you can simply click the **Auto-Select** button and the best fitting categories based on the page's content get automatically selected.
 
 **Important notes:**
-- When you already have some categories selected, the automatic selection may not contain the originally selected ones. If this happens, you can manually add the desired categories on top of the automatic selection.
+- The automatic selection disregards all preexisting category assignments. Consequently, using the **Auto-Select** on manually categorized pages may suggest a different set of categories for the page. You can always add any desired categories manually on top of the automatic selection.
 - The page you are assigning into categories must have at least some data stored in fields with **Text** or **LongText** data types. That is, the automatic selection doesn't work for pages that are built entirely via Page builder.
 
 ![Auto-select categories](images/auto_select.png)
+
+## Contributing
+
+To see the guidelines for Contributing to Kentico open source software, please see [Kentico's `CONTRIBUTING.md`](https://github.com/Kentico/.github/blob/main/CONTRIBUTING.md) for more information and follow the [Kentico's `CODE_OF_CONDUCT`](https://github.com/Kentico/.github/blob/main/CODE_OF_CONDUCT.md).
 
 ## Development environment setup
 
 1. Download/clone this repository.
 2. Copy the `/src/CMS/ConnectionStrings.template.config` file to `/src/CMS/ConnectionStrings.config`.
-3. Add a directory junction of *src/Kentico.Xperience.OpenAI.Azure/CMSResources/Kentico.Xperience.OpenAI.Azure* into *src/CMS/CMSResources* using Command Prompt (not PowerShell):
+3. Add a directory junction of *src/Kentico.Xperience.OpenAI.Azure/CMSResources/Kentico.Xperience.OpenAI.Azure* into *src/CMS/CMSResources* using Command Prompt **(not PowerShell)**:
 
     `mklink /J .\src\CMS\CMSResources\Kentico.Xperience.OpenAI.Azure .\src\Kentico.Xperience.OpenAI.Azure\CMSResources\Kentico.Xperience.OpenAI.Azure`
 4. Open `/src/WebApp.sln`.
 5. Start the *CMSApp* project in IIS Express.
-    - If you receive a *Could not find a part of the path ... bin\roslyn\csc.exe* exception, open the Package Manager Console (Menu -> View -> Other Windows) and run:
+    - If you encounter a *Could not find a part of the path ... bin\roslyn\csc.exe* exception, open the Package Manager Console (Menu -> View -> Other Windows) and run:
 
         `Update-Package Microsoft.CodeDom.Providers.DotNetCompilerPlatform -r`
 6. Create a database via a web wizard.
@@ -49,10 +53,6 @@ After you [set up](#installation) the integration, next time you assign a page i
 11. Start the DancingGoatCore site.
 12. Clear cookies in your browser.
 13. Optional – restart the IIS Express process.
-
-## Contributing
-
-To see the guidelines for Contributing to Kentico open source software, please see [Kentico's `CONTRIBUTING.md`](https://github.com/Kentico/.github/blob/main/CONTRIBUTING.md) for more information and follow the [Kentico's `CODE_OF_CONDUCT`](https://github.com/Kentico/.github/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 
