@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <cms.uielement>
   <ElementAccessCondition>
-    <![CDATA[{%Rule("(CurrentUser.IsAuthorizedPerResource(\"CMS.Ecommerce\",\"EcommerceRead\"))", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"Permission\" ><p n=\"module\"><t>CMS.Ecommerce</t><v>CMS.Ecommerce</v><r>0</r><d>select module</d><vt>text</vt><tv>1</tv></p><p n=\"permission\"><t>EcommerceRead</t><v>EcommerceRead</v><r>0</r><d>select permission</d><vt>text</vt><tv>1</tv></p></r></rules>")|(identity)GlobalAdministrator|(hash)69fac136c88cffdeb7f291a5021c88665d8411e5644591cbb112de48584815aa%}]]>
+    <![CDATA[{%Rule("(CurrentUser.IsAuthorizedPerResource(\"CMS.Ecommerce\",\"EcommerceRead\"))", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"Permission\" ><p n=\"module\"><t>CMS.Ecommerce</t><v>CMS.Ecommerce</v><r>0</r><d>select module</d><vt>text</vt><tv>1</tv></p><p n=\"permission\"><t>EcommerceRead</t><v>EcommerceRead</v><r>0</r><d>select permission</d><vt>text</vt><tv>1</tv></p></r></rules>")|(identity)GlobalAdministrator|(hash)55fa9dbd2f56f7e27bd44d473d9f0c7cc5139046c519f752b342cc302df1d0fd%}]]>
   </ElementAccessCondition>
   <ElementCaption>{$com.collections$}</ElementCaption>
   <ElementCheckModuleReadPermission>False</ElementCheckModuleReadPermission>
@@ -42,7 +42,7 @@
       <OpenInDialog>False</OpenInDialog>
       <OrderBy>CollectionDisplayName</OrderBy>
       <WhereCondition>
-        <![CDATA[CollectionSiteID = {%SiteContext.CurrentSiteID|(identity)GlobalAdministrator|(hash)4f7433321168d6844abe167688753cc5e119d5e7469d91b476cefcdabafa0e65%}]]>
+        <![CDATA[CollectionSiteID = {%SiteContext.CurrentSiteID|(identity)GlobalAdministrator|(hash)ad4873899b4b2420d87bf957303580c9e9f98bcc27ae71a47ebdf420dfc82cbc%}]]>
       </WhereCondition>
       <ZeroRowsText ismacro="True">{$com.collections.none$}</ZeroRowsText>
     </Data>

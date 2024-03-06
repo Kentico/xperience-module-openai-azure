@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.pageurlpath>
+  <PageUrlPathCulture>en-US</PageUrlPathCulture>
+  <PageUrlPathGUID>78021038-ae9c-486e-9afc-a605eaf1b6bc</PageUrlPathGUID>
+  <PageUrlPathNodeID>
+    <CodeName>/Manufacturers/Hario/Hario-V60</CodeName>
+    <GUID>5cd926c5-74bf-4181-b1c8-703f3cd95c2b</GUID>
+    <ObjectType>cms.node</ObjectType>
+    <Site>
+      <CodeName>DancingGoatCore</CodeName>
+      <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
+      <ObjectType>cms.site</ObjectType>
+    </Site>
+  </PageUrlPathNodeID>
+  <PageUrlPathSiteID>
+    <CodeName>DancingGoatCore</CodeName>
+    <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
+    <ObjectType>cms.site</ObjectType>
+  </PageUrlPathSiteID>
+  <PageUrlPathUrlPath>Manufacturers/Hario/Hario-V60</PageUrlPathUrlPath>
+  <PageUrlPathUrlPathHash>
+    <![CDATA[2B82FD4B53DA0285CC1597DEB396DCEFCD37F4E2BC65447D4434680A0DBA2814]]>
+  </PageUrlPathUrlPathHash>
+</cms.pageurlpath>

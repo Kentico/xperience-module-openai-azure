@@ -103,7 +103,7 @@
         </settings>
         <rules>
           <rule errormsg="{$sm.facebook.accounts.msg.pageidnotnumericstring$}">
-            <![CDATA[{%Rule("(Value.Matches(\"^\\\\d+$\"))", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"RegExp\" ><p n=\"regexp\"><t>^\\d+$</t><v>^\\d+$</v><r>0</r><d></d><vt>text</vt><tv>0</tv></p></r></rules>")|(identity)GlobalAdministrator|(hash)cc82b3dd1ff03de6999d6a616406fd9353d1bf03c02f42c5daee2c810a23b252%}]]>
+            <![CDATA[{%Rule("(Value.Matches(\"^\\\\d+$\"))", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"RegExp\" ><p n=\"regexp\"><t>^\\d+$</t><v>^\\d+$</v><r>0</r><d></d><vt>text</vt><tv>0</tv></p></r></rules>")|(identity)GlobalAdministrator|(hash)c1a4449559d42c0ef7ce60acc878b1c5b64ba48c7ae2114ab8cc9aa43897befe%}]]>
           </rule>
         </rules>
       </field>

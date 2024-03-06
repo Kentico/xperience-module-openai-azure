@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <cms.uielement>
   <ElementAccessCondition>
-    <![CDATA[{%(EditedObjectParent.DiscountSiteID == SiteContext.CurrentSiteID) && ( EditedObjectParent.DiscountApplyTo == "Order")|(identity)GlobalAdministrator|(hash)fb6eddacc970c746a04efd0b097862ca4824ed1f1d5e80b4520dbb506dc27d01%}]]>
+    <![CDATA[{%(EditedObjectParent.DiscountSiteID == SiteContext.CurrentSiteID) && ( EditedObjectParent.DiscountApplyTo == "Order")|(identity)GlobalAdministrator|(hash)69e84bddf7d07ee5be0740266e6033aeb2d4e6fb03ca67aa38d0043f80229326%}]]>
   </ElementAccessCondition>
   <ElementCaption>{$com.couponcode.new$}</ElementCaption>
   <ElementCheckModuleReadPermission>False</ElementCheckModuleReadPermission>
@@ -48,6 +48,6 @@
   <ElementSize>0</ElementSize>
   <ElementType>PageTemplate</ElementType>
   <ElementVisibilityCondition>
-    <![CDATA[{%ToBool(EditedObjectParent.ToBaseInfo().GetValue("DiscountUsesCoupons"), false) && (CurrentUser.IsAuthorizedPerResource("CMS.Ecommerce", "ModifyDiscounts") || CurrentUser.IsAuthorizedPerResource("CMS.Ecommerce", "EcommerceModify"))|(identity)GlobalAdministrator|(hash)0efe9ccec28d6d3daf00a446777965f026db6fc57ee67935971c1f43b0122b88%}]]>
+    <![CDATA[{%ToBool(EditedObjectParent.ToBaseInfo().GetValue("DiscountUsesCoupons"), false) && (CurrentUser.IsAuthorizedPerResource("CMS.Ecommerce", "ModifyDiscounts") || CurrentUser.IsAuthorizedPerResource("CMS.Ecommerce", "EcommerceModify"))|(identity)GlobalAdministrator|(hash)cdfe77ef78bf25c061b05482f915d06b41e1b48873a1e17fa54205ce1fda14e7%}]]>
   </ElementVisibilityCondition>
 </cms.uielement>

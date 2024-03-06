@@ -9,7 +9,7 @@
     <ObjectType>newsletter.newsletter</ObjectType>
     <Site>
       <CodeName>DancingGoatCore</CodeName>
-      <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+      <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
       <ObjectType>cms.site</ObjectType>
     </Site>
   </IssueNewsletterID>
@@ -17,7 +17,7 @@
   <IssueSenderName>Dancing Goat Core</IssueSenderName>
   <IssueSiteID>
     <CodeName>DancingGoatCore</CodeName>
-    <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+    <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
     <ObjectType>cms.site</ObjectType>
   </IssueSiteID>
   <IssueSubject>Get a free Colombia coffee sample today</IssueSubject>
@@ -27,7 +27,7 @@
     <ObjectType>newsletter.emailtemplate</ObjectType>
     <Site>
       <CodeName>DancingGoatCore</CodeName>
-      <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+      <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
       <ObjectType>cms.site</ObjectType>
     </Site>
   </IssueTemplateID>
@@ -60,7 +60,7 @@
                 <Property>
                   <Name>ImageUrl</Name>
                   <Value>
-                    <![CDATA[~/getmedia/25808ee1-16c5-4397-b5a5-f1af8ee21e18/colombia-coffee-promotion.jpg?width=500&height=266&ext=.jpg]]>
+                    <![CDATA[~/getmedia/25808ee1-16c5-4397-b5a5-f1af8ee21e18/colombia-coffee-promotion.jpg?width=500&height=266&mediaprotectionhash=77464302ec585eed4c5cecda1ef3a40c3335c76dfc629d4109efa2a1644662c4&ext=.jpg]]>
                   </Value>
                 </Property>
                 <Property>

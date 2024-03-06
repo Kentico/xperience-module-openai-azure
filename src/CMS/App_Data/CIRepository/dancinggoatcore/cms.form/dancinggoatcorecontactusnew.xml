@@ -42,7 +42,7 @@
   </FormBuilderLayout>
   <FormClassID>
     <CodeName>bizform.DancingGoatCoreContactUsNew</CodeName>
-    <GUID>38db129d-6e52-428c-b830-2df78c2a690b</GUID>
+    <GUID>938dbda6-49a2-4370-806a-e40fc6210aa1</GUID>
     <ObjectType>cms.formclass</ObjectType>
   </FormClassID>
   <FormClearAfterSave>False</FormClearAfterSave>
@@ -57,7 +57,7 @@
   <FormName>DancingGoatCoreContactUsNew</FormName>
   <FormSiteID>
     <CodeName>DancingGoatCore</CodeName>
-    <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+    <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
     <ObjectType>cms.site</ObjectType>
   </FormSiteID>
   <FormSubmitButtonText />

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.category>
+  <CategoryAllowAllTypes>False</CategoryAllowAllTypes>
+  <CategoryDisplayName>Coffee Brewing and Techniques</CategoryDisplayName>
+  <CategoryEnabled>True</CategoryEnabled>
+  <CategoryGUID>f302dbc3-4c96-4eaa-beb5-eec5b7e448ea</CategoryGUID>
+  <CategoryName>CoffeeBrewingAndTechniques</CategoryName>
+  <CategoryOrder>1</CategoryOrder>
+  <CategoryParentID>
+    <CodeName>ArticleTopics</CodeName>
+    <GUID>304bb8db-76f1-4a24-a91d-45d1fcbd4381</GUID>
+    <ObjectType>cms.category</ObjectType>
+    <Site>
+      <CodeName>DancingGoatCore</CodeName>
+      <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
+      <ObjectType>cms.site</ObjectType>
+    </Site>
+  </CategoryParentID>
+  <CategorySiteID>
+    <CodeName>DancingGoatCore</CodeName>
+    <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
+    <ObjectType>cms.site</ObjectType>
+  </CategorySiteID>
+</cms.category>

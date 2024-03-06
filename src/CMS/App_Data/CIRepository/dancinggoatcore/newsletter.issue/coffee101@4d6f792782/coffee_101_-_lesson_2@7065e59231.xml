@@ -9,7 +9,7 @@
     <ObjectType>newsletter.newsletter</ObjectType>
     <Site>
       <CodeName>DancingGoatCore</CodeName>
-      <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+      <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
       <ObjectType>cms.site</ObjectType>
     </Site>
   </IssueNewsletterID>
@@ -17,7 +17,7 @@
   <IssueSenderName>Dancing Goat Core</IssueSenderName>
   <IssueSiteID>
     <CodeName>DancingGoatCore</CodeName>
-    <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+    <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
     <ObjectType>cms.site</ObjectType>
   </IssueSiteID>
   <IssueSubject>Coffee 101 - Lesson 2</IssueSubject>
@@ -27,7 +27,7 @@
     <ObjectType>newsletter.emailtemplate</ObjectType>
     <Site>
       <CodeName>DancingGoatCore</CodeName>
-      <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+      <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
       <ObjectType>cms.site</ObjectType>
     </Site>
   </IssueTemplateID>
@@ -68,7 +68,7 @@
                 <Property>
                   <Name>ImageUrl</Name>
                   <Value>
-                    <![CDATA[~/getmedia/2aeaedab-8745-433b-9fd9-82ecdf5c58f1/coffee-101-lesson-2.jpg?width=500&height=332&ext=.jpg]]>
+                    <![CDATA[~/getmedia/2aeaedab-8745-433b-9fd9-82ecdf5c58f1/coffee-101-lesson-2.jpg?width=500&height=332&mediaprotectionhash=e5ceabd6550760e788669df03bfa380b6a4e262173af78b120b33c4d6bcac2d1&ext=.jpg]]>
                   </Value>
                 </Property>
                 <Property>

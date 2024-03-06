@@ -15,6 +15,11 @@
           <controlname>labelcontrol</controlname>
         </settings>
       </field>
+      <field column="TaskDataIsJson" columntype="boolean" guid="9c8c8dd3-1e9a-4e1e-ba00-a7d6eb7ac4d6" system="true">
+        <properties>
+          <defaultvalue>False</defaultvalue>
+        </properties>
+      </field>
       <field column="TaskType" columnsize="100" columntype="text" guid="8f272cff-24c4-48d6-8199-d96f0b3a4c49" system="true" visible="true">
         <properties>
           <fieldcaption>TaskType</fieldcaption>

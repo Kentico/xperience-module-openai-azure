@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.category>
+  <CategoryAllowAllTypes>False</CategoryAllowAllTypes>
+  <CategoryDisplayName>Coffee Varieties and Processing</CategoryDisplayName>
+  <CategoryEnabled>True</CategoryEnabled>
+  <CategoryGUID>ec83263e-76ec-4f5d-84e7-3231021241e9</CategoryGUID>
+  <CategoryName>CoffeeVarietiesAndProcessing</CategoryName>
+  <CategoryOrder>2</CategoryOrder>
+  <CategoryParentID>
+    <CodeName>ArticleTopics</CodeName>
+    <GUID>304bb8db-76f1-4a24-a91d-45d1fcbd4381</GUID>
+    <ObjectType>cms.category</ObjectType>
+    <Site>
+      <CodeName>DancingGoatCore</CodeName>
+      <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
+      <ObjectType>cms.site</ObjectType>
+    </Site>
+  </CategoryParentID>
+  <CategorySiteID>
+    <CodeName>DancingGoatCore</CodeName>
+    <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
+    <ObjectType>cms.site</ObjectType>
+  </CategorySiteID>
+</cms.category>

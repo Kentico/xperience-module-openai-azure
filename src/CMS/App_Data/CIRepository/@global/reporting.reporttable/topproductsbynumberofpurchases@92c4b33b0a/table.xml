@@ -8,9 +8,9 @@
 <![CDATA[
 /* Variable determines whether global products should be displayed. */
 DECLARE @GlobalProducts bit;
-SET @GlobalProducts = {%Settings.CMSStoreAllowGlobalProducts?1:0|(identity)GlobalAdministrator|(hash)acdc6433036afb4d900e92430635e90b3650f75ab35ace9f4b5c7aade8a2babd%};
+SET @GlobalProducts = {%Settings.CMSStoreAllowGlobalProducts?1:0|(identity)GlobalAdministrator|(hash)28d18f81b945675cdbd63845470ad5583f5c74678c3a0a3d0c984c8d038d61ca%};
 DECLARE @GlobalOptions bit;
-SET @GlobalOptions = {%Settings.CMSStoreAllowGlobalProductOptions?1:0|(identity)GlobalAdministrator|(hash)7c3e1ee1f8b51eb7dfbf79e8342a79a0866e01aea0c7b9e5b3777153cb570f7b%};
+SET @GlobalOptions = {%Settings.CMSStoreAllowGlobalProductOptions?1:0|(identity)GlobalAdministrator|(hash)ed2d4f248eef0a29e9dfe6a4d70c06f9af294e2cbd64f79d87edfffddbf10cbe%};
                             
 /* Selects the product meeting the conditions from the filter and 
    the number of orders in which it occures */

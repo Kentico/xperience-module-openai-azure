@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.category>
+  <CategoryAllowAllTypes>False</CategoryAllowAllTypes>
+  <CategoryDisplayName>Article topics</CategoryDisplayName>
+  <CategoryEnabled>True</CategoryEnabled>
+  <CategoryGUID>304bb8db-76f1-4a24-a91d-45d1fcbd4381</CategoryGUID>
+  <CategoryName>ArticleTopics</CategoryName>
+  <CategoryOrder>1</CategoryOrder>
+  <CategorySiteID>
+    <CodeName>DancingGoatCore</CodeName>
+    <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
+    <ObjectType>cms.site</ObjectType>
+  </CategorySiteID>
+</cms.category>

@@ -6,7 +6,7 @@
     <ObjectType>ecommerce.department</ObjectType>
     <Site>
       <CodeName>DancingGoatCore</CodeName>
-      <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+      <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
       <ObjectType>cms.site</ObjectType>
     </Site>
   </SKUDepartmentID>
@@ -33,7 +33,7 @@ Gakuyuni AA is made by a small business where they grow a hybrid variety of the 
     <ObjectType>ecommerce.publicstatus</ObjectType>
     <Site>
       <CodeName>DancingGoatCore</CodeName>
-      <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+      <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
       <ObjectType>cms.site</ObjectType>
     </Site>
   </SKUPublicStatusID>
@@ -43,7 +43,7 @@ Gakuyuni AA is made by a small business where they grow a hybrid variety of the 
   </SKUShortDescription>
   <SKUSiteID>
     <CodeName>DancingGoatCore</CodeName>
-    <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+    <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
     <ObjectType>cms.site</ObjectType>
   </SKUSiteID>
   <SKUTaxClassID>
@@ -52,7 +52,7 @@ Gakuyuni AA is made by a small business where they grow a hybrid variety of the 
     <ObjectType>ecommerce.taxclass</ObjectType>
     <Site>
       <CodeName>DancingGoatCore</CodeName>
-      <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+      <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
       <ObjectType>cms.site</ObjectType>
     </Site>
   </SKUTaxClassID>

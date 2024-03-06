@@ -7,7 +7,7 @@
     <ObjectType>ecommerce.department</ObjectType>
     <Site>
       <CodeName>DancingGoatCore</CodeName>
-      <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+      <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
       <ObjectType>cms.site</ObjectType>
     </Site>
   </SKUDepartmentID>
@@ -32,7 +32,7 @@ The kettle is big enough for four cups (1 liter).
     <ObjectType>ecommerce.manufacturer</ObjectType>
     <Site>
       <CodeName>DancingGoatCore</CodeName>
-      <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+      <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
       <ObjectType>cms.site</ObjectType>
     </Site>
   </SKUManufacturerID>
@@ -47,7 +47,7 @@ The kettle is big enough for four cups (1 liter).
   </SKUShortDescription>
   <SKUSiteID>
     <CodeName>DancingGoatCore</CodeName>
-    <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+    <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
     <ObjectType>cms.site</ObjectType>
   </SKUSiteID>
   <SKUTaxClassID>
@@ -56,7 +56,7 @@ The kettle is big enough for four cups (1 liter).
     <ObjectType>ecommerce.taxclass</ObjectType>
     <Site>
       <CodeName>DancingGoatCore</CodeName>
-      <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+      <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
       <ObjectType>cms.site</ObjectType>
     </Site>
   </SKUTaxClassID>

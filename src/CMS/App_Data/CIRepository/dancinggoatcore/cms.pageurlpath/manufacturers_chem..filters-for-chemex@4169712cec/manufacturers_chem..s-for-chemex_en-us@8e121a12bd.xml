@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.pageurlpath>
+  <PageUrlPathCulture>en-US</PageUrlPathCulture>
+  <PageUrlPathGUID>c399d27e-0b4f-4156-81da-da3eafbf4f8e</PageUrlPathGUID>
+  <PageUrlPathNodeID>
+    <CodeName>/Manufacturers/Chemex/Paper-Filters-for-Chemex</CodeName>
+    <GUID>ecdc61bb-d78a-454e-a815-9dad681da2e6</GUID>
+    <ObjectType>cms.node</ObjectType>
+    <Site>
+      <CodeName>DancingGoatCore</CodeName>
+      <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
+      <ObjectType>cms.site</ObjectType>
+    </Site>
+  </PageUrlPathNodeID>
+  <PageUrlPathSiteID>
+    <CodeName>DancingGoatCore</CodeName>
+    <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
+    <ObjectType>cms.site</ObjectType>
+  </PageUrlPathSiteID>
+  <PageUrlPathUrlPath>Manufacturers/Chemex/Paper-Filters-for-Chemex</PageUrlPathUrlPath>
+  <PageUrlPathUrlPathHash>
+    <![CDATA[7AB8EB3A2B92240E523B3477C8D594C64E21DEE54BB498B9CAFF57AD1542D1ED]]>
+  </PageUrlPathUrlPathHash>
+</cms.pageurlpath>

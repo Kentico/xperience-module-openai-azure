@@ -6,7 +6,7 @@
     <ObjectType>cms.documenttype</ObjectType>
   </TransformationClassID>
   <TransformationCode>
-    <![CDATA[{% " - " + GetResourceString(MembershipDisplayName) + " (" + (String.IsNullOrEmpty(ValidTo) ? "never expires" : "expires after " + Format(ValidTo,"{0:G}")) + ")" |(identity)GlobalAdministrator|(hash)b42e058c037ca540ff9eb26ea38956d02e4d68e2beaa908de1b15970d06296cd%} <br />]]>
+    <![CDATA[{% " - " + GetResourceString(MembershipDisplayName) + " (" + (String.IsNullOrEmpty(ValidTo) ? "never expires" : "expires after " + Format(ValidTo,"{0:G}")) + ")" |(identity)GlobalAdministrator|(hash)88eb3c4d322492031161aa318c0e2ee2583a277fef8753b18eecd76c1472ed05%} <br />]]>
   </TransformationCode>
   <TransformationGUID>de7e35e0-bfa9-4aae-928c-0268848bce54</TransformationGUID>
   <TransformationName>Order_MembershipsTable</TransformationName>

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <cms.settingskey>
-  <KeyDefaultValue>131</KeyDefaultValue>
+  <KeyDefaultValue>142</KeyDefaultValue>
   <KeyDescription>{$settingskey.cmshotfixversion.description$}</KeyDescription>
   <KeyDisplayName>{$settingskey.cmshotfixversion$}</KeyDisplayName>
   <KeyExplanationText />
@@ -10,5 +10,5 @@
   <KeyIsHidden>False</KeyIsHidden>
   <KeyName>CMSHotfixVersion</KeyName>
   <KeyType>int</KeyType>
-  <KeyValue>141</KeyValue>
+  <KeyValue>142</KeyValue>
 </cms.settingskey>

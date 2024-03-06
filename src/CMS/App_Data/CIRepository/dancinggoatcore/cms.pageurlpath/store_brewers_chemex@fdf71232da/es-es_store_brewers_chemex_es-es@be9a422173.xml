@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.pageurlpath>
+  <PageUrlPathCulture>es-ES</PageUrlPathCulture>
+  <PageUrlPathGUID>5752bf46-a644-450b-acbf-fa470b27e337</PageUrlPathGUID>
+  <PageUrlPathNodeID>
+    <CodeName>/Store/Brewers/Chemex</CodeName>
+    <GUID>5b2649c6-8368-47cc-ab3a-ee2ae70fc776</GUID>
+    <ObjectType>cms.node</ObjectType>
+    <Site>
+      <CodeName>DancingGoatCore</CodeName>
+      <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
+      <ObjectType>cms.site</ObjectType>
+    </Site>
+  </PageUrlPathNodeID>
+  <PageUrlPathSiteID>
+    <CodeName>DancingGoatCore</CodeName>
+    <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
+    <ObjectType>cms.site</ObjectType>
+  </PageUrlPathSiteID>
+  <PageUrlPathUrlPath>es-ES/Store/Brewers/Chemex</PageUrlPathUrlPath>
+  <PageUrlPathUrlPathHash>
+    <![CDATA[4FEB4342C21DD3A42B52FA93712747AD11588EA36C63B54DBDC656F23A3C9157]]>
+  </PageUrlPathUrlPathHash>
+</cms.pageurlpath>

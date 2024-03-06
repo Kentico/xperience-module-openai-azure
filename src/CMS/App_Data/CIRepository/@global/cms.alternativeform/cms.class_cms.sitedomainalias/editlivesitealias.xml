@@ -22,7 +22,7 @@
       <field column="SiteDomainAliasType" guid="0d1ae28b-9467-4778-a551-69af1c4c6e17">
         <properties>
           <defaultvalue ismacro="true">
-            <![CDATA[{%Convert.ToInt(Enums.SiteDomainAliasTypeEnum.LiveSite)|(identity)GlobalAdministrator|(hash)905addb187ae28a3442ab26dbf08d90b1f81a416832a5b7dc3a91d5d252b31a4%}]]>
+            <![CDATA[{%Convert.ToInt(Enums.SiteDomainAliasTypeEnum.LiveSite)|(identity)GlobalAdministrator|(hash)2ed43a66d6b46c7a58cab84b8b109d0cb3223ba28f3466e05681e733d8fc4181%}]]>
           </defaultvalue>
         </properties>
       </field>

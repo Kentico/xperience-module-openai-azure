@@ -29,7 +29,7 @@
       <objecttype>om.activity</objecttype>
       <displaybreadcrumbs>False</displaybreadcrumbs>
       <siteid>
-        <![CDATA[{%CurrentSite.SiteID|(identity)GlobalAdministrator|(hash)38d962127e2471dc714df8108da16e92f6d76c1963bb02f1cbac98a69813c8d6%}]]>
+        <![CDATA[{%CurrentSite.SiteID|(identity)GlobalAdministrator|(hash)0b1c15019e21e0e2ef3486e6df9d23411314b0d0af5629a8e67f277660f31589%}]]>
       </siteid>
       <category_name_custom>False</category_name_custom>
       <includejquery>False</includejquery>
@@ -49,6 +49,6 @@
   </ElementTargetURL>
   <ElementType>Url</ElementType>
   <ElementVisibilityCondition>
-    <![CDATA[{%LicenseHelper.CheckFeature(FeatureEnum.FullContactManagement)|(identity)GlobalAdministrator|(hash)96c9501be9580010dda96e119d4f1c39bd257a6b26304e8f72b99cf811c123bc%}]]>
+    <![CDATA[{%LicenseHelper.CheckFeature(FeatureEnum.FullContactManagement)|(identity)GlobalAdministrator|(hash)c7ab5cb7054c3dd173e32690cf5505dd82d8e5199c7aca779a514894d2e607f9%}]]>
   </ElementVisibilityCondition>
 </cms.uielement>

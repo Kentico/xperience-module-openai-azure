@@ -8,7 +8,7 @@
   <EmailTemplateName>Report_subscription_template</EmailTemplateName>
   <EmailTemplatePlainText>
 <![CDATA[
-{%ReportSubscription.ReportSubscriptionSubject|(identity)GlobalAdministrator|(hash)1a525c4037cda1b03f21a1d8322464bbe1d2712cb18ab121413f0eeb2ae5047e%}
+{%ReportSubscription.ReportSubscriptionSubject|(identity)GlobalAdministrator|(hash)c6612ce4d9b8df4e894eb1ba3711ba24d88fb866d57426144ecb8585f845a604%}
 
 {%SubscriptionBody%}
 
@@ -26,7 +26,7 @@ Click here to unsubscribe:
      </style>
   </head>
 <body>
-    <h3>{%ReportSubscription.ReportSubscriptionSubject|(identity)GlobalAdministrator|(hash)1a525c4037cda1b03f21a1d8322464bbe1d2712cb18ab121413f0eeb2ae5047e%}</h3>
+    <h3>{%ReportSubscription.ReportSubscriptionSubject|(identity)GlobalAdministrator|(hash)c6612ce4d9b8df4e894eb1ba3711ba24d88fb866d57426144ecb8585f845a604%}</h3>
     <p>
       {%SubscriptionBody%}
     </p>

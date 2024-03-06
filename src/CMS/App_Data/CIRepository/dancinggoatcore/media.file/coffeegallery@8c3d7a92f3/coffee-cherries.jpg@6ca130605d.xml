@@ -17,7 +17,7 @@
     <ObjectType>media.library</ObjectType>
     <Site>
       <CodeName>DancingGoatCore</CodeName>
-      <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+      <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
       <ObjectType>cms.site</ObjectType>
     </Site>
   </FileLibraryID>
@@ -31,7 +31,7 @@
   <FilePath>Coffee-Cherries.jpg</FilePath>
   <FileSiteID>
     <CodeName>DancingGoatCore</CodeName>
-    <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+    <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
     <ObjectType>cms.site</ObjectType>
   </FileSiteID>
   <FileSize>79157</FileSize>

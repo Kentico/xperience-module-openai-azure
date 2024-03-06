@@ -19,7 +19,7 @@
       <field allowempty="true" column="CategoryClasses" columntype="longtext" dummy="altform" guid="37816dea-4104-4180-a1af-2812b3c4d0af" system="true" visible="true" order="8">
         <properties>
           <enabledmacro ismacro="true">
-            <![CDATA[{%!CategoryAllowAllTypes.Value|(identity)GlobalAdministrator|(hash)42240bd4fce6c8cb1bfe2cb3619e1193ba07204c2cff12f3e3556cffcd00ce60%}]]>
+            <![CDATA[{%!CategoryAllowAllTypes.Value|(identity)GlobalAdministrator|(hash)2fa477b35c36f70c689a4ab17c633d432c9aec4b48553cd9f022b8d4c925f9b5%}]]>
           </enabledmacro>
         </properties>
         <settings>

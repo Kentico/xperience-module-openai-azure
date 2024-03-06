@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <cms.uielement>
   <ElementAccessCondition>
-    <![CDATA[{%(EditedObjectParent.GiftCardSiteID == SiteContext.CurrentSiteID)|(identity)GlobalAdministrator|(hash)3004f5f7bebc88627c06d5d369df93af058e53c3a1e523ee28c25934281fe221%}]]>
+    <![CDATA[{%(EditedObjectParent.GiftCardSiteID == SiteContext.CurrentSiteID)|(identity)GlobalAdministrator|(hash)677d5e7714d0daf76054536aa960b7b5052b722372ed20f7c90c0714e9ad70c7%}]]>
   </ElementAccessCondition>
   <ElementCaption>{$com.couponcode.new$}</ElementCaption>
   <ElementCheckModuleReadPermission>False</ElementCheckModuleReadPermission>
@@ -45,6 +45,6 @@
   <ElementSize>0</ElementSize>
   <ElementType>PageTemplate</ElementType>
   <ElementVisibilityCondition>
-    <![CDATA[{%(CurrentUser.IsAuthorizedPerResource("CMS.Ecommerce", "ModifyDiscounts") || CurrentUser.IsAuthorizedPerResource("CMS.Ecommerce", "EcommerceModify"))|(identity)GlobalAdministrator|(hash)a599a7f046f0442f64e26c1e4441c749c8098e3ae2b875a21213cd366c96921b%}]]>
+    <![CDATA[{%(CurrentUser.IsAuthorizedPerResource("CMS.Ecommerce", "ModifyDiscounts") || CurrentUser.IsAuthorizedPerResource("CMS.Ecommerce", "EcommerceModify"))|(identity)GlobalAdministrator|(hash)992d04583441161dacc0c1578c231e604619645f0bc9c7995076dfc97ea27e1a%}]]>
   </ElementVisibilityCondition>
 </cms.uielement>

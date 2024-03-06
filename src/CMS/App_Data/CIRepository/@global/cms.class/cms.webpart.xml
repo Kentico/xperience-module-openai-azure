@@ -68,7 +68,7 @@
           <visiblemacro ismacro="true">
 <![CDATA[
 {%parentID = EditedObject.WebPartParentID;
-return parentID != 0 && parentID != null;|(identity)GlobalAdministrator|(hash)dd8c4a1e113d9247054517fd38561f096419a2305a3489a032c039d9d6a3b73e%}
+return parentID != 0 && parentID != null;|(identity)GlobalAdministrator|(hash)5ca93ee4076286500f087fead9281c4c09c90535f17414bf0a7eb9cd03253580%}
 ]]>
           </visiblemacro>
         </properties>
@@ -82,14 +82,14 @@ return parentID != 0 && parentID != null;|(identity)GlobalAdministrator|(hash)dd
           <enabledmacro ismacro="true">
 <![CDATA[
 {%parentID = EditedObject.WebPartParentID;
-return parentID == 0 || parentID == null;|(identity)GlobalAdministrator|(hash)d52c38cae3e64966ec9de51ac06904976cdb6b014bbb016a17a59d93ea1dc71a%}
+return parentID == 0 || parentID == null;|(identity)GlobalAdministrator|(hash)0114a88da5576b6a6c867e1f598987961699266ec349e3845724a53b74bf204c%}
 ]]>
           </enabledmacro>
           <fieldcaption>{$general.filename$}</fieldcaption>
           <visiblemacro ismacro="true">
 <![CDATA[
 {%parentID = EditedObject.WebPartParentID;
-return parentID == 0 || parentID == null;|(identity)GlobalAdministrator|(hash)d52c38cae3e64966ec9de51ac06904976cdb6b014bbb016a17a59d93ea1dc71a%}
+return parentID == 0 || parentID == null;|(identity)GlobalAdministrator|(hash)0114a88da5576b6a6c867e1f598987961699266ec349e3845724a53b74bf204c%}
 ]]>
           </visiblemacro>
         </properties>
@@ -143,7 +143,7 @@ return parentID == 0 || parentID == null;|(identity)GlobalAdministrator|(hash)d5
         <properties>
           <fieldcaption>{$general.module$}</fieldcaption>
           <visiblemacro ismacro="true">
-            <![CDATA[{%SystemContext.DevelopmentMode|(identity)GlobalAdministrator|(hash)890fcff19fa966e08aa2e8b380c8acec93a574a00e811e629306121aa2660742%}]]>
+            <![CDATA[{%SystemContext.DevelopmentMode|(identity)GlobalAdministrator|(hash)ae2a1ce2509d874bb1f72eb6ad4a78bb70850c2bb3ad0fd388272e83e1430585%}]]>
           </visiblemacro>
         </properties>
         <settings>

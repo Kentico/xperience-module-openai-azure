@@ -35,7 +35,7 @@
       <ExtenderClassName>CMS.Ecommerce.Web.UI.ProductCouponEditExtender</ExtenderClassName>
       <includejquery>False</includejquery>
       <RedirectURL ismacro="True">
-        <![CDATA[{% UIContext.GetElementUrl("CMS.Ecommerce", "EditDiscountCouponProperties", false, EditedObject.ID, "tabname=ProductCouponCodes&saved=1") |(identity)GlobalAdministrator|(hash)20020ae99c51fefb30ffd5912652a0097de6e51bacf375b900a3a6ca061f740a%}]]>
+        <![CDATA[{% UIContext.GetElementUrl("CMS.Ecommerce", "EditDiscountCouponProperties", false, EditedObject.ID, "tabname=ProductCouponCodes&saved=1") |(identity)GlobalAdministrator|(hash)2519d6e1f2227d6c724036d2a8f013f480b9a898a1aa0b64a4ed3357ac7ce385%}]]>
       </RedirectURL>
     </Data>
   </ElementProperties>

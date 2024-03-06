@@ -14,7 +14,7 @@
           <Text />
           <Tooltip />
           <Condition>
-            <![CDATA[{%Rule("(Contact.DidActivities(\"purchase\", ToInt(10), false))", "<rules><r pos=\"0\" par=\"\" op=\"or\" n=\"CMSContactHasDoneFollowingActivitiesInTheLastXDays\" ><p n=\"activities\"><t>Purchase</t><v>purchase</v><r>1</r><d>select activities</d><vt>text</vt><tv>0</tv></p><p n=\"days\"><t>10</t><v>10</v><r>0</r><d>enter days</d><vt>integer</vt><tv>1</tv></p><p n=\"_any\"><t>any</t><v>false</v><r>0</r><d>select operation</d><vt>text</vt><tv>0</tv></p><p n=\"_perfectum\"><t>has</t><v></v><r>0</r><d>select operation</d><vt>text</vt><tv>0</tv></p></r></rules>")|(identity)GlobalAdministrator|(hash)dc19b56e7364b97d2b215ccf275590c32d79e6cbc0ad5f91463e61c6e1ae1f46%}]]>
+            <![CDATA[{%Rule("(Contact.DidActivities(\"purchase\", ToInt(10), false))", "<rules><r pos=\"0\" par=\"\" op=\"or\" n=\"CMSContactHasDoneFollowingActivitiesInTheLastXDays\" ><p n=\"activities\"><t>Purchase</t><v>purchase</v><r>1</r><d>select activities</d><vt>text</vt><tv>0</tv></p><p n=\"days\"><t>10</t><v>10</v><r>0</r><d>enter days</d><vt>integer</vt><tv>1</tv></p><p n=\"_any\"><t>any</t><v>false</v><r>0</r><d>select operation</d><vt>text</vt><tv>0</tv></p><p n=\"_perfectum\"><t>has</t><v></v><r>0</r><d>select operation</d><vt>text</vt><tv>0</tv></p></r></rules>")|(identity)GlobalAdministrator|(hash)365aa45e2308fdb7d4c1f93f54931196add3cd71919f2893f1b228e9e056ab61%}]]>
           </Condition>
           <Type>1</Type>
           <StepRolesSecurity>0</StepRolesSecurity>

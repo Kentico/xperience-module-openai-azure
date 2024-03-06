@@ -13,7 +13,7 @@
   address = street + ", " + zipCode + ", " + city;
   ctaText = ButtonText == String.Empty ? "Learn More" : ButtonText;
   return; 
-|(identity)GlobalAdministrator|(hash)0ba75e9029d288743dc74133cf3dec5e65804e6160cc5a7fb6ce119ef2cbcd05%}
+|(identity)GlobalAdministrator|(hash)4df3fea10a340ca0310bc5316bb54b1cf98be9df984cb572bf8ebd24e5693374%}
 <!--[if (gte mso 9)|(IE)]>
 <table align="center" border="0" cellspacing="0" cellpadding="0" width="500">
 <tr>
@@ -174,7 +174,7 @@
   </EmailWidgetProperties>
   <EmailWidgetSiteID>
     <CodeName>DancingGoatCore</CodeName>
-    <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+    <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
     <ObjectType>cms.site</ObjectType>
   </EmailWidgetSiteID>
 </newsletter.emailwidget>

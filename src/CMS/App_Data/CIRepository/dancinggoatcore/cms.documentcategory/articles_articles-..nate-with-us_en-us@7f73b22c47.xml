@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.documentcategory>
+  <Parent>
+    <CodeName>en-US</CodeName>
+    <GUID>f97d626f-e6cd-47c8-a8ec-779b030509db</GUID>
+    <ObjectType>cms.documentlocalization</ObjectType>
+    <Parent>
+      <CodeName>/Articles/Articles-under-workflow/Donate-with-us</CodeName>
+      <GUID>aeea45aa-13e6-4282-a392-81e96d0c4ec3</GUID>
+      <ObjectType>cms.node</ObjectType>
+      <Site>
+        <CodeName>DancingGoatCore</CodeName>
+        <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
+        <ObjectType>cms.site</ObjectType>
+      </Site>
+    </Parent>
+  </Parent>
+  <Bindings>
+    <Binding id="cms.category_SocialResponsibility_cms.site_DancingGoatCore">
+      <CategoryID>
+        <CodeName>SocialResponsibility</CodeName>
+        <GUID>3b63034a-9906-48ea-bc91-5be368c37210</GUID>
+        <ObjectType>cms.category</ObjectType>
+        <Site>
+          <CodeName>DancingGoatCore</CodeName>
+          <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
+          <ObjectType>cms.site</ObjectType>
+        </Site>
+      </CategoryID>
+    </Binding>
+  </Bindings>
+</cms.documentcategory>

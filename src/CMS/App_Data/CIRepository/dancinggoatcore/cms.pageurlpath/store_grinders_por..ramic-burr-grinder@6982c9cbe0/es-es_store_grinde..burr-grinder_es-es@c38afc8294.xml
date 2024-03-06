@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.pageurlpath>
+  <PageUrlPathCulture>es-ES</PageUrlPathCulture>
+  <PageUrlPathGUID>688ab392-4ae4-41d8-9102-d517a1b8fec0</PageUrlPathGUID>
+  <PageUrlPathNodeID>
+    <CodeName>/Store/Grinders/Porlex-Tall-Ceramic-Burr-Grinder</CodeName>
+    <GUID>c4bb108d-8fa3-4023-8027-848188fb6e24</GUID>
+    <ObjectType>cms.node</ObjectType>
+    <Site>
+      <CodeName>DancingGoatCore</CodeName>
+      <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
+      <ObjectType>cms.site</ObjectType>
+    </Site>
+  </PageUrlPathNodeID>
+  <PageUrlPathSiteID>
+    <CodeName>DancingGoatCore</CodeName>
+    <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
+    <ObjectType>cms.site</ObjectType>
+  </PageUrlPathSiteID>
+  <PageUrlPathUrlPath>
+    <![CDATA[es-ES/Store/Grinders/Porlex-Tall-Ceramic-Burr-Grinder]]>
+  </PageUrlPathUrlPath>
+  <PageUrlPathUrlPathHash>
+    <![CDATA[C2F4BBB3ED985CE7D212031AF97E3406ADEBC33E65226ED1BDAD8AB75B1C399A]]>
+  </PageUrlPathUrlPathHash>
+</cms.pageurlpath>

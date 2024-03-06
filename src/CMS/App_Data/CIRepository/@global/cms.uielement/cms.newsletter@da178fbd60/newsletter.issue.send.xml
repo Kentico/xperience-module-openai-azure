@@ -24,7 +24,7 @@
   <ElementProperties>
     <data>
       <helptopicname ismacro="True">
-        <![CDATA[{% EditedObject.IssueIsABTest ? "newsletterab_send" : "send_tab"|(identity)GlobalAdministrator|(hash)92d80c8290b819a1957c5b87b169dbc2320f8dfc613ed6d9b90ef0de37b29373%}]]>
+        <![CDATA[{% EditedObject.IssueIsABTest ? "newsletterab_send" : "send_tab"|(identity)GlobalAdministrator|(hash)4cb96719040dc6f5b945ee15690e04eb096f0b212932d7527e5f7a1590e006ea%}]]>
       </helptopicname>
       <category_name_codebehind>False</category_name_codebehind>
       <category_name_header>False</category_name_header>
@@ -42,6 +42,6 @@
   </ElementTargetURL>
   <ElementType>Url</ElementType>
   <ElementVisibilityCondition>
-    <![CDATA[{% !EditedObject.IssueIsABTest && !EditedObject.IssueForAutomation |(identity)GlobalAdministrator|(hash)37f8b30aa2ea09cad52b23a068a3cdb96d58100bb6c18c6e6e133b28d33187a9%}]]>
+    <![CDATA[{% !EditedObject.IssueIsABTest && !EditedObject.IssueForAutomation |(identity)GlobalAdministrator|(hash)8a2fce6b43f0327d8d8bad3b9cd1c559c1647de2deee8663e5d8836ba990ca9e%}]]>
   </ElementVisibilityCondition>
 </cms.uielement>

@@ -40,7 +40,7 @@
   <ElementVisibilityCondition>
 <![CDATA[
 {%name = EditedObject.ToBaseInfo().CodeName;
-return !(name == "_everyone_" || name == "_authenticated_" || name == "_notauthenticated_");|(identity)GlobalAdministrator|(hash)61c5990429b0178455a49564010fd70d35a9bcc08087aea166d0a16bf70f57b3%}
+return !(name == "_everyone_" || name == "_authenticated_" || name == "_notauthenticated_");|(identity)GlobalAdministrator|(hash)e6bf4e619f083b8f4f3a57646b81a9bb233c6ee50836f51ae13714b6fa660db7%}
 ]]>
   </ElementVisibilityCondition>
 </cms.uielement>

@@ -35,7 +35,7 @@ If the link includes a URL parameter already, this email widget may produce an i
     </tr>
 </table>
 
-{% } |(identity)GlobalAdministrator|(hash)dd29098034468b30fc5852b1db65c9654c8faa9e6fa692cb5fe20e1853596296%}
+{% } |(identity)GlobalAdministrator|(hash)3f50a7a8961ffb5e328dd957c5f3a51ccb930dfa84a234535f84513f01d1def4%}
 ]]>
   </EmailWidgetCode>
   <EmailWidgetDescription>
@@ -158,7 +158,7 @@ If no persona is selected, widget is displayed to all recipients.
   </EmailWidgetProperties>
   <EmailWidgetSiteID>
     <CodeName>DancingGoatCore</CodeName>
-    <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+    <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
     <ObjectType>cms.site</ObjectType>
   </EmailWidgetSiteID>
 </newsletter.emailwidget>

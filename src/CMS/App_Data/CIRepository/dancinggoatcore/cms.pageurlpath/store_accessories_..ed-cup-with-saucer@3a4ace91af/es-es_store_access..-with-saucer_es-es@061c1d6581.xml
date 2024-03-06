@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.pageurlpath>
+  <PageUrlPathCulture>es-ES</PageUrlPathCulture>
+  <PageUrlPathGUID>16cf8148-1184-4953-9d6f-6f9cd95a11d5</PageUrlPathGUID>
+  <PageUrlPathNodeID>
+    <CodeName>/Store/Accessories/Personalized-cup-with-saucer</CodeName>
+    <GUID>ae2ae1a2-788b-4f3f-8169-ac8f888a881d</GUID>
+    <ObjectType>cms.node</ObjectType>
+    <Site>
+      <CodeName>DancingGoatCore</CodeName>
+      <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
+      <ObjectType>cms.site</ObjectType>
+    </Site>
+  </PageUrlPathNodeID>
+  <PageUrlPathSiteID>
+    <CodeName>DancingGoatCore</CodeName>
+    <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
+    <ObjectType>cms.site</ObjectType>
+  </PageUrlPathSiteID>
+  <PageUrlPathUrlPath>
+    <![CDATA[es-ES/Store/Accessories/Personalized-cup-with-saucer]]>
+  </PageUrlPathUrlPath>
+  <PageUrlPathUrlPathHash>
+    <![CDATA[A302069BF084755840771299E78ECE787091330E73E5E293EB13C039378D7227]]>
+  </PageUrlPathUrlPathHash>
+</cms.pageurlpath>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.pageurlpath>
+  <PageUrlPathCulture>es-ES</PageUrlPathCulture>
+  <PageUrlPathGUID>14c9d39d-7bbc-4808-8dec-097b241877c2</PageUrlPathGUID>
+  <PageUrlPathNodeID>
+    <CodeName>/Store/Brewers/Hario-Vacuum-Pot</CodeName>
+    <GUID>a905a18a-6a4f-4b4a-a79e-9ffa65527124</GUID>
+    <ObjectType>cms.node</ObjectType>
+    <Site>
+      <CodeName>DancingGoatCore</CodeName>
+      <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
+      <ObjectType>cms.site</ObjectType>
+    </Site>
+  </PageUrlPathNodeID>
+  <PageUrlPathSiteID>
+    <CodeName>DancingGoatCore</CodeName>
+    <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
+    <ObjectType>cms.site</ObjectType>
+  </PageUrlPathSiteID>
+  <PageUrlPathUrlPath>es-ES/Store/Brewers/Hario-Vacuum-Pot</PageUrlPathUrlPath>
+  <PageUrlPathUrlPathHash>
+    <![CDATA[F020E061513DF3152124E6AFAD7274423A8D497F264F1131AA2CE35035863644]]>
+  </PageUrlPathUrlPathHash>
+</cms.pageurlpath>

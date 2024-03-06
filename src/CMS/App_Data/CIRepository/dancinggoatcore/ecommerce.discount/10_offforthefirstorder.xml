@@ -3,7 +3,7 @@
   <DiscountApplyFurtherDiscounts>True</DiscountApplyFurtherDiscounts>
   <DiscountApplyTo>Order</DiscountApplyTo>
   <DiscountCartCondition>
-    <![CDATA[{%Rule("(Data.OrderIsOneOfTheFirstOrdersPlacedByRegisteredCustomer(1))", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"OrderIsOneOfTheFirstXOrder_s_ThatTheRegisteredCustomerHasPlaced\" ><p n=\"numOrders\"><t>1</t><v>1</v><r>0</r><d>select count</d><vt>integer</vt><tv>1</tv></p></r></rules>")|(identity)GlobalAdministrator|(hash)3b30b9401519f500ae579e8b3c8424d5488f005a3ce41a5b35e3f3ba33fde188%}]]>
+    <![CDATA[{%Rule("(Data.OrderIsOneOfTheFirstOrdersPlacedByRegisteredCustomer(1))", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"OrderIsOneOfTheFirstXOrder_s_ThatTheRegisteredCustomerHasPlaced\" ><p n=\"numOrders\"><t>1</t><v>1</v><r>0</r><d>select count</d><vt>integer</vt><tv>1</tv></p></r></rules>")|(identity)GlobalAdministrator|(hash)80db9a26cd87eaa6a9a798416247f90ade216d12fbad9e2e5cf6ca27b1925076%}]]>
   </DiscountCartCondition>
   <DiscountCustomerRestriction>All</DiscountCustomerRestriction>
   <DiscountDisplayName>10% off for the first order</DiscountDisplayName>
@@ -15,7 +15,7 @@
   <DiscountRoles />
   <DiscountSiteID>
     <CodeName>DancingGoatCore</CodeName>
-    <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+    <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
     <ObjectType>cms.site</ObjectType>
   </DiscountSiteID>
   <DiscountUsesCoupons>True</DiscountUsesCoupons>

@@ -50,7 +50,7 @@
   </FormBuilderLayout>
   <FormClassID>
     <CodeName>bizform.DancingGoatCoreCoffeeSampleList</CodeName>
-    <GUID>1b0072d3-0a49-479d-aab1-9eea99ea9827</GUID>
+    <GUID>e60d7caf-7906-4c6d-b9a2-a662cbd98be8</GUID>
     <ObjectType>cms.formclass</ObjectType>
   </FormClassID>
   <FormClearAfterSave>False</FormClearAfterSave>
@@ -63,7 +63,7 @@
   <FormName>DancingGoatCoreCoffeeSampleList</FormName>
   <FormSiteID>
     <CodeName>DancingGoatCore</CodeName>
-    <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+    <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
     <ObjectType>cms.site</ObjectType>
   </FormSiteID>
   <FormSubmitButtonText>Taste the coffee</FormSubmitButtonText>

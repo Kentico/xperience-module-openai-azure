@@ -51,6 +51,6 @@
   <ElementSize>0</ElementSize>
   <ElementType>PageTemplate</ElementType>
   <ElementVisibilityCondition>
-    <![CDATA[{%Settings.CMSRoutingMode == Enums.PageRoutingModeEnum.BasedOnContentTree|(identity)GlobalAdministrator|(hash)023a92c49c728b71f5919e3158ba6b2727162a5a7cf97bb2aa1e432792bc8681%}]]>
+    <![CDATA[{%Settings.CMSRoutingMode == Enums.PageRoutingModeEnum.BasedOnContentTree|(identity)GlobalAdministrator|(hash)7071159cdb7f6c2e8bd008f2236d705efd81997c8b29fe791752f67ea3ef5bff%}]]>
   </ElementVisibilityCondition>
 </cms.uielement>

@@ -53,7 +53,7 @@
         </settings>
         <rules>
           <rule errormsg="{$basicform.errortexttoolong$}">
-            <![CDATA[{%Rule("(Value.Length <= 190)", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"MaxLength\" ><p n=\"maxlength\"><t>190</t><v>190</v><r>0</r><d></d><vt>integer</vt><tv>0</tv></p></r></rules>")|(identity)GlobalAdministrator|(hash)55b4c66d750025b0eb665fdcf3323c77e228739a472748326f27f227178c731f%}]]>
+            <![CDATA[{%Rule("(Value.Length <= 190)", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"MaxLength\" ><p n=\"maxlength\"><t>190</t><v>190</v><r>0</r><d></d><vt>integer</vt><tv>0</tv></p></r></rules>")|(identity)GlobalAdministrator|(hash)7a9d0c52d09a62bd3d2123a64c7f6ab06de53f7113b348d952a0e642d39b0d04%}]]>
           </rule>
         </rules>
       </field>

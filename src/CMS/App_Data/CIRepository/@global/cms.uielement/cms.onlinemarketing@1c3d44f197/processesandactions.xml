@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <cms.uielement>
   <ElementAccessCondition>
-    <![CDATA[{%Rule("CurrentUser.IsAuthorizedPerResource(\"CMS.OnlineMarketing\",\"ReadProcesses\")", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"Permission\" ><p n=\"module\"><t>CMS.OnlineMarketing</t><v>CMS.OnlineMarketing</v><r>0</r><d>select module</d><vt>text</vt><tv>1</tv></p><p n=\"permission\"><t>ReadProcesses</t><v>ReadProcesses</v><r>0</r><d>select permission</d><vt>text</vt><tv>1</tv></p></r></rules>")|(identity)GlobalAdministrator|(hash)b94e7ad0114d64f590a172a8989367c752fa2bf8234a4604506f18f3464cf2a9%}]]>
+    <![CDATA[{%Rule("CurrentUser.IsAuthorizedPerResource(\"CMS.OnlineMarketing\",\"ReadProcesses\")", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"Permission\" ><p n=\"module\"><t>CMS.OnlineMarketing</t><v>CMS.OnlineMarketing</v><r>0</r><d>select module</d><vt>text</vt><tv>1</tv></p><p n=\"permission\"><t>ReadProcesses</t><v>ReadProcesses</v><r>0</r><d>select permission</d><vt>text</vt><tv>1</tv></p></r></rules>")|(identity)GlobalAdministrator|(hash)0657352d7d71cbc21ae53ec39f3f99b6759e8dfeb05668b3a77637055ea49483%}]]>
   </ElementAccessCondition>
   <ElementCaption>{$ma.applicationname$}</ElementCaption>
   <ElementCheckModuleReadPermission>False</ElementCheckModuleReadPermission>

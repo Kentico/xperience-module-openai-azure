@@ -1,15 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <cms.uielement>
-  <ElementAccessCondition />
-  <ElementCaption />
   <ElementCheckModuleReadPermission>True</ElementCheckModuleReadPermission>
-  <ElementDescription />
   <ElementDisplayName>{$administration-system.files.mediaprotection$}</ElementDisplayName>
-  <ElementFeature />
   <ElementFromVersion>13.0</ElementFromVersion>
   <ElementGUID>395792b7-273e-4606-aea2-83ea42cbdb62</ElementGUID>
   <ElementIconClass />
-  <ElementIconPath />
   <ElementIsCustom>False</ElementIsCustom>
   <ElementIsGlobalApplication>False</ElementIsGlobalApplication>
   <ElementIsMenu>False</ElementIsMenu>
@@ -41,5 +36,4 @@
     <![CDATA[~/CMSModules/System/Files/System_MediaProtection.aspx]]>
   </ElementTargetURL>
   <ElementType>Url</ElementType>
-  <ElementVisibilityCondition />
 </cms.uielement>

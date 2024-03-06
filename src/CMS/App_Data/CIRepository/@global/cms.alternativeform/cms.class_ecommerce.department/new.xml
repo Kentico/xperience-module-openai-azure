@@ -12,7 +12,7 @@
         <settings>
           <Options>
 <![CDATA[
-{%SiteContext.CurrentSiteID|(identity)GlobalAdministrator|(hash)4f7433321168d6844abe167688753cc5e119d5e7469d91b476cefcdabafa0e65%};{$com.onthissiteonly$}
+{%SiteContext.CurrentSiteID|(identity)GlobalAdministrator|(hash)ad4873899b4b2420d87bf957303580c9e9f98bcc27ae71a47ebdf420dfc82cbc%};{$com.onthissiteonly$}
 ;{$com.globally$}
 ]]>
           </Options>
@@ -21,13 +21,13 @@
         </settings>
         <properties>
           <visiblemacro ismacro="true">
-            <![CDATA[{%QueryString["siteId"] != -4 && Settings.CMSStoreAllowGlobalDepartments && CurrentUser.IsAuthorizedPerResource("CMS.Ecommerce","ConfigurationGlobalModify") && CurrentUser.IsAuthorizedPerResource("CMS.Ecommerce","ConfigurationModify")|(identity)GlobalAdministrator|(hash)3bc5d5c931063e67bcf1afa493c2ed92a4373c80f5d9120e3dc80ae06a07f9eb%}]]>
+            <![CDATA[{%QueryString["siteId"] != -4 && Settings.CMSStoreAllowGlobalDepartments && CurrentUser.IsAuthorizedPerResource("CMS.Ecommerce","ConfigurationGlobalModify") && CurrentUser.IsAuthorizedPerResource("CMS.Ecommerce","ConfigurationModify")|(identity)GlobalAdministrator|(hash)00e99c9e939882d8e378622f9cfc8a832885656eb6534551f3295a48ab21553a%}]]>
           </visiblemacro>
           <defaultvalue ismacro="true">
 <![CDATA[
 {% if ((QueryString["siteId"] != -4) && (!Settings.CMSStoreAllowGlobalDepartments
     || !CurrentUser.IsAuthorizedPerResource("CMS.Ecommerce","ConfigurationGlobalModify")
-    || CurrentUser.IsAuthorizedPerResource("CMS.Ecommerce","ConfigurationModify"))) {SiteContext.CurrentSiteID} |(identity)GlobalAdministrator|(hash)7dfa791ee0fdc755b4978b95486da2524399fe283aa079e0127ecea8c46972e1%}
+    || CurrentUser.IsAuthorizedPerResource("CMS.Ecommerce","ConfigurationModify"))) {SiteContext.CurrentSiteID} |(identity)GlobalAdministrator|(hash)492e2be555b5cfe0749cccd3146e093b9333b0dd3d2eb86c75869c3fb8d449bb%}
 ]]>
           </defaultvalue>
           <fieldcaption>{$com.available$}</fieldcaption>

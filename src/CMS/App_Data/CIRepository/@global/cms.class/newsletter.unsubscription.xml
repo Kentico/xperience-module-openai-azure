@@ -32,7 +32,7 @@
         </settings>
         <rules>
           <rule errormsg="{$emailmarketing.ui.unsubscriptions.new.emailaddress.invalidemail$}">
-            <![CDATA[{%Rule("Util.IsEmail(Value)", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"Email\" ></r></rules>")|(identity)GlobalAdministrator|(hash)39cfffeffbfc6a10283122678fc94c518bc88d3d7b381439a3b1af95e6234ea5%}]]>
+            <![CDATA[{%Rule("Util.IsEmail(Value)", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"Email\" ></r></rules>")|(identity)GlobalAdministrator|(hash)73f67352011d14741ea086ea04c1e52764ce03048af05eb33bd0e322f88da2cb%}]]>
           </rule>
         </rules>
       </field>

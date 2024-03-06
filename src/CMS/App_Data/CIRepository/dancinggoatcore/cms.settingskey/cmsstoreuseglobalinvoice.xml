@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.settingskey>
+  <KeyCategoryID>
+    <CodeName>CMS.Ecommerce.UseGlobalSettingsFor</CodeName>
+    <ObjectType>cms.settingscategory</ObjectType>
+  </KeyCategoryID>
+  <KeyDefaultValue>False</KeyDefaultValue>
+  <KeyDisplayName>{$settingskey.cmsstoreuseglobalinvoice$}</KeyDisplayName>
+  <KeyGUID>242331a6-3d91-456f-90b4-2c50e751c090</KeyGUID>
+  <KeyIsHidden>False</KeyIsHidden>
+  <KeyName>CMSStoreUseGlobalInvoice</KeyName>
+  <KeyType>boolean</KeyType>
+  <KeyValue>False</KeyValue>
+  <SiteID>
+    <CodeName>DancingGoatCore</CodeName>
+    <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
+    <ObjectType>cms.site</ObjectType>
+  </SiteID>
+</cms.settingskey>

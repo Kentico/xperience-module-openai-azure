@@ -5,7 +5,7 @@
     <ObjectType>cms.settingscategory</ObjectType>
   </KeyCategoryID>
   <KeyDefaultValue>
-    <![CDATA[<strong>&mdash; {%User.FullName|(identity)GlobalAdministrator|(hash)26bcb6542547bfbb62acfa9aa03072a0d3200e7e7d4c5770f96ee576ae959878%}</strong>, {%CurrentDateTime%}<br /><br />]]>
+    <![CDATA[<strong>&mdash; {%User.FullName|(identity)GlobalAdministrator|(hash)79ea846669b638a687bdb52f8a97ba9938127027449b2a744e42cf6558d3bf2a%}</strong>, {%CurrentDateTime%}<br /><br />]]>
   </KeyDefaultValue>
   <KeyDescription>{$settingskey.cmscmstamp.description$}</KeyDescription>
   <KeyDisplayName>{$settingskey.cmscmstamp$}</KeyDisplayName>
@@ -28,6 +28,6 @@
   <KeyOrder>5</KeyOrder>
   <KeyType>string</KeyType>
   <KeyValue>
-    <![CDATA[<strong>&mdash; {%User.FullName|(identity)GlobalAdministrator|(hash)26bcb6542547bfbb62acfa9aa03072a0d3200e7e7d4c5770f96ee576ae959878%}</strong>, {%CurrentDateTime%}<br /><br />]]>
+    <![CDATA[<strong>&mdash; {%User.FullName|(identity)GlobalAdministrator|(hash)79ea846669b638a687bdb52f8a97ba9938127027449b2a744e42cf6558d3bf2a%}</strong>, {%CurrentDateTime%}<br /><br />]]>
   </KeyValue>
 </cms.settingskey>

@@ -31,6 +31,6 @@
   <ElementTargetURL>~/CMSModules/Modules/Pages/Class/Query/Edit.aspx</ElementTargetURL>
   <ElementType>Url</ElementType>
   <ElementVisibilityCondition>
-    <![CDATA[{%System.GetObject("cms.resource",UIContext.EditedObjectParent.ClassResourceID).IsEditable || UIContext.EditedObjectParent.ClassShowAsSystemTable|(identity)GlobalAdministrator|(hash)436edf04c26ad4e26dc7373a2168c810d3835e48ee73b3aed526f38113fd1016%}]]>
+    <![CDATA[{%System.GetObject("cms.resource",UIContext.EditedObjectParent.ClassResourceID).IsEditable || UIContext.EditedObjectParent.ClassShowAsSystemTable|(identity)GlobalAdministrator|(hash)08d2755ce0ccfede6c1585af5003f322aaa77e7707543d8ae6cdf11f162cea03%}]]>
   </ElementVisibilityCondition>
 </cms.uielement>

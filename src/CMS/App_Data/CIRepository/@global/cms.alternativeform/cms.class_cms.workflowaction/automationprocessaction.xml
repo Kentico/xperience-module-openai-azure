@@ -48,14 +48,14 @@
       <field column="ActionWorkflowType" guid="ed6b7241-0a4b-4ae0-a1ba-bdc07ce3756f">
         <properties>
           <defaultvalue ismacro="true">
-            <![CDATA[{% Enums.WorkflowTypeEnum.Automation |(identity)GlobalAdministrator|(hash)bc28861a148dabb84e64cb6d0a2d3fc0d9d01a983c5fc195ba40f85a5efed7aa%}]]>
+            <![CDATA[{% Enums.WorkflowTypeEnum.Automation |(identity)GlobalAdministrator|(hash)e2f91bad06a7cd7a8210b854fb4c5d3495c906098fb5ae507ebd01a82de5a824%}]]>
           </defaultvalue>
         </properties>
       </field>
       <field column="ActionAllowedObjects" guid="712791be-558b-4ddf-b9cb-d7c698ca8e20">
         <properties>
           <defaultvalue ismacro="true">
-            <![CDATA[{% "om.contact" |(identity)GlobalAdministrator|(hash)388d039aac2d0e8294c882f8049d6a4498bc8b2f722f03728fa923b4a409ebd9%}]]>
+            <![CDATA[{% "om.contact" |(identity)GlobalAdministrator|(hash)b7f75979e6f26c753241b9fbf0bb652dd9890456c29ff2e692de847d879fe824%}]]>
           </defaultvalue>
         </properties>
       </field>

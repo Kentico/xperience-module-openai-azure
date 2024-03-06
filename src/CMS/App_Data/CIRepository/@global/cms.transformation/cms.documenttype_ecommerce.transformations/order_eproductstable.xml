@@ -8,7 +8,7 @@
   <TransformationCode>
 <![CDATA[
 <br />
-- {%GetResourceString(OrderItemSKUName)%} (<a href="{%GetEproductUrl(Token, FileName, OrderSiteID)%}" target="_blank" >{%FileName%}</a>) {% String.IsNullOrEmpty(OrderItemValidTo) ? "never expires" : "expires after " + Format(OrderItemValidTo, "{0:G}") |(identity)GlobalAdministrator|(hash)bbc20a9c67eac820d65719be20ac6dc59f73e5ef21b900bfff04357f294ac91e%}
+- {%GetResourceString(OrderItemSKUName)%} (<a href="{%GetEproductUrl(Token, FileName, OrderSiteID)%}" target="_blank" >{%FileName%}</a>) {% String.IsNullOrEmpty(OrderItemValidTo) ? "never expires" : "expires after " + Format(OrderItemValidTo, "{0:G}") |(identity)GlobalAdministrator|(hash)5810bcf6e4e6ff978e576e8f8848d8e73db444ed152fa815b14df414b731e63b%}
 ]]>
   </TransformationCode>
   <TransformationGUID>4ec7bbb8-88b3-4922-84ec-68d4ce02bfa5</TransformationGUID>

@@ -32,10 +32,10 @@
       <field column="GiftCardCouponCodeRemainingValue" columnprecision="9" columnsize="18" columntype="decimal" guid="b2954d37-033b-487a-96ac-d3bc722d344c" system="true" visible="true">
         <properties>
           <contentafter ismacro="true">
-            <![CDATA[<span class="form-control-text">{% HTMLEncode(GetMainSiteCurrency(CMSContext.CurrentSiteID).CurrencyCode) |(identity)GlobalAdministrator|(hash)6b9fd7b9e7292f9a44b001d4c5e8ede4dfdf713c9064b215f9c33361c715ea24%}</span>]]>
+            <![CDATA[<span class="form-control-text">{% HTMLEncode(GetMainSiteCurrency(CMSContext.CurrentSiteID).CurrencyCode) |(identity)GlobalAdministrator|(hash)221d3415748163f27f52b682886acf81f3518094e4159ae1cb0d3ca0d404c803%}</span>]]>
           </contentafter>
           <defaultvalue ismacro="true">
-            <![CDATA[{% ParentObject.GetValue("GiftCardValue") |(identity)GlobalAdministrator|(hash)6b1ca627e52130fff7ca5908cff69591f49b495a8817438b94edbef338085a9c%}]]>
+            <![CDATA[{% ParentObject.GetValue("GiftCardValue") |(identity)GlobalAdministrator|(hash)4cbfe1e07860da30e3d742cb2131e9517c883e3afb9967e8d6a789159ca02365%}]]>
           </defaultvalue>
           <fieldcaption>{$com.giftcardcouponcode.remainingvalue$}</fieldcaption>
           <fielddescription>

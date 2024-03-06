@@ -115,7 +115,7 @@
 
 <!-- HIDDEN PREHEADER TEXT -->
 <div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: Helvetica, Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
-  {% Email.Preheader |(identity)GlobalAdministrator|(hash)fa83e672bfce35400a7af1084e10bac9e31fd161236455ffeca8772939572e2b%}
+  {% Email.Preheader |(identity)GlobalAdministrator|(hash)54cd1912f796e36c12939d031c15780bfc70dad0ba1e6b5bc9b60e0af348c16b%}
 </div>
 
 <!-- HEADER -->
@@ -219,13 +219,13 @@
                     <td align="center" style="font-size: 12px; line-height: 18px; font-family: Helvetica, Arial, sans-serif; color:#666666;">
                         We hope you found this message to be useful.
                         However, if you&#39;d rather not receive these emails in the future,
-                        please <a href="{% EmailFeed.UnsubscribeFromEmailFeedUrl |(identity)GlobalAdministrator|(hash)aa87d2338fa4f8698159b9e5ea62fcdb320a988158da007610cf093d0c504161%}" target="_blank" style="color: #000000;">unsubscribe</a> from this newsletter.
-                        You can also unsubscribe from <a href="{% EmailFeed.UnsubscribeFromAllEmailFeedsUrl |(identity)GlobalAdministrator|(hash)fd960c4519f08b97950df3d9ed0666216e3bc5492fb0babf453b26fbcc37e731%}" target="_blank" style="color: #000000;">all marketing emails</a>.
+                        please <a href="{% EmailFeed.UnsubscribeFromEmailFeedUrl |(identity)GlobalAdministrator|(hash)09a4a9dd6928a33cba360f4b3bd57f847c9c6a39d2928afc05ed6e87ae6c6085%}" target="_blank" style="color: #000000;">unsubscribe</a> from this newsletter.
+                        You can also unsubscribe from <a href="{% EmailFeed.UnsubscribeFromAllEmailFeedsUrl |(identity)GlobalAdministrator|(hash)29394cd0fefd9035f1011f4b3ef0346431bcd879bbed30a4e16f4a92ee2b2c7a%}" target="_blank" style="color: #000000;">all marketing emails</a>.
                     </td>
                 </tr>
                 <tr>
                     <td align="center" style="font-size: 12px; line-height: 18px; font-family: Helvetica, Arial, sans-serif; color:#666666;">
-                        <a href="{% Email.ViewInBrowserUrl |(identity)GlobalAdministrator|(hash)bef6a78fad86f66ac80c011e1b3ebdf227ed5ae930957e2f217646210c0a31ae%}" target="_blank" style="color: #000000;">View this email in your browser.</a>
+                        <a href="{% Email.ViewInBrowserUrl |(identity)GlobalAdministrator|(hash)3a9ddfc5b530df9f93b314726bacc1732a814a9cc62bb2a5da5de30d526a1156%}" target="_blank" style="color: #000000;">View this email in your browser.</a>
                     </td>
                 </tr>
             </table>
@@ -252,7 +252,7 @@
   <TemplateName>CoreDemoEmailTemplate3zones</TemplateName>
   <TemplateSiteID>
     <CodeName>DancingGoatCore</CodeName>
-    <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+    <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
     <ObjectType>cms.site</ObjectType>
   </TemplateSiteID>
   <TemplateType>I</TemplateType>

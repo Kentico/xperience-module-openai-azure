@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.pageurlpath>
+  <PageUrlPathCulture>es-ES</PageUrlPathCulture>
+  <PageUrlPathGUID>a36ccb3c-f408-44af-a161-8b2ce0353f41</PageUrlPathGUID>
+  <PageUrlPathNodeID>
+    <CodeName>/Store/Accessories/Changeable-Paper-Filters-for-Vacuum-Pot</CodeName>
+    <GUID>5a9b16ca-3fdd-4c88-96f3-d54ebe56878d</GUID>
+    <ObjectType>cms.node</ObjectType>
+    <Site>
+      <CodeName>DancingGoatCore</CodeName>
+      <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
+      <ObjectType>cms.site</ObjectType>
+    </Site>
+  </PageUrlPathNodeID>
+  <PageUrlPathSiteID>
+    <CodeName>DancingGoatCore</CodeName>
+    <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
+    <ObjectType>cms.site</ObjectType>
+  </PageUrlPathSiteID>
+  <PageUrlPathUrlPath>
+    <![CDATA[es-ES/Store/Accessories/Changeable-Paper-Filters-for-Vacuum-Pot]]>
+  </PageUrlPathUrlPath>
+  <PageUrlPathUrlPathHash>
+    <![CDATA[50846DFBC3AD07363CFE9276A21F40E416D494287804DE5F1D23F4F47D8725CA]]>
+  </PageUrlPathUrlPathHash>
+</cms.pageurlpath>

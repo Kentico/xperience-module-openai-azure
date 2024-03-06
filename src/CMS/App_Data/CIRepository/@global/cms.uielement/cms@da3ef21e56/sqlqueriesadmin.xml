@@ -36,6 +36,6 @@
   <ElementTargetURL>~/CMSModules/System/Debug/Log.aspx?name=sqlqueries</ElementTargetURL>
   <ElementType>Url</ElementType>
   <ElementVisibilityCondition>
-    <![CDATA[{%Debug.IsDebugEnabled("sqlqueries") && (Settings.CMSDebugAllSQLQueries || Settings.CMSDebugEverythingEverywhere)|(identity)GlobalAdministrator|(hash)f9f9ccb26d1e1a4b65aee9a8d9b190b2c2ee67bb464d68318c35b1b825723605%}]]>
+    <![CDATA[{%Debug.IsDebugEnabled("sqlqueries") && (Settings.CMSDebugAllSQLQueries || Settings.CMSDebugEverythingEverywhere)|(identity)GlobalAdministrator|(hash)a0998e2ed6f33a0846144a2331609fb7d39470b260e8f377fdbcf44dfdcaa271%}]]>
   </ElementVisibilityCondition>
 </cms.uielement>

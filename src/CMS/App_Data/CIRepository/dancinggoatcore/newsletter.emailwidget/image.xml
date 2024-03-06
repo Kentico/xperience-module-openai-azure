@@ -5,7 +5,7 @@
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td class="padding" align="center" style="padding: 10px 0 15px 0;">
-      <img src="{% ImageUrl == String.Empty ? "~/getmedia/d82041ac-2264-463f-81fb-5a7bbda33cd3/default-image-product.png" : ImageUrl |(identity)GlobalAdministrator|(hash)8cd320a2cdcf371b63a3f6f776b5de4f4eaa5cd2f269f8a4b75e84e32d5c4ba8%}" width="500" border="0" alt="{% HTMLAttributeEncode(AlternateText) %}" style="display: block; color: #666666;  font-family: Helvetica, arial, sans-serif; font-size: 16px;" class="img-max">
+      <img src="{% ImageUrl == String.Empty ? "~/getmedia/d82041ac-2264-463f-81fb-5a7bbda33cd3/default-image-product.png" : ImageUrl |(identity)GlobalAdministrator|(hash)f1a921f71e5582d9c7d6f953c58568009ab71c9d0321842d88bc6dd03b7a2e3f%}" width="500" border="0" alt="{% HTMLAttributeEncode(AlternateText) %}" style="display: block; color: #666666;  font-family: Helvetica, arial, sans-serif; font-size: 16px;" class="img-max">
     </td>
   </tr>
 </table>
@@ -46,7 +46,7 @@
   </EmailWidgetProperties>
   <EmailWidgetSiteID>
     <CodeName>DancingGoatCore</CodeName>
-    <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+    <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
     <ObjectType>cms.site</ObjectType>
   </EmailWidgetSiteID>
 </newsletter.emailwidget>
