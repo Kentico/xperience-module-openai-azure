@@ -120,7 +120,7 @@
           <contentafter ismacro="true">{$com.variantedit.trackinginfo$}</contentafter>
           <controlcellcssclass>form-control-text</controlcellcssclass>
           <visiblemacro ismacro="true">
-            <![CDATA[{%ParentObject.skutrackinventory != "ByVariants"|(identity)GlobalAdministrator|(hash)1c2914ef353c2ec868295e5f49937a240b157c10c0c40cc164ffcf33f6e970e1%}]]>
+            <![CDATA[{%ParentObject.skutrackinventory != "ByVariants"|(identity)GlobalAdministrator|(hash)8ea31c59fb3c7a71fab3438a15192cc509451f73efd691d4539c59064dce46cc%}]]>
           </visiblemacro>
         </properties>
         <settings>
@@ -134,7 +134,7 @@
         </settings>
         <properties>
           <visiblemacro>
-            <![CDATA[{%ParentObject.skutrackinventory == "ByVariants"|(identity)GlobalAdministrator|(hash)5594ec0e0a9b16be58d1208cabf1db8c509ced41edf97c484daf23b16d8617f9%}]]>
+            <![CDATA[{%ParentObject.skutrackinventory == "ByVariants"|(identity)GlobalAdministrator|(hash)58152b3d616534840ba9bad14cedd6363625905c4f3edc0465c2e11f85e59338%}]]>
           </visiblemacro>
         </properties>
       </field>
@@ -142,7 +142,7 @@
         <properties>
           <fieldcaption>Reorder at</fieldcaption>
           <visiblemacro>
-            <![CDATA[{%ParentObject.skutrackinventory == "ByVariants"|(identity)GlobalAdministrator|(hash)5594ec0e0a9b16be58d1208cabf1db8c509ced41edf97c484daf23b16d8617f9%}]]>
+            <![CDATA[{%ParentObject.skutrackinventory == "ByVariants"|(identity)GlobalAdministrator|(hash)58152b3d616534840ba9bad14cedd6363625905c4f3edc0465c2e11f85e59338%}]]>
           </visiblemacro>
         </properties>
       </field>
@@ -183,7 +183,7 @@
           <Trim>False</Trim>
           <ValidChars>,.</ValidChars>
           <WatermarkText ismacro="true">
-            <![CDATA[{% ParentObject.SKUWeight |(identity)GlobalAdministrator|(hash)ec8f46e5c1506ead8895cde6337c9c1d60adf41ef6d919e7e9dfb639424b2635%}]]>
+            <![CDATA[{% ParentObject.SKUWeight |(identity)GlobalAdministrator|(hash)0cc7d587a8fd764e55c2c7fed2e17dbc9f032ba989413a49aae8672b3e0032a5%}]]>
           </WatermarkText>
           <FilterType />
         </settings>
@@ -191,21 +191,21 @@
       <field column="SKUHeight" guid="960b12da-a78a-47af-b30a-dd5d4c963c7f" order="46">
         <settings>
           <WatermarkText ismacro="true">
-            <![CDATA[{% ParentObject.SKUHeight |(identity)GlobalAdministrator|(hash)c0c344319ffd14b60c7146bf9210b17aba6533709a9617c96e9675c23e4e4e4e%}]]>
+            <![CDATA[{% ParentObject.SKUHeight |(identity)GlobalAdministrator|(hash)c7f565fa45d847f3ca0de5e5e6f1e779cee605d7be29f5ccc55111992c497ce6%}]]>
           </WatermarkText>
         </settings>
       </field>
       <field column="SKUWidth" guid="cada95d5-f56f-47b8-8ec5-2311f6420e8f" order="47">
         <settings>
           <WatermarkText ismacro="true">
-            <![CDATA[{% ParentObject.SKUWidth |(identity)GlobalAdministrator|(hash)385845106f603be0b230f7bb133b982aeb3422e68ab346873486350fab1d9e7f%}]]>
+            <![CDATA[{% ParentObject.SKUWidth |(identity)GlobalAdministrator|(hash)9ee4ba45cca620a15238166d15b8c7774f1d82750f1f62f3af13a41b8a351b2b%}]]>
           </WatermarkText>
         </settings>
       </field>
       <field column="SKUDepth" guid="01b371cb-8598-4409-82a5-955e5178dbfa" order="48">
         <settings>
           <WatermarkText ismacro="true">
-            <![CDATA[{% ParentObject.SKUDepth |(identity)GlobalAdministrator|(hash)6c4c8d9dd08dec0069a02d67ffdf8bfb8130ef1acd4ee6bfbc7c84b5464e9aa6%}]]>
+            <![CDATA[{% ParentObject.SKUDepth |(identity)GlobalAdministrator|(hash)a7c2f337dbd0fa72f9a2920ddc172ccb02b0444eeaee36eeb9e7c82dbfaca0bc%}]]>
           </WatermarkText>
         </settings>
       </field>

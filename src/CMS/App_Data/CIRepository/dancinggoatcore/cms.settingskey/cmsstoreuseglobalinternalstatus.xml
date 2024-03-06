@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.settingskey>
+  <KeyCategoryID>
+    <CodeName>CMS.Ecommerce.UseGlobalSettingsFor</CodeName>
+    <ObjectType>cms.settingscategory</ObjectType>
+  </KeyCategoryID>
+  <KeyDefaultValue>False</KeyDefaultValue>
+  <KeyDisplayName>{$settingskey.cmsstoreuseglobalinternalstatus$}</KeyDisplayName>
+  <KeyGUID>533c9c1a-8d0a-4f13-bf15-dd06df0c35ae</KeyGUID>
+  <KeyIsHidden>False</KeyIsHidden>
+  <KeyName>CMSStoreUseGlobalInternalStatus</KeyName>
+  <KeyType>boolean</KeyType>
+  <KeyValue>False</KeyValue>
+  <SiteID>
+    <CodeName>DancingGoatCore</CodeName>
+    <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
+    <ObjectType>cms.site</ObjectType>
+  </SiteID>
+</cms.settingskey>

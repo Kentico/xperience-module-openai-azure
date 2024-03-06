@@ -11,7 +11,7 @@
   <KeyFormControlSettings>
     <settings>
       <Options>
-        <![CDATA[{%GetSupportedContentExtractors().Replace(", ", "\n") |(identity)GlobalAdministrator|(hash)216e5bac9c97dfccf396efae2a5d3e311ed0daef5535ffcacd98fd71713cdbfc%}]]>
+        <![CDATA[{%GetSupportedContentExtractors().Replace(", ", "\n") |(identity)GlobalAdministrator|(hash)fe580885160a79df81d2c3f7d67f8051e61536dd815364df929136ff514e6a25%}]]>
       </Options>
       <RepeatDirection>vertical</RepeatDirection>
       <RepeatLayout>Flow</RepeatLayout>

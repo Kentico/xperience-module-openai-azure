@@ -49,7 +49,7 @@ public partial class CMSModules_Categories_Controls_CategorySelectionDialog : CM
     private IDictionary<int, bool> filteredCategories;
     private CMS.DocumentEngine.TreeNode currentPage;
     private bool showAutoSelectButton;
-    private int[] allowedCategoryIDs;
+    private bool autoCheckParents;
 
     // Actions
     private HeaderAction upAction;
@@ -630,7 +630,7 @@ function ProcessItem(chkbox, hash, changeChecked, getHash) {
             itemsElem.value = items.replace(re, '", ValuesSeparator, @"');
         }
         checkHash = '|' + item + '#' + hash;
-        disableParents(item, chkbox.checked);
+        ", autoCheckParents ? "disableParents(item, chkbox.checked);" : "", @"
     }
     else
     {
@@ -785,11 +785,11 @@ function SelectAllItems(checkbox, hash) {
             {
                 // Prepare checbox when in multiple selection mode
                 checkBox = string.Format("<span class=\"checkbox tree-checkbox\"><input id=\"chk{0}\" type=\"checkbox\" onclick=\"ProcessItem(this,'{1}',false,true);\" class=\"chckbox\" ", category.CategoryID, ValidationHelper.GetHashString(category.CategoryID.ToString(), new HashSettings(mSecurityPurpose)));
-                if (catHasCheckedChildren || (hidItem.Value.IndexOfCSafe(ValuesSeparator + category.CategoryID + ValuesSeparator, true) >= 0))
+                if ((autoCheckParents && catHasCheckedChildren) || (hidItem.Value.IndexOfCSafe(ValuesSeparator + category.CategoryID + ValuesSeparator, true) >= 0))
                 {
                     checkBox += "checked=\"checked\" ";
                 }
-                if (catHasCheckedChildren)
+                if (autoCheckParents && catHasCheckedChildren)
                 {
                     checkBox += "disabled=\"disabled\" ";
                 }
@@ -1117,10 +1117,7 @@ function SelectAllItems(checkbox, hash) {
             mDocumentId = ValidationHelper.GetInteger(parameters["CurrentDocumentID"], 0);
             siteId = ValidationHelper.GetInteger(parameters["SiteID"], SiteContext.CurrentSiteID);
             showAutoSelectButton = ValidationHelper.GetBoolean(parameters["ShowAutoSelect"], false);
-            allowedCategoryIDs = ValidationHelper.GetString(parameters["AllowedCategoryIDs"], String.Empty)
-                .Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries)
-                .Select(int.Parse)
-                .ToArray();
+            autoCheckParents = ValidationHelper.GetBoolean(parameters["AutoCheckParents"], true);
 
             switch (SelectionMode)
             {
@@ -1542,13 +1539,11 @@ function SelectAllItems(checkbox, hash) {
     {
         var filteredCategoriesMap = new Dictionary<int, bool>();
 
-        if (documentId > 0 && allowedCategoryIDs.Any())
+        if (documentId > 0)
         {
             var classId = DataClassInfoProvider.GetDataClassInfo(CurrentPage.NodeClassName).ClassID;
-            var allowedCategories = CategoryInfo.Provider.Get()
-                .Column(nameof(CategoryInfo.CategoryIDPath))
-                .WhereIn("CategoryID", allowedCategoryIDs)
-                .TypedResult;
+            var allowedCategories = new PageTypeCategoriesRetriever().Get(siteId, classId);
+            var allowedCategoryIDs = allowedCategories.Select(c => c.CategoryID).ToList();
 
             var filteredCategoryIDs = allowedCategories.SelectMany(category =>
             {

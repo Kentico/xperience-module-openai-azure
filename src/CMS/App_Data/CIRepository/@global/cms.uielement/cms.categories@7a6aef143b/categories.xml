@@ -38,7 +38,7 @@
   </ElementResourceID>
   <ElementSize>0</ElementSize>
   <ElementTargetURL>
-    <![CDATA[~/CMSModules/Categories/Pages/Administration/Category_List.aspx?siteId={% if (!CurrentUser.CheckPrivilegeLevel(UserPrivilegeLevelEnum.GlobalAdmin)) { return CurrentSite.SiteID } |(identity)GlobalAdministrator|(hash)063ec5b9c61c0ac6c7f65decf9adc70ab7eec6053c86513034ab40d3f571a7b9%}]]>
+    <![CDATA[~/CMSModules/Categories/Pages/Administration/Category_List.aspx?siteId={% if (!CurrentUser.CheckPrivilegeLevel(UserPrivilegeLevelEnum.GlobalAdmin)) { return CurrentSite.SiteID } |(identity)GlobalAdministrator|(hash)4aacd652617a152b2726f2f7a5f385697cd6c8e28af0a0aac5b9719004371016%}]]>
   </ElementTargetURL>
   <ElementType>Url</ElementType>
 </cms.uielement>

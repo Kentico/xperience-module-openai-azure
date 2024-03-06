@@ -24,17 +24,17 @@
       <field allowempty="true" column="StepType" columntype="integer" guid="00492fa3-f303-4d73-b232-06002242544e" system="true" visible="true">
         <properties>
           <defaultvalue ismacro="true">
-            <![CDATA[{% Convert.ToInt(WorkflowStepTypeEnum.Standard, 0)|(identity)GlobalAdministrator|(hash)0a4e3f13561b05cd67a75a02c69036ccc18a21ce0ada97defca376cbfce3be37%}]]>
+            <![CDATA[{% Convert.ToInt(WorkflowStepTypeEnum.Standard, 0)|(identity)GlobalAdministrator|(hash)3475eefc73d54ca1229e8920bf0c94870dcfc7240fc94c352c14af364d626332%}]]>
           </defaultvalue>
           <fieldcaption>{$graph.stepType$}</fieldcaption>
           <visiblemacro ismacro="true">
-            <![CDATA[{%!ParentObject.IsBasic|(identity)GlobalAdministrator|(hash)d48b3c1c7f78352fbde6cfd8644d051c7752395194d8b8308f302b0a7b8c325b%}]]>
+            <![CDATA[{%!ParentObject.IsBasic|(identity)GlobalAdministrator|(hash)ddde7a320cb1849beee0e26362cd94bf2c4074571a31dca57ce2a42f8d60cde5%}]]>
           </visiblemacro>
         </properties>
         <settings>
           <controlname>labelcontrol</controlname>
           <OutputFormat>
-            <![CDATA[{% Enums.ToStringRepresentation(Value, "CMS.DataEngine", "CMS.DataEngine.WorkflowStepTypeEnum") |(identity)GlobalAdministrator|(hash)18c4e8f258b7410ff912e7843fcc5b652e08b86b2d9d078606ee1d3b29c5482f%}]]>
+            <![CDATA[{% Enums.ToStringRepresentation(Value, "CMS.DataEngine", "CMS.DataEngine.WorkflowStepTypeEnum") |(identity)GlobalAdministrator|(hash)b9fbbc6f5080d9c1c03e8934fcac4d371552ef1a73f922b5341148dd48375b56%}]]>
           </OutputFormat>
         </settings>
       </field>
@@ -93,10 +93,10 @@
         <properties>
           <defaultvalue>true</defaultvalue>
           <fieldcaption ismacro="true">
-            <![CDATA[{%!ParentObject.IsAutomation ? GetResourceString("WorkflowStep.AllowReject") : GetResourceString("WorkflowStep.AllowMoveToPrevious") |(identity)GlobalAdministrator|(hash)3423507ef585e38e48671315c6c57ede80c0e567c7fa0fcd0d69cc961883a4c0%}]]>
+            <![CDATA[{%!ParentObject.IsAutomation ? GetResourceString("WorkflowStep.AllowReject") : GetResourceString("WorkflowStep.AllowMoveToPrevious") |(identity)GlobalAdministrator|(hash)2e77860cab55aab900b63dd2512aa07ebeb6800e5cef7693ebb6dbdac84722bc%}]]>
           </fieldcaption>
           <visiblemacro ismacro="true">
-            <![CDATA[{%!EditedObject.StepIsArchived && !EditedObject.StepIsEdit && !EditedObject.StepIsStart && !EditedObject.StepIsAction|(identity)GlobalAdministrator|(hash)53da8005d2b46fb40cc5109d21cb6ff6b22c3a17f3fe3c11b2483360fcd9dcb5%}]]>
+            <![CDATA[{%!EditedObject.StepIsArchived && !EditedObject.StepIsEdit && !EditedObject.StepIsStart && !EditedObject.StepIsAction|(identity)GlobalAdministrator|(hash)167b1135f3d07377fdbbf99d9104a3b7656e662969a84ef245ef48e13aec009e%}]]>
           </visiblemacro>
         </properties>
         <settings>
@@ -109,7 +109,7 @@
           <fieldcaption>{$WorkflowStep.AllowPublish$}</fieldcaption>
           <validationerrormessage>{$Development-Workflow_New.RequiresCodeName$}</validationerrormessage>
           <visiblemacro ismacro="true">
-            <![CDATA[{%!ParentObject.IsAutomation && ((EditedObject.StepType == WorkflowStepTypeEnum.Standard) || EditedObject.StepIsEdit || EditedObject.StepIsStart || (EditedObject.StepType == WorkflowStepTypeEnum.Wait))|(identity)GlobalAdministrator|(hash)136b8f01510084fb543a2c71c0b59d36662177ba7fbc9709b3247e39bfaa4df9%}]]>
+            <![CDATA[{%!ParentObject.IsAutomation && ((EditedObject.StepType == WorkflowStepTypeEnum.Standard) || EditedObject.StepIsEdit || EditedObject.StepIsStart || (EditedObject.StepType == WorkflowStepTypeEnum.Wait))|(identity)GlobalAdministrator|(hash)6d7f1d2b459c1ecbe401b1e7d7f6057cf062cf64d5b8e2f52a7ab25146dd6d59%}]]>
           </visiblemacro>
         </properties>
         <settings>

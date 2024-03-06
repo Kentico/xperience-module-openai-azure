@@ -9,7 +9,7 @@
   <GraphQuery>
 <![CDATA[
 DECLARE @GlobalObjects bit;
-SET @GlobalObjects = {%Settings.CMSStoreUseGlobalOrderStatus?1:0|(identity)GlobalAdministrator|(hash)7ccf811ed95feec806e31d1d4212dd184b4c108ea46d2fdb61927c1ecfe42a29%};
+SET @GlobalObjects = {%Settings.CMSStoreUseGlobalOrderStatus?1:0|(identity)GlobalAdministrator|(hash)61677682af3e2f0efcfe76fe13eedc7941f8ba62564412aa5d9a917ebf5d83fe%};
                       
 SELECT
    StatusDisplayName AS '{$orderstatuslist.header$}',

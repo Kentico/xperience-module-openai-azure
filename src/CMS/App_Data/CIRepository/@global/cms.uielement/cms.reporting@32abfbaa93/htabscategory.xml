@@ -31,7 +31,7 @@
       <objecttype>reporting.reportcategory</objecttype>
       <includejquery>False</includejquery>
       <displaybreadcrumbs ismacro="True">
-        <![CDATA[{%EditedObject.CategoryParentID > 0|(identity)GlobalAdministrator|(hash)cc79eb0753715d9b812a602a2578d59578210b2689b7d03bac60e6b5a8fe63a3%}]]>
+        <![CDATA[{%EditedObject.CategoryParentID > 0|(identity)GlobalAdministrator|(hash)a310d9ba55ccd0bbf210dc884eeaec155db560dfaf46d076d36dfe9f9e10462c%}]]>
       </displaybreadcrumbs>
       <javascript>
         <![CDATA[function refreshPage() {parent.selectTreeCategory({% UIContext.ObjectID @%});}]]>

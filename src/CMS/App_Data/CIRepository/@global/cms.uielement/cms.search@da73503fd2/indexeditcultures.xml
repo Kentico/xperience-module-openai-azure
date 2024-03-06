@@ -37,6 +37,6 @@
   <ElementTargetURL>~/CMSModules/SmartSearch/SearchIndex_Cultures.aspx</ElementTargetURL>
   <ElementType>Url</ElementType>
   <ElementVisibilityCondition>
-    <![CDATA[{%(EditedObject.IndexType == "cms.document") || (EditedObject.IndexType == "DOCUMENTS_CRAWLER_INDEX")|(identity)GlobalAdministrator|(hash)d751147b1c7de68468d38b8a88aa9d68e98305fc7964c1f8f7652b50409cccfb%}]]>
+    <![CDATA[{%(EditedObject.IndexType == "cms.document") || (EditedObject.IndexType == "DOCUMENTS_CRAWLER_INDEX")|(identity)GlobalAdministrator|(hash)0dd558d93700ab2dbe7c5f45d84c88b272f23984779d7448111e2e0dcecb1727%}]]>
   </ElementVisibilityCondition>
 </cms.uielement>

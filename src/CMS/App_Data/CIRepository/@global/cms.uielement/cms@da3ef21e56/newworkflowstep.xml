@@ -30,6 +30,6 @@
   <ElementTargetURL>~/CMSModules/Workflows/Workflow_Step_New.aspx</ElementTargetURL>
   <ElementType>Url</ElementType>
   <ElementVisibilityCondition>
-    <![CDATA[{%!EditedObjectParent.WorkflowAutoPublishChanges|(identity)GlobalAdministrator|(hash)9ac9321e491de9e9410e06c7c3be2a95c630289450953e8627ff0c2f973d56ae%}]]>
+    <![CDATA[{%!EditedObjectParent.WorkflowAutoPublishChanges|(identity)GlobalAdministrator|(hash)bb7280570dc5a33d42f1ee12a963812396f357ebc4c427e6d9b58f80e45bf7f1%}]]>
   </ElementVisibilityCondition>
 </cms.uielement>

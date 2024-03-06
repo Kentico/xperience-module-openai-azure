@@ -7,7 +7,7 @@
     <ObjectType>ecommerce.department</ObjectType>
     <Site>
       <CodeName>DancingGoatCore</CodeName>
-      <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+      <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
       <ObjectType>cms.site</ObjectType>
     </Site>
   </SKUDepartmentID>
@@ -49,7 +49,7 @@ Apart from the already mentioned greatest features, the Macap M2D aims even high
     <ObjectType>ecommerce.manufacturer</ObjectType>
     <Site>
       <CodeName>DancingGoatCore</CodeName>
-      <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+      <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
       <ObjectType>cms.site</ObjectType>
     </Site>
   </SKUManufacturerID>
@@ -64,7 +64,7 @@ Apart from the already mentioned greatest features, the Macap M2D aims even high
   </SKUShortDescription>
   <SKUSiteID>
     <CodeName>DancingGoatCore</CodeName>
-    <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+    <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
     <ObjectType>cms.site</ObjectType>
   </SKUSiteID>
   <SKUTaxClassID>
@@ -73,7 +73,7 @@ Apart from the already mentioned greatest features, the Macap M2D aims even high
     <ObjectType>ecommerce.taxclass</ObjectType>
     <Site>
       <CodeName>DancingGoatCore</CodeName>
-      <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+      <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
       <ObjectType>cms.site</ObjectType>
     </Site>
   </SKUTaxClassID>

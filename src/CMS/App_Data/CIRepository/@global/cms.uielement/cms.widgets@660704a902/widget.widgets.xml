@@ -37,7 +37,7 @@
       </wherecondition>
       <includejquery>False</includejquery>
       <afterdeletescript>
-        <![CDATA[parent.parent.selectTreeCategory({% UIContext.ParentObjectID |(identity)GlobalAdministrator|(hash)95881f6d3cffb1041014a20e3cae60cba4a4de4b534db4f1693b2a7d2629228e%});]]>
+        <![CDATA[parent.parent.selectTreeCategory({% UIContext.ParentObjectID |(identity)GlobalAdministrator|(hash)9bd11feb308939952784b8276de1039457c7fca43614eb45100e7a1db08f43a8%});]]>
       </afterdeletescript>
     </data>
   </ElementProperties>

@@ -4,6 +4,7 @@ using System.Linq;
 using CMS.DocumentEngine;
 using CMS.DocumentEngine.Types.DancingGoatCore;
 
+using Kentico.Components.Web.Mvc.FormComponents;
 using Kentico.Content.Web.Mvc;
 
 namespace DancingGoat.Models
@@ -33,13 +34,22 @@ namespace DancingGoat.Models
         /// </summary>
         /// <param name="nodeAliasPath">The node alias path of the articles section in the content tree.</param>
         /// <param name="count">The number of articles to return. Use 0 as value to return all records.</param>
-        public IEnumerable<Article> GetArticles(string nodeAliasPath, int count = 0)
+        /// <param name="categories">The code names of selected categories of the articles.</param>
+        public IEnumerable<Article> GetArticles(string nodeAliasPath, int count = 0, IEnumerable<string> categories = null)
         {
             return pageRetriever.Retrieve<Article>(
-                query => query
+                query => {
+                    query
                     .Path(nodeAliasPath, PathTypeEnum.Children)
                     .TopN(count)
-                    .OrderByDescending("DocumentPublishFrom"),
+                    .OrderByDescending("DocumentPublishFrom");
+
+                    // Apply category filter if possible
+                    if (categories != null && categories.Any())
+                    {
+                        query.InCategories(categories.ToArray());
+                    }
+                },
                 cache => cache
                     .Key($"{nameof(ArticleRepository)}|{nameof(GetArticles)}|{nodeAliasPath}|{count}")
                     // Include path dependency to flush cache when a new child page is created.
@@ -62,5 +72,5 @@ namespace DancingGoat.Models
                     .Dependencies((articles, deps) => deps.Pages(articles.First().Fields.RelatedArticles)))
                 .First();
 		}
-	}
+    }
 }

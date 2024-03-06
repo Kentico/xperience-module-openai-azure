@@ -35,7 +35,7 @@
         <![CDATA[WebPartLayoutWebPartID = {% ToInt(UIContext.ParentObjectID) @%}]]>
       </wherecondition>
       <gridname ismacro="True">
-        <![CDATA[{% (UIContext.EditedObjectParent.WebPartParentID > 0) ? "~/App_Data/CMSModules/Design/UI/Grids/CMS_WebPartLayout/WebPartLayoutInherited.xml" : "" |(identity)GlobalAdministrator|(hash)ad5c6def378659f78f991b4ec8a23ece69fefa88206af9312aed3c2869584fc8%}]]>
+        <![CDATA[{% (UIContext.EditedObjectParent.WebPartParentID > 0) ? "~/App_Data/CMSModules/Design/UI/Grids/CMS_WebPartLayout/WebPartLayoutInherited.xml" : "" |(identity)GlobalAdministrator|(hash)d82f73ae5800d5defef085ad0329d2f8821a0f21f1c95811998ac76bafce36e5%}]]>
       </gridname>
       <displaybreadcrumbs>False</displaybreadcrumbs>
       <objecttype>cms.webpartlayout</objecttype>

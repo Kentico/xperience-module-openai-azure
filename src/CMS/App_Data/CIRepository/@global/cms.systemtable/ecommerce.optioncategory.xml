@@ -31,7 +31,7 @@
           <controlname>radiobuttonscontrol</controlname>
           <Options ismacro="true">
 <![CDATA[
-{%SiteContext.CurrentSiteID|(identity)GlobalAdministrator|(hash)4f7433321168d6844abe167688753cc5e119d5e7469d91b476cefcdabafa0e65%};{$com.allowuse.site$}
+{%SiteContext.CurrentSiteID|(identity)GlobalAdministrator|(hash)ad4873899b4b2420d87bf957303580c9e9f98bcc27ae71a47ebdf420dfc82cbc%};{$com.allowuse.site$}
 0;{$com.allowuse.global$}
 ]]>
           </Options>
@@ -51,10 +51,10 @@
         </settings>
         <rules>
           <rule>
-            <![CDATA[{%Rule("Value.Length >= 1", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"MinLength\" ><p n=\"minlength\"><t>1</t><v>1</v><r>false</r><d></d><vt>integer</vt></p></r></rules>")|(identity)GlobalAdministrator|(hash)ee8a20226f37f8733a6300bef99e2b14fff448d7b0e323b969e2a45830681613%}]]>
+            <![CDATA[{%Rule("Value.Length >= 1", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"MinLength\" ><p n=\"minlength\"><t>1</t><v>1</v><r>false</r><d></d><vt>integer</vt></p></r></rules>")|(identity)GlobalAdministrator|(hash)90e66549a1f71734a33ac4c854c9719abf6832a201a311c9dba2188932002bcd%}]]>
           </rule>
           <rule>
-            <![CDATA[{%Rule("Value.Length <= 200", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"MaxLength\" ><p n=\"maxlength\"><t>200</t><v>200</v><r>false</r><d></d><vt>integer</vt></p></r></rules>")|(identity)GlobalAdministrator|(hash)71d58bd4c9c138ee28f8028bc19c42279f4f738b5b11d505955c964e384be92a%}]]>
+            <![CDATA[{%Rule("Value.Length <= 200", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"MaxLength\" ><p n=\"maxlength\"><t>200</t><v>200</v><r>false</r><d></d><vt>integer</vt></p></r></rules>")|(identity)GlobalAdministrator|(hash)ee3fbb4464d0b3f26c59f6adcbcdfe16d2e44d9918ef17419ef855935ddccfd9%}]]>
           </rule>
         </rules>
       </field>
@@ -69,7 +69,7 @@
         </settings>
         <rules>
           <rule>
-            <![CDATA[{%Rule("Value.Length <= 200", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"MaxLength\" ><p n=\"maxlength\"><t>200</t><v>200</v><r>false</r><d></d><vt>integer</vt></p></r></rules>")|(identity)GlobalAdministrator|(hash)71d58bd4c9c138ee28f8028bc19c42279f4f738b5b11d505955c964e384be92a%}]]>
+            <![CDATA[{%Rule("Value.Length <= 200", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"MaxLength\" ><p n=\"maxlength\"><t>200</t><v>200</v><r>false</r><d></d><vt>integer</vt></p></r></rules>")|(identity)GlobalAdministrator|(hash)ee3fbb4464d0b3f26c59f6adcbcdfe16d2e44d9918ef17419ef855935ddccfd9%}]]>
           </rule>
         </rules>
       </field>
@@ -82,10 +82,10 @@
         </settings>
         <rules>
           <rule>
-            <![CDATA[{%Rule("Value.Length >= 1", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"MinLength\" ><p n=\"minlength\"><t>1</t><v>1</v><r>false</r><d></d><vt>integer</vt></p></r></rules>")|(identity)GlobalAdministrator|(hash)ee8a20226f37f8733a6300bef99e2b14fff448d7b0e323b969e2a45830681613%}]]>
+            <![CDATA[{%Rule("Value.Length >= 1", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"MinLength\" ><p n=\"minlength\"><t>1</t><v>1</v><r>false</r><d></d><vt>integer</vt></p></r></rules>")|(identity)GlobalAdministrator|(hash)90e66549a1f71734a33ac4c854c9719abf6832a201a311c9dba2188932002bcd%}]]>
           </rule>
           <rule>
-            <![CDATA[{%Rule("Value.Length <= 200", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"MaxLength\" ><p n=\"maxlength\"><t>200</t><v>200</v><r>false</r><d></d><vt>integer</vt></p></r></rules>")|(identity)GlobalAdministrator|(hash)71d58bd4c9c138ee28f8028bc19c42279f4f738b5b11d505955c964e384be92a%}]]>
+            <![CDATA[{%Rule("Value.Length <= 200", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"MaxLength\" ><p n=\"maxlength\"><t>200</t><v>200</v><r>false</r><d></d><vt>integer</vt></p></r></rules>")|(identity)GlobalAdministrator|(hash)ee3fbb4464d0b3f26c59f6adcbcdfe16d2e44d9918ef17419ef855935ddccfd9%}]]>
           </rule>
         </rules>
       </field>
@@ -111,12 +111,12 @@
           <contentafter ismacro="true">
 <![CDATA[
 <div class="explanation-text">
-{% (EditedObject.CategoryOptionHasDependencies)? GetResourceString("com.optioncategory.typechangenotallowed"): "" |(identity)GlobalAdministrator|(hash)92a48f5f45b93bdfa0b3b3c599d2e13ac1ea36805b5351d6353a45685dc7c5c6%}
+{% (EditedObject.CategoryOptionHasDependencies)? GetResourceString("com.optioncategory.typechangenotallowed"): "" |(identity)GlobalAdministrator|(hash)dc7951138bcf01ba8b993c4332cea3d67e0eabbae99715b11be45e44e1fae3f5%}
 </div>
 ]]>
           </contentafter>
           <enabledmacro ismacro="true">
-            <![CDATA[{%!EditedObject.CategoryOptionHasDependencies|(identity)GlobalAdministrator|(hash)b4c1eeb9da11a3faec5dc0f05298f42ce9af2becb7513fd103ac31e29a406840%}]]>
+            <![CDATA[{%!EditedObject.CategoryOptionHasDependencies|(identity)GlobalAdministrator|(hash)8dd802558b47477c1c0e2dcaaa20657d7b32809f07836558595753091753ff5e%}]]>
           </enabledmacro>
           <fieldcaption>{$general.type$}</fieldcaption>
           <validationerrormessage>{$com.optioncategory.pleaseselectvalue$}</validationerrormessage>
@@ -170,7 +170,7 @@
 {%CategoryType.Value != "TEXT" && CategorySelectionType != "RADIOBUTTONVERTICAL"
                              && CategorySelectionType != "RADIOBUTTONHORIZONTAL"
                              && CategorySelectionType != "CHECKBOXVERTICAL"
-                             && CategorySelectionType != "CHECKBOXHORIZONTAL"|(identity)GlobalAdministrator|(hash)09c3e7b7479930ab8ec2e185170ed4ad5e1c30761399d4a8c42458320d7bdf44%}
+                             && CategorySelectionType != "CHECKBOXHORIZONTAL"|(identity)GlobalAdministrator|(hash)3822a70dce69392a67799f3ea00f93fb23809c6df6659fcfca927bffd6885363%}
 ]]>
           </visiblemacro>
         </properties>
@@ -190,7 +190,7 @@
           </fieldcaption>
           <validationerrormessage ismacro="true">
 <![CDATA[
-{%FormatString(GetResourceString("com.optioncategory.maxtextlengthexceeded"), Convert.ToInt(CategoryTextMaxLength))|(identity)GlobalAdministrator|(hash)aacedb839c642f32e2fef1b194efbc4a5e31e465c773408432d87780c4e474e6%}
+{%FormatString(GetResourceString("com.optioncategory.maxtextlengthexceeded"), Convert.ToInt(CategoryTextMaxLength))|(identity)GlobalAdministrator|(hash)7e3f1239abd7b1ff3d76cd08a93fb46c9ae34b9e0d2bc7f28585c573692ef7ce%}
 
 ]]>
           </validationerrormessage>
@@ -205,7 +205,7 @@
         </settings>
         <rules>
           <rule>
-            <![CDATA[{%Rule("((CategoryType==\"TEXT\")? (Convert.ToInt(CategoryDefaultOptions.Value.Length , 0) <= Convert.ToInt(CategoryTextMaxLength.Value, 200)) : true)", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"GeneralCondition\" ><p n=\"condition\"><t>(CategoryType==&quot;TEXT&quot;)? (Convert.ToInt(CategoryDefaultOptions.Value.Length , 0) &lt;= Convert.ToInt(CategoryTextMaxLength.Value, 200)) : true</t><v>(CategoryType==&quot;TEXT&quot;)? (Convert.ToInt(CategoryDefaultOptions.Value.Length , 0) &lt;= Convert.ToInt(CategoryTextMaxLength.Value, 200)) : true</v><r>0</r><d></d><vt>longtext</vt><tv>0</tv></p></r></rules>")|(identity)GlobalAdministrator|(hash)ea16b2fd8962d931e055c7abda9814f020c1ee1614394a9970ffc429dc763e8a%}]]>
+            <![CDATA[{%Rule("((CategoryType==\"TEXT\")? (Convert.ToInt(CategoryDefaultOptions.Value.Length , 0) <= Convert.ToInt(CategoryTextMaxLength.Value, 200)) : true)", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"GeneralCondition\" ><p n=\"condition\"><t>(CategoryType==&quot;TEXT&quot;)? (Convert.ToInt(CategoryDefaultOptions.Value.Length , 0) &lt;= Convert.ToInt(CategoryTextMaxLength.Value, 200)) : true</t><v>(CategoryType==&quot;TEXT&quot;)? (Convert.ToInt(CategoryDefaultOptions.Value.Length , 0) &lt;= Convert.ToInt(CategoryTextMaxLength.Value, 200)) : true</v><r>0</r><d></d><vt>longtext</vt><tv>0</tv></p></r></rules>")|(identity)GlobalAdministrator|(hash)5833e16bee4a13a6f1fbbd294dcda60364e89a62f03e444e79bff8bbe2697046%}]]>
           </rule>
         </rules>
       </field>
@@ -223,7 +223,7 @@
         <properties>
           <caption>{$com.ui.validation$}</caption>
           <visible ismacro="true">
-            <![CDATA[{%CategoryType.Value == "TEXT"|(identity)GlobalAdministrator|(hash)417ce532772a7dab32378caa2b916f37f1b294a7493b084e5c9888e74b110eb3%}]]>
+            <![CDATA[{%CategoryType.Value == "TEXT"|(identity)GlobalAdministrator|(hash)6de4b61055bb485cd7e91a8cd741240a88af15f5bf5b9fc584f19e012021b48b%}]]>
           </visible>
         </properties>
       </category>
@@ -265,7 +265,7 @@
         </settings>
         <rules>
           <rule>
-            <![CDATA[{%Rule("Value > Fields[\"42fe83c6-e654-4c3f-8a53-6dbefcb04ffc\"].Value", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"CompareToField\" ><p n=\"field\"><t>Text min length</t><v>42fe83c6-e654-4c3f-8a53-6dbefcb04ffc</v><r>0</r><d></d><vt>text</vt><tv>0</tv></p><p n=\"operator\"><t>is greater than</t><v>&gt;</v><r>0</r><d></d><vt>text</vt><tv>0</tv></p></r></rules>")|(identity)GlobalAdministrator|(hash)c412fc0d687c874153b11f613e25bcc425881fe71ca0ff9928018d42295552a4%}]]>
+            <![CDATA[{%Rule("Value > Fields[\"42fe83c6-e654-4c3f-8a53-6dbefcb04ffc\"].Value", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"CompareToField\" ><p n=\"field\"><t>Text min length</t><v>42fe83c6-e654-4c3f-8a53-6dbefcb04ffc</v><r>0</r><d></d><vt>text</vt><tv>0</tv></p><p n=\"operator\"><t>is greater than</t><v>&gt;</v><r>0</r><d></d><vt>text</vt><tv>0</tv></p></r></rules>")|(identity)GlobalAdministrator|(hash)87b9f45330ec015fb204b09e7e66765095a344bd81dd48d7a135557d170a4ac0%}]]>
           </rule>
           <rule>
             <![CDATA[{%Rule("Value >= 0", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"MinValue\" ><p n=\"minvalue\"><t>0</t><v>0</v><r>false</r><d></d><vt>integer</vt></p></r></rules>")%}]]>

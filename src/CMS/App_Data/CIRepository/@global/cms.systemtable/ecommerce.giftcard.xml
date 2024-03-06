@@ -168,7 +168,7 @@
         </settings>
         <rules>
           <rule errormsg="{$general.dateoverlaps$}">
-            <![CDATA[{%Rule("(Value > Fields[\"74087089-b8c7-4267-88a4-6d937d7ac375\"].Value)", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"CompareToField\" ><p n=\"field\"><t>Valid from</t><v>74087089-b8c7-4267-88a4-6d937d7ac375</v><r>0</r><d></d><vt>text</vt><tv>0</tv></p><p n=\"operator\"><t>Is greater than</t><v>&gt;</v><r>0</r><d></d><vt>text</vt><tv>0</tv></p></r></rules>")|(identity)GlobalAdministrator|(hash)1fd454da2c2708e499297517276908568a845bb1a4e08814865439307ecf8305%}]]>
+            <![CDATA[{%Rule("(Value > Fields[\"74087089-b8c7-4267-88a4-6d937d7ac375\"].Value)", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"CompareToField\" ><p n=\"field\"><t>Valid from</t><v>74087089-b8c7-4267-88a4-6d937d7ac375</v><r>0</r><d></d><vt>text</vt><tv>0</tv></p><p n=\"operator\"><t>Is greater than</t><v>&gt;</v><r>0</r><d></d><vt>text</vt><tv>0</tv></p></r></rules>")|(identity)GlobalAdministrator|(hash)5d5c76ce3f1f65853365dd25e545a971f655be3e1397cde0627d8fdc8db7f3e9%}]]>
           </rule>
         </rules>
       </field>
@@ -196,7 +196,7 @@
       <field allowempty="true" column="GiftCardRoles" columnsize="400" columntype="text" dependsonanotherfield="true" guid="5d7e55d8-5589-4a1b-9448-af0f58883edb" spellcheck="false" system="true" visible="true">
         <properties>
           <enabledmacro ismacro="true">
-            <![CDATA[{%GiftCodeCustomerRestriction.Value == "SelectedRoles"|(identity)GlobalAdministrator|(hash)6809501158cd87bd183f49b754b64daae0003d521b097a609f7b8e374ae80791%}]]>
+            <![CDATA[{%GiftCodeCustomerRestriction.Value == "SelectedRoles"|(identity)GlobalAdministrator|(hash)d8fe60e46101ccc971b147f3f1e16254e9d7a928ea03a1747296616c333a28f1%}]]>
           </enabledmacro>
           <fielddescription>{$com.giftcard.roles$}</fielddescription>
         </properties>

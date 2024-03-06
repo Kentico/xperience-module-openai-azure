@@ -792,13 +792,4 @@ Enter a URL to a system image handler to obtain a protected URL containing the h
   <data name="categories.autoselect.serviceerror" xml:space="preserve">
     <value>The categorization service is currently unreachable. Try the automatic selection again later, and if the problem persists, contact your system administrator. Alternatively, you can select the categories manually.</value>
   </data>
-  <data name="documenttype.allowedcategories" xml:space="preserve">
-    <value>Allowed categories</value>
-  </data>
-  <data name="documenttype.allowedcategories.choosesite" xml:space="preserve">
-    <value>Please select a specific site to add allowed categories for the page type.</value>
-  </data>
-  <data name="documenttype.allowedcategories.heading" xml:space="preserve">
-    <value>The page type has the following allowed categories</value>
-  </data>
 </root>

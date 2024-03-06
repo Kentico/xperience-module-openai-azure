@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <cms.uielement>
   <ElementAccessCondition>
-    <![CDATA[{%CurrentUser.IsAuthorizedPerResource("CMS.Staging","ManageAllTasks") || CurrentUser.IsAuthorizedPerResource("CMS.Staging","ManageDocumentsTasks") || CurrentUser.IsAuthorizedPerResource("CMS.Staging","ManageDataTasks") || CurrentUser.IsAuthorizedPerResource("CMS.Staging","ManageObjectsTasks") || CurrentUser.IsAuthorizedPerResource("CMS.Staging","ManageServers")|(identity)GlobalAdministrator|(hash)75686fd21665650bed8c8eba881985a146875329f26e9d116b109736dfc4f996%}]]>
+    <![CDATA[{%CurrentUser.IsAuthorizedPerResource("CMS.Staging","ManageAllTasks") || CurrentUser.IsAuthorizedPerResource("CMS.Staging","ManageDocumentsTasks") || CurrentUser.IsAuthorizedPerResource("CMS.Staging","ManageDataTasks") || CurrentUser.IsAuthorizedPerResource("CMS.Staging","ManageObjectsTasks") || CurrentUser.IsAuthorizedPerResource("CMS.Staging","ManageServers")|(identity)GlobalAdministrator|(hash)83df798cbdc9615c4c327ac9e834beed850d7ef23a2bb89f556051cc8141c794%}]]>
   </ElementAccessCondition>
   <ElementCaption>{$tools.ui.staging$}</ElementCaption>
   <ElementCheckModuleReadPermission>False</ElementCheckModuleReadPermission>

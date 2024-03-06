@@ -20,7 +20,7 @@
           <controlname>labelcontrol</controlname>
           <OutputFormat>
 <![CDATA[
-{% GetResourceString("smartsearch.indextype." + IndexType.ToString()); |(identity)GlobalAdministrator|(hash)bca1185fdee49c2217ddd66815f0dd6e17c89f9c377fd6785062bd1c4019ff5c%}
+{% GetResourceString("smartsearch.indextype." + IndexType.ToString()); |(identity)GlobalAdministrator|(hash)f9d4af2c6c6311e3a1f07b35e193d0b313b0afec59564facf05328dab900fb25%}
 
 
 
@@ -50,7 +50,7 @@
           <fieldcaption>{$srch.index.user$}</fieldcaption>
           <fielddescription>{$srch.index.user.description$}</fielddescription>
           <visiblemacro ismacro="true">
-            <![CDATA[{%IndexType == "cms.document"|(identity)GlobalAdministrator|(hash)7fcef9bbb37f163e7e13ddf257ef7576379546b902f3468de7b56024740413fc%}]]>
+            <![CDATA[{%IndexType == "cms.document"|(identity)GlobalAdministrator|(hash)c81ddaf9596387dc946dc4a4baeb4eb13a908fd5df217d5a0349ec8d0d14f7ea%}]]>
           </visiblemacro>
         </properties>
       </field>

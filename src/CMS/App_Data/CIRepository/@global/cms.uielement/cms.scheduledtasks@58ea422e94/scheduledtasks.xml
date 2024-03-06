@@ -35,7 +35,7 @@
       <includejquery>False</includejquery>
       <displaybreadcrumbs>False</displaybreadcrumbs>
       <displaysiteselector>
-        <![CDATA[{% CurrentUser.CheckPrivilegeLevel(UserPrivilegeLevelEnum.GlobalAdmin) |(identity)GlobalAdministrator|(hash)f1b3bce1be6d1e301a6ea4df4abc455df1f620ae7368126c44c9c51b9eae3bf3%}]]>
+        <![CDATA[{% CurrentUser.CheckPrivilegeLevel(UserPrivilegeLevelEnum.GlobalAdmin) |(identity)GlobalAdministrator|(hash)d44327776487e93544908d3900300ff0b4c890b3e02696bb45efbe732b3e5a6a%}]]>
       </displaysiteselector>
       <allowempty>False</allowempty>
       <allowsubtabs>False</allowsubtabs>

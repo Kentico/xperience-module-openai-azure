@@ -38,7 +38,7 @@
   </ElementResourceID>
   <ElementSize>0</ElementSize>
   <ElementTargetURL>
-    <![CDATA[{% UIContext.GetElementUrl("cms.ecommerce", "Configuration.Departments", false, 0, "siteid=-4") |(identity)GlobalAdministrator|(hash)388a097eab36fa883943ca666db8764e2ab286b25d32952dcafa6e2971260976%}]]>
+    <![CDATA[{% UIContext.GetElementUrl("cms.ecommerce", "Configuration.Departments", false, 0, "siteid=-4") |(identity)GlobalAdministrator|(hash)1f817c25e467273eccbf431e0a212583f144da27a9a540e966b9204993a07130%}]]>
   </ElementTargetURL>
   <ElementType>Url</ElementType>
 </cms.uielement>

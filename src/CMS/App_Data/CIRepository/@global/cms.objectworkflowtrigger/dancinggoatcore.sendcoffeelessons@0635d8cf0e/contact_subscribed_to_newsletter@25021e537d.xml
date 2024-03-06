@@ -5,7 +5,7 @@
   </TriggerDisplayName>
   <TriggerGUID>d2b34208-6920-4359-978e-2feff708a9af</TriggerGUID>
   <TriggerMacroCondition>
-    <![CDATA[{%Rule("(Activity.LinkedToObject(\"newsletter.newsletter\", \"Newsletter\"))", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"CMSActivityNewsletterSubscriptionPerformedForNewsletter\" ><p n=\"_was\"><t>was</t><v></v><r>0</r><d>select operation</d><vt>text</vt><tv>0</tv></p><p n=\"newsletter\"><t>Newsletter</t><v>Newsletter</v><r>1</r><d>{$macro.selector.newsletter$}</d><vt>text</vt><tv>0</tv></p></r></rules>")|(identity)GlobalAdministrator|(hash)fa54e0e5d8fa9b8c038fbab68e5a9cc511905b8b48f4ff02f5b678a52cf24bc1%}]]>
+    <![CDATA[{%Rule("(Activity.LinkedToObject(\"newsletter.newsletter\", \"Newsletter\"))", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"CMSActivityNewsletterSubscriptionPerformedForNewsletter\" ><p n=\"_was\"><t>was</t><v></v><r>0</r><d>select operation</d><vt>text</vt><tv>0</tv></p><p n=\"newsletter\"><t>Newsletter</t><v>Newsletter</v><r>1</r><d>{$macro.selector.newsletter$}</d><vt>text</vt><tv>0</tv></p></r></rules>")|(identity)GlobalAdministrator|(hash)eab8e0538be7dcfa262476f62ad8f12c0837531a688bc4349b36bfd713aff7f5%}]]>
   </TriggerMacroCondition>
   <TriggerObjectType>om.activity</TriggerObjectType>
   <TriggerParameters />

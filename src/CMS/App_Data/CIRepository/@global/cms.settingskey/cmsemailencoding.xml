@@ -14,7 +14,7 @@
       <DisplayActualValueAsItem>False</DisplayActualValueAsItem>
       <EditText>False</EditText>
       <Macro>
-        <![CDATA[{%SystemUI.TextEncodings()|(identity)GlobalAdministrator|(hash)928a6f38816b041a9b866d629e112d9780d9345e4b19e270acdf3852edd4cb03%}]]>
+        <![CDATA[{%SystemUI.TextEncodings()|(identity)GlobalAdministrator|(hash)e6f95f466211abe8edf815ca762123d107455dd8ef6f9e27d3b2b5a16ac10774%}]]>
       </Macro>
       <SortItems>False</SortItems>
     </settings>

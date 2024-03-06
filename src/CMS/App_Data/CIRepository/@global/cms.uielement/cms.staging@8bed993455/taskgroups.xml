@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <cms.uielement>
   <ElementAccessCondition>
-    <![CDATA[{%Rule("(CurrentUser.IsAuthorizedPerResource(\"CMS.Staging\",\"ManageTaskGroups\"))", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"Permission\" ><p n=\"module\"><t>CMS.Staging</t><v>CMS.Staging</v><r>0</r><d>select module</d><vt>text</vt><tv>1</tv></p><p n=\"permission\"><t>ManageTaskGroups</t><v>ManageTaskGroups</v><r>0</r><d>select permission</d><vt>text</vt><tv>1</tv></p></r></rules>")|(identity)GlobalAdministrator|(hash)189d358bba3e7c682d6c236fb37aead3c787d9d9e8bf13016e86d99b9f88e81e%}]]>
+    <![CDATA[{%Rule("(CurrentUser.IsAuthorizedPerResource(\"CMS.Staging\",\"ManageTaskGroups\"))", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"Permission\" ><p n=\"module\"><t>CMS.Staging</t><v>CMS.Staging</v><r>0</r><d>select module</d><vt>text</vt><tv>1</tv></p><p n=\"permission\"><t>ManageTaskGroups</t><v>ManageTaskGroups</v><r>0</r><d>select permission</d><vt>text</vt><tv>1</tv></p></r></rules>")|(identity)GlobalAdministrator|(hash)32c3bab15f650ff5d2e0ad71ef84c96ce8af84faade47a095587238b40a802ab%}]]>
   </ElementAccessCondition>
   <ElementCaption>{$taskGroup.ui.TaskGroups$}</ElementCaption>
   <ElementCheckModuleReadPermission>False</ElementCheckModuleReadPermission>

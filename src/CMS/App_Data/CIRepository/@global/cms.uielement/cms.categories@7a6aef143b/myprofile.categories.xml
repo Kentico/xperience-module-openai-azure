@@ -35,6 +35,6 @@
   </ElementTargetURL>
   <ElementType>Url</ElementType>
   <ElementVisibilityCondition>
-    <![CDATA[{%System.IsModuleLoaded("CMS.Categories")|(identity)GlobalAdministrator|(hash)bf680bb8ef6f6b4b6ee48ea956287c21c8282cc285796c25a05a4b67c54d7e12%}]]>
+    <![CDATA[{%System.IsModuleLoaded("CMS.Categories")|(identity)GlobalAdministrator|(hash)96f7a274a39764a1d96e43c94e446cbfed3990d5f4771be97e72148383d95f83%}]]>
   </ElementVisibilityCondition>
 </cms.uielement>

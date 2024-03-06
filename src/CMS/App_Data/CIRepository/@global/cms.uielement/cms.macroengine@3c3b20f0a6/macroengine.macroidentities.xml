@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <cms.uielement>
   <ElementAccessCondition>
-    <![CDATA[{%Rule("(CurrentUser.CheckPrivilegeLevel(UserPrivilegeLevelEnum.GlobalAdmin))", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"CurrentUserHasPrivilegeLevel\" ><p n=\"_has\"><t>has</t><v></v><r>0</r><d>select operation</d><vt>text</vt><tv>0</tv></p><p n=\"privilege\"><t>GlobalAdmin</t><v>GlobalAdmin</v><r>0</r><d>select level</d><vt>text</vt><tv>1</tv></p></r></rules>")|(identity)GlobalAdministrator|(hash)34e0d8883155acdc0ca67e185903bfe847bbe8eec2d9265f4408cc854a481a35%}]]>
+    <![CDATA[{%Rule("(CurrentUser.CheckPrivilegeLevel(UserPrivilegeLevelEnum.GlobalAdmin))", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"CurrentUserHasPrivilegeLevel\" ><p n=\"_has\"><t>has</t><v></v><r>0</r><d>select operation</d><vt>text</vt><tv>0</tv></p><p n=\"privilege\"><t>GlobalAdmin</t><v>GlobalAdmin</v><r>0</r><d>select level</d><vt>text</vt><tv>1</tv></p></r></rules>")|(identity)GlobalAdministrator|(hash)8885e9f8720a5b20e437a36ea5f74999393c627428cc1c7a3f2cf7e17e8c322e%}]]>
   </ElementAccessCondition>
   <ElementCaption>{$macroengine.macroidentities$}</ElementCaption>
   <ElementCheckModuleReadPermission>True</ElementCheckModuleReadPermission>

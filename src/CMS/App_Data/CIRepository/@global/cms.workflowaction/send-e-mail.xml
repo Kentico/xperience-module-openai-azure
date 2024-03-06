@@ -67,7 +67,7 @@
           <fielddescription>{$wf.action.sendemails.template.desc$}</fielddescription>
           <validationerrormessage>{$emailtemplate_edit.fillcodenamefield$}</validationerrormessage>
           <visiblemacro ismacro="true">
-            <![CDATA[{%BasedOn.Value == "0"|(identity)GlobalAdministrator|(hash)0b4a1a3af45d630e895ea311ee27b8bf6696b76f95140634ce393765c31c3c65%}]]>
+            <![CDATA[{%BasedOn.Value == "0"|(identity)GlobalAdministrator|(hash)8d24fdad4adcf36e7ce97ff85bfe7339701448969e9adbc27334dc77ae554b8a%}]]>
           </visiblemacro>
         </properties>
         <settings>
@@ -76,10 +76,10 @@
         </settings>
         <rules>
           <rule>
-            <![CDATA[{%Rule("Value.Length >= 1", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"MinLength\" ><p n=\"minlength\"><t>1</t><v>1</v><r>false</r><d></d><vt>integer</vt></p></r></rules>")|(identity)GlobalAdministrator|(hash)ee8a20226f37f8733a6300bef99e2b14fff448d7b0e323b969e2a45830681613%}]]>
+            <![CDATA[{%Rule("Value.Length >= 1", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"MinLength\" ><p n=\"minlength\"><t>1</t><v>1</v><r>false</r><d></d><vt>integer</vt></p></r></rules>")|(identity)GlobalAdministrator|(hash)90e66549a1f71734a33ac4c854c9719abf6832a201a311c9dba2188932002bcd%}]]>
           </rule>
           <rule>
-            <![CDATA[{%Rule("Value.Matches(\"^(?!\\s*$).+$\")", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"RegExp\" ><p n=\"regexp\"><t>^(?!\\s*$).+$</t><v>^(?!\\s*$).+$</v><r>false</r><d></d><vt>text</vt></p></r></rules>")|(identity)GlobalAdministrator|(hash)55a831d5a2e97ce5732ea6fbd462e3eab8e645b7e51ae485377769df480a7883%}]]>
+            <![CDATA[{%Rule("Value.Matches(\"^(?!\\s*$).+$\")", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"RegExp\" ><p n=\"regexp\"><t>^(?!\\s*$).+$</t><v>^(?!\\s*$).+$</v><r>false</r><d></d><vt>text</vt></p></r></rules>")|(identity)GlobalAdministrator|(hash)927c00f0c3cf93cec9e25bf10341bf830c9e17a80eab7d0202a221c38944e9ac%}]]>
           </rule>
         </rules>
       </field>
@@ -88,7 +88,7 @@
           <fieldcaption>{$general.subject$}</fieldcaption>
           <fielddescription>{$wf.action.sendemails.subject.desc$}</fielddescription>
           <visiblemacro ismacro="true">
-            <![CDATA[{%BasedOn.Value == "1"|(identity)GlobalAdministrator|(hash)f0fc293365df2b3ab388f1d8e2799e964b115bcaa208d4e00a0b1def5abc9191%}]]>
+            <![CDATA[{%BasedOn.Value == "1"|(identity)GlobalAdministrator|(hash)6221c28c6930e718bb18c1243b1cb893ad9d03bd133abf3734a4053500065d72%}]]>
           </visiblemacro>
         </properties>
         <settings>
@@ -105,7 +105,7 @@
           <fieldcaption>{$general.body$}</fieldcaption>
           <fielddescription>{$wf.action.sendemails.body.desc$}</fielddescription>
           <visiblemacro ismacro="true">
-            <![CDATA[{%BasedOn.Value == "1"|(identity)GlobalAdministrator|(hash)f0fc293365df2b3ab388f1d8e2799e964b115bcaa208d4e00a0b1def5abc9191%}]]>
+            <![CDATA[{%BasedOn.Value == "1"|(identity)GlobalAdministrator|(hash)6221c28c6930e718bb18c1243b1cb893ad9d03bd133abf3734a4053500065d72%}]]>
           </visiblemacro>
         </properties>
         <settings>

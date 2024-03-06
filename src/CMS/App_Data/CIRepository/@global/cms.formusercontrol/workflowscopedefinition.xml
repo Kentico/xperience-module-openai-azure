@@ -26,7 +26,7 @@
       <field allowempty="true" column="SiteID" columntype="integer" guid="598c8b26-d722-4f5f-84a0-780e9601bbcb">
         <properties>
           <defaultvalue ismacro="true">
-            <![CDATA[{% Form.ObjectSiteID|(identity)GlobalAdministrator|(hash)9f50d280e1e70ec29ce313e69e0792d7273b30df685ae43b0ca4e284ce563347%}]]>
+            <![CDATA[{% Form.ObjectSiteID|(identity)GlobalAdministrator|(hash)cb9661e9ae80d6ab87505018a256979b8e27eba49d5b77e9447591fac3195800%}]]>
           </defaultvalue>
         </properties>
         <settings>

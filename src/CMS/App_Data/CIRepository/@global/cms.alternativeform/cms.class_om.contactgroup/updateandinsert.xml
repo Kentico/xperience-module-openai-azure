@@ -18,13 +18,13 @@
       <field allowempty="true" column="ContactGroupIsDynamicCondition" columntype="boolean" dummy="altform" guid="951b492a-a7ac-48b7-8a07-9b9bc4f3cc8d" hasdependingfields="true" system="true" visible="true" order="7">
         <properties>
           <defaultvalue ismacro="true">
-            <![CDATA[{% !String.IsNullOrEmpty(EditedObject.ContactGroupDynamicCondition) |(identity)GlobalAdministrator|(hash)80890b9cb6e97956b8b9371c1e1fea570119b3e2916d3d4b3ddfc243ed15b5bc%}]]>
+            <![CDATA[{% !String.IsNullOrEmpty(EditedObject.ContactGroupDynamicCondition) |(identity)GlobalAdministrator|(hash)7ae4136810e3d8d1c9a2d45eaa6ea548010f5e044d5117ca454755b56f6731ea%}]]>
           </defaultvalue>
           <explanationtext>{$om.contactgroup.dynamic.description$}</explanationtext>
           <fieldcaption>{$om.contactgroup.dynamic$}</fieldcaption>
           <fielddescription>{$om.contactgroup.dynamic.description$}</fielddescription>
           <visiblemacro ismacro="true">
-            <![CDATA[{%LicenseHelper.CheckFeature(FeatureEnum.FullContactManagement)|(identity)GlobalAdministrator|(hash)96c9501be9580010dda96e119d4f1c39bd257a6b26304e8f72b99cf811c123bc%}]]>
+            <![CDATA[{%LicenseHelper.CheckFeature(FeatureEnum.FullContactManagement)|(identity)GlobalAdministrator|(hash)c7ab5cb7054c3dd173e32690cf5505dd82d8e5199c7aca779a514894d2e607f9%}]]>
           </visiblemacro>
         </properties>
         <settings>
@@ -34,7 +34,7 @@
       <field column="ContactGroupDynamicCondition" guid="fd9391ed-bfab-4753-bc4d-a98e0457ce1a" reftype="Required">
         <properties>
           <visiblemacro ismacro="true">
-            <![CDATA[{%ContactGroupIsDynamicCondition && LicenseHelper.CheckFeature(FeatureEnum.FullContactManagement)|(identity)GlobalAdministrator|(hash)b7a628de03dee4f15e0ab9b1e95be7effdddbad9da1233710fc889554e551fa5%}]]>
+            <![CDATA[{%ContactGroupIsDynamicCondition && LicenseHelper.CheckFeature(FeatureEnum.FullContactManagement)|(identity)GlobalAdministrator|(hash)5ad33d747d5388b336dcfe15b9ae612d987636ae37059176b0b19d1ea53639dc%}]]>
           </visiblemacro>
           <enabledmacro />
         </properties>
@@ -42,13 +42,13 @@
       <field allowempty="true" column="ContactGroupIsAutomaticallyRebuilt" columntype="boolean" dummy="altform" guid="5264e823-c27d-4126-8a11-56084cee000d" system="true" visible="true" order="9">
         <properties>
           <defaultvalue ismacro="true">
-            <![CDATA[{% EditedObject.IsRebuildScheduled |(identity)GlobalAdministrator|(hash)9c843a9e7044a6706618d859d92d3a04040bd69e98f9ec3650525ae106a6e065%}]]>
+            <![CDATA[{% EditedObject.IsRebuildScheduled |(identity)GlobalAdministrator|(hash)1e3c2279812295de1e155b89334334c501a4bcc6bc9d5696c5de45358740935a%}]]>
           </defaultvalue>
           <explanationtext>{$om.contactgroup.schedule.description$}</explanationtext>
           <fieldcaption>{$om.contactgroup.schedule$}</fieldcaption>
           <fielddescription>{$om.contactgroup.schedule.description.tooltip$}</fielddescription>
           <visiblemacro ismacro="true">
-            <![CDATA[{%ContactGroupIsDynamicCondition && LicenseHelper.CheckFeature(FeatureEnum.FullContactManagement)|(identity)GlobalAdministrator|(hash)b7a628de03dee4f15e0ab9b1e95be7effdddbad9da1233710fc889554e551fa5%}]]>
+            <![CDATA[{%ContactGroupIsDynamicCondition && LicenseHelper.CheckFeature(FeatureEnum.FullContactManagement)|(identity)GlobalAdministrator|(hash)5ad33d747d5388b336dcfe15b9ae612d987636ae37059176b0b19d1ea53639dc%}]]>
           </visiblemacro>
         </properties>
         <settings>

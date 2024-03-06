@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <cms.uielement>
   <ElementAccessCondition>
-    <![CDATA[{%Rule("CurrentUser.IsAuthorizedPerResource(\"CMS.Ecommerce\",\"ConfigurationRead\")", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"Permission\" ><p n=\"permission\"><t>ConfigurationRead</t><v>ConfigurationRead</v><r>0</r><d>select permission</d><vt>text</vt><tv>1</tv></p><p n=\"module\"><t>CMS.Ecommerce</t><v>CMS.Ecommerce</v><r>0</r><d>select permission</d><vt>text</vt><tv>1</tv></p></r></rules>")|(identity)GlobalAdministrator|(hash)b29be33ec50a0edc9c907cf7e098881baf00b7d23b66376879c8994e512cbe6e%}]]>
+    <![CDATA[{%Rule("CurrentUser.IsAuthorizedPerResource(\"CMS.Ecommerce\",\"ConfigurationRead\")", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"Permission\" ><p n=\"permission\"><t>ConfigurationRead</t><v>ConfigurationRead</v><r>0</r><d>select permission</d><vt>text</vt><tv>1</tv></p><p n=\"module\"><t>CMS.Ecommerce</t><v>CMS.Ecommerce</v><r>0</r><d>select permission</d><vt>text</vt><tv>1</tv></p></r></rules>")|(identity)GlobalAdministrator|(hash)2af6e62df26e5cd6ef266c98c846172f7e6bb412ad5a78c88fe62f20485e15c1%}]]>
   </ElementAccessCondition>
   <ElementCaption>{$com.ui.StoreConfiguration$}</ElementCaption>
   <ElementCheckModuleReadPermission>False</ElementCheckModuleReadPermission>

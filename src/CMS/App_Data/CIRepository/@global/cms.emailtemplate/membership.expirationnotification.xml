@@ -9,7 +9,7 @@
 The following memberships will expire soon:
 <br />
 
-{%MembershipsTable.ApplyTransformation("Ecommerce.Transformations.Order_MembershipsTable")|(encode)false |(identity)GlobalAdministrator|(hash)1f0970dadc26ce28e57ec89cb93bb09f164629f09d0aaa68e680a654b9fb3caa%}
+{%MembershipsTable.ApplyTransformation("Ecommerce.Transformations.Order_MembershipsTable")|(encode)false |(identity)GlobalAdministrator|(hash)05b82c3fec2663dbb6faf922bda1ade96b763f40db18ab8436c00c9a62d05316%}
 
 <br />
 

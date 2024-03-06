@@ -12,7 +12,7 @@ This is sometimes a better option than using a default value in the property its
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
     <tr>
         <td align="center" style="font-size: 25px; font-family: Helvetica, Arial, sans-serif; color: #333333; padding: 10px 0 15px 0;" class="padding">
-          {% Text == String.Empty ? "Write a catchy headline for the section below." : Text |(identity)GlobalAdministrator|(hash)93b4b0e8adefa7ac6778ce122b64f5a75f0f1f13234e67a560bb8ba8249cb223%}
+          {% Text == String.Empty ? "Write a catchy headline for the section below." : Text |(identity)GlobalAdministrator|(hash)c67564d203f9316daa384b5ea9f300a4b4cc6ad439c197aefd3e603cce0a2147%}
         </td>
     </tr>
 </table>
@@ -43,7 +43,7 @@ This is sometimes a better option than using a default value in the property its
   </EmailWidgetProperties>
   <EmailWidgetSiteID>
     <CodeName>DancingGoatCore</CodeName>
-    <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+    <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
     <ObjectType>cms.site</ObjectType>
   </EmailWidgetSiteID>
 </newsletter.emailwidget>

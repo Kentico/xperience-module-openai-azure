@@ -233,7 +233,6 @@ public partial class CMSModules_Categories_Controls_MultipleCategoriesSelector :
 
             selectCategory.SetValue("CurrentDocumentID", Node.DocumentID);
             selectCategory.SetValue("ShowAutoSelect", isContentCategorizationEnabled);
-            selectCategory.SetValue("AllowedCategoryIDs", string.Join(";", AllowedCategoryIDs));
 
             if (!RequestHelper.IsPostBack())
             {

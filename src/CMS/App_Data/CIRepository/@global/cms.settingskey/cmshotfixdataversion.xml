@@ -4,7 +4,7 @@
     <CodeName>CMS.System.General</CodeName>
     <ObjectType>cms.settingscategory</ObjectType>
   </KeyCategoryID>
-  <KeyDefaultValue>131</KeyDefaultValue>
+  <KeyDefaultValue>142</KeyDefaultValue>
   <KeyDescription>{$settingskey.cmshotfixdataversion.description$}</KeyDescription>
   <KeyDisplayName>{$settingskey.cmshotfixdataversion$}</KeyDisplayName>
   <KeyExplanationText />
@@ -15,5 +15,5 @@
   <KeyName>CMSHotfixDataVersion</KeyName>
   <KeyOrder>12</KeyOrder>
   <KeyType>int</KeyType>
-  <KeyValue>141</KeyValue>
+  <KeyValue>142</KeyValue>
 </cms.settingskey>

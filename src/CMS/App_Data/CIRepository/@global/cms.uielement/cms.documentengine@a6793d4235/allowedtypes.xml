@@ -10,7 +10,7 @@
   <ElementIsGlobalApplication>False</ElementIsGlobalApplication>
   <ElementIsMenu>False</ElementIsMenu>
   <ElementName>AllowedTypes</ElementName>
-  <ElementOrder>7</ElementOrder>
+  <ElementOrder>6</ElementOrder>
   <ElementParentID>
     <CodeName>EditDocumentType</CodeName>
     <GUID>f1741808-fe24-4a0e-8111-a63d13559635</GUID>

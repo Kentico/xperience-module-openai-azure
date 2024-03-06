@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.documentcategory>
+  <Parent>
+    <CodeName>en-US</CodeName>
+    <GUID>bb46602b-2c56-4d03-afa9-833ec867f39a</GUID>
+    <ObjectType>cms.documentlocalization</ObjectType>
+    <Parent>
+      <CodeName>/Articles/Coffee-Beverages-Explained</CodeName>
+      <GUID>6834c93e-fd9f-4cd6-8704-93e8ab59e2fb</GUID>
+      <ObjectType>cms.node</ObjectType>
+      <Site>
+        <CodeName>DancingGoatCore</CodeName>
+        <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
+        <ObjectType>cms.site</ObjectType>
+      </Site>
+    </Parent>
+  </Parent>
+  <Bindings>
+    <Binding id="cms.category_CoffeeBrewingAndTechniques_cms.site_DancingGoatCore">
+      <CategoryID>
+        <CodeName>CoffeeBrewingAndTechniques</CodeName>
+        <GUID>f302dbc3-4c96-4eaa-beb5-eec5b7e448ea</GUID>
+        <ObjectType>cms.category</ObjectType>
+        <Site>
+          <CodeName>DancingGoatCore</CodeName>
+          <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
+          <ObjectType>cms.site</ObjectType>
+        </Site>
+      </CategoryID>
+    </Binding>
+    <Binding id="cms.category_CoffeeVarietiesAndProcessing_cms.site_DancingGoatCore">
+      <CategoryID>
+        <CodeName>CoffeeVarietiesAndProcessing</CodeName>
+        <GUID>ec83263e-76ec-4f5d-84e7-3231021241e9</GUID>
+        <ObjectType>cms.category</ObjectType>
+        <Site>
+          <CodeName>DancingGoatCore</CodeName>
+          <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
+          <ObjectType>cms.site</ObjectType>
+        </Site>
+      </CategoryID>
+    </Binding>
+  </Bindings>
+</cms.documentcategory>

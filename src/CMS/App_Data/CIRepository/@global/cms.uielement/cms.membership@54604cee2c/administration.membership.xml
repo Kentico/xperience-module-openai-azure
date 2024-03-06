@@ -31,7 +31,7 @@
   <ElementProperties>
     <data>
       <siteselectorvisibility>
-        <![CDATA[{% CurrentUser.CheckPrivilegeLevel(UserPrivilegeLevelEnum.GlobalAdmin) |(identity)GlobalAdministrator|(hash)f1b3bce1be6d1e301a6ea4df4abc455df1f620ae7368126c44c9c51b9eae3bf3%}]]>
+        <![CDATA[{% CurrentUser.CheckPrivilegeLevel(UserPrivilegeLevelEnum.GlobalAdmin) |(identity)GlobalAdministrator|(hash)d44327776487e93544908d3900300ff0b4c890b3e02696bb45efbe732b3e5a6a%}]]>
       </siteselectorvisibility>
       <descriptionlink>membership_management</descriptionlink>
       <allowglobal>True</allowglobal>
@@ -39,13 +39,13 @@
       <includejquery>False</includejquery>
       <displaybreadcrumbs>False</displaybreadcrumbs>
       <siteid>
-        <![CDATA[{% CurrentUser.CheckPrivilegeLevel(UserPrivilegeLevelEnum.GlobalAdmin) ? (QueryString.SiteID != null? ToInt(QueryString.SiteID) : SiteContext.CurrentSiteID) : SiteContext.CurrentSiteID |(identity)GlobalAdministrator|(hash)15848fbe5da0401fae9e14a5be7028a36ff1c0a14d4be739afeaca7ac949b80a%}]]>
+        <![CDATA[{% CurrentUser.CheckPrivilegeLevel(UserPrivilegeLevelEnum.GlobalAdmin) ? (QueryString.SiteID != null? ToInt(QueryString.SiteID) : SiteContext.CurrentSiteID) : SiteContext.CurrentSiteID |(identity)GlobalAdministrator|(hash)93479e4af5c99dcba9b7875193c09b8047a5e865e01247291ae3075fe28bd6f3%}]]>
       </siteid>
       <selectortype>Classic</selectortype>
       <allowall>False</allowall>
       <wherecondition>
 <![CDATA[
-{% System.FormatId(UIContext.SiteID, " MembershipSiteID ={0} ", " MembershipSiteID IS NULL ") |(identity)GlobalAdministrator|(hash)9dcd3cf8460a9571eb7650f5d4ac51a4c27725b0b95359fa06a4838b405fab53%}
+{% System.FormatId(UIContext.SiteID, " MembershipSiteID ={0} ", " MembershipSiteID IS NULL ") |(identity)GlobalAdministrator|(hash)7c29b8fa302ca508056ef764060dfb81f83c95f5daec273109afbae58e77931f%}
 
 
 ]]>

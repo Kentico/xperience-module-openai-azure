@@ -108,7 +108,7 @@ Use the macros from the template example to add dynamic values, such as the shop
               <d4p1:Key>Body</d4p1:Key>
               <d4p1:Value>
 <![CDATA[
-{% culture = "en-US"; site = System.GetObject("cms.site", ActivitySiteID); cartLink = ShoppingCartAbsoluteUrl(site.SiteName, culture, ActivityValue); return; |(identity)GlobalAdministrator|(hash)f92f0a134b5f5ca4474c6e7b5fe76865fd31b7659150849f5096868183084d4d%}
+{% culture = "en-US"; site = System.GetObject("cms.site", ActivitySiteID); cartLink = ShoppingCartAbsoluteUrl(site.SiteName, culture, ActivityValue); return; |(identity)GlobalAdministrator|(hash)32cdd0278ef668d15279fd48e5949f8bc17ec2a5b72ae11661fac5871c12b5ec%}
 <style type="text/css">body
 {
   max-width:800px;
@@ -152,11 +152,11 @@ p {
 
 <p>{% item.SKU.SKUName %}</p>
 </div>
-{% } |(encode)false |(identity)GlobalAdministrator|(hash)d60583af1fdd5cb5ac3f4c0609cd8ec2a4c1095050dd56b44a3bd74be407528a%}</div>
+{% } |(encode)false |(identity)GlobalAdministrator|(hash)c08b922b79fabe40fc94ec066e49061871df99d02abf5a6d177b64dd55eeffac%}</div>
 <a class="btn" href="{% cartLink %}">CONTINUE SHOPPING</a>
 
 <hr />
-<div style="text-align: center">Copyright &copy; {% DateTime.Today.Year |(identity)GlobalAdministrator|(hash)1118693f6047843d9248228cbfcf5ea7eac02b62be880e0cd74d90b0b466e9ab%} Company Name. All rights reserved.</div>
+<div style="text-align: center">Copyright &copy; {% DateTime.Today.Year |(identity)GlobalAdministrator|(hash)96409c09433065ad07b92e574d51b01f7020b2fe9c05ea27a7b86add33659932%} Company Name. All rights reserved.</div>
 
 ]]>
               </d4p1:Value>
@@ -164,7 +164,7 @@ p {
             <d4p1:KeyValueOfstringstring>
               <d4p1:Key>To</d4p1:Key>
               <d4p1:Value>
-                <![CDATA[{% Contact.ContactEmail |(identity)GlobalAdministrator|(hash)80d83ebb431ce049c98918d45113981008c21bedcc9a7999c112d7eaaf19b104%}]]>
+                <![CDATA[{% Contact.ContactEmail |(identity)GlobalAdministrator|(hash)1f13b45e4e1b50cddfe6d065f74efe96d6bbf0dc1d58b4b0d642105162b2a101%}]]>
               </d4p1:Value>
             </d4p1:KeyValueOfstringstring>
             <d4p1:KeyValueOfstringstring>

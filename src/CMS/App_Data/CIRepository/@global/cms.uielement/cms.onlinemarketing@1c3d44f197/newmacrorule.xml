@@ -51,6 +51,6 @@
   <ElementSize>0</ElementSize>
   <ElementType>PageTemplate</ElementType>
   <ElementVisibilityCondition>
-    <![CDATA[{%CurrentUser.IsAuthorizedPerResource("CMS.ContactManagement", "ModifyConfiguration")|(identity)GlobalAdministrator|(hash)b25971fba7f669e20c3f40b874abc31cd472efa8c6d14de270c7b82da8a85552%}]]>
+    <![CDATA[{%CurrentUser.IsAuthorizedPerResource("CMS.ContactManagement", "ModifyConfiguration")|(identity)GlobalAdministrator|(hash)b641ecdb001584830b8f433a24838b738674ad54d7bcd23024e8d0bae3fdb435%}]]>
   </ElementVisibilityCondition>
 </cms.uielement>

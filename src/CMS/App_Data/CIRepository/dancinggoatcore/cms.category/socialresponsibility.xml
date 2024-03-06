@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.category>
+  <CategoryAllowAllTypes>False</CategoryAllowAllTypes>
+  <CategoryDisplayName>Social Responsibility</CategoryDisplayName>
+  <CategoryEnabled>True</CategoryEnabled>
+  <CategoryGUID>3b63034a-9906-48ea-bc91-5be368c37210</CategoryGUID>
+  <CategoryName>SocialResponsibility</CategoryName>
+  <CategoryOrder>4</CategoryOrder>
+  <CategoryParentID>
+    <CodeName>ArticleTopics</CodeName>
+    <GUID>304bb8db-76f1-4a24-a91d-45d1fcbd4381</GUID>
+    <ObjectType>cms.category</ObjectType>
+    <Site>
+      <CodeName>DancingGoatCore</CodeName>
+      <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
+      <ObjectType>cms.site</ObjectType>
+    </Site>
+  </CategoryParentID>
+  <CategorySiteID>
+    <CodeName>DancingGoatCore</CodeName>
+    <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
+    <ObjectType>cms.site</ObjectType>
+  </CategorySiteID>
+</cms.category>

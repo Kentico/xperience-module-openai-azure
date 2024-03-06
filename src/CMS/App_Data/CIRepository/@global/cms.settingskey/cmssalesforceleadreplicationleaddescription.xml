@@ -5,7 +5,7 @@
     <ObjectType>cms.settingscategory</ObjectType>
   </KeyCategoryID>
   <KeyDefaultValue>
-    <![CDATA[{%Contact.ContactLastName|(identity)GlobalAdministrator|(hash)c434940b4003eb726c32afb90bb46e6ed9b77c779e52face5f705b658ecd44b1%}]]>
+    <![CDATA[{%Contact.ContactLastName|(identity)GlobalAdministrator|(hash)e88f9129fec376ae360a37ecd5eb2c201d42e111865343157fb8161334f0bf56%}]]>
   </KeyDefaultValue>
   <KeyDescription>
     <![CDATA[{$settingskey.cmssalesforceleadreplicationleaddescription.description$}]]>
@@ -25,6 +25,6 @@
   <KeyOrder>7</KeyOrder>
   <KeyType>string</KeyType>
   <KeyValue>
-    <![CDATA[{%Contact.ContactLastName|(identity)GlobalAdministrator|(hash)c434940b4003eb726c32afb90bb46e6ed9b77c779e52face5f705b658ecd44b1%}]]>
+    <![CDATA[{%Contact.ContactLastName|(identity)GlobalAdministrator|(hash)e88f9129fec376ae360a37ecd5eb2c201d42e111865343157fb8161334f0bf56%}]]>
   </KeyValue>
 </cms.settingskey>

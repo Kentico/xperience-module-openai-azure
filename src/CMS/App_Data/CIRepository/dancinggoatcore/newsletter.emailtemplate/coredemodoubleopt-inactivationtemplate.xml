@@ -20,7 +20,7 @@
 			<table cellpadding="0" cellspacing="0">
 				<tbody>
 					<tr>
-						<td align="center" bgcolor="#B49669" height="45" style="padding: 5px 10px; border: 2px solid rgb(180,150,105); border-image: none; color: rgb(255, 255, 255); display: block;" width="180"><a href="{% EmailFeed.SubscriptionConfirmationUrl |(identity)GlobalAdministrator|(hash)80989d620904e8828d1afeded1c861ba80e3833dd82b9daca166fb9610203837%}" style="width: 180px; line-height: 45px; font-family: Verdana, sans-serif; font-size: 16px; font-weight: normal; text-decoration: none; display: inline-block;"><span style="color: rgb(255, 255, 255);">SUBSCRIBE</span></a></td>
+						<td align="center" bgcolor="#B49669" height="45" style="padding: 5px 10px; border: 2px solid rgb(180,150,105); border-image: none; color: rgb(255, 255, 255); display: block;" width="180"><a href="{% EmailFeed.SubscriptionConfirmationUrl |(identity)GlobalAdministrator|(hash)034860c71d3e5f627c439139517e57d81e024dc89fa4bebddf31fb519a84f461%}" style="width: 180px; line-height: 45px; font-family: Verdana, sans-serif; font-size: 16px; font-weight: normal; text-decoration: none; display: inline-block;"><span style="color: rgb(255, 255, 255);">SUBSCRIBE</span></a></td>
 					</tr>
 				</tbody>
 			</table>
@@ -54,7 +54,7 @@
   <TemplateName>CoreDemoDoubleOpt-inActivationTemplate</TemplateName>
   <TemplateSiteID>
     <CodeName>DancingGoatCore</CodeName>
-    <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+    <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
     <ObjectType>cms.site</ObjectType>
   </TemplateSiteID>
   <TemplateSubject>Confirm your subscription</TemplateSubject>

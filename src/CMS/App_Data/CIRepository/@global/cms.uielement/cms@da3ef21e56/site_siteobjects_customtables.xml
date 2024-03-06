@@ -31,7 +31,7 @@
       <BindingObjectType>cms.classsite</BindingObjectType>
       <DisplayBreadcrumbs>False</DisplayBreadcrumbs>
       <ListPrefaceText ismacro="True">
-        <![CDATA[{% String.FormatString(GetResourceString("site_edit_siteobjects.objectsavailable"), GetResourceString("objecttasks.cms_customtable").ToLower()) |(identity)GlobalAdministrator|(hash)43e62b20eb193af60228423a2ca5c285e44a168fe5377663f990bc5554f0b791%}]]>
+        <![CDATA[{% String.FormatString(GetResourceString("site_edit_siteobjects.objectsavailable"), GetResourceString("objecttasks.cms_customtable").ToLower()) |(identity)GlobalAdministrator|(hash)29367d7b5376536e003c67d609297e92b9108dfa343d77ba9856591eceea3fd6%}]]>
       </ListPrefaceText>
       <ResourcePrefix>cms_customtable.select</ResourcePrefix>
       <TargetObjectType>cms.customtable</TargetObjectType>

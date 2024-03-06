@@ -35,7 +35,7 @@
       <displaybreadcrumbs>False</displaybreadcrumbs>
       <newelement>NewFacebookPage</newelement>
       <wherecondition>
-        <![CDATA[FacebookAccountSiteID = {%SiteContext.CurrentSiteID|(identity)GlobalAdministrator|(hash)4f7433321168d6844abe167688753cc5e119d5e7469d91b476cefcdabafa0e65%}]]>
+        <![CDATA[FacebookAccountSiteID = {%SiteContext.CurrentSiteID|(identity)GlobalAdministrator|(hash)ad4873899b4b2420d87bf957303580c9e9f98bcc27ae71a47ebdf420dfc82cbc%}]]>
       </wherecondition>
     </data>
   </ElementProperties>

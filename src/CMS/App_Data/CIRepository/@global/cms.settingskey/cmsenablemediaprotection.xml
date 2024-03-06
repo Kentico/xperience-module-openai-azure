@@ -15,7 +15,7 @@
   <KeyIsGlobal>True</KeyIsGlobal>
   <KeyIsHidden>False</KeyIsHidden>
   <KeyName>CMSEnableMediaProtection</KeyName>
-  <KeyOrder>4</KeyOrder>
+  <KeyOrder>3</KeyOrder>
   <KeyType>boolean</KeyType>
-  <KeyValue>False</KeyValue>
+  <KeyValue>True</KeyValue>
 </cms.settingskey>

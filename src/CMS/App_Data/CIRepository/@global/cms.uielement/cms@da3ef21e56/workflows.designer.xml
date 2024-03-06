@@ -38,6 +38,6 @@
   <ElementTargetURL>~/CMSModules/Workflows/Workflow_Designer.aspx</ElementTargetURL>
   <ElementType>Url</ElementType>
   <ElementVisibilityCondition>
-    <![CDATA[{%!EditedObject.IsBasic|(identity)GlobalAdministrator|(hash)a9d7b9bd369dc1d0de4e12419ea34baca015c8b6b318d515248229d34abfb7bb%}]]>
+    <![CDATA[{%!EditedObject.IsBasic|(identity)GlobalAdministrator|(hash)e5118c51472adcddaaafd72c43fcf5a98a6c70f2926355a05d4aaac33d180eaa%}]]>
   </ElementVisibilityCondition>
 </cms.uielement>

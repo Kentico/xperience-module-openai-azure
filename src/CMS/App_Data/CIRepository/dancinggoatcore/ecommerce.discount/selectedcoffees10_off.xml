@@ -10,12 +10,12 @@
   <DiscountName>SelectedCoffees10_Off</DiscountName>
   <DiscountOrder>1</DiscountOrder>
   <DiscountProductCondition>
-    <![CDATA[{%Rule("( (SKU.SKUGUID.EqualsAny(\"f2cb84d7-9c04-4aef-91a5-d605066d8270;c3f794db-bb76-414b-839d-4c348956a4fd\".Split(\";\"))))", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"ProductIsOneOf\" ><p n=\"_is\"><t>is</t><v></v><r>0</r><d>select operation</d><vt>text</vt><tv>0</tv></p><p n=\"products\"><t>Ethiopia Yirgacheffe (decaf) (2 lb)\nGuatemala Finca El Injerto (4 oz)</t><v>f2cb84d7-9c04-4aef-91a5-d605066d8270;c3f794db-bb76-414b-839d-4c348956a4fd</v><r>1</r><d>select products</d><vt>text</vt><tv>0</tv></p></r></rules>")|(identity)GlobalAdministrator|(hash)4474ef1dde17ffa9ac78a0005e64f94d4a447045a76f7f1c34a8b7be68273e39%}]]>
+    <![CDATA[{%Rule("( (SKU.SKUGUID.EqualsAny(\"f2cb84d7-9c04-4aef-91a5-d605066d8270;c3f794db-bb76-414b-839d-4c348956a4fd\".Split(\";\"))))", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"ProductIsOneOf\" ><p n=\"_is\"><t>is</t><v></v><r>0</r><d>select operation</d><vt>text</vt><tv>0</tv></p><p n=\"products\"><t>Ethiopia Yirgacheffe (decaf) (2 lb)\nGuatemala Finca El Injerto (4 oz)</t><v>f2cb84d7-9c04-4aef-91a5-d605066d8270;c3f794db-bb76-414b-839d-4c348956a4fd</v><r>1</r><d>select products</d><vt>text</vt><tv>0</tv></p></r></rules>")|(identity)GlobalAdministrator|(hash)d233f1d4b931aa5e7499444a9cf7daf95acff7e852fc97ae497baad1966a52fb%}]]>
   </DiscountProductCondition>
   <DiscountRoles />
   <DiscountSiteID>
     <CodeName>DancingGoatCore</CodeName>
-    <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+    <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
     <ObjectType>cms.site</ObjectType>
   </DiscountSiteID>
   <DiscountUsesCoupons>False</DiscountUsesCoupons>

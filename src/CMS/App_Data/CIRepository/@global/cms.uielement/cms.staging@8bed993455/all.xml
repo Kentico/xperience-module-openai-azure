@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <cms.uielement>
   <ElementAccessCondition>
-    <![CDATA[{%Rule("CurrentUser.IsAuthorizedPerResource(\"CMS.Staging\",\"ManageAllTasks\")", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"Permission\" ><p n=\"module\"><t>CMS.Staging</t><v>CMS.Staging</v><r>false</r><d>select module</d><vt>text</vt></p><p n=\"permission\"><t>ManageAllTasks</t><v>ManageAllTasks</v><r>false</r><d>select permission</d><vt>text</vt></p></r></rules>")|(identity)GlobalAdministrator|(hash)29ebd9897c9b8687d375673be2447d546dd6fb70b9b758f55c2b8e3515a5317e%}]]>
+    <![CDATA[{%Rule("CurrentUser.IsAuthorizedPerResource(\"CMS.Staging\",\"ManageAllTasks\")", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"Permission\" ><p n=\"module\"><t>CMS.Staging</t><v>CMS.Staging</v><r>false</r><d>select module</d><vt>text</vt></p><p n=\"permission\"><t>ManageAllTasks</t><v>ManageAllTasks</v><r>false</r><d>select permission</d><vt>text</vt></p></r></rules>")|(identity)GlobalAdministrator|(hash)ff58887ef883508b0fa8460e4c44f19e019a1d379e450689de804fd2f33dbb4b%}]]>
   </ElementAccessCondition>
   <ElementCaption>{$contentstaging.alltasks$}</ElementCaption>
   <ElementCheckModuleReadPermission>False</ElementCheckModuleReadPermission>

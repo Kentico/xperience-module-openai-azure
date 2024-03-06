@@ -12,7 +12,7 @@
   <ElementIsGlobalApplication>False</ElementIsGlobalApplication>
   <ElementIsMenu>False</ElementIsMenu>
   <ElementName>Transformations</ElementName>
-  <ElementOrder>5</ElementOrder>
+  <ElementOrder>4</ElementOrder>
   <ElementParentID>
     <CodeName>EditDocumentType</CodeName>
     <GUID>f1741808-fe24-4a0e-8111-a63d13559635</GUID>
