@@ -32,10 +32,12 @@ namespace Kentico.Xperience.OpenAI.Azure
         private readonly IOpenAIClientFactory openAIClientFactory;
         private readonly ILocalizationService localizationService;
 
+
         /// <summary>
         /// Initializes a new instance of <see cref="PageCategorizationService"/> class.
         /// </summary>
-        public PageCategorizationService(ISettingsService settingsService, IAppSettingsService appSettingsService, ICategoryInfoProvider categoryInfoProvider, ILocalizationService localizationService) : this(settingsService, appSettingsService, categoryInfoProvider, new OpenAIClientFactory(), localizationService)
+        public PageCategorizationService(ISettingsService settingsService, IAppSettingsService appSettingsService, ICategoryInfoProvider categoryInfoProvider, ILocalizationService localizationService)
+            : this(settingsService, appSettingsService, categoryInfoProvider, new OpenAIClientFactory(), localizationService)
         {
         }
 
@@ -68,7 +70,7 @@ namespace Kentico.Xperience.OpenAI.Azure
 
             var localizedNamesByDisplayNames = new Dictionary<string, string>();
             categoryIdentifiers = categoryIdentifiers.Distinct();
-            var systemPrompt = GetSystemPrompt(categoryIdentifiers, localizedNamesByDisplayNames);
+            string systemPrompt = GetSystemPrompt(categoryIdentifiers, localizedNamesByDisplayNames);
 
             var client = CreateClient();
             string treeNodeData = ExtractTreeNodeData(treeNode);
@@ -90,15 +92,15 @@ namespace Kentico.Xperience.OpenAI.Azure
             string apiEndpoint = settingsService[PageCategorizationConstants.API_ENDPOINT_KEY];
             string apiKey = EncryptionHelper.DecryptData(settingsService[PageCategorizationConstants.API_KEY_KEY]);
 
-            return openAIClientFactory.GetOpenAIClient(apiKey, apiEndpoint);
+            return openAIClientFactory.GetOpenAIClient(apiEndpoint, apiKey);
         }
 
 
         private string ExtractTreeNodeData(TreeNode treeNode)
         {
             var fields = GetFields(treeNode)
-                .Where((field) => !string.IsNullOrEmpty(field.value))
-                .Select(field => $"{field.name}:{field.value}");
+                .Where((field) => !string.IsNullOrEmpty(field.Value))
+                .Select(field => $"{field.Name}:{field.Value}");
 
             if (!fields.Any())
             {
@@ -145,17 +147,22 @@ namespace Kentico.Xperience.OpenAI.Azure
         }
 
 
-        private IEnumerable<(string name, string value)> GetFields(TreeNode treeNode)
+        private IEnumerable<(string Name, string Value)> GetFields(TreeNode treeNode)
         {
-            string treeNodeClassName = treeNode.ClassName;
+            var textFields = new List<FormFieldInfo>();
 
-            var formInfo = FormHelper.GetFormInfo(treeNodeClassName, false);
+            var formInfo = FormHelper.GetFormInfo(treeNode.ClassName, false);
+            textFields.AddRange(formInfo.GetFields(FieldDataType.LongText));
+            textFields.AddRange(formInfo.GetFields(FieldDataType.Text));
 
-            var textColumns = formInfo.GetFields(FieldDataType.LongText).Concat(formInfo.GetFields(FieldDataType.Text));
+            if (treeNode.IsProduct())
+            {
+                var productFormInfo = FormHelper.GetFormInfo(PredefinedObjectType.SKU, false);
+                textFields.AddRange(productFormInfo.GetFields(FieldDataType.LongText));
+                textFields.AddRange(productFormInfo.GetFields(FieldDataType.Text));
+            }
 
-            var fields = textColumns.Select(text => (text.Caption, treeNode.GetStringValue(text.Name, string.Empty)));
-
-            return fields;
+            return textFields.Select(text => (localizationService.LocalizeString(text.Caption), treeNode.GetStringValue(text.Name, string.Empty)));
         }
 
 
@@ -187,10 +194,11 @@ namespace Kentico.Xperience.OpenAI.Azure
         {
             var categories = GetCategories(categoryIdentifiers).Select(category =>
             {
-                var localizedName = localizationService.GetString(category.CategoryDisplayName);
+                string localizedName = localizationService.LocalizeString(category.CategoryDisplayName);
                 localizedDisplayNames[category.CategoryDisplayName] = localizedName;
                 return localizedName;
             });
+
             return "Category names: " + string.Join(PageCategorizationConstants.delimiter, categories);
         }
     }
