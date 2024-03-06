@@ -1,56 +1,58 @@
-# Kentico Xperience Azure OpenAI integration module
+# Xperience Azure OpenAI integration
 
+This custom module allows Xperience users to [automatically select](https://docs.kentico.com/x/IgqRBg) the best fitting categories for a page based on its content using [Azure OpenAI](https://azure.microsoft.com/en-us/products/ai-services/openai-service).
 
-## Description
-
----Please put here some general information about your Intergration / App / Solution.---
-
-## Requirements and prerequisites
-* *Kentico Xperience 13.* installed.
-* URL and credentials to your Azure OpenAI portal.
 
 ## Installation
-1. Open the solution with your administration project (*~/WebApp.sln*).
-1. Navigate to the *NuGet Package Manager Console*.
-1. Run *Install-Package Kentico.Xperience.OpenAI.Azure.KX13 -Version 1.0.*
-1. Build the *CMSApp* project.
-1. Run the Xperience administration to finish the module installation.
 
-  
-## Development environment setup
-1. Download/clone this repository
-1. Copy `/src/CMS/ConnectionStrings.template.config` file to `/src/CMS/ConnectionStrings.config`
-1. Add directory junction of _src/Kentico.Xperience.OpenAI.Azure/CMSResources/Kentico.Xperience.OpenAI.Azure_ into _src/CMS/CMSResources_ using Command Prompt (not Powershell)\
-`mklink /J .\src\CMS\CMSResources\Kentico.Xperience.OpenAI.Azure .\src\Kentico.Xperience.OpenAI.Azure\CMSResources\Kentico.Xperience.OpenAI.Azure`
-1. Open `/src/WebApp.sln`
-1. Start the *CMSApp* project in IIS Express
-1. Optionally: If you receive an exception _Could not find a part of the path ... bin\roslyn\csc.exe_ in the new step, open the Package Manager Console (Menu -> View -> Other Windows) and run \
-   `Update-Package Microsoft.CodeDom.Providers.DotNetCompilerPlatform -r`
-1. Create a database via a web wizard
-1. Stop IIS Express process
-1. Restore database data via `/src/CMS/bin/ContinuousIntegration.exe -r`
-1. Start the *CMSApp* project in IIS Express
-1. Go to _Sites_ application
-1. Start the DancingGoatCore site
-1. Browser: Clear cookies
-1. Restart IIS Express process (possibly not necessary)
+1. Install the [Kentico.Xperience.OpenAI.Azure](https://www.nuget.org/packages/Kentico.Xperience.OpenAI.Azure) NuGet package in the administration project.
+2. Sign in to your [Azure portal](https://portal.azure.com/).
+3. Create and configure an [Azure OpenAI resource](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/create-resource?pivots=web-portal).
+4. [Deploy a model](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/create-resource?pivots=web-portal#deploy-a-model).
+5. In Xperience, go to **Settings -> Content -> Azure OpenAI** and configure the settings:
+    - General:
+        - **Azure OpenAI API endpoint:** – value of the **Endpoint** field from **Resource Management -> Keys and Endpoints** of your Azure OpenAI resource in Azure portal.
+        - **Azure OpenAI API endpoint:** – value of either the **KEY 1** or **KEY 2** fields (both keys will work) from **Resource Management -> Keys and Endpoints** of your Azure OpenAI resource in Azure portal.
+    - Content categorization:
+        - Select the **Enable content categorization** option.
+        - **Deployment name** – the **Deployment name** you chose when deploying the model. Can be also found in **Azure OpenAI Studio -> Management -> Deployments**.
 
-## Quick Start
+    ![Azure OpenAI settings](images/azure_openai_settings.png)
 
----This section shows how to quickly get started with the library. The minimum number of steps (without all the details) should be listed
-to give a developer a general idea of what is involved---
+## Automatic selection of categories
 
-## Full Instructions
+After you [set up](#installation) the integration, the next time you assign a page into categories you can simply click the **Auto-Select** button and the best fitting categories based on the page's content get automatically selected.
 
----Add the full instructions, guidance, and tips to the Usage-Guide.md file---
+**Important notes:**
+- The automatic selection disregards all preexisting category assignments. Consequently, using the **Auto-Select** on manually categorized pages may suggest a different set of categories for the page. You can always add any desired categories manually on top of the automatic selection.
+- The page you are assigning into categories must have at least some data stored in fields with **Text** or **LongText** data types. That is, the automatic selection doesn't work for pages that are built entirely via Page builder.
 
-View the [Usage Guide](./docs/Usage-Guide.md) for more detailed instructions.
+![Auto-select categories](images/auto_select.png)
 
 ## Contributing
 
 To see the guidelines for Contributing to Kentico open source software, please see [Kentico's `CONTRIBUTING.md`](https://github.com/Kentico/.github/blob/main/CONTRIBUTING.md) for more information and follow the [Kentico's `CODE_OF_CONDUCT`](https://github.com/Kentico/.github/blob/main/CODE_OF_CONDUCT.md).
 
-Instructions and technical details for contributing to **this** project can be found in [Contributing Setup](./docs/Contributing-Setup.md).
+## Development environment setup
+
+1. Download/clone this repository.
+2. Copy the `/src/CMS/ConnectionStrings.template.config` file to `/src/CMS/ConnectionStrings.config`.
+3. Add a directory junction of *src/Kentico.Xperience.OpenAI.Azure/CMSResources/Kentico.Xperience.OpenAI.Azure* into *src/CMS/CMSResources* using Command Prompt **(not PowerShell)**:
+
+    `mklink /J .\src\CMS\CMSResources\Kentico.Xperience.OpenAI.Azure .\src\Kentico.Xperience.OpenAI.Azure\CMSResources\Kentico.Xperience.OpenAI.Azure`
+4. Open `/src/WebApp.sln`.
+5. Start the *CMSApp* project in IIS Express.
+    - If you encounter a *Could not find a part of the path ... bin\roslyn\csc.exe* exception, open the Package Manager Console (Menu -> View -> Other Windows) and run:
+
+        `Update-Package Microsoft.CodeDom.Providers.DotNetCompilerPlatform -r`
+6. Create a database via a web wizard.
+7. Stop the IIS Express process.
+8. Restore database data via `/src/CMS/bin/ContinuousIntegration.exe -r`.
+9. Start the *CMSApp* project in IIS Express.
+10. Go to the *Sites* application.
+11. Start the DancingGoatCore site.
+12. Clear cookies in your browser.
+13. Optional – restart the IIS Express process.
 
 ## License
 
