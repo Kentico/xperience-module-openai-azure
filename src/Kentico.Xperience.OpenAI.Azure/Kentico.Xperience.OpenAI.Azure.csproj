@@ -11,7 +11,7 @@
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>OpenSource.snk</AssemblyOriginatorKeyFile>
     <RootNamespace>Kentico.Xperience.OpenAI.Azure</RootNamespace>
-    <AssemblyName>Kentico.Xperience.OpenAI.Azure.KX13</AssemblyName>
+    <AssemblyName>Kentico.Xperience.OpenAI.Azure</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
     <EmbeddedResource Remove="CMSResources\Kentico.Xperience.OpenAI.Azure\Resource.resx" />
