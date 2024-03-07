@@ -7,14 +7,15 @@
     <IsTestProject>true</IsTestProject>
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>OpenSource.snk</AssemblyOriginatorKeyFile>
-	  <AssemblyName>Kentico.Xperience.OpenAI.Azure.Tests</AssemblyName>
+      <AssemblyName>Kentico.Xperience.OpenAI.Azure.Tests</AssemblyName>
 
   </PropertyGroup>
   <PropertyGroup>
-	<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-	<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Kentico.Xperience.Libraries.Tests" Version="13.0.142" />
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.11.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
     <PackageReference Include="NSubstitute" Version="5.1.0" />
@@ -24,31 +25,5 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Kentico.Xperience.OpenAI.Azure\Kentico.Xperience.OpenAI.Azure.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="CMS.Base">
-      <HintPath>..\Lib\CMS.Base.dll</HintPath>
-    </Reference>
-    <Reference Include="CMS.Core">
-      <HintPath>..\Lib\CMS.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="CMS.DataEngine">
-      <HintPath>..\Lib\CMS.DataEngine.dll</HintPath>
-    </Reference>
-    <Reference Include="CMS.DocumentEngine">
-      <HintPath>..\Lib\CMS.DocumentEngine.dll</HintPath>
-    </Reference>
-    <Reference Include="CMS.FormEngine">
-      <HintPath>..\Lib\CMS.FormEngine.dll</HintPath>
-    </Reference>
-    <Reference Include="CMS.Taxonomy">
-      <HintPath>..\Lib\CMS.Taxonomy.dll</HintPath>
-    </Reference>
-    <Reference Include="CMS.Tests">
-      <HintPath>..\Lib\CMS.Tests.dll</HintPath>
-    </Reference>
-    <Reference Include="CMS.Tests.DocumentEngine">
-      <HintPath>..\Lib\CMS.Tests.DocumentEngine.dll</HintPath>
-    </Reference>
   </ItemGroup>
 </Project>

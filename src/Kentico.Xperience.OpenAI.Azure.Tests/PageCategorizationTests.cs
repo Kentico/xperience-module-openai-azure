@@ -13,7 +13,6 @@ using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
 
 namespace Kentico.Xperience.OpenAI.Azure.Tests
 {
@@ -22,26 +21,30 @@ namespace Kentico.Xperience.OpenAI.Azure.Tests
     {
         private OpenAIClient client;
         private IOpenAIClientFactory clientFactory;
-        private ChatResponseMessage responseMessage;
         private PageCategorizationMock pageCategorizationService;
         private ISettingsService settingService;
         private ICategoryInfoProvider categoryInfoProvider;
         private TreeNode treeNode;
 
-        const string CATEGORY1_NAME = "Category1";
-        const string CATEGORY2_NAME = "Category2";
-        const string CATEGORY3_NAME = "Category3";
-        const int CATEGORY1_ID = 1;
-        const int CATEGORY2_ID = 2;
-        const int CATEGORY3_ID = 3;
-        const string DEPLOYMENT_NAME = "deploymentName";
+        private const string CATEGORY1_NAME = "Category1";
+        private const string CATEGORY2_NAME = "Category2";
+        private const string CATEGORY3_NAME = "Category3";
+        private const int CATEGORY1_ID = 1;
+        private const int CATEGORY2_ID = 2;
+        private const int CATEGORY3_ID = 3;
+        private const string DEPLOYMENT_NAME = "deploymentName";
+        private const string DELIMITER = PageCategorizationConstants.DELIMITER;
+
+        [Test]
+        public void Test() => Assert.Pass();
+
+        [Test]
+        public void Test2() => Assert.Pass();
 
 
         [SetUp]
         public void Setup()
         {
-            TestContext.Out.WriteLine("setup");
-            categoryInfoProvider = null;
             FakeCategories();
             Fake<TreeNode>();
 
@@ -58,50 +61,48 @@ namespace Kentico.Xperience.OpenAI.Azure.Tests
             treeNode = Substitute.For<TreeNode>();
             treeNode.DocumentCulture = "en-US";
 
-            pageCategorizationService = new PageCategorizationMock(settingService, appSettingsService, categoryInfoProvider, clientFactory, localizationService);
-            pageCategorizationService.Fields = new List<(string, string)>() { ("field1", "value1") };
+            pageCategorizationService = new PageCategorizationMock(settingService, appSettingsService, categoryInfoProvider, clientFactory, localizationService)
+            {
+                Fields = new List<(string, string)>() { ("field1", "value1") }
+            };
         }
 
 
-        public void FakeCategories()
-        {
-            categoryInfoProvider = (ICategoryInfoProvider)Fake<CategoryInfo, CategoryInfoProvider>().WithData(CategoryInfo.New(c1 =>
-            {
-                c1.CategoryDisplayName = CATEGORY1_NAME;
-                c1.CategoryID = CATEGORY1_ID;
-            }),
-            CategoryInfo.New(c2 =>
-            {
-                c2.CategoryDisplayName = CATEGORY2_NAME;
-                c2.CategoryID = CATEGORY2_ID;
-            }),
-            CategoryInfo.New(c3 =>
-            {
-                c3.CategoryDisplayName = CATEGORY3_NAME;
-                c3.CategoryID = CATEGORY3_ID;
-            })).ProviderObject;
-        }
+        private void FakeCategories() => categoryInfoProvider = (ICategoryInfoProvider)Fake<CategoryInfo, CategoryInfoProvider>()
+                .WithData(CategoryInfo.New(c1 =>
+                    {
+                        c1.CategoryDisplayName = CATEGORY1_NAME;
+                        c1.CategoryID = CATEGORY1_ID;
+                    }),
+                    CategoryInfo.New(c2 =>
+                    {
+                        c2.CategoryDisplayName = CATEGORY2_NAME;
+                        c2.CategoryID = CATEGORY2_ID;
+                    }),
+                    CategoryInfo.New(c3 =>
+                    {
+                        c3.CategoryDisplayName = CATEGORY3_NAME;
+                        c3.CategoryID = CATEGORY3_ID;
+                    })).ProviderObject;
 
 
         private void SetChatCompletionsResponse(string expectedResponse)
         {
             var response = Substitute.For<Response<ChatCompletions>>();
 
-            responseMessage = AzureOpenAIModelFactory.ChatResponseMessage(content: expectedResponse);
+            var responseMessage = AzureOpenAIModelFactory.ChatResponseMessage(content: expectedResponse);
             var chatChoice = AzureOpenAIModelFactory.ChatChoice(responseMessage);
 
-            var x = AzureOpenAIModelFactory.ChatCompletions(choices: new List<ChatChoice>() { chatChoice });
-            response.Value.Returns(x);
+            var completion = AzureOpenAIModelFactory.ChatCompletions(choices: new List<ChatChoice>() { chatChoice });
+            response.Value.Returns(completion);
 
             client.GetChatCompletions(Arg.Any<ChatCompletionsOptions>()).Returns(response);
         }
 
 
         [Test]
-        public void SettingsNotPresent_ThrowsInvalidOperationException()
+        public void CategorizePage_SettingsNotPresent_ThrowsInvalidOperationException()
         {
-            TestContext.Out.WriteLine("setting");
-
             settingService[PageCategorizationConstants.API_ENDPOINT_KEY].Returns("");
             settingService[PageCategorizationConstants.API_KEY_KEY].Returns("");
 
@@ -113,10 +114,8 @@ namespace Kentico.Xperience.OpenAI.Azure.Tests
 
 
         [Test]
-        public void DeploymentNameNotPresent_ThrowsInvalidOperationException()
+        public void CategorizePage_DeploymentNameNotPresent_ThrowsInvalidOperationException()
         {
-            TestContext.Out.WriteLine("deployment");
-
             settingService[PageCategorizationConstants.DEPLOYMENT_NAME_KEY].Returns("");
 
             Assert.Throws<InvalidOperationException>(() => pageCategorizationService.CategorizePage(treeNode, new List<int> { 1, 2, 3 }));
@@ -124,14 +123,12 @@ namespace Kentico.Xperience.OpenAI.Azure.Tests
 
 
         [Test]
-        public void DuplicateIdentifiers_ReturnsUniqueIdentifiers()
+        public void CategorizePage_DuplicateIdentifiers_ReturnsUniqueIdentifiers()
         {
-            TestContext.Out.WriteLine("duplicate");
             var categoryIds = new List<int> { CATEGORY1_ID, CATEGORY2_ID, CATEGORY3_ID, CATEGORY3_ID };
             var uniqueCategoryIds = categoryIds.Distinct();
-            var delimiter = PageCategorizationConstants.DELIMITER;
 
-            SetChatCompletionsResponse($"{CATEGORY1_NAME}{delimiter}{CATEGORY2_NAME}{delimiter}{CATEGORY3_NAME}");
+            SetChatCompletionsResponse($"{CATEGORY1_NAME}{DELIMITER}{CATEGORY2_NAME}{DELIMITER}{CATEGORY3_NAME}");
 
             var result = pageCategorizationService.CategorizePage(treeNode, categoryIds);
 
@@ -145,10 +142,8 @@ namespace Kentico.Xperience.OpenAI.Azure.Tests
 
 
         [Test]
-        public void NoTreeNodeData_ReturnsEmptyResult()
+        public void CategorizePage_NoTreeNodeData_ReturnsEmptyResult()
         {
-            TestContext.Out.WriteLine("e,mpty");
-
             var categoryIds = new List<int> { CATEGORY1_ID, CATEGORY2_ID, CATEGORY3_ID };
 
             pageCategorizationService.Fields = new List<(string, string)>();
@@ -165,23 +160,20 @@ namespace Kentico.Xperience.OpenAI.Azure.Tests
 
 
         [Test]
-        public void GetChatCompletionsReturnsUnknownCategory_ReturnsUnknownCategory()
+        public void CategorizePage_GetChatCompletionsReturnsUnknownCategory_ReturnsUnknownCategory()
         {
-            TestContext.Out.WriteLine("completions");
+            const string UNKNOWN_CATEGORY_NAME = "Unknown";
 
             var categoryIds = new List<int> { CATEGORY1_ID, CATEGORY2_ID, CATEGORY3_ID };
             var responseCategoryIds = new List<int> { CATEGORY1_ID, CATEGORY2_ID };
-            var delimiter = PageCategorizationConstants.DELIMITER;
 
-            var unknownCategoryName = "Unknown";
-
-            SetChatCompletionsResponse($"{CATEGORY1_NAME}{delimiter}{CATEGORY2_NAME}{delimiter}{unknownCategoryName}");
+            SetChatCompletionsResponse($"{CATEGORY1_NAME}{DELIMITER}{CATEGORY2_NAME}{DELIMITER}{UNKNOWN_CATEGORY_NAME}");
 
             var result = pageCategorizationService.CategorizePage(treeNode, categoryIds);
 
             Assert.Multiple(() =>
             {
-                Assert.That(!result.UnknownCategories.Contains(unknownCategoryName));
+                Assert.AreEqual(true, result.UnknownCategories.Contains(UNKNOWN_CATEGORY_NAME));
                 CollectionAssert.AreEquivalent(responseCategoryIds, result.Categories);
             });
         }
@@ -192,14 +184,22 @@ namespace Kentico.Xperience.OpenAI.Azure.Tests
         public List<(string, string)> Fields { get; set; }
 
 
-        internal PageCategorizationMock(ISettingsService settingsService, IAppSettingsService appSettingsService, ICategoryInfoProvider categoryInfoProvider, IOpenAIClientFactory openAIClientFactory, ILocalizationService localizationService) : base(settingsService, appSettingsService, categoryInfoProvider, openAIClientFactory, localizationService)
+        internal PageCategorizationMock(
+            ISettingsService settingsService,
+            IAppSettingsService appSettingsService,
+            ICategoryInfoProvider categoryInfoProvider,
+            IOpenAIClientFactory openAIClientFactory,
+            ILocalizationService localizationService)
+            : base(
+                  settingsService,
+                  appSettingsService,
+                  categoryInfoProvider,
+                  openAIClientFactory,
+                  localizationService)
         {
         }
 
 
-        internal override IEnumerable<(string name, string value)> GetFields(TreeNode treeNode)
-        {
-            return Fields;
-        }
+        internal override IEnumerable<(string name, string value)> GetFields(TreeNode treeNode) => Fields;
     }
 }
