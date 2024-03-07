@@ -75,9 +75,13 @@ namespace Kentico.Xperience.OpenAI.Azure
             var client = CreateClient();
             string treeNodeData = ExtractTreeNodeData(treeNode);
 
-            if (treeNodeData == string.Empty)
+            if (string.IsNullOrEmpty(treeNodeData))
             {
-                return new PageCategorizationResult();
+                return new PageCategorizationResult
+                {
+                    Categories = Enumerable.Empty<int>(),
+                    UnknownCategories = Enumerable.Empty<string>()
+                };
             }
 
             var chatCompletionsOptions = InitializeChatCompletionsOptions(treeNodeData, systemPrompt);
