@@ -149,7 +149,7 @@ namespace Kentico.Xperience.OpenAI.Azure
             PageCategorizationConstants.DEFAULT_SYSTEM_PROMPT + GetCategoryNames(categoryIdentifiers, localizedDisplayNames);
 
 
-        private IEnumerable<(string Name, string Value)> GetFields(TreeNode treeNode)
+        internal virtual IEnumerable<(string Name, string Value)> GetFields(TreeNode treeNode)
         {
             var textFields = new List<FormFieldInfo>();
 
@@ -173,13 +173,13 @@ namespace Kentico.Xperience.OpenAI.Azure
             string responseContent = response.Value.Choices[0].Message.Content;
 
             var categoriesByName = GetCategories(categoryIdentifiers).ToLookup(category => localizedDisplayNames[category.CategoryDisplayName], category => category.CategoryID);
-            var cattegoryNames = responseContent.TrimEnd('.')
+            var categoryNames = responseContent.TrimEnd('.')
                 .Split(PageCategorizationConstants.DELIMITER[0])
                 .Select(category => category.Trim())
                 .Distinct();
 
-            var correctlyIdentified = cattegoryNames.Where(category => categoriesByName.Contains(category)).SelectMany(name => categoriesByName[name]);
-            var other = cattegoryNames.Where((category) => !categoriesByName.Contains(category));
+            var correctlyIdentified = categoryNames.Where(category => categoriesByName.Contains(category)).SelectMany(name => categoriesByName[name]);
+            var other = categoryNames.Where((category) => !categoriesByName.Contains(category));
 
             return new PageCategorizationResult
             {

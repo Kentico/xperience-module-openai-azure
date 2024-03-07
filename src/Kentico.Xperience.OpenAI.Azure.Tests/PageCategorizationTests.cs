@@ -3,7 +3,6 @@ using Azure.AI.OpenAI;
 
 using CMS.Core;
 using CMS.DocumentEngine;
-using CMS.DocumentEngine.Internal;
 using CMS.Taxonomy;
 using CMS.Tests;
 
@@ -26,6 +25,7 @@ namespace Kentico.Xperience.OpenAI.Azure.Tests
         private ISettingsService settingService;
         private ICategoryInfoProvider categoryInfoProvider;
         private TreeNode treeNode;
+        private Response<ChatCompletions> response;
 
         private const string CATEGORY1_NAME = "Category1";
         private const string CATEGORY2_NAME = "Category2";
@@ -36,12 +36,6 @@ namespace Kentico.Xperience.OpenAI.Azure.Tests
         private const string DEPLOYMENT_NAME = "deploymentName";
         private const string DELIMITER = PageCategorizationConstants.DELIMITER;
 
-        [Test]
-        public void Test() => Assert.Pass();
-
-        [Test]
-        public void Test2() => Assert.Pass();
-
 
         [SetUp]
         public void Setup()
@@ -50,17 +44,21 @@ namespace Kentico.Xperience.OpenAI.Azure.Tests
             Fake<TreeNode>();
 
             client = Substitute.For<OpenAIClient>();
+
             clientFactory = Substitute.For<IOpenAIClientFactory>();
             clientFactory.GetOpenAIClient(Arg.Any<string>(), Arg.Any<string>()).Returns(client);
 
             settingService = Substitute.For<ISettingsService>();
             settingService[PageCategorizationConstants.DEPLOYMENT_NAME_KEY].Returns(DEPLOYMENT_NAME);
+
             var localizationService = Substitute.For<ILocalizationService>();
-            localizationService.GetString(Arg.Any<string>()).ReturnsForAnyArgs(x => (string)x.Args()[0]);
+            localizationService.LocalizeString(Arg.Any<string>()).ReturnsForAnyArgs(x => x.ArgAt<string>(0));
+
             var appSettingsService = Substitute.For<IAppSettingsService>();
 
             treeNode = Substitute.For<TreeNode>();
             treeNode.DocumentCulture = "en-US";
+            treeNode.ClassName.Returns("documentName");
 
             pageCategorizationService = new PageCategorizationMock(settingService, appSettingsService, categoryInfoProvider, clientFactory, localizationService)
             {
@@ -89,7 +87,7 @@ namespace Kentico.Xperience.OpenAI.Azure.Tests
 
         private void SetChatCompletionsResponse(string expectedResponse)
         {
-            var response = Substitute.For<Response<ChatCompletions>>();
+            response = Substitute.For<Response<ChatCompletions>>();
 
             var responseMessage = AzureOpenAIModelFactory.ChatResponseMessage(content: expectedResponse);
             var chatChoice = AzureOpenAIModelFactory.ChatChoice(responseMessage);
@@ -154,8 +152,8 @@ namespace Kentico.Xperience.OpenAI.Azure.Tests
             Assert.Multiple(() =>
             {
                 Assert.That(!client.ReceivedCalls().Any());
-                Assert.That(result.Categories, Is.Null);
-                Assert.That(result.UnknownCategories, Is.Null);
+                Assert.AreEqual(Enumerable.Empty<int>(), result.Categories);
+                Assert.AreEqual(Enumerable.Empty<string>(), result.UnknownCategories);
             });
         }
 
@@ -201,6 +199,6 @@ namespace Kentico.Xperience.OpenAI.Azure.Tests
         }
 
 
-        internal IEnumerable<(string name, string value)> GetFields(TreeNode treeNode) => Fields;
+        internal override IEnumerable<(string Name, string Value)> GetFields(TreeNode treeNode) => Fields;
     }
 }
