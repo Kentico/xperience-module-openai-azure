@@ -12,7 +12,7 @@ This custom module allows Xperience users to [automatically select](https://docs
 5. In Xperience, go to **Settings -> Content -> Azure OpenAI** and configure the settings:
     - General:
         - **Azure OpenAI API endpoint:** – value of the **Endpoint** field from **Resource Management -> Keys and Endpoints** of your Azure OpenAI resource in Azure portal.
-        - **Azure OpenAI API endpoint:** – value of either the **KEY 1** or **KEY 2** fields (both keys will work) from **Resource Management -> Keys and Endpoints** of your Azure OpenAI resource in Azure portal.
+        - **Azure OpenAI API key:** – value of either the **KEY 1** or **KEY 2** fields (both keys will work) from **Resource Management -> Keys and Endpoints** of your Azure OpenAI resource in Azure portal.
     - Content categorization:
         - Select the **Enable content categorization** option.
         - **Deployment name** – the **Deployment name** you chose when deploying the model. Can be also found in **Azure OpenAI Studio -> Management -> Deployments**.
