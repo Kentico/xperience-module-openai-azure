@@ -7,7 +7,7 @@
 <![CDATA[
 This is an automatic notification sent by Kentico CMS. The following page was published. 
 
-Page: [url={%DocumentEditUrl%}]{%documentname%}[/url] {% DocumentPreviewUrl.IsNullOrEmpty() ? "" : "([url=" + DocumentPreviewUrl + "]preview[/url])"|(identity)GlobalAdministrator|(hash)b8fcf6aaa6ab10486c3dc83b8ec470ba38547b2a63100d0ff6f54a31297e5e0f%}
+Page: [url={%DocumentEditUrl%}]{%documentname%}[/url] {% DocumentPreviewUrl.IsNullOrEmpty() ? "" : "([url=" + DocumentPreviewUrl + "]preview[/url])"|(identity)GlobalAdministrator|(hash)c5c1eee1885c8bf97e4866af9da674f6adae11db33d9ee74433e234b0301c144%}
 Last approved by: {%approvedby%} 
 Last approved when: {%approvedwhen%} 
 Original step: {%originalstepname%} 
@@ -29,7 +29,7 @@ Comment:
     This is an automatic notification sent by Kentico CMS. The following page was published.
     </p>
     <p>
-    <strong>Page:</strong> <a href="{%DocumentEditUrl%}">{%documentname%}</a> {% DocumentPreviewUrl.IsNullOrEmpty() ? "" : "(<a href=\"" + DocumentPreviewUrl + "\">preview</a>)"|(encode)false|(identity)GlobalAdministrator|(hash)1e8e7ddafbd86a3d34cb9a1576f408bc61e6ba0b99a54ffb1dde6d3d42dc095d%}
+    <strong>Page:</strong> <a href="{%DocumentEditUrl%}">{%documentname%}</a> {% DocumentPreviewUrl.IsNullOrEmpty() ? "" : "(<a href=\"" + DocumentPreviewUrl + "\">preview</a>)"|(encode)false|(identity)GlobalAdministrator|(hash)09050f5cb95bbe4789297d91bba206fbf8fc0646a47982022078e967f93fbe0d%}
     <br />
     <br />
     <strong>Last approved by:</strong> {%approvedby%}

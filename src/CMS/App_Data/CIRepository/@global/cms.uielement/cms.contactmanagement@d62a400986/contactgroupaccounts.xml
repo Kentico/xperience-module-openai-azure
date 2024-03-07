@@ -38,6 +38,6 @@
   </ElementTargetURL>
   <ElementType>Url</ElementType>
   <ElementVisibilityCondition>
-    <![CDATA[{%LicenseHelper.CheckFeature(FeatureEnum.FullContactManagement)|(identity)GlobalAdministrator|(hash)96c9501be9580010dda96e119d4f1c39bd257a6b26304e8f72b99cf811c123bc%}]]>
+    <![CDATA[{%LicenseHelper.CheckFeature(FeatureEnum.FullContactManagement)|(identity)GlobalAdministrator|(hash)c7ab5cb7054c3dd173e32690cf5505dd82d8e5199c7aca779a514894d2e607f9%}]]>
   </ElementVisibilityCondition>
 </cms.uielement>

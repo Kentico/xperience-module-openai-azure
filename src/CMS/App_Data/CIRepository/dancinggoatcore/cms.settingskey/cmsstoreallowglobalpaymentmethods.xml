@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.settingskey>
+  <KeyCategoryID>
+    <CodeName>CMS.Ecommerce.AllowGlobalObjectsFor</CodeName>
+    <ObjectType>cms.settingscategory</ObjectType>
+  </KeyCategoryID>
+  <KeyDefaultValue>False</KeyDefaultValue>
+  <KeyDisplayName>{$settingskey.cmsstoreallowglobalpaymentmethods$}</KeyDisplayName>
+  <KeyGUID>fb031d29-4932-4ee7-8ea3-b8bea0d04344</KeyGUID>
+  <KeyIsHidden>False</KeyIsHidden>
+  <KeyName>CMSStoreAllowGlobalPaymentMethods</KeyName>
+  <KeyType>boolean</KeyType>
+  <KeyValue>False</KeyValue>
+  <SiteID>
+    <CodeName>DancingGoatCore</CodeName>
+    <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
+    <ObjectType>cms.site</ObjectType>
+  </SiteID>
+</cms.settingskey>

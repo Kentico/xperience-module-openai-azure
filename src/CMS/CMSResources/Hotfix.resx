@@ -274,10 +274,10 @@ Enter a URL to a system image handler to obtain a protected URL containing the h
     <value>If selected, the system generates page URLs with culture aliases as language prefixes whenever a culture alias is specified. If there is no culture alias specified for a given culture, the culture code is used instead. E.g., '{domain}/en-US/Home' becomes '{domain}/en/Home' when the culture alias is set to 'en' for the 'English - United States' culture.&lt;br /&gt;&lt;br /&gt;You can view and set culture aliases in the 'Localization' application on the 'Cultures' tab.</value>
   </data>
   <data name="settingskey.cmsenablemediaprotection" xml:space="preserve">
-	  <value>Enable image file request protection</value>
+    <value>Enable image file request protection</value>
   </data>
   <data name="settingskey.cmsenablemediaprotection.description" xml:space="preserve">
-	  <value>Enables additional hash protection for image file requests with a specified "width", "height" or "maxsidesize" parameters. Requests without a valid hash will return the image in default dimensions.</value>
+    <value>Enables additional hash protection for image file requests with a specified "width", "height" or "maxsidesize" parameters. Requests without a valid hash will return the image in default dimensions.</value>
   </data>
   <data name="culture.editcultureconfirmation" xml:space="preserve">
     <value>Are you sure you want to save the changes? Saving the changes may lead to changes in page URLs. For example, changing the culture alias when using it as a language prefix in URLs will lead to regeneration of all URLs associated with the culture.</value>
@@ -782,5 +782,14 @@ Enter a URL to a system image handler to obtain a protected URL containing the h
   </data>
   <data name="Category_Edit.AllowedPageTypes" xml:space="preserve">
     <value>Allowed page types</value>
+  </data>
+  <data name="categories.autoselect.button" xml:space="preserve">
+    <value>Auto-Select</value>
+  </data>
+  <data name="categories.autoselect.invalidcategorieserror" xml:space="preserve">
+    <value>The page could not be automatically assigned to any of the available categories. Try the automatic selection again or select the categories manually.</value>
+  </data>
+  <data name="categories.autoselect.serviceerror" xml:space="preserve">
+    <value>The categorization service is currently unreachable. Try the automatic selection again later, and if the problem persists, contact your system administrator. Alternatively, you can select the categories manually.</value>
   </data>
 </root>

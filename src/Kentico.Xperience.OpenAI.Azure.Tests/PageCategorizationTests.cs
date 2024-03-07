@@ -3,6 +3,7 @@ using Azure.AI.OpenAI;
 
 using CMS.Core;
 using CMS.DocumentEngine;
+using CMS.DocumentEngine.Internal;
 using CMS.Taxonomy;
 using CMS.Tests;
 
@@ -200,6 +201,6 @@ namespace Kentico.Xperience.OpenAI.Azure.Tests
         }
 
 
-        internal override IEnumerable<(string name, string value)> GetFields(TreeNode treeNode) => Fields;
+        internal IEnumerable<(string name, string value)> GetFields(TreeNode treeNode) => Fields;
     }
 }

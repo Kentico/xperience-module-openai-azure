@@ -5,7 +5,7 @@
     <ObjectType>cms.settingscategory</ObjectType>
   </KeyCategoryID>
   <KeyDefaultValue>
-    <![CDATA[{%Order.OrderID|(identity)GlobalAdministrator|(hash)10e90a9d9fc0e26d13f405346784b97edb57172a90c0ecc2162cae8512b9038a%}]]>
+    <![CDATA[{%Order.OrderID|(identity)GlobalAdministrator|(hash)dda414e1e31a6753a9c449e6dec902b4c85c627cf1d9462c8f06586bd60cfc95%}]]>
   </KeyDefaultValue>
   <KeyDescription>
     <![CDATA[{$settingskey.CMSStoreInvoiceNumberPattern.description$}]]>
@@ -30,6 +30,6 @@
   <KeyOrder>1</KeyOrder>
   <KeyType>string</KeyType>
   <KeyValue>
-    <![CDATA[{%Order.OrderID|(identity)GlobalAdministrator|(hash)10e90a9d9fc0e26d13f405346784b97edb57172a90c0ecc2162cae8512b9038a%}]]>
+    <![CDATA[{%Order.OrderID|(identity)GlobalAdministrator|(hash)dda414e1e31a6753a9c449e6dec902b4c85c627cf1d9462c8f06586bd60cfc95%}]]>
   </KeyValue>
 </cms.settingskey>

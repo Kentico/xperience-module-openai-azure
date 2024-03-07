@@ -7,7 +7,7 @@
 <![CDATA[
 Pages have been submitted for translation. The source text and instructions are enclosed in a ZIP file.
 
-This submission was created with priority {% GetTranslationPriority(Submission.SubmissionPriority) |(identity)GlobalAdministrator|(hash)6d8ae69759047890b5bb724fff2221b20e14d9f1faffa5d032e5385a91bf9c5c%} and is due by {% Submission.SubmissionDeadline |(identity)GlobalAdministrator|(hash)0a4083d71995409b44f9fd8faee916549cf206b87821eda636ade9d243419d38%}.
+This submission was created with priority {% GetTranslationPriority(Submission.SubmissionPriority) |(identity)GlobalAdministrator|(hash)b1866f8f155dff22664dc5b00ad0aa8c61c8553b61ea8cff2a242201f359fc7a%} and is due by {% Submission.SubmissionDeadline |(identity)GlobalAdministrator|(hash)724ec07f77baa7795e3e16461628c91905de5b0d438fa7f5633a0ae0871b60eb%}.
 
 To upload a ZIP archive with the completed translation, go to the following URL {% SubmissionLink %}.
 ]]>
@@ -23,7 +23,7 @@ To upload a ZIP archive with the completed translation, go to the following URL 
     Pages have been submitted for translation. The source text and instructions are enclosed in a ZIP file.
     </p>
     <p>
-    This submission was created with priority {% GetTranslationPriority(Submission.SubmissionPriority) |(identity)GlobalAdministrator|(hash)6d8ae69759047890b5bb724fff2221b20e14d9f1faffa5d032e5385a91bf9c5c%} and is due by {% Submission.SubmissionDeadline |(identity)GlobalAdministrator|(hash)0a4083d71995409b44f9fd8faee916549cf206b87821eda636ade9d243419d38%}.
+    This submission was created with priority {% GetTranslationPriority(Submission.SubmissionPriority) |(identity)GlobalAdministrator|(hash)b1866f8f155dff22664dc5b00ad0aa8c61c8553b61ea8cff2a242201f359fc7a%} and is due by {% Submission.SubmissionDeadline |(identity)GlobalAdministrator|(hash)724ec07f77baa7795e3e16461628c91905de5b0d438fa7f5633a0ae0871b60eb%}.
     </p>
     <p>
     To upload a ZIP archive with the completed translation, click this link: <a href="{% SubmissionLink %}">{% SubmissionLink %}</a>

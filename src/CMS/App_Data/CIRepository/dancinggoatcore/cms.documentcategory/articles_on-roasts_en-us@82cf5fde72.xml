@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.documentcategory>
+  <Parent>
+    <CodeName>en-US</CodeName>
+    <GUID>4b0213cb-f6ec-476e-92eb-619c44d66373</GUID>
+    <ObjectType>cms.documentlocalization</ObjectType>
+    <Parent>
+      <CodeName>/Articles/On-Roasts</CodeName>
+      <GUID>1c198498-aff2-4068-a111-004afe866191</GUID>
+      <ObjectType>cms.node</ObjectType>
+      <Site>
+        <CodeName>DancingGoatCore</CodeName>
+        <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
+        <ObjectType>cms.site</ObjectType>
+      </Site>
+    </Parent>
+  </Parent>
+  <Bindings>
+    <Binding id="cms.category_CoffeeBrewingAndTechniques_cms.site_DancingGoatCore">
+      <CategoryID>
+        <CodeName>CoffeeBrewingAndTechniques</CodeName>
+        <GUID>f302dbc3-4c96-4eaa-beb5-eec5b7e448ea</GUID>
+        <ObjectType>cms.category</ObjectType>
+        <Site>
+          <CodeName>DancingGoatCore</CodeName>
+          <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
+          <ObjectType>cms.site</ObjectType>
+        </Site>
+      </CategoryID>
+    </Binding>
+  </Bindings>
+</cms.documentcategory>

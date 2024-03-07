@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.pageurlpath>
+  <PageUrlPathCulture>es-ES</PageUrlPathCulture>
+  <PageUrlPathGUID>4cd336cf-fac4-4eef-9e3d-70056c6b18b5</PageUrlPathGUID>
+  <PageUrlPathNodeID>
+    <CodeName>/Contacts</CodeName>
+    <GUID>1eb27203-7d46-4329-8a56-2458481e55c0</GUID>
+    <ObjectType>cms.node</ObjectType>
+    <Site>
+      <CodeName>DancingGoatCore</CodeName>
+      <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
+      <ObjectType>cms.site</ObjectType>
+    </Site>
+  </PageUrlPathNodeID>
+  <PageUrlPathSiteID>
+    <CodeName>DancingGoatCore</CodeName>
+    <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
+    <ObjectType>cms.site</ObjectType>
+  </PageUrlPathSiteID>
+  <PageUrlPathUrlPath>es-ES/Contacts</PageUrlPathUrlPath>
+  <PageUrlPathUrlPathHash>
+    <![CDATA[0B00316CFC193AA74346B7930FC74811936BA51637F040A59C768D85CB400647]]>
+  </PageUrlPathUrlPathHash>
+</cms.pageurlpath>

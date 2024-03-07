@@ -57,7 +57,8 @@ namespace DancingGoat.Widgets
 
             viewModel.CacheDependencies.CacheKeys = dependency_keys;
 
-            var articles = repository.GetArticles(ContentItemIdentifiers.ARTICLES, viewModel.Properties.Count);
+            var articleCategories = viewModel.Properties.Categories?.Select(c => c.Identifier);
+            var articles = repository.GetArticles(ContentItemIdentifiers.ARTICLES, viewModel.Properties.Count, articleCategories);
             var articlesModel = articles.Select(article => ArticleViewModel.GetViewModel(article, pageUrlRetriever, attachmentUrlRetriever));
             return View("~/Components/Widgets/Articles/_ArticlesWidget.cshtml", new ArticlesWidgetViewModel { Articles = articlesModel, Count = viewModel.Properties.Count });
         }

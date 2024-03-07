@@ -5,7 +5,7 @@
   </TriggerDisplayName>
   <TriggerGUID>36394895-4768-407f-81a0-272da207ae13</TriggerGUID>
   <TriggerMacroCondition>
-    <![CDATA[{%Rule("(Contact.IsInactive(300))", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"CMSContactInactiveInTheLastXDays\" ><p n=\"days\"><t>300</t><v>300</v><r>1</r><d>enter days</d><vt>integer</vt><tv>1</tv></p></r></rules>")|(identity)GlobalAdministrator|(hash)db43d5c1df24a652c5391c89114604104ecaf9975c9cd46e011ce19c7940a817%}]]>
+    <![CDATA[{%Rule("(Contact.IsInactive(300))", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"CMSContactInactiveInTheLastXDays\" ><p n=\"days\"><t>300</t><v>300</v><r>1</r><d>enter days</d><vt>integer</vt><tv>1</tv></p></r></rules>")|(identity)GlobalAdministrator|(hash)ad1cd002f481e8636b68d1fdb82e7f8322cea65e2758f8d48361246629ee0e9e%}]]>
   </TriggerMacroCondition>
   <TriggerObjectType>cms.objectscheduledtask</TriggerObjectType>
   <TriggerParameters>

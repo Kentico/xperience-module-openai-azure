@@ -41,13 +41,15 @@ public partial class CMSModules_Categories_Controls_CategorySelectionDialog : CM
     private CategoryInfo mSelectedCategory;
     private int mSelectedParentId;
     private int mDocumentId;
+    private int siteId;
     private const int CATEGORIES_ROOT_PARENT_ID = -1;
     private const int PERSONAL_CATEGORIES_ROOT_PARENT_ID = -2;
     private bool canModifySite;
     private bool canModifyGlobal;
-    private IDictionary<int, (string CategoryDisplayName, bool IsAllowed)> filteredCategories;
+    private IDictionary<int, bool> filteredCategories;
     private CMS.DocumentEngine.TreeNode currentPage;
     private bool showAutoSelectButton;
+    private bool autoCheckParents;
 
     // Actions
     private HeaderAction upAction;
@@ -304,7 +306,7 @@ public partial class CMSModules_Categories_Controls_CategorySelectionDialog : CM
     /// Filtered categories for document type of the current document specified by <see cref="DocumentID"/>.
     /// </summary>
     /// <remarks>If <see cref="DocumentID"/> is not specified, this collection is empty, hence all categories are allowed.</remarks>
-    private IDictionary<int, (string CategoryDisplayName, bool IsAllowed)> FilteredCategoriesInTree
+    private IDictionary<int, bool> FilteredCategoriesInTree
     {
         get
         {
@@ -387,7 +389,7 @@ public partial class CMSModules_Categories_Controls_CategorySelectionDialog : CM
         }
         else
         {
-            CategoryInfo cat = CategoryInfo.Provider.Get(values[0], SiteContext.CurrentSiteID);
+            CategoryInfo cat = CategoryInfo.Provider.Get(values[0], siteId);
             catId = (cat != null) ? cat.CategoryID : 0;
         }
 
@@ -425,7 +427,7 @@ public partial class CMSModules_Categories_Controls_CategorySelectionDialog : CM
         treeElemP.NodeTemplate = treeElemG.NodeTemplate = "<span id=\"node_##NODECODENAME####NODEID##\" name=\"treeNode\" class=\"ContentTreeItem\" onclick=\"SelectNode('##NODECODENAME####NODEID##'); if (NodeSelected) { NodeSelected(##NODEID##, ##PARENTID##); ##ONCLICK## return false;}\">##ICON##<span class=\"Name\">##NODECUSTOMNAME##</span></span>";
 
         treeElemP.UsePostBack = treeElemG.UsePostBack = false;
-        treeElemG.ProviderObject = CreateTreeProvider(SiteContext.CurrentSiteID, 0);
+        treeElemG.ProviderObject = CreateTreeProvider(siteId, 0);
         treeElemP.ProviderObject = CreateTreeProvider(0, UserID);
 
         treeElemP.ExpandPath = treeElemG.ExpandPath = "/";
@@ -628,7 +630,7 @@ function ProcessItem(chkbox, hash, changeChecked, getHash) {
             itemsElem.value = items.replace(re, '", ValuesSeparator, @"');
         }
         checkHash = '|' + item + '#' + hash;
-        disableParents(item, chkbox.checked);
+        ", autoCheckParents ? "disableParents(item, chkbox.checked);" : "", @"
     }
     else
     {
@@ -783,15 +785,15 @@ function SelectAllItems(checkbox, hash) {
             {
                 // Prepare checbox when in multiple selection mode
                 checkBox = string.Format("<span class=\"checkbox tree-checkbox\"><input id=\"chk{0}\" type=\"checkbox\" onclick=\"ProcessItem(this,'{1}',false,true);\" class=\"chckbox\" ", category.CategoryID, ValidationHelper.GetHashString(category.CategoryID.ToString(), new HashSettings(mSecurityPurpose)));
-                if (catHasCheckedChildren || (hidItem.Value.IndexOfCSafe(ValuesSeparator + category.CategoryID + ValuesSeparator, true) >= 0))
+                if ((autoCheckParents && catHasCheckedChildren) || (hidItem.Value.IndexOfCSafe(ValuesSeparator + category.CategoryID + ValuesSeparator, true) >= 0))
                 {
                     checkBox += "checked=\"checked\" ";
                 }
-                if (catHasCheckedChildren)
+                if (autoCheckParents && catHasCheckedChildren)
                 {
                     checkBox += "disabled=\"disabled\" ";
                 }
-                if (DocumentID > 0 && FilteredCategoriesInTree.TryGetValue(category.CategoryID, out var filteredCategory) && !filteredCategory.IsAllowed)
+                if (DocumentID > 0 && FilteredCategoriesInTree.TryGetValue(category.CategoryID, out var isCategoryAllowed) && !isCategoryAllowed)
                 {
                     checkBox += catHasCheckedChildren ? "data-disabled " : "disabled=\"disabled\" data-disabled ";
                 }
@@ -1037,9 +1039,8 @@ function SelectAllItems(checkbox, hash) {
         try
         {
             var categoryIds = FilteredCategoriesInTree
-                                   .Where(c => c.Value.IsAllowed)
+                                   .Where(c => c.Value)
                                    .Select(pair => pair.Key);
-
 
             var pageCategorizationService = Service.Resolve<IPageCategorizationService>();
             var categorizedPage = pageCategorizationService.CategorizePage(CurrentPage, categoryIds);
@@ -1114,7 +1115,9 @@ function SelectAllItems(checkbox, hash) {
             disabledItems = ValidationHelper.GetString(parameters["DisabledItems"], null);
             mSecurityPurpose = ValidationHelper.GetString(parameters["SecurityPurpose"], String.Empty);
             mDocumentId = ValidationHelper.GetInteger(parameters["CurrentDocumentID"], 0);
+            siteId = ValidationHelper.GetInteger(parameters["SiteID"], SiteContext.CurrentSiteID);
             showAutoSelectButton = ValidationHelper.GetBoolean(parameters["ShowAutoSelect"], false);
+            autoCheckParents = ValidationHelper.GetBoolean(parameters["AutoCheckParents"], true);
 
             switch (SelectionMode)
             {
@@ -1184,7 +1187,7 @@ function SelectAllItems(checkbox, hash) {
         hidHash.Value = ValidationHelper.GetHashString(hidItem.Value, new HashSettings(mSecurityPurpose));
 
         // Update selected categories in provider object
-        treeElemG.ProviderObject = CreateTreeProvider(SiteContext.CurrentSiteID, 0);
+        treeElemG.ProviderObject = CreateTreeProvider(siteId, 0);
 
         pnlHidden.Update();
         pnlUpdateTrees.Update();
@@ -1327,7 +1330,7 @@ function SelectAllItems(checkbox, hash) {
                 else
                 {
                     // Site categories have to belong to selected site
-                    valid = (SelectedCategory.CategorySiteID == SiteContext.CurrentSiteID);
+                    valid = (SelectedCategory.CategorySiteID == siteId);
                 }
             }
         }
@@ -1532,16 +1535,16 @@ function SelectAllItems(checkbox, hash) {
     private bool IsCategoryAllowedForRendering(CategoryInfo category) => FilteredCategoriesInTree.ContainsKey(category.CategoryID) || category.CategoryIsPersonal;
 
 
-    private IDictionary<int, (string CategoryDisplayName, bool IsAllowed)> LoadFilteredCategories(int documentId)
+    private IDictionary<int, bool> LoadFilteredCategories(int documentId)
     {
-        var filteredCategoriesMap = new Dictionary<int, (string CategoryDisplayName, bool IsAllowed)>();
+        var filteredCategoriesMap = new Dictionary<int, bool>();
 
         if (documentId > 0)
         {
             var classId = DataClassInfoProvider.GetDataClassInfo(CurrentPage.NodeClassName).ClassID;
+            var allowedCategories = new PageTypeCategoriesRetriever().Get(siteId, classId);
+            var allowedCategoryIDs = allowedCategories.Select(c => c.CategoryID).ToList();
 
-            var allowedCategories = new PageTypeCategoriesRetriever().Get(SiteContext.CurrentSiteID, classId);
-            var allowedCategoryIDsAndNames = allowedCategories.ToDictionary(c => c.CategoryID, c => ResHelper.LocalizeString(c.CategoryDisplayName));
             var filteredCategoryIDs = allowedCategories.SelectMany(category =>
             {
                 return category.CategoryIDPath
@@ -1551,9 +1554,7 @@ function SelectAllItems(checkbox, hash) {
 
             foreach (var categoryId in filteredCategoryIDs)
             {
-                var isAllowed = allowedCategoryIDsAndNames.ContainsKey(categoryId);
-
-                filteredCategoriesMap.Add(categoryId, (isAllowed ? allowedCategoryIDsAndNames[categoryId] : string.Empty, isAllowed));
+                filteredCategoriesMap.Add(categoryId, allowedCategoryIDs.Contains(categoryId));
             }
         }
 

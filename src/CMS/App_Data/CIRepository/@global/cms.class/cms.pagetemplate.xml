@@ -92,7 +92,7 @@
           <EditText>False</EditText>
           <Options>
 <![CDATA[
-dashboard;{$PageTemplate.DashBoard$};{%ToInt(QueryString.Dialog) != 1|(identity)GlobalAdministrator|(hash)0a64226e8f2697a9683237bed9c460ebb976f5a8d4424d2f2e8ebe9449cab3d1%}
+dashboard;{$PageTemplate.DashBoard$};{%ToInt(QueryString.Dialog) != 1|(identity)GlobalAdministrator|(hash)5345c45893c19022a50292dc1592d37f10f29fd09abde7bd33ee84dffc4cb3ef%}
 ui;{$PageTemplate.UI$}
 ]]>
           </Options>
@@ -104,7 +104,7 @@ ui;{$PageTemplate.UI$}
           <defaultvalue>false</defaultvalue>
           <fieldcaption>Is layout</fieldcaption>
           <visiblemacro ismacro="true">
-            <![CDATA[{%PageTemplateType.Value == "ui"|(identity)GlobalAdministrator|(hash)dd0596307602f2a112a6b2d759815ec9ae7c58d5b479cc627594f8d263449ab7%}]]>
+            <![CDATA[{%PageTemplateType.Value == "ui"|(identity)GlobalAdministrator|(hash)89177f5d1591369a78e91eed573291ed7ea75e7007a76df85454e0a99182f2b3%}]]>
           </visiblemacro>
         </properties>
         <settings>

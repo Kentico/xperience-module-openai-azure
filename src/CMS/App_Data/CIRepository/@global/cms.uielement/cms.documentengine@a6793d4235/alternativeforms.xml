@@ -41,6 +41,6 @@
   </ElementTargetURL>
   <ElementType>Url</ElementType>
   <ElementVisibilityCondition>
-    <![CDATA[{%EditedObject.ClassIsCoupledClass|(identity)GlobalAdministrator|(hash)2ced1f96be5c886ac4d885c9324669c530d61ba5ec431fe7b57552d7cb3d80c3%}]]>
+    <![CDATA[{%EditedObject.ClassIsCoupledClass|(identity)GlobalAdministrator|(hash)056469733be1fbd425e9e36055654dd7b9e719dfed997240d47d9e510bd26224%}]]>
   </ElementVisibilityCondition>
 </cms.uielement>

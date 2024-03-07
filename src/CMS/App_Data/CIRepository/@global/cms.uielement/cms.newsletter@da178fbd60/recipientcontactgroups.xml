@@ -33,12 +33,12 @@
       <EditExtender>CMS.Newsletters.Web.UI</EditExtender>
       <ExtenderClassName>CMS.Newsletters.Web.UI.IssueContactGroupsExtender</ExtenderClassName>
       <ListPrefaceText ismacro="True">
-        <![CDATA[{% FormatString(GetResourceString("emailmarketing.ui.recipientsheader"), EditedObject.GetMarketableRecipientsCount()) |(identity)GlobalAdministrator|(hash)fcf166e2b2ab4177f626ebc6828c6af821b5a1d523d5a80e13ee24b8bf6845a0%}]]>
+        <![CDATA[{% FormatString(GetResourceString("emailmarketing.ui.recipientsheader"), EditedObject.GetMarketableRecipientsCount()) |(identity)GlobalAdministrator|(hash)5022060eaad2cc5f80e914cdfbdd146057a8c2dd08a0e8d2684491df78c79548%}]]>
       </ListPrefaceText>
       <ResourcePrefix>contactgroupsubscriber</ResourcePrefix>
       <TargetObjectType>om.contactgroup</TargetObjectType>
       <WhereCondition>
-        <![CDATA[IssueID = {% ToInt(UIContext.ObjectID) |(identity)GlobalAdministrator|(hash)6dc8fd45881a17fe66211aec1d90bf26f6d48cb414cb5d4e48e69e28669a1981%}]]>
+        <![CDATA[IssueID = {% ToInt(UIContext.ObjectID) |(identity)GlobalAdministrator|(hash)3e64c58407563d42582a908abc9457f61dc3d5f3ca68c633a18428f06c245727%}]]>
       </WhereCondition>
     </Data>
   </ElementProperties>

@@ -40,6 +40,6 @@
   <ElementSize>0</ElementSize>
   <ElementType>PageTemplate</ElementType>
   <ElementVisibilityCondition>
-    <![CDATA[{%!EditedObject.UsesExternalStorage && ToInt(QueryString.TemplateID,0) == 0;|(identity)GlobalAdministrator|(hash)c493037eb4584808407fe47fe0a23368f51a91bcf06b4dea3c61042f649b1437%}]]>
+    <![CDATA[{%!EditedObject.UsesExternalStorage && ToInt(QueryString.TemplateID,0) == 0;|(identity)GlobalAdministrator|(hash)8e5741bc87377765fe2da28d4e0c407482f617cce5781ff1e27ba2cf538cd783%}]]>
   </ElementVisibilityCondition>
 </cms.uielement>

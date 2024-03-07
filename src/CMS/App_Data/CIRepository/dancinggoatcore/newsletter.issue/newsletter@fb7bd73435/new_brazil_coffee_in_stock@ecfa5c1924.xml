@@ -9,18 +9,18 @@
     <ObjectType>newsletter.newsletter</ObjectType>
     <Site>
       <CodeName>DancingGoatCore</CodeName>
-      <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+      <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
       <ObjectType>cms.site</ObjectType>
     </Site>
   </IssueNewsletterID>
   <IssuePreheader>
-    <![CDATA[{% Recipient.FirstName == "" ? "Hello" : "Hi " + Recipient.FirstName |(identity)GlobalAdministrator|(hash)b1c27ffed0c47b247acd955f8b379aa2ab6632086a02b50e626d390acaa787a4%}! Come and taste our new coffee with a creamy mouth sensation, and a cherry and chocolaty flavor.]]>
+    <![CDATA[{% Recipient.FirstName == "" ? "Hello" : "Hi " + Recipient.FirstName |(identity)GlobalAdministrator|(hash)0d7ae3150bc027e4b7e183059a5817557cafe10ba247358c43b4b63b14528fe2%}! Come and taste our new coffee with a creamy mouth sensation, and a cherry and chocolaty flavor.]]>
   </IssuePreheader>
   <IssueSenderEmail>dancinggoat@localhost.local</IssueSenderEmail>
   <IssueSenderName>Zoey from Dancing Goat</IssueSenderName>
   <IssueSiteID>
     <CodeName>DancingGoatCore</CodeName>
-    <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+    <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
     <ObjectType>cms.site</ObjectType>
   </IssueSiteID>
   <IssueSubject>Try our new Brazilian coffee!</IssueSubject>
@@ -30,7 +30,7 @@
     <ObjectType>newsletter.emailtemplate</ObjectType>
     <Site>
       <CodeName>DancingGoatCore</CodeName>
-      <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+      <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
       <ObjectType>cms.site</ObjectType>
     </Site>
   </IssueTemplateID>

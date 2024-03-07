@@ -9,7 +9,7 @@
   <GraphQuery>
 <![CDATA[
 DECLARE @AllowGlobalDepartments bit;
-SET @AllowGlobalDepartments = {%Settings.CMSStoreAllowGlobalDepartments?1:0|(identity)GlobalAdministrator|(hash)f16f3dca14e3a1eaec225de460768d800a7b37a8a555e2b8c430f5304256699a%};
+SET @AllowGlobalDepartments = {%Settings.CMSStoreAllowGlobalDepartments?1:0|(identity)GlobalAdministrator|(hash)d5fd865c6224f856236c311f5b63aef6b50381aec9980f143f980272d82fe400%};
 SELECT
    DepartmentDisplayName AS '{$ecommerce.report_departmentname$}',
    CAST(ROUND(SUM(OrderItemTotalPriceInMainCurrency),1) AS DECIMAL(38,1)) AS '{$com.sales.volumeofsales$}' 

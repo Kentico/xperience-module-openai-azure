@@ -39,7 +39,7 @@
       <ListPrefaceText>{$cms_roleapplication.assignedapplications$}</ListPrefaceText>
       <ResourcePrefix>cms_roleapplication.select</ResourcePrefix>
       <WhereCondition>
-        <![CDATA[RoleID = {% UIContext.ObjectID |(identity)GlobalAdministrator|(hash)fe37a20c440d3fee676a888687d33d65f54db55260896b670286250166526c47%}]]>
+        <![CDATA[RoleID = {% UIContext.ObjectID |(identity)GlobalAdministrator|(hash)b4d11a6e7559954cfa3f2d49889ce5453430ecae96c39ecf974511bcec4f2f2c%}]]>
       </WhereCondition>
     </Data>
   </ElementProperties>
@@ -54,7 +54,7 @@
   <ElementVisibilityCondition>
 <![CDATA[
 {%name = EditedObject.ToBaseInfo().CodeName;
-return !(name == "_everyone_" || name == "_authenticated_" || name == "_notauthenticated_");|(identity)GlobalAdministrator|(hash)61c5990429b0178455a49564010fd70d35a9bcc08087aea166d0a16bf70f57b3%}
+return !(name == "_everyone_" || name == "_authenticated_" || name == "_notauthenticated_");|(identity)GlobalAdministrator|(hash)e6bf4e619f083b8f4f3a57646b81a9bb233c6ee50836f51ae13714b6fa660db7%}
 ]]>
   </ElementVisibilityCondition>
 </cms.uielement>

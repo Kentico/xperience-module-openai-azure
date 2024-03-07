@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.categoryclass>
+  <Parent>
+    <CodeName>CoffeeVarietiesAndProcessing</CodeName>
+    <GUID>ec83263e-76ec-4f5d-84e7-3231021241e9</GUID>
+    <ObjectType>cms.category</ObjectType>
+    <Site>
+      <CodeName>DancingGoatCore</CodeName>
+      <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
+      <ObjectType>cms.site</ObjectType>
+    </Site>
+  </Parent>
+  <Bindings>
+    <Binding id="cms.documenttype_DancingGoatCore.Article">
+      <ClassID>
+        <CodeName>DancingGoatCore.Article</CodeName>
+        <GUID>f10195ae-16f3-46a2-bcda-1b0e86ed9df7</GUID>
+        <ObjectType>cms.documenttype</ObjectType>
+      </ClassID>
+    </Binding>
+  </Bindings>
+</cms.categoryclass>

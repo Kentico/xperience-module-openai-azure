@@ -39,7 +39,7 @@
         <![CDATA[{% GetGiftCardCouponsMessage(EditedObjectParent); %}]]>
       </Text>
       <WhereCondition>
-        <![CDATA[GiftCardCouponCodeGiftCardID = {%EditedObjectParent.GiftCardID|(identity)GlobalAdministrator|(hash)fe93397c58c041b716fcf9df11ac65578ad9b2076c26ca65a8156e59fd7e3aab%}]]>
+        <![CDATA[GiftCardCouponCodeGiftCardID = {%EditedObjectParent.GiftCardID|(identity)GlobalAdministrator|(hash)baf04e3ba7606068357100c3803b70c30ea3a6305cc99452ad4e3ed93a0c8a7c%}]]>
       </WhereCondition>
     </Data>
   </ElementProperties>

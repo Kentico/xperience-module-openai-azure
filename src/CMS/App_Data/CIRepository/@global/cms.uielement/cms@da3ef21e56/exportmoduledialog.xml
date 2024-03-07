@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <cms.uielement>
   <ElementAccessCondition>
-    <![CDATA[{%UIContext.EditedObject.ResourceIsInDevelopment && !UIContext.EditedObject.ResourceName.Equals("cms.customsystemmodule", true)|(identity)GlobalAdministrator|(hash)af30677d38e6e58d3e81477b73526b808654461aa1ce8e9fa18f766b671e5fea%}]]>
+    <![CDATA[{%UIContext.EditedObject.ResourceIsInDevelopment && !UIContext.EditedObject.ResourceName.Equals("cms.customsystemmodule", true)|(identity)GlobalAdministrator|(hash)89f5a73363635d01603c250de5880a901c2192741ad2da4efb492b717bc54586%}]]>
   </ElementAccessCondition>
   <ElementCaption>{$cms.modules.installpackage.createbutton$}</ElementCaption>
   <ElementCheckModuleReadPermission>True</ElementCheckModuleReadPermission>
@@ -50,6 +50,6 @@
   <ElementSize>0</ElementSize>
   <ElementType>PageTemplate</ElementType>
   <ElementVisibilityCondition>
-    <![CDATA[{%UIContext.EditedObject.ResourceIsInDevelopment && !UIContext.EditedObject.ResourceName.Equals("cms.customsystemmodule", true)|(identity)GlobalAdministrator|(hash)af30677d38e6e58d3e81477b73526b808654461aa1ce8e9fa18f766b671e5fea%}]]>
+    <![CDATA[{%UIContext.EditedObject.ResourceIsInDevelopment && !UIContext.EditedObject.ResourceName.Equals("cms.customsystemmodule", true)|(identity)GlobalAdministrator|(hash)89f5a73363635d01603c250de5880a901c2192741ad2da4efb492b717bc54586%}]]>
   </ElementVisibilityCondition>
 </cms.uielement>

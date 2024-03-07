@@ -6,7 +6,7 @@
     <ObjectType>cms.node</ObjectType>
     <Site>
       <CodeName>DancingGoatCore</CodeName>
-      <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+      <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
       <ObjectType>cms.site</ObjectType>
     </Site>
   </Parent>
@@ -15,7 +15,7 @@
       <RelationshipIsAdHoc>True</RelationshipIsAdHoc>
       <RelationshipNameID>
         <CodeName>DancingGoatCore.FooterNavigation_d56f9beb-5623-43ab-8569-ce8c4bd02594</CodeName>
-        <GUID>f310dc03-6eec-48c9-94e2-57586de6f365</GUID>
+        <GUID>0cdc43df-3c81-447d-9969-d53e9ee7093c</GUID>
         <ObjectType>cms.relationshipname</ObjectType>
       </RelationshipNameID>
       <RelationshipOrder>1</RelationshipOrder>
@@ -25,7 +25,7 @@
         <ObjectType>cms.node</ObjectType>
         <Site>
           <CodeName>DancingGoatCore</CodeName>
-          <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+          <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
           <ObjectType>cms.site</ObjectType>
         </Site>
       </RightNodeID>
@@ -34,7 +34,7 @@
       <RelationshipIsAdHoc>True</RelationshipIsAdHoc>
       <RelationshipNameID>
         <CodeName>DancingGoatCore.FooterNavigation_d56f9beb-5623-43ab-8569-ce8c4bd02594</CodeName>
-        <GUID>f310dc03-6eec-48c9-94e2-57586de6f365</GUID>
+        <GUID>0cdc43df-3c81-447d-9969-d53e9ee7093c</GUID>
         <ObjectType>cms.relationshipname</ObjectType>
       </RelationshipNameID>
       <RelationshipOrder>2</RelationshipOrder>
@@ -44,7 +44,7 @@
         <ObjectType>cms.node</ObjectType>
         <Site>
           <CodeName>DancingGoatCore</CodeName>
-          <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+          <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
           <ObjectType>cms.site</ObjectType>
         </Site>
       </RightNodeID>
@@ -53,7 +53,7 @@
       <RelationshipIsAdHoc>True</RelationshipIsAdHoc>
       <RelationshipNameID>
         <CodeName>DancingGoatCore.FooterNavigation_d56f9beb-5623-43ab-8569-ce8c4bd02594</CodeName>
-        <GUID>f310dc03-6eec-48c9-94e2-57586de6f365</GUID>
+        <GUID>0cdc43df-3c81-447d-9969-d53e9ee7093c</GUID>
         <ObjectType>cms.relationshipname</ObjectType>
       </RelationshipNameID>
       <RelationshipOrder>3</RelationshipOrder>
@@ -63,7 +63,7 @@
         <ObjectType>cms.node</ObjectType>
         <Site>
           <CodeName>DancingGoatCore</CodeName>
-          <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+          <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
           <ObjectType>cms.site</ObjectType>
         </Site>
       </RightNodeID>

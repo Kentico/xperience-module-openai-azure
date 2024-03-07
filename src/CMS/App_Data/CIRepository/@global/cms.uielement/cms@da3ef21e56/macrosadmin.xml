@@ -36,6 +36,6 @@
   <ElementTargetURL>~/CMSModules/System/Debug/Log.aspx?name=macros</ElementTargetURL>
   <ElementType>Url</ElementType>
   <ElementVisibilityCondition>
-    <![CDATA[{%Debug.IsDebugEnabled("macros") && (Settings.CMSDebugAllMacros || Settings.CMSDebugEverythingEverywhere)|(identity)GlobalAdministrator|(hash)db64e6d861e89cf710c262f1b2d44c519ba31e525b2ad0d334f421fe8c3a4328%}]]>
+    <![CDATA[{%Debug.IsDebugEnabled("macros") && (Settings.CMSDebugAllMacros || Settings.CMSDebugEverythingEverywhere)|(identity)GlobalAdministrator|(hash)77765dfc99e571a82126fc63566dea42ad8a4e8f45e9d5dfbe351104b45af916%}]]>
   </ElementVisibilityCondition>
 </cms.uielement>

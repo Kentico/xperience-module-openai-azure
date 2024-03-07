@@ -30,7 +30,7 @@
       <field column="FromDate" columnprecision="7" columntype="datetime" guid="e1fcb92e-4342-4ef7-9258-051786a37daf" visible="true">
         <properties>
           <defaultvalue ismacro="true">
-            <![CDATA[{%CurrentDateTime.AddWeeks(-15).Date|(identity)GlobalAdministrator|(hash)a9a305a98790d3c099edd1827ad4a177058964fc0a283f67fd977f212f597606%}]]>
+            <![CDATA[{%CurrentDateTime.AddWeeks(-15).Date|(identity)GlobalAdministrator|(hash)63c05321cc0c1b97e37e33b2d46c055f4e4e2f7cac5df309cb3104dab364a87b%}]]>
           </defaultvalue>
           <fieldcaption>{$general.from$}</fieldcaption>
         </properties>

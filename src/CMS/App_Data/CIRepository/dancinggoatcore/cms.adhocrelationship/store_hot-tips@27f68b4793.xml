@@ -6,7 +6,7 @@
     <ObjectType>cms.node</ObjectType>
     <Site>
       <CodeName>DancingGoatCore</CodeName>
-      <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+      <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
       <ObjectType>cms.site</ObjectType>
     </Site>
   </Parent>
@@ -15,7 +15,7 @@
       <RelationshipIsAdHoc>True</RelationshipIsAdHoc>
       <RelationshipNameID>
         <CodeName>DancingGoatCore.HotTips_8a768436-ef8c-4980-8b80-5d66dd0e17cd</CodeName>
-        <GUID>40e73570-00d9-4a50-99f1-92f0ba729a26</GUID>
+        <GUID>32e16c87-1852-49a6-94b1-8bb9f4041e4e</GUID>
         <ObjectType>cms.relationshipname</ObjectType>
       </RelationshipNameID>
       <RelationshipOrder>3</RelationshipOrder>
@@ -25,7 +25,7 @@
         <ObjectType>cms.node</ObjectType>
         <Site>
           <CodeName>DancingGoatCore</CodeName>
-          <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+          <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
           <ObjectType>cms.site</ObjectType>
         </Site>
       </RightNodeID>
@@ -34,7 +34,7 @@
       <RelationshipIsAdHoc>True</RelationshipIsAdHoc>
       <RelationshipNameID>
         <CodeName>DancingGoatCore.HotTips_8a768436-ef8c-4980-8b80-5d66dd0e17cd</CodeName>
-        <GUID>40e73570-00d9-4a50-99f1-92f0ba729a26</GUID>
+        <GUID>32e16c87-1852-49a6-94b1-8bb9f4041e4e</GUID>
         <ObjectType>cms.relationshipname</ObjectType>
       </RelationshipNameID>
       <RelationshipOrder>4</RelationshipOrder>
@@ -44,7 +44,7 @@
         <ObjectType>cms.node</ObjectType>
         <Site>
           <CodeName>DancingGoatCore</CodeName>
-          <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+          <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
           <ObjectType>cms.site</ObjectType>
         </Site>
       </RightNodeID>
@@ -53,7 +53,7 @@
       <RelationshipIsAdHoc>True</RelationshipIsAdHoc>
       <RelationshipNameID>
         <CodeName>DancingGoatCore.HotTips_8a768436-ef8c-4980-8b80-5d66dd0e17cd</CodeName>
-        <GUID>40e73570-00d9-4a50-99f1-92f0ba729a26</GUID>
+        <GUID>32e16c87-1852-49a6-94b1-8bb9f4041e4e</GUID>
         <ObjectType>cms.relationshipname</ObjectType>
       </RelationshipNameID>
       <RelationshipOrder>1</RelationshipOrder>
@@ -63,7 +63,7 @@
         <ObjectType>cms.node</ObjectType>
         <Site>
           <CodeName>DancingGoatCore</CodeName>
-          <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+          <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
           <ObjectType>cms.site</ObjectType>
         </Site>
       </RightNodeID>
@@ -72,7 +72,7 @@
       <RelationshipIsAdHoc>True</RelationshipIsAdHoc>
       <RelationshipNameID>
         <CodeName>DancingGoatCore.HotTips_8a768436-ef8c-4980-8b80-5d66dd0e17cd</CodeName>
-        <GUID>40e73570-00d9-4a50-99f1-92f0ba729a26</GUID>
+        <GUID>32e16c87-1852-49a6-94b1-8bb9f4041e4e</GUID>
         <ObjectType>cms.relationshipname</ObjectType>
       </RelationshipNameID>
       <RelationshipOrder>2</RelationshipOrder>
@@ -82,7 +82,7 @@
         <ObjectType>cms.node</ObjectType>
         <Site>
           <CodeName>DancingGoatCore</CodeName>
-          <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+          <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
           <ObjectType>cms.site</ObjectType>
         </Site>
       </RightNodeID>

@@ -24,13 +24,13 @@
 {%
 	siteID = GiftCardSiteID == 0 ? CMSContext.CurrentSiteID : GiftCardSiteID;
 	HTMLEncode(GetMainSiteCurrency(siteID).CurrencyCode);
-|(identity)GlobalAdministrator|(hash)70740939844e3d056cc416016159f77bc1a9c20904ae3ce801ac622c5c2747f3%}
+|(identity)GlobalAdministrator|(hash)2ba36f2159a9a943f838957ef2562dc2ea07d8b642179e82fc8349c519b9ce40%}
 </span>
 ]]>
           </contentafter>
           <controlcssclass>input-width-20</controlcssclass>
           <enabledmacro ismacro="true">
-            <![CDATA[{%EditedObject.Children.GiftCardCouponCodes.Count == 0|(identity)GlobalAdministrator|(hash)f66f30f98b233aae5a543c38fbfedf0185891ba3cc06cec49c1b098c69e3c1ae%}]]>
+            <![CDATA[{%EditedObject.Children.GiftCardCouponCodes.Count == 0|(identity)GlobalAdministrator|(hash)648869db14b76456a3ce7d6641fbf5cd9bbeeb8d20731cdf6776917e41e73772%}]]>
           </enabledmacro>
           <validationerrormessage>{$com.discount.valueempty$}</validationerrormessage>
         </properties>
@@ -48,7 +48,7 @@
 {%
 	siteID = GiftCardSiteID == 0 ? CMSContext.CurrentSiteID : GiftCardSiteID;
 	HTMLEncode(GetMainSiteCurrency(siteID).CurrencyCode);
-|(identity)GlobalAdministrator|(hash)70740939844e3d056cc416016159f77bc1a9c20904ae3ce801ac622c5c2747f3%}
+|(identity)GlobalAdministrator|(hash)2ba36f2159a9a943f838957ef2562dc2ea07d8b642179e82fc8349c519b9ce40%}
 </span>
 ]]>
           </contentafter>
@@ -62,7 +62,7 @@
       <field column="GiftCardRoles" guid="5d7e55d8-5589-4a1b-9448-af0f58883edb">
         <properties>
           <visiblemacro ismacro="true">
-            <![CDATA[{%GiftCardCustomerRestriction.Value == "SelectedRoles"|(identity)GlobalAdministrator|(hash)d2be16846b55b3452b98e625240f747f44300da2a30a30fef35d8d27cdf041fc%}]]>
+            <![CDATA[{%GiftCardCustomerRestriction.Value == "SelectedRoles"|(identity)GlobalAdministrator|(hash)e4d7ac5438164c8bb9638aa85ab5484804d53dd3adec81f3d8439ecf30a888bf%}]]>
           </visiblemacro>
           <enabledmacro />
         </properties>

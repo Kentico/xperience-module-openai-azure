@@ -5,7 +5,7 @@
   <EmailTemplateName>Ecommerce.OrderNotificationToCustomer</EmailTemplateName>
   <EmailTemplateSiteID>
     <CodeName>DancingGoatCore</CodeName>
-    <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+    <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
     <ObjectType>cms.site</ObjectType>
   </EmailTemplateSiteID>
   <EmailTemplateText>
@@ -32,7 +32,7 @@
             <tbody>
               <tr>
                 <td style="text-align: left; color:black; font-weight:bold;">Invoice number</td>
-                <td style="text-align: right; padding-right: 10px; padding: 8px">{%Order.OrderInvoiceNumber|(encode)true|(identity)GlobalAdministrator|(hash)9c883abe4e738102a55f59b490faf3631c8e222566a6ff47eaf4884357e5e091%}</td>
+                <td style="text-align: right; padding-right: 10px; padding: 8px">{%Order.OrderInvoiceNumber|(encode)true|(identity)GlobalAdministrator|(hash)2b1966486f664f02522cc3417a505cc907bfe98edce90b3eeba26a1c69ee5451%}</td>
               </tr>
             </tbody>
           </table>
@@ -42,7 +42,7 @@
             <tbody>
               <tr>
                 <td style="text-align: left; color:black; font-weight:bold;">Order date:</td>
-                <td style="text-align: right; padding: 8px">{% Order.OrderDate |(identity)GlobalAdministrator|(hash)67d244b786723a5c841e9f99d9a1c27ecaa55b8c27dbcab4ee12d22697cc046c%}</td>
+                <td style="text-align: right; padding: 8px">{% Order.OrderDate |(identity)GlobalAdministrator|(hash)c7854b6ba6d708aea571d19a30405039c665f0dbb390f763e233186aaf0207a4%}</td>
               </tr>
             </tbody>
           </table>
@@ -61,15 +61,15 @@
         </td>
         <td style="text-align: left; vertical-align: top; padding: 8px" width="50%"><span style="color:black; font-weight:bold">Customer </span><br />
           <p>
-            {% if(!IsNullOrEmpty(Customer.CustomerCompany)) { %} {% Localize(Customer.CustomerCompany)|(encode)true %} <br/> {% } |(identity)GlobalAdministrator|(hash)456cc788607b649a2254462a32ae517cfcf58b2197de9270ac480770e17a84fd%}
-            {% if(!IsNullOrEmpty(Customer.CustomerTaxRegistrationID)) { %} {%  "Tax registration ID: " + Localize(Customer.CustomerTaxRegistrationID)|(encode)true %} <br/>{% }|(identity)GlobalAdministrator|(hash)5eb7bd0fe432b115f48c2c7a3f6631aaca51840bca93b767c0d15e0d9b17cc59%}
-            {% if(!IsNullOrEmpty(Customer.CustomerOrganizationID)) { %} {% "Organization ID: " + Localize(Customer.CustomerOrganizationID)|(encode)true %} <br/>{% } |(identity)GlobalAdministrator|(hash)f900749ddadc7b5ebbae9625da0fd7e07222e8128630abef7dffbf1c9836e454%}
-            {% Localize(BillingAddress.AddressPersonalName)|(encode)true |(identity)GlobalAdministrator|(hash)c564e89ec061c44862457a9428b0a02da66350eb539c945373c6a0a9172303c5%}<br />
-            {% Localize(BillingAddress.AddressLine1)|(encode)true |(identity)GlobalAdministrator|(hash)08ca34bb1f0793aa091109764ed780acb2e9e54705aff355d7562fb27e3cdee1%}<br />
-            {% if(!IsNullOrEmpty(BillingAddress.AddressLine2)) { %} {%  Localize(BillingAddress.AddressLine2)|(encode)true %} <br/>{% } |(identity)GlobalAdministrator|(hash)467b2adee156520d9e1255728e683d109f3eb81a52a8bce2bb67b39ddedd1c57%}
-            {% Localize(BillingAddress.AddressCity)|(encode)true |(identity)GlobalAdministrator|(hash)ce43ddf326a05e49a85e1ae8ee36a702c44881438fd21a949e017f774e22c94a%}<br />
-            {% Localize(BillingAddress.AddressZip)|(encode)true |(identity)GlobalAdministrator|(hash)31d0dfca78198925a1d83023efbbd0affda5fc913b9f25892b191e3450b61772%}<br />
-            {% Localize(BillingAddress.Country.CountryDisplayName)|(encode)true |(identity)GlobalAdministrator|(hash)ff8d648bbc8ef08bd126e4f4177f047b3e8136b4c77b484326952a09e5eb81ac%}{% if(BillingAddress.State != null) { ", " + Localize(BillingAddress.State.StateDisplayName) }|(encode)true |(identity)GlobalAdministrator|(hash)e1949ddc0e9ebb0eb1c662e3b4a206b370e3a66ddc74232606963504f47bb581%}
+            {% if(!IsNullOrEmpty(Customer.CustomerCompany)) { %} {% Localize(Customer.CustomerCompany)|(encode)true %} <br/> {% } |(identity)GlobalAdministrator|(hash)fb7627468c2d9b383697f25098f97a91f6c009562d70b0fc7a8b2ab738fd261a%}
+            {% if(!IsNullOrEmpty(Customer.CustomerTaxRegistrationID)) { %} {%  "Tax registration ID: " + Localize(Customer.CustomerTaxRegistrationID)|(encode)true %} <br/>{% }|(identity)GlobalAdministrator|(hash)6e9de81e808fe1b39f6411bd92182c6653abc4743fc2a043ccf4188eced77303%}
+            {% if(!IsNullOrEmpty(Customer.CustomerOrganizationID)) { %} {% "Organization ID: " + Localize(Customer.CustomerOrganizationID)|(encode)true %} <br/>{% } |(identity)GlobalAdministrator|(hash)276641f634c72c6bb884351c60d5b3d480352b2729e590dd6660b561c3d7ed08%}
+            {% Localize(BillingAddress.AddressPersonalName)|(encode)true |(identity)GlobalAdministrator|(hash)b2b64da2144bbbace244547c41c6836584232051d55a825248d27c910ac2baa2%}<br />
+            {% Localize(BillingAddress.AddressLine1)|(encode)true |(identity)GlobalAdministrator|(hash)deb81110e51242cd4a7b5b2a5657cf5eec74c6f4c48dfd32a29186cdabc2dc25%}<br />
+            {% if(!IsNullOrEmpty(BillingAddress.AddressLine2)) { %} {%  Localize(BillingAddress.AddressLine2)|(encode)true %} <br/>{% } |(identity)GlobalAdministrator|(hash)11b6440e5dc8550b5309cb86c46cdf9c04093f766d544765ff4c236d7c5f2961%}
+            {% Localize(BillingAddress.AddressCity)|(encode)true |(identity)GlobalAdministrator|(hash)79a66fd222f06ad7ff6024073b99eeccf387b90462e0e161b69b0481602c28e3%}<br />
+            {% Localize(BillingAddress.AddressZip)|(encode)true |(identity)GlobalAdministrator|(hash)284ce771efe21f139b3c0f2bf29acecabe4615813202ed98a5c4983b7b2d4af6%}<br />
+            {% Localize(BillingAddress.Country.CountryDisplayName)|(encode)true |(identity)GlobalAdministrator|(hash)17cc2c8e118bb020acc76816d3f34b3e9a0cf0678fcf8d9753075cddfe542738%}{% if(BillingAddress.State != null) { ", " + Localize(BillingAddress.State.StateDisplayName) }|(encode)true |(identity)GlobalAdministrator|(hash)c00dc125fa09f56f2264bfe74012f6c479b62ae5c1510c0cd173bf286dd84512%}
           </p>
         </td>
       </tr>
@@ -79,7 +79,7 @@
             <tbody>
               <tr>
                 <td style="text-align: left; padding: 8px"><span style="color:black; font-weight:bold">Payment option</span></td>
-                <td style="text-align: left; padding: 8px">{%PaymentOption.PaymentOptionDisplayName |(identity)GlobalAdministrator|(hash)ad9f0f8105b791571f221adab3e48e419dee124516a51a32a24b306470d110a1%}</td>
+                <td style="text-align: left; padding: 8px">{%PaymentOption.PaymentOptionDisplayName |(identity)GlobalAdministrator|(hash)f99d4a3e2bc5e2ca5308321750eff7748cc1b4518dfb228b4ff742b562240ece%}</td>
               </tr>
             </tbody>
           </table>
@@ -106,7 +106,7 @@
                 <td style="text-align: right; vertical-align: top;">{%(item.IsProductOption && !item.IsAccessoryProduct) ? "" : (item.UnitPrice - item.UnitTotalDiscount).Format(Currency.CurrencyFormatString)|(encode)true %}</td>
                 <td style="text-align: right; vertical-align: top;">{%(item.IsProductOption && !item.IsAccessoryProduct) ? "" : item.TotalPrice.Format(Currency.CurrencyFormatString)|(encode)true %}</td>
               </tr>
-              {% } |(identity)GlobalAdministrator|(hash)6d48e7d1555946edfd1cf0408b85783a649d95072c441ea64f5dbd7bb857b781%}
+              {% } |(identity)GlobalAdministrator|(hash)c331c9ce71ff64d303e00c19106177b3ea5635cea2438d522cf05171327b2a57%}
             </tbody>
           </table>
           <hr size="1" />
@@ -114,7 +114,7 @@
             <tbody>
               <tr>
                 <td>Subtotal</td>
-                <td style="text-align: right; padding-right: 0px">{% TotalItemsPrice.Format(Currency.CurrencyFormatString)|(encode)true|(identity)GlobalAdministrator|(hash)533ef7c46b4efd2b532cd960dc252585728b44d4ce803e23b236b793463a9dfd%}</td>
+                <td style="text-align: right; padding-right: 0px">{% TotalItemsPrice.Format(Currency.CurrencyFormatString)|(encode)true|(identity)GlobalAdministrator|(hash)947a909b7ae40de799300dcff39e643b936fad726288a51c7f60792a5c7cc867%}</td>
               </tr>
               <tr>
                 <td colspan="2" style="padding: 0; text-align: right;">
@@ -129,12 +129,12 @@
                       {% } %}
                     </tbody>
                   </table>
-                  {% } |(identity)GlobalAdministrator|(hash)194f9604c81b9336c4d6482eccb69e4eaf9b8e766f6ce46269251a0d218179b7%}
+                  {% } |(identity)GlobalAdministrator|(hash)9b9822a06e50864a208cb60a827855ab8e43e4c0b2a96fbbd06cc0c8060cf9e5%}
                 </td>
               </tr>
               <tr>
                 <td>Shipping</td>
-                <td style="text-align: right; padding-right: 0px">{% TotalShipping.Format(Currency.CurrencyFormatString)|(encode)true |(identity)GlobalAdministrator|(hash)75ef81cb7d1d4e0578cb6bb5bc430e804d47a30b5f6f756c710f32d977a7202d%}</td>
+                <td style="text-align: right; padding-right: 0px">{% TotalShipping.Format(Currency.CurrencyFormatString)|(encode)true |(identity)GlobalAdministrator|(hash)c26d1e226d60b978b2b683844835bf39c585edc732a7a3e893187ecc16070c5d%}</td>
               </tr>
               <tr>
                 <td colspan="2" style="padding: 0; text-align: right;">
@@ -149,12 +149,12 @@
                       {% } %}
                     </tbody>
                   </table>
-                  {% } |(identity)GlobalAdministrator|(hash)fe8187d8ec7f20e043c2678036ab71729ae963d01cb96a99c4f35381c9eebaa6%}
+                  {% } |(identity)GlobalAdministrator|(hash)ecd15947b18e2ceef390ae11dc93b8a229e52327fcb8d0247dace919d358055b%}
                 </td>
               </tr>
               <tr>
                 <td><span style="color:black; font-weight:bold">TOTAL (incl. tax):</span></td>
-                <td style="text-align: right; padding-right: 0px; color:black; font-weight:bold">{% GrandTotal.Format(Currency.CurrencyFormatString)|(encode)true|(identity)GlobalAdministrator|(hash)05b9708a9f385d36a0e1f766b5a119c3f6bc7f237fea1865da945ebdf19de584%}</td>
+                <td style="text-align: right; padding-right: 0px; color:black; font-weight:bold">{% GrandTotal.Format(Currency.CurrencyFormatString)|(encode)true|(identity)GlobalAdministrator|(hash)013f95923a66bf1be7bd3d00da6107ef4c7cb1679e333764c279395b83619379%}</td>
               </tr>
             </tbody>
           </table>
@@ -180,7 +180,7 @@
                       {% } %}
                     </tbody>
                   </table>
-                  {% } |(identity)GlobalAdministrator|(hash)51d974c598303df2376c6f9f57cd24ed108addb269ad2ccac841de0bc73a6187%}
+                  {% } |(identity)GlobalAdministrator|(hash)74ea37c88d60bcd555167d85c28b6e23f70800f483ef91c7ee010236d2ba3da0%}
                 </td>
               </tr>
             </tbody>

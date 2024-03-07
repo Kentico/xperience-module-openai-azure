@@ -16,7 +16,7 @@ It achieves so by using macros that access pages with the given attributes.
                  .TopN(4)
                  .WithAllData; 
 return; 
-|(identity)GlobalAdministrator|(hash)c041414d517f7855766c23f4612ab6b6f04e1ad69c92ec9bda07733de7d0c035%}
+|(identity)GlobalAdministrator|(hash)a5efb364b0a655f7be1e452b8021966af07b65e643137ba9d691059edc48c51d%}
 
 <!--[if (gte mso 9)|(IE)]>
 <table align="center" border="0" cellspacing="0" cellpadding="0" width="500">
@@ -101,7 +101,7 @@ return;
 {% } /* END if */ #%} 
   
 {% i++; return; %} 
-{% } /* END foreach */ |(identity)GlobalAdministrator|(hash)b779cb2c6f43d1850254feb3491f310c47e262a68718b8a3f566d8d1d4286b56%} 
+{% } /* END foreach */ |(identity)GlobalAdministrator|(hash)ce66911bf9211a6d4a31ed613ed633ace4d17b62749cbff673c93c6cb75a8ed7%} 
 
 </table>
 <!--[if (gte mso 9)|(IE)]>
@@ -156,7 +156,7 @@ return;
   </EmailWidgetProperties>
   <EmailWidgetSiteID>
     <CodeName>DancingGoatCore</CodeName>
-    <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+    <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
     <ObjectType>cms.site</ObjectType>
   </EmailWidgetSiteID>
 </newsletter.emailwidget>

@@ -8,7 +8,7 @@
   <CategoryName>
     <![CDATA[Kentico.Xperience.AzureOpenAI.ContentCategorization]]>
   </CategoryName>
-  <CategoryOrder>0</CategoryOrder>
+  <CategoryOrder>1</CategoryOrder>
   <CategoryParentID>
     <CodeName>Kentico.Xperience.AzureOpenAI</CodeName>
     <ObjectType>cms.settingscategory</ObjectType>

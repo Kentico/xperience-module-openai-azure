@@ -1841,11 +1841,19 @@
             <summary>
             Categories that have been successfully identified. 
             </summary>
+            <remarks>
+            Contains a subset of category identifiers which were provided as an input set to choose from,
+            when calling <see cref="M:CMS.DocumentEngine.Internal.IPageCategorizationService.CategorizePage(CMS.DocumentEngine.TreeNode,System.Collections.Generic.IEnumerable{System.Int32})"/>.
+            </remarks>
         </member>
         <member name="P:CMS.DocumentEngine.Internal.PageCategorizationResult.UnknownCategories">
             <summary>
             Category names that could not have been identified.
             </summary>
+            <remarks>
+            Contains category names for which corresponding categories do not exist in the provided input set,
+            when calling <see cref="M:CMS.DocumentEngine.Internal.IPageCategorizationService.CategorizePage(CMS.DocumentEngine.TreeNode,System.Collections.Generic.IEnumerable{System.Int32})"/>.
+            </remarks>
         </member>
         <member name="T:CMS.DocumentEngine.Internal.DocumentCultureDataInfo">
             <summary>

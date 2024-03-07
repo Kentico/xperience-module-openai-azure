@@ -76,7 +76,7 @@ true; {$com.discount.fixedamount$}
 {%
 	siteID = DiscountSiteID == 0 ? CMSContext.CurrentSiteID : DiscountSiteID;
 	HTMLEncode(GetMainSiteCurrency(siteID).CurrencyCode);
-|(identity)GlobalAdministrator|(hash)871a093ae284d008e2f511c2470e37fd19302384d69e4c8c3a6a6eab3b7b85d3%}
+|(identity)GlobalAdministrator|(hash)5183424ef7cd9205be4534c27666f4d61119066e1b5f1300588fb0dbd642052f%}
 </span>
 ]]>
           </contentafter>
@@ -106,7 +106,7 @@ true; {$com.discount.fixedamount$}
           <contentafter>
 <![CDATA[
 <span ID="CouponsInfoLabel" class="form-control-text" style="display : none;" >
-{% GetResourceString("com.discount.couponsredirect")|(identity)GlobalAdministrator|(hash)bea79e69ff8e5015221a4f5f96ae566f34a876297e7c1f40b8c33eac687f9e0a%}
+{% GetResourceString("com.discount.couponsredirect")|(identity)GlobalAdministrator|(hash)815d20f778d9d5fb0c59c9b33296361a72d38b479a6e8d72e12267b729561df1%}
 </span>
 </div>
 ]]>
@@ -127,7 +127,7 @@ true; {$com.discount.fixedamount$}
         </settings>
         <properties>
           <visiblemacro ismacro="true">
-            <![CDATA[{%DiscountCustomerRestriction.Value == "SelectedRoles"|(identity)GlobalAdministrator|(hash)846d106850604e8eaedcb0b08fb3d05e07905084da1f6f1700eff0ceee952926%}]]>
+            <![CDATA[{%DiscountCustomerRestriction.Value == "SelectedRoles"|(identity)GlobalAdministrator|(hash)9fc085b324ecc700276cbea546022e1dd0687e23a3cb51e16bad096c08bebd7a%}]]>
           </visiblemacro>
           <enabledmacro />
         </properties>

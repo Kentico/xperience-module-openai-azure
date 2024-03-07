@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.documentcategory>
+  <Parent>
+    <CodeName>en-US</CodeName>
+    <GUID>5edec544-4009-4543-9a85-b590d44f7d49</GUID>
+    <ObjectType>cms.documentlocalization</ObjectType>
+    <Parent>
+      <CodeName>/Articles/Origins-of-Arabica-Bourbon</CodeName>
+      <GUID>7e306966-45b2-4923-9cfe-cdf8a89345db</GUID>
+      <ObjectType>cms.node</ObjectType>
+      <Site>
+        <CodeName>DancingGoatCore</CodeName>
+        <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
+        <ObjectType>cms.site</ObjectType>
+      </Site>
+    </Parent>
+  </Parent>
+  <Bindings>
+    <Binding id="cms.category_CoffeeCultureAndHistory_cms.site_DancingGoatCore">
+      <CategoryID>
+        <CodeName>CoffeeCultureAndHistory</CodeName>
+        <GUID>c638a639-d90a-48a4-8a45-69a78d88128f</GUID>
+        <ObjectType>cms.category</ObjectType>
+        <Site>
+          <CodeName>DancingGoatCore</CodeName>
+          <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
+          <ObjectType>cms.site</ObjectType>
+        </Site>
+      </CategoryID>
+    </Binding>
+    <Binding id="cms.category_CoffeeVarietiesAndProcessing_cms.site_DancingGoatCore">
+      <CategoryID>
+        <CodeName>CoffeeVarietiesAndProcessing</CodeName>
+        <GUID>ec83263e-76ec-4f5d-84e7-3231021241e9</GUID>
+        <ObjectType>cms.category</ObjectType>
+        <Site>
+          <CodeName>DancingGoatCore</CodeName>
+          <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
+          <ObjectType>cms.site</ObjectType>
+        </Site>
+      </CategoryID>
+    </Binding>
+  </Bindings>
+</cms.documentcategory>

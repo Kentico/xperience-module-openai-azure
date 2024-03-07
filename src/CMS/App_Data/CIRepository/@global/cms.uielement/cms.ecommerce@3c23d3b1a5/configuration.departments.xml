@@ -31,7 +31,7 @@
       <objecttype>ecommerce.department</objecttype>
       <displaybreadcrumbs>False</displaybreadcrumbs>
       <wherecondition>
-        <![CDATA[DepartmentSiteId IS NULL OR DepartmentSiteId = {% SiteContext.CurrentSiteID |(identity)GlobalAdministrator|(hash)dcc2bf5db6efd5cd596c80687a3cd17ad409321c854a08bee58a6b21433bb124%}]]>
+        <![CDATA[DepartmentSiteId IS NULL OR DepartmentSiteId = {% SiteContext.CurrentSiteID |(identity)GlobalAdministrator|(hash)fc60edacd0c1576e930062b5aec9ddcb473fdf74f97d9575d53dfc1bca6a77f9%}]]>
       </wherecondition>
       <titletext>{$com.ui.configurationdepartments$}</titletext>
       <includejquery>False</includejquery>

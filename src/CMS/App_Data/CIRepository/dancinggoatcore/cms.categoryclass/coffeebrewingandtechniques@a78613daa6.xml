@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.categoryclass>
+  <Parent>
+    <CodeName>CoffeeBrewingAndTechniques</CodeName>
+    <GUID>f302dbc3-4c96-4eaa-beb5-eec5b7e448ea</GUID>
+    <ObjectType>cms.category</ObjectType>
+    <Site>
+      <CodeName>DancingGoatCore</CodeName>
+      <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
+      <ObjectType>cms.site</ObjectType>
+    </Site>
+  </Parent>
+  <Bindings>
+    <Binding id="cms.documenttype_DancingGoatCore.Article">
+      <ClassID>
+        <CodeName>DancingGoatCore.Article</CodeName>
+        <GUID>f10195ae-16f3-46a2-bcda-1b0e86ed9df7</GUID>
+        <ObjectType>cms.documenttype</ObjectType>
+      </ClassID>
+    </Binding>
+  </Bindings>
+</cms.categoryclass>

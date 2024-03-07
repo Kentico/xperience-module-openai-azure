@@ -33,7 +33,7 @@
       <checkmodifypermission>True</checkmodifypermission>
       <resourceprefix>cms_user.select</resourceprefix>
       <listprefacetext>
-        <![CDATA[{% String.FormatString(GetResourceString("site_edit_siteobjects.objectsavailable"), GetResourceString("objecttasks.cms_user").ToLower()) |(identity)GlobalAdministrator|(hash)945e09e2dcb995b224481a3369ad85debf83ba061512e14b43ba3f4e3386115f%}]]>
+        <![CDATA[{% String.FormatString(GetResourceString("site_edit_siteobjects.objectsavailable"), GetResourceString("objecttasks.cms_user").ToLower()) |(identity)GlobalAdministrator|(hash)4ba76b2755635b46916df8099a7ff9b8f55990107c3aaa18695c8fe47974888e%}]]>
       </listprefacetext>
       <displaybreadcrumbs>False</displaybreadcrumbs>
       <wherecondition>SiteID = {% UIContext.ObjectID @%}</wherecondition>

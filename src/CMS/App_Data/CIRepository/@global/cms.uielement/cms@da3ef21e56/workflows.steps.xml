@@ -38,7 +38,7 @@
       <ObjectType>cms.workflowstep</ObjectType>
       <OpenInDialog>False</OpenInDialog>
       <WhereCondition>
-        <![CDATA[StepWorkflowID = {% EditedObjectParent.ID |(identity)GlobalAdministrator|(hash)b42216bb8d02fb886ce35a5654bef1b00d571d0e862046ccbd8557ef40944db2%}]]>
+        <![CDATA[StepWorkflowID = {% EditedObjectParent.ID |(identity)GlobalAdministrator|(hash)9a0d9029e7f9c78e1e09e089c2e1523c531e339dfb6e9920431ac56c3c057254%}]]>
       </WhereCondition>
     </Data>
   </ElementProperties>
@@ -51,6 +51,6 @@
   <ElementSize>0</ElementSize>
   <ElementType>PageTemplate</ElementType>
   <ElementVisibilityCondition>
-    <![CDATA[{%EditedObject.IsBasic|(identity)GlobalAdministrator|(hash)d7dc18d9b63e9f8fc895a239d383c456a81c2a60a6e89409a174626614e6deec%}]]>
+    <![CDATA[{%EditedObject.IsBasic|(identity)GlobalAdministrator|(hash)fbac98ad160a548eddbbdf75fe993353de7b1e7bf0c89f0c0013fae6d12cfa1f%}]]>
   </ElementVisibilityCondition>
 </cms.uielement>

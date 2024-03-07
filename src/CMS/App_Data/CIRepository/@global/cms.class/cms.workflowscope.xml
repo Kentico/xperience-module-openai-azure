@@ -124,7 +124,7 @@
         <properties>
           <fieldcaption>{$general.culture$}</fieldcaption>
           <visiblemacro ismacro="true">
-            <![CDATA[{%LicenseHelper.CheckFeature(FeatureEnum.Multilingual)|(identity)GlobalAdministrator|(hash)425b8e5bd57fc681a6ab9446255e1c909bdf74e4b7750100b384ca282034d07c%}]]>
+            <![CDATA[{%LicenseHelper.CheckFeature(FeatureEnum.Multilingual)|(identity)GlobalAdministrator|(hash)24f2ba156c7fa16664cc5629289325a52e7e4fd3ccc494a0582b634cc4913bbb%}]]>
           </visiblemacro>
         </properties>
         <settings>

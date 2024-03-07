@@ -32,7 +32,7 @@
       <EditInDialog>False</EditInDialog>
       <includejquery>False</includejquery>
       <informationtext>
-        <![CDATA[{% (!EditedObjectParent.DiscountUsesCoupons)? GetResourceString("com.discount.couponcodenotused"):"" |(identity)GlobalAdministrator|(hash)4cf1719d2b8a104f579077efde472a12b0eaed66fcbdb24aabe3c5fe29079acc%}]]>
+        <![CDATA[{% (!EditedObjectParent.DiscountUsesCoupons)? GetResourceString("com.discount.couponcodenotused"):"" |(identity)GlobalAdministrator|(hash)2d83f3e9369b3c39bf0b5576099f8a2adc9e7feda0a74716643fe71808a04ffd%}]]>
       </informationtext>
       <ObjectType>ecommerce.couponcode</ObjectType>
       <OpenInDialog>False</OpenInDialog>
@@ -41,7 +41,7 @@
       <ParentObjectType>ecommerce.discount</ParentObjectType>
       <Text>{% GetCouponsMessage(EditedObjectParent); %}</Text>
       <WhereCondition ismacro="True">
-        <![CDATA[CouponCodeDiscountID= {%EditedObjectParent.DiscountID|(identity)GlobalAdministrator|(hash)3370a812fdaee4f5dc8f3b2345922cf198e13f91c2861531ea44ee95626e10df%}]]>
+        <![CDATA[CouponCodeDiscountID= {%EditedObjectParent.DiscountID|(identity)GlobalAdministrator|(hash)dd2e1f5f79d61d23589f3cd4f16db188e61cc23397fc707d7ca5d55d3ced301a%}]]>
       </WhereCondition>
       <ZeroRowsText>{$com.discount.codenodatafound$}</ZeroRowsText>
     </Data>
@@ -55,6 +55,6 @@
   <ElementSize>0</ElementSize>
   <ElementType>PageTemplate</ElementType>
   <ElementVisibilityCondition>
-    <![CDATA[{%EditedObject.HasOrUsesCoupon|(identity)GlobalAdministrator|(hash)57f56aebd673455fa9dfdfb14b4a43097d16518ea80f831835bb6aa88a58d431%}]]>
+    <![CDATA[{%EditedObject.HasOrUsesCoupon|(identity)GlobalAdministrator|(hash)4751220584b66dfee56d54bf79c27bd4bff16fe7a5e34f660ef1d29e84c38fea%}]]>
   </ElementVisibilityCondition>
 </cms.uielement>

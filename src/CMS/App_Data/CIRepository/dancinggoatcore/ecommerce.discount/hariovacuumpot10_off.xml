@@ -10,12 +10,12 @@
   <DiscountName>HarioVacuumPot10_Off</DiscountName>
   <DiscountOrder>1</DiscountOrder>
   <DiscountProductCondition>
-    <![CDATA[{%Rule("( (SKU.SKUGUID.EqualsAny(\"97e2d6f4-5bf7-49a7-b2d2-ece73c236f1f\".Split(\";\"))))", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"ProductIsOneOf\" ><p n=\"_is\"><t>is</t><v></v><r>0</r><d>select operation</d><vt>text</vt><tv>0</tv></p><p n=\"products\"><t>Hario Vacuum Pot</t><v>97e2d6f4-5bf7-49a7-b2d2-ece73c236f1f</v><r>1</r><d>select products</d><vt>text</vt><tv>0</tv></p></r></rules>")|(identity)GlobalAdministrator|(hash)d0a63f9497a9da007c5c7c2f2eb7f8d10a2d91c3a9556f2a562d4f520fef890e%}]]>
+    <![CDATA[{%Rule("( (SKU.SKUGUID.EqualsAny(\"97e2d6f4-5bf7-49a7-b2d2-ece73c236f1f\".Split(\";\"))))", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"ProductIsOneOf\" ><p n=\"_is\"><t>is</t><v></v><r>0</r><d>select operation</d><vt>text</vt><tv>0</tv></p><p n=\"products\"><t>Hario Vacuum Pot</t><v>97e2d6f4-5bf7-49a7-b2d2-ece73c236f1f</v><r>1</r><d>select products</d><vt>text</vt><tv>0</tv></p></r></rules>")|(identity)GlobalAdministrator|(hash)3b572f917d017803c380f06a2c3bcceb0541ba977c07616a54ab4995c09f1274%}]]>
   </DiscountProductCondition>
   <DiscountRoles />
   <DiscountSiteID>
     <CodeName>DancingGoatCore</CodeName>
-    <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+    <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
     <ObjectType>cms.site</ObjectType>
   </DiscountSiteID>
   <DiscountUsesCoupons>False</DiscountUsesCoupons>

@@ -55,7 +55,7 @@
                 <Text />
                 <Tooltip />
                 <Condition>
-                  <![CDATA[{%Rule("(Contact.ContactEmail.Contains(\"@\"))", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"CMSContactFieldContainsValue\" ><p n=\"field\"><t>Email address</t><v>ContactEmail</v><r>1</r><d>select field</d><vt>text</vt><tv>0</tv></p><p n=\"op\"><t>contains</t><v>Contains</v><r>0</r><d>select operator</d><vt>text</vt><tv>0</tv></p><p n=\"value\"><t>@</t><v>@</v><r>0</r><d>enter value</d><vt>text</vt><tv>1</tv></p></r></rules>")|(identity)GlobalAdministrator|(hash)979cc02067dda3f10fce1f8f4a139c84c2b717cb4599a8f7f198856a02e5916f%}]]>
+                  <![CDATA[{%Rule("(Contact.ContactEmail.Contains(\"@\"))", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"CMSContactFieldContainsValue\" ><p n=\"field\"><t>Email address</t><v>ContactEmail</v><r>1</r><d>select field</d><vt>text</vt><tv>0</tv></p><p n=\"op\"><t>contains</t><v>Contains</v><r>0</r><d>select operator</d><vt>text</vt><tv>0</tv></p><p n=\"value\"><t>@</t><v>@</v><r>0</r><d>enter value</d><vt>text</vt><tv>1</tv></p></r></rules>")|(identity)GlobalAdministrator|(hash)936bee119c8e8f8061d430c0f5eaf3f4a3ac0f7a83f024b8163f8b7e467e954c%}]]>
                 </Condition>
                 <Type>1</Type>
                 <StepRolesSecurity>0</StepRolesSecurity>
@@ -67,7 +67,7 @@
                 <Text />
                 <Tooltip />
                 <Condition>
-                  <![CDATA[{%(Contact.ContactMobilePhone.NotEquals(""))|(identity)GlobalAdministrator|(hash)0d4103788430dbac2d6d34daa378374d32e630a4b9b824f3337672b4acb16557%}]]>
+                  <![CDATA[{%(Contact.ContactMobilePhone.NotEquals(""))|(identity)GlobalAdministrator|(hash)3876ca3222342747484b18113e3ac7b4549f49a04845667092dc62e597c33969%}]]>
                 </Condition>
                 <Type>1</Type>
                 <StepRolesSecurity>0</StepRolesSecurity>
@@ -180,7 +180,7 @@ Note: Automatic deletion of contacts can also be configured in the 'Settings' ap
             <d4p1:KeyValueOfstringstring>
               <d4p1:Key>To</d4p1:Key>
               <d4p1:Value>
-                <![CDATA[{% Contact.ContactOwnerUser.Email |(identity)GlobalAdministrator|(hash)e96e44f04bba40b9d1a7a1103e38dc6dd8b54c790f1843eaa400d511956682b8%}]]>
+                <![CDATA[{% Contact.ContactOwnerUser.Email |(identity)GlobalAdministrator|(hash)85692a486577406765126a44c88e34c4829afb1295205fa044c7b9947721d1da%}]]>
               </d4p1:Value>
             </d4p1:KeyValueOfstringstring>
             <d4p1:KeyValueOfstringstring>
@@ -285,7 +285,7 @@ Note: Automatic deletion of contacts can also be configured in the 'Settings' ap
           <Type>TimeBased</Type>
           <ObjectType>cms.objectscheduledtask</ObjectType>
           <MacroCondition>
-            <![CDATA[{%Rule("(Contact.IsInactive(300))", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"CMSContactInactiveInTheLastXDays\" ><p n=\"days\"><t>300</t><v>300</v><r>1</r><d>enter days</d><vt>integer</vt><tv>1</tv></p></r></rules>")|(identity)GlobalAdministrator|(hash)db43d5c1df24a652c5391c89114604104ecaf9975c9cd46e011ce19c7940a817%}]]>
+            <![CDATA[{%Rule("(Contact.IsInactive(300))", "<rules><r pos=\"0\" par=\"\" op=\"and\" n=\"CMSContactInactiveInTheLastXDays\" ><p n=\"days\"><t>300</t><v>300</v><r>1</r><d>enter days</d><vt>integer</vt><tv>1</tv></p></r></rules>")|(identity)GlobalAdministrator|(hash)ad1cd002f481e8636b68d1fdb82e7f8322cea65e2758f8d48361246629ee0e9e%}]]>
           </MacroCondition>
           <Parameters xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
             <d4p1:KeyValueOfstringstring>

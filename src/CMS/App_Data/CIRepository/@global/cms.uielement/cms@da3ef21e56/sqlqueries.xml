@@ -44,6 +44,6 @@
   <ElementSize>0</ElementSize>
   <ElementType>PageTemplate</ElementType>
   <ElementVisibilityCondition>
-    <![CDATA[{%Debug.IsDebugEnabled("sqlqueries")|(identity)GlobalAdministrator|(hash)31e02304c7cf802b813bc30633e7408d026a0ba8470e2e8f1987285c53ce7906%}]]>
+    <![CDATA[{%Debug.IsDebugEnabled("sqlqueries")|(identity)GlobalAdministrator|(hash)6214a8ec51aa2aac73989d73b4a5aa87a59bf142bf15033b23d604998fe8c850%}]]>
   </ElementVisibilityCondition>
 </cms.uielement>

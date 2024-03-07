@@ -12,7 +12,7 @@
   <ElementIsGlobalApplication>False</ElementIsGlobalApplication>
   <ElementIsMenu>False</ElementIsMenu>
   <ElementName>Queries</ElementName>
-  <ElementOrder>6</ElementOrder>
+  <ElementOrder>5</ElementOrder>
   <ElementParentID>
     <CodeName>EditDocumentType</CodeName>
     <GUID>f1741808-fe24-4a0e-8111-a63d13559635</GUID>

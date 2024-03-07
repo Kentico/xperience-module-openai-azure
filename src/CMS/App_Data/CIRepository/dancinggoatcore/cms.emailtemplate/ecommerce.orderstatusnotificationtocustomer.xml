@@ -5,7 +5,7 @@
   <EmailTemplateName>Ecommerce.OrderStatusNotificationToCustomer</EmailTemplateName>
   <EmailTemplateSiteID>
     <CodeName>DancingGoatCore</CodeName>
-    <GUID>ae5aad70-915d-4ff5-9bed-ff4112e4bc69</GUID>
+    <GUID>f14fe971-173e-4d26-bcb9-57df9c207ff5</GUID>
     <ObjectType>cms.site</ObjectType>
   </EmailTemplateSiteID>
   <EmailTemplateText>
@@ -15,7 +15,7 @@
   </head>
   <body>
     <h1>Status of your order has changed.</h1>
-    <p>The status of your order has changed to '{% Order.OrderStatus.DisplayName|(encode)true |(identity)GlobalAdministrator|(hash)4dc393861c0a4bfd76f702d2e885e13c6ac1ae5ae1dcf9190c3e31635fc63337%}'.</p>
+    <p>The status of your order has changed to '{% Order.OrderStatus.DisplayName|(encode)true |(identity)GlobalAdministrator|(hash)7587e90ea9c2bcd5e2b83615e3d3140de0879ef979f2d9a9412a3dca1e528cb1%}'.</p>
     <p>
       Check the <i>E-commerce - Order notification to customer</i> email template to 
       see a more complex template example.

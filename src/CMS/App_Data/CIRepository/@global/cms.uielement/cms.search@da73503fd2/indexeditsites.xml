@@ -37,6 +37,6 @@
   <ElementTargetURL>~/CMSModules/SmartSearch/SearchIndex_Sites.aspx</ElementTargetURL>
   <ElementType>Url</ElementType>
   <ElementVisibilityCondition>
-    <![CDATA[{%(EditedObject.IndexType != "smartsearch.general") && (EditedObject.IndexType != "cms.customtable")|(identity)GlobalAdministrator|(hash)e0ba26b2ac8c481589b19d31bd0ba1f59fc0ae37022c62e144604eaf3c70c484%}]]>
+    <![CDATA[{%(EditedObject.IndexType != "smartsearch.general") && (EditedObject.IndexType != "cms.customtable")|(identity)GlobalAdministrator|(hash)d6e2192ce4ec67cdec993ebdb38f8b10207ed4bcfee1504fd737459803019617%}]]>
   </ElementVisibilityCondition>
 </cms.uielement>

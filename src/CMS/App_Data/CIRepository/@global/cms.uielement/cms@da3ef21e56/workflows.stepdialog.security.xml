@@ -31,6 +31,6 @@
   <ElementTargetURL>~/CMSModules/Workflows/Workflow_Step_Security.aspx</ElementTargetURL>
   <ElementType>Url</ElementType>
   <ElementVisibilityCondition>
-    <![CDATA[{%!EditedObject.StepIsDefault && !EditedObject.StepIsAction && !EditedObject.StepIsFinished|(identity)GlobalAdministrator|(hash)8fb0017f36cf81c6cef560beafca9812ef18c82103c28f25754d5e2fed8f21dd%}]]>
+    <![CDATA[{%!EditedObject.StepIsDefault && !EditedObject.StepIsAction && !EditedObject.StepIsFinished|(identity)GlobalAdministrator|(hash)d533da8691af005f3cc8c1acbb013ca2219c5a287799c9f8951757bee8010900%}]]>
   </ElementVisibilityCondition>
 </cms.uielement>
