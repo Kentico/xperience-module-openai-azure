@@ -8,7 +8,7 @@ The integration is usable with Kentico Xperience 13 **hotfix 13.0.142** or newer
 
 ## Installation
 
-1. Install the [Kentico.Xperience.OpenAI.Azure](https://www.nuget.org/packages/Kentico.Xperience.OpenAI.Azure) NuGet package in the administration project.
+1. Install the [Kentico.Xperience.OpenAI.Azure.KX13](https://www.nuget.org/packages/Kentico.Xperience.OpenAI.Azure.KX13) NuGet package in the administration project.
 2. Sign in to your [Azure portal](https://portal.azure.com/).
 3. Create and configure an [Azure OpenAI resource](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/create-resource?pivots=web-portal).
 4. [Deploy a model](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/create-resource?pivots=web-portal#deploy-a-model).
