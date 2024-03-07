@@ -2,6 +2,9 @@
 
 This custom module allows Kentico Xperience 13 users to [automatically select](https://docs.kentico.com/x/IgqRBg) the best fitting categories for a page based on its content using [Azure OpenAI](https://azure.microsoft.com/en-us/products/ai-services/openai-service).
 
+## Compatibility
+
+The integration is usable with Kentico Xperience 13 **hotfix 13.0.142** or newer.
 
 ## Installation
 
