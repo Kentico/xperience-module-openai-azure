@@ -67,11 +67,12 @@ namespace Kentico.Xperience.OpenAI.Azure.Tests
         }
 
 
-        [Test]
-        public void CategorizePage_SettingsNotPresent_ThrowsInvalidOperationException()
+        [TestCase("", "apiKey", TestName = "API endpoint key is empty")]
+        [TestCase("apiEndpointKey", "", TestName = "API key is empty")]
+        public void CategorizePage_SettingsNotPresent_ThrowsInvalidOperationException(string apiEndpointKey, string apiKey)
         {
-            settingService[PageCategorizationConstants.API_ENDPOINT_KEY].Returns("");
-            settingService[PageCategorizationConstants.API_KEY_KEY].Returns("");
+            settingService[PageCategorizationConstants.API_ENDPOINT_KEY].Returns(apiEndpointKey);
+            settingService[PageCategorizationConstants.API_KEY_KEY].Returns(apiKey);
 
             var factory = new OpenAIClientFactory();
             clientFactory.When(x => x.GetOpenAIClient(Arg.Any<string>(), Arg.Any<string>())).Do(x => factory.GetOpenAIClient(x.ArgAt<string>(0), x.ArgAt<string>(1)));
@@ -126,9 +127,11 @@ namespace Kentico.Xperience.OpenAI.Azure.Tests
 
 
         [Test]
-        public void CategorizePage_UnknownCategory_ReturnsCorrectResponse()
+        public void CategorizePage_VariousCategories_ReturnsCorrectResponse()
         {
             const string UNKNOWN_CATEGORY_NAME = "Unknown";
+            const string EXPECTED_LANGUAGE = "English (United States)";
+            const string EXPECTED_DATA_FORMAT = "field1:value1";
 
             var categoryIds = new List<int> { CATEGORY1_ID, CATEGORY2_ID, CATEGORY3_ID };
             var responseCategoryIds = new List<int> { CATEGORY1_ID, CATEGORY2_ID };
@@ -139,7 +142,16 @@ namespace Kentico.Xperience.OpenAI.Azure.Tests
 
             Assert.Multiple(() =>
             {
-                client.Received(1).GetChatCompletions(Arg.Any<ChatCompletionsOptions>());
+                client.Received(1).GetChatCompletions(Arg.Is<ChatCompletionsOptions>(o => o.DeploymentName == DEPLOYMENT_NAME
+                                                                                        && o.MaxTokens == PageCategorizationConstants.MAX_TOKENS
+                                                                                        && o.Temperature == PageCategorizationConstants.DEFAULT_TEMPERATURE
+                                                                                        && o.Messages.Count == 2
+                                                                                        && ((ChatRequestSystemMessage)o.Messages[0]).Content.Equals(PageCategorizationConstants.DEFAULT_SYSTEM_PROMPT + $"Category names: {CATEGORY1_NAME}{DELIMITER}{CATEGORY2_NAME}{DELIMITER}{CATEGORY3_NAME}")
+                                                                                        && ((ChatRequestUserMessage)o.Messages[1]).Content.Equals($"The data will be in the {EXPECTED_LANGUAGE} language. Categorize the following data:\n {EXPECTED_DATA_FORMAT}")
+                                                                                        ));
+                _ = settingService.Received(1)[PageCategorizationConstants.API_ENDPOINT_KEY];
+                _ = settingService.Received(1)[PageCategorizationConstants.API_KEY_KEY];
+                _ = settingService.Received(1)[PageCategorizationConstants.DEPLOYMENT_NAME_KEY];
                 Assert.That(result.Categories, Is.EquivalentTo(responseCategoryIds));
                 Assert.That(result.UnknownCategories, Is.EquivalentTo(new[] { UNKNOWN_CATEGORY_NAME }));
             });
