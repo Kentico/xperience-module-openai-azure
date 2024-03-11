@@ -47,6 +47,6 @@
         /// <summary>
         /// The default delimiter used in splitting or joining strings.
         /// </summary>
-        public const string delimiter = ";";
+        public const string DELIMITER = ";";
     }
 }

@@ -111,7 +111,7 @@ namespace Kentico.Xperience.OpenAI.Azure
                 return string.Empty;
             }
 
-            string textRepresentation = string.Join($"{PageCategorizationConstants.delimiter}\n", fields);
+            string textRepresentation = string.Join($"{PageCategorizationConstants.DELIMITER}\n", fields);
             string cultureName = CultureInfo.GetCultureInfo(treeNode.DocumentCulture).EnglishName;
 
             return $"The data will be in the {cultureName} language. Categorize the following data:\n {textRepresentation}";
@@ -145,13 +145,11 @@ namespace Kentico.Xperience.OpenAI.Azure
         }
 
 
-        private string GetSystemPrompt(IEnumerable<int> categoryIdentifiers, Dictionary<string, string> localizedDisplayNames)
-        {
-            return PageCategorizationConstants.DEFAULT_SYSTEM_PROMPT + GetCategoryNames(categoryIdentifiers, localizedDisplayNames);
-        }
+        private string GetSystemPrompt(IEnumerable<int> categoryIdentifiers, Dictionary<string, string> localizedDisplayNames) =>
+            PageCategorizationConstants.DEFAULT_SYSTEM_PROMPT + GetCategoryNames(categoryIdentifiers, localizedDisplayNames);
 
 
-        private IEnumerable<(string Name, string Value)> GetFields(TreeNode treeNode)
+        internal virtual IEnumerable<(string Name, string Value)> GetFields(TreeNode treeNode)
         {
             var textFields = new List<FormFieldInfo>();
 
@@ -175,13 +173,13 @@ namespace Kentico.Xperience.OpenAI.Azure
             string responseContent = response.Value.Choices[0].Message.Content;
 
             var categoriesByName = GetCategories(categoryIdentifiers).ToLookup(category => localizedDisplayNames[category.CategoryDisplayName], category => category.CategoryID);
-            var cattegoryNames = responseContent.TrimEnd('.')
-                .Split(PageCategorizationConstants.delimiter[0])
+            var categoryNames = responseContent.TrimEnd('.')
+                .Split(new[] { PageCategorizationConstants.DELIMITER }, StringSplitOptions.RemoveEmptyEntries)
                 .Select(category => category.Trim())
                 .Distinct();
 
-            var correctlyIdentified = cattegoryNames.Where(category => categoriesByName.Contains(category)).SelectMany(name => categoriesByName[name]);
-            var other = cattegoryNames.Where((category) => !categoriesByName.Contains(category));
+            var correctlyIdentified = categoryNames.Where(category => categoriesByName.Contains(category)).SelectMany(name => categoriesByName[name]);
+            var other = categoryNames.Where((category) => !categoriesByName.Contains(category));
 
             return new PageCategorizationResult
             {
@@ -203,7 +201,7 @@ namespace Kentico.Xperience.OpenAI.Azure
                 return localizedName;
             });
 
-            return "Category names: " + string.Join(PageCategorizationConstants.delimiter, categories);
+            return "Category names: " + string.Join(PageCategorizationConstants.DELIMITER, categories);
         }
     }
 }
