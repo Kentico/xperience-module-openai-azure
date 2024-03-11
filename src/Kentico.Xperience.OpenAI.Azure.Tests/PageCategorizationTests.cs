@@ -1,18 +1,18 @@
-﻿using Azure;
-using Azure.AI.OpenAI;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 using CMS.Core;
 using CMS.DocumentEngine;
 using CMS.Taxonomy;
 using CMS.Tests;
 
+using Azure;
+using Azure.AI.OpenAI;
+
 using NSubstitute;
 
 using NUnit.Framework;
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace Kentico.Xperience.OpenAI.Azure.Tests
 {
@@ -67,38 +67,6 @@ namespace Kentico.Xperience.OpenAI.Azure.Tests
         }
 
 
-        private void FakeCategories() => categoryInfoProvider = (ICategoryInfoProvider)Fake<CategoryInfo, CategoryInfoProvider>()
-                .WithData(CategoryInfo.New(c1 =>
-                    {
-                        c1.CategoryDisplayName = CATEGORY1_NAME;
-                        c1.CategoryID = CATEGORY1_ID;
-                    }),
-                    CategoryInfo.New(c2 =>
-                    {
-                        c2.CategoryDisplayName = CATEGORY2_NAME;
-                        c2.CategoryID = CATEGORY2_ID;
-                    }),
-                    CategoryInfo.New(c3 =>
-                    {
-                        c3.CategoryDisplayName = CATEGORY3_NAME;
-                        c3.CategoryID = CATEGORY3_ID;
-                    })).ProviderObject;
-
-
-        private void SetChatCompletionsResponse(string expectedResponse)
-        {
-            response = Substitute.For<Response<ChatCompletions>>();
-
-            var responseMessage = AzureOpenAIModelFactory.ChatResponseMessage(content: expectedResponse);
-            var chatChoice = AzureOpenAIModelFactory.ChatChoice(responseMessage);
-
-            var completion = AzureOpenAIModelFactory.ChatCompletions(choices: new List<ChatChoice>() { chatChoice });
-            response.Value.Returns(completion);
-
-            client.GetChatCompletions(Arg.Any<ChatCompletionsOptions>()).Returns(response);
-        }
-
-
         [Test]
         public void CategorizePage_SettingsNotPresent_ThrowsInvalidOperationException()
         {
@@ -106,9 +74,9 @@ namespace Kentico.Xperience.OpenAI.Azure.Tests
             settingService[PageCategorizationConstants.API_KEY_KEY].Returns("");
 
             var factory = new OpenAIClientFactory();
-            clientFactory.When(x => x.GetOpenAIClient(Arg.Any<string>(), Arg.Any<string>())).Do(x => factory.GetOpenAIClient("", ""));
+            clientFactory.When(x => x.GetOpenAIClient(Arg.Any<string>(), Arg.Any<string>())).Do(x => factory.GetOpenAIClient(x.ArgAt<string>(0), x.ArgAt<string>(1)));
 
-            Assert.Throws<InvalidOperationException>(() => pageCategorizationService.CategorizePage(TreeNode.New(), new List<int> { 1, 2, 3 }));
+            Assert.Throws<InvalidOperationException>(() => pageCategorizationService.CategorizePage(treeNode, new List<int> { 1, 2, 3 }));
         }
 
 
@@ -133,8 +101,7 @@ namespace Kentico.Xperience.OpenAI.Azure.Tests
 
             Assert.Multiple(() =>
             {
-                CollectionAssert.AreEquivalent(uniqueCategoryIds, result.Categories);
-                Assert.That(result.Categories.Count(), Is.EqualTo(uniqueCategoryIds.Count()));
+                Assert.That(result.Categories, Is.EquivalentTo(uniqueCategoryIds));
                 Assert.That(result.UnknownCategories, Is.Empty);
             });
         }
@@ -151,15 +118,15 @@ namespace Kentico.Xperience.OpenAI.Azure.Tests
 
             Assert.Multiple(() =>
             {
-                Assert.That(!client.ReceivedCalls().Any());
-                Assert.AreEqual(Enumerable.Empty<int>(), result.Categories);
-                Assert.AreEqual(Enumerable.Empty<string>(), result.UnknownCategories);
+                Assert.That(client.ReceivedCalls(), Is.Empty);
+                Assert.That(result.Categories, Is.Empty);
+                Assert.That(result.UnknownCategories, Is.Empty);
             });
         }
 
 
         [Test]
-        public void CategorizePage_GetChatCompletionsReturnsUnknownCategory_ReturnsUnknownCategory()
+        public void CategorizePage_UnknownCategory_ReturnsCorrectResponse()
         {
             const string UNKNOWN_CATEGORY_NAME = "Unknown";
 
@@ -172,9 +139,42 @@ namespace Kentico.Xperience.OpenAI.Azure.Tests
 
             Assert.Multiple(() =>
             {
-                Assert.AreEqual(true, result.UnknownCategories.Contains(UNKNOWN_CATEGORY_NAME));
-                CollectionAssert.AreEquivalent(responseCategoryIds, result.Categories);
+                client.Received(1).GetChatCompletions(Arg.Any<ChatCompletionsOptions>());
+                Assert.That(result.Categories, Is.EquivalentTo(responseCategoryIds));
+                Assert.That(result.UnknownCategories, Is.EquivalentTo(new[] { UNKNOWN_CATEGORY_NAME }));
             });
+        }
+
+
+        private void FakeCategories() => categoryInfoProvider = (ICategoryInfoProvider)Fake<CategoryInfo, CategoryInfoProvider>()
+                .WithData(CategoryInfo.New(c1 =>
+                {
+                    c1.CategoryDisplayName = CATEGORY1_NAME;
+                    c1.CategoryID = CATEGORY1_ID;
+                }),
+                    CategoryInfo.New(c2 =>
+                    {
+                        c2.CategoryDisplayName = CATEGORY2_NAME;
+                        c2.CategoryID = CATEGORY2_ID;
+                    }),
+                    CategoryInfo.New(c3 =>
+                    {
+                        c3.CategoryDisplayName = CATEGORY3_NAME;
+                        c3.CategoryID = CATEGORY3_ID;
+                    })).ProviderObject;
+
+
+        private void SetChatCompletionsResponse(string expectedResponse)
+        {
+            response = Substitute.For<Response<ChatCompletions>>();
+
+            var responseMessage = AzureOpenAIModelFactory.ChatResponseMessage(content: expectedResponse);
+            var chatChoice = AzureOpenAIModelFactory.ChatChoice(responseMessage);
+
+            var completion = AzureOpenAIModelFactory.ChatCompletions(choices: new List<ChatChoice>() { chatChoice });
+            response.Value.Returns(completion);
+
+            client.GetChatCompletions(Arg.Any<ChatCompletionsOptions>()).Returns(response);
         }
     }
 

@@ -174,7 +174,7 @@ namespace Kentico.Xperience.OpenAI.Azure
 
             var categoriesByName = GetCategories(categoryIdentifiers).ToLookup(category => localizedDisplayNames[category.CategoryDisplayName], category => category.CategoryID);
             var categoryNames = responseContent.TrimEnd('.')
-                .Split(PageCategorizationConstants.DELIMITER[0])
+                .Split(new[] { PageCategorizationConstants.DELIMITER }, StringSplitOptions.RemoveEmptyEntries)
                 .Select(category => category.Trim())
                 .Distinct();
 
