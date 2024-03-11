@@ -1,0 +1,59 @@
+name: "CI: Build and Test"
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "**.cs"
+      - "**.tsx"
+      - "**.js"
+      - "**.csproj"
+      - "**.props"
+      - "**.targets"
+      - "**.sln"
+      - "**/Client/**/*.json"
+      - "**/ci.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "**.cs"
+      - "**.tsx"
+      - "**.js"
+      - "**.csproj"
+      - "**.props"
+      - "**.targets"
+      - "**.sln"
+      - "**/Client/**/*.json"
+      - "**/ci.yml"
+
+
+jobs:
+  build-and-test: 
+    name: "Build and test"
+    runs-on: windows-latest
+
+    defaults:
+      run:
+        shell: pwsh
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Setup NuGet
+        uses: NuGet/setup-nuget@v1.0.5
+
+      - name: Setup VSTest
+        uses: darenm/Setup-VSTest@v1
+
+      - name: Restore Packages
+        run: nuget restore
+
+      - name: Build Solution
+        run: msbuild.exe /p:platform="Any CPU" /p:configuration="Release" /p:RestorePackages=false
+
+      - name: Test Solution
+        run: vstest.console.exe .\src\Kentico.Xperience.OpenAI.Azure.Tests\bin\Release\net48\Kentico.Xperience.OpenAI.Azure.Tests.dll
+    
