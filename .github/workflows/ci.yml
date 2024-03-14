@@ -29,7 +29,6 @@ on:
       - "**/Client/**/*.json"
       - "**/ci.yml"
 
-
 jobs:
   dotnet-format:
     name: Format
@@ -41,17 +40,29 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 
 
-      - name: Add dotnet-format problem matcher
-        uses: xt0rted/dotnet-format-problem-matcher@v1
+      - name: Get changed files
+        if: github.event_name == 'push'
+        run: |
+          $CHANGED_FILES = (git diff --name-only ${{ github.event.before }} ${{ github.sha }}) -replace '\n',' '
+          echo "CHANGED_FILES=$CHANGED_FILES" | Out-File -FilePath $Env:GITHUB_ENV -Append
 
-      - name: Restore dotnet tools
-        uses: xt0rted/dotnet-tool-restore@v1
+      - name: Get changed files in PR
+        if: github.event_name == 'pull_request'
+        run: |
+          $CHANGED_FILES = (git diff --name-only origin/${{ github.base_ref }} ${{ github.sha }}) -replace '\n',' '
+          echo "CHANGED_FILES=$CHANGED_FILES" | Out-File -Append -FilePath $Env:GITHUB_ENV
 
       - name: Run dotnet format
-        uses: xt0rted/dotnet-format@v1
-        with: 
-          only-changed-files: "true"
+        run: |
+          $files = $Env:CHANGED_FILES -split ' '
+          if ($files.Length -eq 0) {
+            Write-Host "No relevant files have changed."
+          } else {
+            dotnet format ./src/WebApp.sln --verify-no-changes --include $files
+          }
 
 
   build-and-test: 
@@ -63,7 +74,6 @@ jobs:
         shell: pwsh
         working-directory: ${{ env.working-directory }}
 
-
     steps:
       - uses: actions/checkout@v4
 
@@ -71,10 +81,7 @@ jobs:
         uses: microsoft/setup-msbuild@v2
 
       - name: Setup NuGet
-        uses: NuGet/setup-nuget@v1.0.5
-
-      - name: Setup VSTest
-        uses: darenm/Setup-VSTest@v1
+        uses: NuGet/setup-nuget@v2
 
       - name: Restore Packages
         run: nuget restore WebApp.sln
@@ -83,5 +90,5 @@ jobs:
         run: msbuild.exe WebApp.sln /p:platform="Any CPU" /p:configuration="Release"
 
       - name: Test Solution
-        run: vstest.console.exe Kentico.Xperience.OpenAI.Azure.Tests\bin\Release\net48\Kentico.Xperience.OpenAI.Azure.Tests.dll
+        run: dotnet test Kentico.Xperience.OpenAI.Azure.Tests\bin\Release\net48\Kentico.Xperience.OpenAI.Azure.Tests.dll
     
