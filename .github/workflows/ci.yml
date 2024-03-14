@@ -1,4 +1,4 @@
-name: "CI: Build and Test"
+name: "CI: Build validation"
 
 env:
   working-directory: ./src
@@ -31,7 +31,7 @@ on:
 
 jobs:
   dotnet-format:
-    name: Format
+    name: Code Style Validation
     runs-on: ubuntu-latest
 
     defaults:
