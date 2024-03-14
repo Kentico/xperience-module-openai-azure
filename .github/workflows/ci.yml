@@ -29,7 +29,6 @@ on:
       - "**/Client/**/*.json"
       - "**/ci.yml"
 
-
 jobs:
   dotnet-format:
     name: Format
@@ -62,7 +61,6 @@ jobs:
       run:
         shell: pwsh
         working-directory: ${{ env.working-directory }}
-
 
     steps:
       - uses: actions/checkout@v4
