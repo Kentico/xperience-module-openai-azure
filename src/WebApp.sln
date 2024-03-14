@@ -2,11 +2,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMSApp", "src\CMS\CMSApp.csproj", "{BB8817AE-48DF-4672-A1CB-CFB7441B88DA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMSApp", "CMS\CMSApp.csproj", "{BB8817AE-48DF-4672-A1CB-CFB7441B88DA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kentico.Xperience.OpenAI.Azure", "src\Kentico.Xperience.OpenAI.Azure\Kentico.Xperience.OpenAI.Azure.csproj", "{5F319BD1-C938-4C04-B4A2-B7D54C667BCB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kentico.Xperience.OpenAI.Azure", "Kentico.Xperience.OpenAI.Azure\Kentico.Xperience.OpenAI.Azure.csproj", "{5F319BD1-C938-4C04-B4A2-B7D54C667BCB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kentico.Xperience.OpenAI.Azure.Tests", "src\Kentico.Xperience.OpenAI.Azure.Tests\Kentico.Xperience.OpenAI.Azure.Tests.csproj", "{1D21D886-576E-42E8-82B3-28D53458A76D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kentico.Xperience.OpenAI.Azure.Tests", "Kentico.Xperience.OpenAI.Azure.Tests\Kentico.Xperience.OpenAI.Azure.Tests.csproj", "{1D21D886-576E-42E8-82B3-28D53458A76D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
