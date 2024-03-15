@@ -44,15 +44,14 @@ jobs:
           fetch-depth: 0 
 
       - name: Get changed files
-        if: github.event_name == 'push'
         run: |
-          $CHANGED_FILES = (git diff --name-only ${{ github.event.before }} ${{ github.sha }}) -replace '\n',' '
-          echo "CHANGED_FILES=$CHANGED_FILES" | Out-File -FilePath $Env:GITHUB_ENV -Append
-
-      - name: Get changed files in PR
-        if: github.event_name == 'pull_request'
-        run: |
-          $CHANGED_FILES = (git diff --name-only origin/${{ github.base_ref }} ${{ github.sha }}) -replace '\n',' '
+          if ($env:GITHUB_EVENT_NAME -eq "pull_request") {
+            $BASE_REF = "origin/${{ github.base_ref }}"
+          } else {
+            $BASE_REF = "${{ github.event.before }}"
+          }
+          git fetch origin ${{ github.base_ref }}:${{ github.base_ref }} --depth=1
+          $CHANGED_FILES = (git diff --name-only $BASE_REF ${{ github.sha }}) -replace '\n',' '
           echo "CHANGED_FILES=$CHANGED_FILES" | Out-File -Append -FilePath $Env:GITHUB_ENV
 
       - name: Run dotnet format
@@ -68,6 +67,8 @@ jobs:
   build-and-test: 
     name: Build and test
     runs-on: windows-latest
+    
+    needs: dotnet-format
 
     defaults:
       run:
