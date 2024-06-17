@@ -11624,7 +11624,7 @@
             The thread is aborted but <seealso cref="T:System.Threading.ThreadAbortException"/> is not logged.
             </para>
             <para>
-            In case of <seealso cref="F:CMS.Base.ThreadModeEnum.Sync"/> mode this method only stops this and child synchronous threads. 
+            In case of <seealso cref="F:CMS.Base.ThreadModeEnum.Sync"/> mode this method only stops this and child synchronous threads.
             </para>
             <para>
             Parent threads running under same InnerThread will continue running.
@@ -11706,7 +11706,7 @@
         </member>
         <member name="M:CMS.Base.CMSThread.Execute(System.Action,CMS.Base.ThreadContext,System.Delegate)">
             <summary>
-            Executes the given code as it was executed in a context of CMSThread. Use this method to wrap a code, that runs from anonymous thread that you have no control over. 
+            Executes the given code as it was executed in a context of CMSThread. Use this method to wrap a code, that runs from anonymous thread that you have no control over.
             </summary>
             <param name="action">Action to execute</param>
             <param name="sourceContext">Source context of the originating thread</param>
@@ -11714,7 +11714,7 @@
         </member>
         <member name="M:CMS.Base.CMSThread.ExecuteFunc``1(System.Func{``0},CMS.Base.ThreadContext,System.Delegate)">
             <summary>
-            Executes the given function as it was executed in a context of CMSThread. Use this method to wrap a code, that runs from anonymous thread that you have no control over. 
+            Executes the given function as it was executed in a context of CMSThread. Use this method to wrap a code, that runs from anonymous thread that you have no control over.
             </summary>
             <param name="action">Action to execute</param>
             <param name="sourceContext">Source context items of the originating thread</param>
@@ -12444,6 +12444,70 @@
             <summary>
             Indicates whether <see cref="M:CMS.Base.ThreadQueueWorker`2.Enqueue(`0,System.Boolean)"/> method can put items in a queue for asynchronous processing. True by default. Work items are processed synchronously when set to false.
             </summary>
+        </member>
+        <member name="T:CMS.Base.ContextUtils">
+            <summary>
+            Contains utility methods for capturing system's ambient context and propagating it to methods which are executed asynchronously or in parallel.
+            </summary>
+        </member>
+        <member name="M:CMS.Base.ContextUtils.PropagateCurrent(System.Action)">
+            <summary>
+            Captures the current system's ambient context and wraps <paramref name="action"/> so that the context is propagated to it upon its invocation.
+            </summary>
+            <param name="action">Action to which the current context is to be propagated.</param>
+            <returns>Returns <paramref name="action"/> wrapped so that current context is propagated to it upon invocation.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="action"/> is null.</exception>
+            <remarks>
+            Use this method to wrap actions before passing them to <see cref="M:System.Threading.Tasks.Task.Run(System.Action)"/> or <see cref="M:System.Threading.Tasks.Task.Run(System.Action,System.Threading.CancellationToken)"/>
+            to ensure the current context is captured and propagated to the executed action.
+            </remarks>
+        </member>
+        <member name="M:CMS.Base.ContextUtils.PropagateCurrent``1(System.Func{``0})">
+            <summary>
+            Captures the current system's ambient context and wraps <paramref name="function"/> so that the context is propagated to it upon its invocation.
+            </summary>
+            <typeparam name="TResult">Type of <paramref name="function"/>'s result.</typeparam>
+            <param name="function">Function to which the current context is to be propagated.</param>
+            <returns>Returns <paramref name="function"/> wrapped so that current context is propagated to it upon invocation.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="function"/> is null.</exception>
+            <remarks>
+            Use this method to wrap functions before passing them to <see cref="M:System.Threading.Tasks.Task.Run``1(System.Func{``0})"/> or <see cref="M:System.Threading.Tasks.Task.Run``1(System.Func{``0},System.Threading.CancellationToken)"/>
+            to ensure the current context is captured and propagated to the executed function.
+            </remarks>
+        </member>
+        <member name="M:CMS.Base.ContextUtils.PropagateCurrent(System.Func{System.Threading.Tasks.Task})">
+            <summary>
+            Captures the current system's ambient context and wraps <paramref name="function"/> so that the context is propagated to it upon its invocation.
+            </summary>
+            <param name="function">Asynchronous action to which the current context is to be propagated.</param>
+            <returns>Returns <paramref name="function"/> wrapped so that current context is propagated to it upon invocation.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="function"/> is null.</exception>
+            <remarks>
+            Use this method to wrap asynchronous actions before passing them to <see cref="M:System.Threading.Tasks.Task.Run(System.Func{System.Threading.Tasks.Task})"/> or <see cref="M:System.Threading.Tasks.Task.Run(System.Func{System.Threading.Tasks.Task},System.Threading.CancellationToken)"/>
+            to ensure the current context is captured and propagated to the executed action.
+            </remarks>
+        </member>
+        <member name="M:CMS.Base.ContextUtils.PropagateCurrent``1(System.Func{System.Threading.Tasks.Task{``0}})">
+            <summary>
+            Captures the current system's ambient context and wraps <paramref name="function"/> so that the context is propagated to it upon its invocation.
+            </summary>
+            <typeparam name="TResult">Type of <paramref name="function"/>'s result.</typeparam>
+            <param name="function">Asynchronous function to which the current context is to be propagated.</param>
+            <returns>Returns <paramref name="function"/> wrapped so that current context is propagated to it upon invocation.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="function"/> is null.</exception>
+            <remarks>
+            Use this method to wrap asynchronous functions before passing them to <see cref="M:System.Threading.Tasks.Task.Run``1(System.Func{System.Threading.Tasks.Task{``0}})"/> or <see cref="M:System.Threading.Tasks.Task.Run``1(System.Func{System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken)"/>
+            to ensure the current context is captured and propagated to the executed function.
+            </remarks>
+        </member>
+        <member name="M:CMS.Base.ContextUtils.ResetCurrent">
+            <summary>
+            Resets the current system's ambient context.
+            </summary>
+            <remarks>
+            Use this method within an action when the context was not explicitly captured and passed
+            (e.g. when running on the thread pool where residual context from previous code might linger).
+            </remarks>
         </member>
         <member name="T:CMS.Base.IValidationError">
             <summary>

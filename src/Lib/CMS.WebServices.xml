@@ -870,6 +870,11 @@
             Checks WHERE, ORDER BY and COLUMNS query string parameters so non-admin users cannot use malicious code (= SQL injection protection).
             </summary>
         </member>
+        <member name="M:CMS.WebServices.BaseRESTService.ExcludeSensitiveColumns">
+            <summary>
+            Determines whether sensitive column data should be excluded from result.
+            </summary>
+        </member>
         <member name="M:CMS.WebServices.BaseRESTService.RewriteRESTUrl(System.String,System.String,System.String,System.String)">
             <summary>
             Handles the rewriting for REST service.
