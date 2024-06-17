@@ -16,7 +16,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="kentico.xperience.aspnetcore.webapp" Version="13.0.142" />
+    <PackageReference Include="kentico.xperience.aspnetcore.webapp" Version="13.0.152" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.8" />
     <PackageReference Include="Microsoft.jQuery.Unobtrusive.Ajax" Version="3.2.5" />
   </ItemGroup>

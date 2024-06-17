@@ -6049,6 +6049,11 @@
             Name of the parameter which indicates form builder preview link expiration.
             </summary>
         </member>
+        <member name="F:CMS.Helpers.VirtualContext.PARAM_EXPIRATION">
+            <summary>
+            Name of the parameter which indicates preview link expiration.
+            </summary>
+        </member>
         <member name="F:CMS.Helpers.VirtualContext.PARAM_EMBEDED_IN_ADMINISTRATION">
             <summary>
             Name of the parameter which indicates if page is embedded in administration inside an iframe.
@@ -6082,6 +6087,12 @@
         <member name="F:CMS.Helpers.VirtualContext.FormBuilderLinkExpiration">
             <summary>
             Represents period for which the form builder preview link is valid.
+            </summary>
+        </member>
+        <member name="F:CMS.Helpers.VirtualContext.ExternalFrameExpiration">
+            <summary>
+            Represents the period which the preview/form builder link is valid for when displayed outside of the administration interface.
+            For example when the link is opened in a new tab.
             </summary>
         </member>
         <member name="P:CMS.Helpers.VirtualContext.VirtualContextPrefix">
@@ -6264,7 +6275,7 @@
             <param name="cultureCode">Context of culture for the preview.</param>
             <param name="workflowCycleGuid">Context of workflow cycle GUID.</param>
             <param name="readonlyMode">Indicates if readonly mode should be enabled to disallow modify actions and POST requests.</param>
-            <param name="embededInAdministration">Indicates if page is embedded in administration inside an iframe.</param>
+            <param name="embededInAdministration">Indicates if the page preview will be embedded in administration UI inside an iframe.</param>
             <remarks>
             Preview mode is used for the page builder and the preview tab.
             </remarks>
@@ -6277,7 +6288,7 @@
             <param name="cultureCode">Context of culture for the preview.</param>
             <param name="workflowCycleGuid">Context of workflow cycle GUID.</param>
             <remarks>
-            Preview link URL can be used by external users. This URL does not need additional authentization.
+            Preview link URL can be used by external users. This URL does not need additional authentication.
             </remarks>
         </member>
         <member name="M:CMS.Helpers.VirtualContext.GetFormBuilderPath(System.String,System.Guid)">
@@ -6286,6 +6297,14 @@
             </summary>
             <param name="path">Application absolute path to be converted.</param>
             <param name="userGuid">Context of user for the form builder.</param> 
+        </member>
+        <member name="M:CMS.Helpers.VirtualContext.GetFormBuilderPath(System.String,System.Guid,System.Boolean)">
+            <summary>
+            Returns path containing <see cref="T:CMS.Helpers.VirtualContext"/> data required by Form builder.
+            </summary>
+            <param name="path">Application absolute path to be converted.</param>
+            <param name="userGuid">Context of user for the form builder.</param> 
+            <param name="embeddedInAdministration">Indicates if the returned path will be embedded in administration UI in an iframe.</param>
         </member>
         <member name="M:CMS.Helpers.VirtualContext.AddAdministrationDomain(System.String)">
             <summary>
@@ -6302,6 +6321,11 @@
         <member name="M:CMS.Helpers.VirtualContext.GetFormBuilderLinkExpiration(System.DateTime)">
             <summary>
             Returns given <paramref name="dateTime"/> represented in UTC time as number of ticks.
+            </summary>
+        </member>
+        <member name="M:CMS.Helpers.VirtualContext.GetExternalFrameExpiration(System.DateTime)">
+            <summary>
+            Returns given <paramref name="dateTime"/> extended by the <see cref="F:CMS.Helpers.VirtualContext.PARAM_EXPIRATION"/> represented in UTC time as number of ticks.
             </summary>
         </member>
         <member name="M:CMS.Helpers.VirtualContext.AddParameterToUrl(System.String,System.String,System.String)">

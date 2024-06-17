@@ -701,6 +701,21 @@
             <param name="referenceOnly">Sets container reference only. No existence verification, creation or permission setting.</param>
             <exception cref="T:System.IO.IOException">Thrown when initialization of the container fails.</exception>
         </member>
+        <member name="T:CMS.AzureStorage.BlobPropertiesExtensions">
+            <summary>
+            Extension methods for <see cref="T:Microsoft.Azure.Storage.Blob.BlobProperties"/> class.
+            </summary>
+        </member>
+        <member name="M:CMS.AzureStorage.BlobPropertiesExtensions.GetLastModified(Microsoft.Azure.Storage.Blob.BlobProperties)">
+            <summary>
+            Returns last modified date of blob file in server time.
+            </summary>
+        </member>
+        <member name="M:CMS.AzureStorage.BlobPropertiesExtensions.GetCreated(Microsoft.Azure.Storage.Blob.BlobProperties)">
+            <summary>
+            Returns creation date of blob file in server time.
+            </summary>
+        </member>
         <member name="T:CMS.AzureStorage.GetAzureFileService">
             <summary>
             Service for retrieving Azure files.
@@ -1048,11 +1063,6 @@
             Initializes a new instance of the <see cref="T:CMS.AzureStorage.File"/> class, which provides operations with files.
             </summary>
         </member>
-        <member name="M:CMS.AzureStorage.File.#ctor(CMS.Core.Internal.IDateTimeNowService)">
-            <summary>
-            Internal constructor for testing purposes.
-            </summary>
-        </member>
         <member name="M:CMS.AzureStorage.File.Exists(System.String)">
             <summary>
             Determines whether the specified file exists.
@@ -1308,16 +1318,6 @@
         <member name="M:CMS.AzureStorage.File.IsPathDirectoryPlaceholder(System.String)">
             <summary>
             Returns <c>true</c> if <paramref name="path"/> has format of Azure directory placeholder.
-            </summary>
-        </member>
-        <member name="M:CMS.AzureStorage.File.SetBlobLastWriteTimeToNow(CMS.AzureStorage.BlobInfo,System.Nullable{System.DateTime})">
-            <summary>
-            Set blob's last write time to the current time.
-            </summary>
-        </member>
-        <member name="M:CMS.AzureStorage.File.SetBlobCreationTimeToNow(CMS.AzureStorage.BlobInfo,System.Nullable{System.DateTime})">
-            <summary>
-            Set blob's last write time to the current time.
             </summary>
         </member>
         <member name="T:CMS.AzureStorage.FileInfo">
@@ -1601,11 +1601,6 @@
         <member name="M:CMS.AzureStorage.FileStream.InitFileStream">
             <summary>
             Initializes the stream
-            </summary>
-        </member>
-        <member name="M:CMS.AzureStorage.FileStream.SetLastWriteTimeAndCreationTimeToBlob">
-            <summary>
-            Sets last write time and creation time to blob.
             </summary>
         </member>
         <member name="T:CMS.AzureStorage.AzureStorageUsageDataSource">

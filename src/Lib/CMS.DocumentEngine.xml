@@ -3541,9 +3541,9 @@
             <param name="userGuid">User GUID to be stored in the preview link URL. If left empty, the user name is not stored in the generated URL.</param>
             <param name="queryString">Optional additional query string parameters.</param>
             <param name="cultureCode">Culture code for which the preview link should be generated.</param>
-            The <paramref name="cultureCode"/> can differ from the page culture in case of combine with default culture feature.
+            <paramref name="cultureCode"/> can differ from the page culture in case of combine with default culture feature.
             <remarks>
-            Preview link URL can be used by external users. This URL does not need additional authentization.
+            Preview link URL can be used by external users. This URL does not need additional authentication.
             </remarks>
         </member>
         <member name="M:CMS.DocumentEngine.Internal.PreviewLinkGenerator.DecorateUrlWithQueryStringParameters(System.String,System.Collections.Specialized.NameValueCollection)">

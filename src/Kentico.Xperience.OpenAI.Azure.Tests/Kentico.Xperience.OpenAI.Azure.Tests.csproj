@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <!-- Full framework target have to be listed first because it's used as default for project references within build process -->
     <TargetFrameworks>net48</TargetFrameworks>
@@ -7,15 +7,14 @@
     <IsTestProject>true</IsTestProject>
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>OpenSource.snk</AssemblyOriginatorKeyFile>
-      <AssemblyName>Kentico.Xperience.OpenAI.Azure.Tests</AssemblyName>
-
+    <AssemblyName>Kentico.Xperience.OpenAI.Azure.Tests</AssemblyName>
   </PropertyGroup>
   <PropertyGroup>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Kentico.Xperience.Libraries.Tests" Version="13.0.142" />
+    <PackageReference Include="Kentico.Xperience.Libraries.Tests" Version="13.0.152" />
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.11.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
     <PackageReference Include="NSubstitute" Version="5.1.0" />
