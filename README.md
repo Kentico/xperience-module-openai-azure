@@ -12,7 +12,7 @@ The integration is usable with Kentico Xperience 13 **hotfix 13.0.142** or newer
 ## Installation
 
 1. Install the [Kentico.Xperience.OpenAI.Azure.KX13](https://www.nuget.org/packages/Kentico.Xperience.OpenAI.Azure.KX13) NuGet package in the administration project.
-    - If you encounter an *Unable to resolve dependency 'Azure.AI.OpenAI'..* error during installation, consider a console installation through **Package Manager Console** (*Tools* → *NuGet Package Manager* → *Package Manager Console* in Visual Studio) and install the package with the **-IncludePrerelease** flag:
+    - If you encounter an *Unable to resolve dependency 'Azure.AI.OpenAI'...* error during installation, consider a console installation through **Package Manager Console** (*Tools* → *NuGet Package Manager* → *Package Manager Console* in Visual Studio) and install the package with the **-IncludePrerelease** flag:
         
         `Install-Package Kentico.Xperience.OpenAI.Azure.KX13 -IncludePrerelease`
 2. Sign in to your [Azure portal](https://portal.azure.com/).
