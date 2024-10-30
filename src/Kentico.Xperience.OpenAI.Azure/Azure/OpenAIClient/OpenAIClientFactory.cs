@@ -1,7 +1,6 @@
 ﻿using System;
 
-using Azure;
-using Azure.AI.OpenAI;
+using OpenAI;
 
 namespace Kentico.Xperience.OpenAI.Azure
 {
@@ -18,7 +17,7 @@ namespace Kentico.Xperience.OpenAI.Azure
                 throw new InvalidOperationException($"The Azure OpenAI Content Categorization service API endpoint and key are not configured correctly.");
             }
 
-            return new OpenAIClient(new Uri(apiEndpoint), new AzureKeyCredential(apiKey));
+            return new OpenAIClient(apiKey);
         }
     }
 }

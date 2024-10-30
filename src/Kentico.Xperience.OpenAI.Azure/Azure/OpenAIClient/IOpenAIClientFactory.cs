@@ -1,6 +1,5 @@
 ﻿using System;
-
-using Azure.AI.OpenAI;
+using OpenAI;
 
 namespace Kentico.Xperience.OpenAI.Azure
 {
