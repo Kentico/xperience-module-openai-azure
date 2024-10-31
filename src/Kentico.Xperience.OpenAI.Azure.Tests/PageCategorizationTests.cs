@@ -12,7 +12,7 @@ using CMS.DocumentEngine;
 using CMS.Taxonomy;
 using CMS.Tests;
 
-using OpenAI;
+using Azure.AI.OpenAI;
 using OpenAI.Chat;
 
 using NSubstitute;
@@ -24,7 +24,7 @@ namespace Kentico.Xperience.OpenAI.Azure.Tests
     [TestFixture]
     public class PageCategorizationTests : UnitTests
     {
-        private OpenAIClient client;
+        private AzureOpenAIClient client;
         private ChatClient chatClient;
         private IOpenAIClientFactory clientFactory;
         private PageCategorizationMock pageCategorizationService;
@@ -48,7 +48,7 @@ namespace Kentico.Xperience.OpenAI.Azure.Tests
             FakeCategories();
             Fake<TreeNode>();
 
-            client = Substitute.For<OpenAIClient>();
+            client = Substitute.For<AzureOpenAIClient>();
 
             clientFactory = Substitute.For<IOpenAIClientFactory>();
             clientFactory.GetOpenAIClient(Arg.Any<string>(), Arg.Any<string>()).Returns(client);

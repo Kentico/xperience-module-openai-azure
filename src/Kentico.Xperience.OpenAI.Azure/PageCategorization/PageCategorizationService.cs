@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 
-using OpenAI;
+using Azure.AI.OpenAI;
 using OpenAI.Chat;
 
 using CMS;
@@ -105,7 +105,7 @@ namespace Kentico.Xperience.OpenAI.Azure
         }
 
 
-        private OpenAIClient CreateClient()
+        private AzureOpenAIClient CreateClient()
         {
             string apiEndpoint = settingsService[PageCategorizationConstants.API_ENDPOINT_KEY];
             string apiKey = EncryptionHelper.DecryptData(settingsService[PageCategorizationConstants.API_KEY_KEY]);

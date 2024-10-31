@@ -1,5 +1,6 @@
 ﻿using System;
-using OpenAI;
+
+using Azure.AI.OpenAI;
 
 namespace Kentico.Xperience.OpenAI.Azure
 {
@@ -15,6 +16,6 @@ namespace Kentico.Xperience.OpenAI.Azure
         /// <param name="apiKey">The subscription key for accessing the Azure OpenAI Content Categorization service.</param>
         /// <returns>An instance of the <see cref="OpenAIClient"/> configured with the specified endpoint and key.</returns>
         /// <exception cref="InvalidOperationException">Thrown when either <paramref name="apiEndpoint"/> or <paramref name="apiKey"/> is null or empty.</exception>
-        OpenAIClient GetOpenAIClient(string apiEndpoint, string apiKey);
+        AzureOpenAIClient GetOpenAIClient(string apiEndpoint, string apiKey);
     }
 }

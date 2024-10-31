@@ -1,6 +1,7 @@
 ﻿using System;
+using System.ClientModel;
 
-using OpenAI;
+using Azure.AI.OpenAI;
 
 namespace Kentico.Xperience.OpenAI.Azure
 {
@@ -10,14 +11,14 @@ namespace Kentico.Xperience.OpenAI.Azure
     internal class OpenAIClientFactory : IOpenAIClientFactory
     {
         /// <inheritdoc/>
-        public OpenAIClient GetOpenAIClient(string apiEndpoint, string apiKey)
+        public AzureOpenAIClient GetOpenAIClient(string apiEndpoint, string apiKey)
         {
             if (string.IsNullOrEmpty(apiEndpoint) || string.IsNullOrEmpty(apiKey))
             {
                 throw new InvalidOperationException($"The Azure OpenAI Content Categorization service API endpoint and key are not configured correctly.");
             }
 
-            return new OpenAIClient(apiKey);
+            return new AzureOpenAIClient(new Uri(apiEndpoint), new ApiKeyCredential(apiKey));
         }
     }
 }
