@@ -14492,6 +14492,10 @@
     <Folder Include="CMSScripts\Custom\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Kentico.Xperience.OpenAI.Azure\Kentico.Xperience.OpenAI.Azure.csproj">
+      <Project>{5f319bd1-c938-4c04-b4a2-b7d54c667bcb}</Project>
+      <Name>Kentico.Xperience.OpenAI.Azure</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>
