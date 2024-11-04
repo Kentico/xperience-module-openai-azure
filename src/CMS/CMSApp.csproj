@@ -14490,6 +14490,7 @@
   <ItemGroup>
     <Folder Include="CMSModules\EmailEngine\FormControls\" />
     <Folder Include="CMSScripts\Custom\" />
+    <Folder Include="CMSScripts\WebComponents\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Kentico.Xperience.OpenAI.Azure\Kentico.Xperience.OpenAI.Azure.csproj">
