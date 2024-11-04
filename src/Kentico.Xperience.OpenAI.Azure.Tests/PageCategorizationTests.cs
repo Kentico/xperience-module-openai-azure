@@ -1,14 +1,19 @@
 ﻿using System;
+using System.ClientModel;
+using System.ClientModel.Primitives;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 using CMS.Core;
 using CMS.DocumentEngine;
 using CMS.Taxonomy;
 using CMS.Tests;
 
-using Azure;
 using Azure.AI.OpenAI;
+using OpenAI.Chat;
 
 using NSubstitute;
 
@@ -19,13 +24,13 @@ namespace Kentico.Xperience.OpenAI.Azure.Tests
     [TestFixture]
     public class PageCategorizationTests : UnitTests
     {
-        private OpenAIClient client;
+        private AzureOpenAIClient client;
+        private ChatClient chatClient;
         private IOpenAIClientFactory clientFactory;
         private PageCategorizationMock pageCategorizationService;
         private ISettingsService settingService;
         private ICategoryInfoProvider categoryInfoProvider;
         private TreeNode treeNode;
-        private Response<ChatCompletions> response;
 
         private const string CATEGORY1_NAME = "Category1";
         private const string CATEGORY2_NAME = "Category2";
@@ -43,10 +48,13 @@ namespace Kentico.Xperience.OpenAI.Azure.Tests
             FakeCategories();
             Fake<TreeNode>();
 
-            client = Substitute.For<OpenAIClient>();
+            client = Substitute.For<AzureOpenAIClient>();
 
             clientFactory = Substitute.For<IOpenAIClientFactory>();
             clientFactory.GetOpenAIClient(Arg.Any<string>(), Arg.Any<string>()).Returns(client);
+
+            chatClient = Substitute.For<ChatClient>();
+            client.GetChatClient(DEPLOYMENT_NAME).Returns(chatClient);
 
             settingService = Substitute.For<ISettingsService>();
             settingService[PageCategorizationConstants.DEPLOYMENT_NAME_KEY].Returns(DEPLOYMENT_NAME);
@@ -142,13 +150,15 @@ namespace Kentico.Xperience.OpenAI.Azure.Tests
 
             Assert.Multiple(() =>
             {
-                client.Received(1).GetChatCompletions(Arg.Is<ChatCompletionsOptions>(o => o.DeploymentName == DEPLOYMENT_NAME
-                                                                                        && o.MaxTokens == PageCategorizationConstants.MAX_TOKENS
-                                                                                        && o.Temperature == PageCategorizationConstants.DEFAULT_TEMPERATURE
-                                                                                        && o.Messages.Count == 2
-                                                                                        && ((ChatRequestSystemMessage)o.Messages[0]).Content.Equals(PageCategorizationConstants.DEFAULT_SYSTEM_PROMPT + $"Category names: {CATEGORY1_NAME}{DELIMITER}{CATEGORY2_NAME}{DELIMITER}{CATEGORY3_NAME}")
-                                                                                        && ((ChatRequestUserMessage)o.Messages[1]).Content.Equals($"The data will be in the {EXPECTED_LANGUAGE} language. Categorize the following data:\n {EXPECTED_DATA_FORMAT}")
-                                                                                        ));
+                _ = client.Received(1);
+                chatClient.CompleteChat(Arg.Is<ChatMessage[]>(m =>
+                        m.Length == 2
+                        && m[0].Content.Equals(PageCategorizationConstants.DEFAULT_SYSTEM_PROMPT + $"Category names: {CATEGORY1_NAME}{DELIMITER}{CATEGORY2_NAME}{DELIMITER}{CATEGORY3_NAME}")
+                        && m[1].Content.Equals($"The data will be in the {EXPECTED_LANGUAGE} language. Categorize the following data:\n {EXPECTED_DATA_FORMAT}")),
+                    Arg.Is<ChatCompletionOptions>(o =>
+                        o.MaxOutputTokenCount == PageCategorizationConstants.MAX_TOKENS
+                        && o.Temperature == PageCategorizationConstants.DEFAULT_TEMPERATURE
+                ));
                 _ = settingService.Received(1)[PageCategorizationConstants.API_ENDPOINT_KEY];
                 _ = settingService.Received(1)[PageCategorizationConstants.API_KEY_KEY];
                 _ = settingService.Received(1)[PageCategorizationConstants.DEPLOYMENT_NAME_KEY];
@@ -178,15 +188,12 @@ namespace Kentico.Xperience.OpenAI.Azure.Tests
 
         private void SetChatCompletionsResponse(string expectedResponse)
         {
-            response = Substitute.For<Response<ChatCompletions>>();
+            chatClient = client.GetChatClient(DEPLOYMENT_NAME);
 
-            var responseMessage = AzureOpenAIModelFactory.ChatResponseMessage(content: expectedResponse);
-            var chatChoice = AzureOpenAIModelFactory.ChatChoice(responseMessage);
+            var completion = OpenAIChatModelFactory.ChatCompletion(content: new ChatMessageContent(expectedResponse));
+            var result = ClientResult.FromValue(completion, new PipelineResponseMock());
 
-            var completion = AzureOpenAIModelFactory.ChatCompletions(choices: new List<ChatChoice>() { chatChoice });
-            response.Value.Returns(completion);
-
-            client.GetChatCompletions(Arg.Any<ChatCompletionsOptions>()).Returns(response);
+            chatClient.CompleteChat(Arg.Any<ChatMessage[]>(), Arg.Any<ChatCompletionOptions>()).Returns(result);
         }
     }
 
@@ -212,5 +219,22 @@ namespace Kentico.Xperience.OpenAI.Azure.Tests
 
 
         internal override IEnumerable<(string Name, string Value)> GetFields(TreeNode treeNode) => Fields;
+    }
+
+    internal class PipelineResponseMock : PipelineResponse
+    {
+        public override int Status => throw new NotImplementedException();
+
+        public override string ReasonPhrase => throw new NotImplementedException();
+
+        public override Stream ContentStream { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        public override System.BinaryData Content => throw new NotImplementedException();
+
+        protected override PipelineResponseHeaders HeadersCore => throw new NotImplementedException();
+
+        public override System.BinaryData BufferContent(CancellationToken cancellationToken = default) => throw new NotImplementedException();
+        public override ValueTask<System.BinaryData> BufferContentAsync(CancellationToken cancellationToken = default) => throw new NotImplementedException();
+        public override void Dispose() => throw new NotImplementedException();
     }
 }

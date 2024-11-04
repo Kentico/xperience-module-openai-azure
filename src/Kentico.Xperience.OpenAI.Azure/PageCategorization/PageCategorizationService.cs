@@ -1,10 +1,11 @@
 ﻿using System;
+using System.ClientModel;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 
-using Azure;
 using Azure.AI.OpenAI;
+using OpenAI.Chat;
 
 using CMS;
 using CMS.Core;
@@ -84,14 +85,27 @@ namespace Kentico.Xperience.OpenAI.Azure
                 };
             }
 
-            var chatCompletionsOptions = InitializeChatCompletionsOptions(treeNodeData, systemPrompt);
-            var response = client.GetChatCompletions(chatCompletionsOptions);
+            string deploymentName = settingsService[PageCategorizationConstants.DEPLOYMENT_NAME_KEY];
+
+            if (string.IsNullOrEmpty(deploymentName))
+            {
+                throw new InvalidOperationException($"The Azure OpenAI Content Categorization service deployment name is not configured correctly.");
+            }
+
+            var chatCompletionsOptions = InitializeChatCompletionsOptions();
+
+            var response = client.GetChatClient(deploymentName).CompleteChat(new ChatMessage[]
+            {
+                new SystemChatMessage(systemPrompt),
+                new UserChatMessage(treeNodeData)
+            },
+            chatCompletionsOptions);
 
             return ProcessResponse(response, categoryIdentifiers, localizedNamesByDisplayNames);
         }
 
 
-        private OpenAIClient CreateClient()
+        private AzureOpenAIClient CreateClient()
         {
             string apiEndpoint = settingsService[PageCategorizationConstants.API_ENDPOINT_KEY];
             string apiKey = EncryptionHelper.DecryptData(settingsService[PageCategorizationConstants.API_KEY_KEY]);
@@ -118,26 +132,13 @@ namespace Kentico.Xperience.OpenAI.Azure
         }
 
 
-        private ChatCompletionsOptions InitializeChatCompletionsOptions(string treeNodeData, string systemPrompt)
+        private ChatCompletionOptions InitializeChatCompletionsOptions()
         {
-            string deploymentName = settingsService[PageCategorizationConstants.DEPLOYMENT_NAME_KEY];
-
-            if (string.IsNullOrEmpty(deploymentName))
-            {
-                throw new InvalidOperationException($"The Azure OpenAI Content Categorization service deployment name is not configured correctly.");
-            }
-
             float temperature = ValidationHelper.GetFloat(appSettingsService[PageCategorizationConstants.TEMPERATURE_KEY], PageCategorizationConstants.DEFAULT_TEMPERATURE);
 
-            var chatCompletionsOptions = new ChatCompletionsOptions()
+            var chatCompletionsOptions = new ChatCompletionOptions()
             {
-                DeploymentName = deploymentName,
-                Messages =
-                {
-                    new ChatRequestSystemMessage(systemPrompt),
-                    new ChatRequestUserMessage(treeNodeData),
-                },
-                MaxTokens = PageCategorizationConstants.MAX_TOKENS,
+                MaxOutputTokenCount = PageCategorizationConstants.MAX_TOKENS,
                 Temperature = temperature,
             };
 
@@ -168,9 +169,9 @@ namespace Kentico.Xperience.OpenAI.Azure
         }
 
 
-        private PageCategorizationResult ProcessResponse(Response<ChatCompletions> response, IEnumerable<int> categoryIdentifiers, Dictionary<string, string> localizedDisplayNames)
+        private PageCategorizationResult ProcessResponse(ClientResult<ChatCompletion> response, IEnumerable<int> categoryIdentifiers, Dictionary<string, string> localizedDisplayNames)
         {
-            string responseContent = response.Value.Choices[0].Message.Content;
+            string responseContent = string.Join(Environment.NewLine, response.Value.Content.Select(x => x.Text));
 
             var categoriesByName = GetCategories(categoryIdentifiers).ToLookup(category => localizedDisplayNames[category.CategoryDisplayName], category => category.CategoryID);
             var categoryNames = responseContent.TrimEnd('.')
